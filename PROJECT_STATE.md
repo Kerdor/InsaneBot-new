@@ -38,22 +38,18 @@
 
 Полностью обработаны `bot/exts/backend/`, `bot/exts/filtering/`, `bot/exts/fun/`, `bot/exts/help_channels/` и `bot/exts/info/`.
 
-В `moderation/` просмотрены `alts.py`, `clean.py`, `defcon.py`, `dm_relay.py`, `incidents.py`, `metabase.py`, `modlog.py`, `modpings.py`, `silence.py`, `slowmode.py`, `stream.py`, `verification.py`, `voice_gate.py`, а также `infraction/_scheduler.py`, `infraction/_utils.py`, `infraction/_views.py`.
+`bot/exts/moderation/` теперь полностью закрыт: все root-файлы, `infraction/` и `watchchannels/` просмотрены.
 
-Дополнительно обработан основной command/management surface `infraction/infractions.py`, `infraction/management.py` и полностью просмотрен `infraction/superstarify.py`. Новый пакет `ideas/PYTHON_DISCORD_MODERATION_4.md` содержит `PDIS-M4-001`–`PDIS-M4-011`.
-
-`modpings.py` не породил новый дубль поверх `PDIS-A002`.
-
-Основные дополнительные moderation-идеи находятся в `ideas/PYTHON_DISCORD_MODERATION_2.md` (`PDIS-M2-001`–`PDIS-M2-016`), `ideas/PYTHON_DISCORD_MODERATION_3.md` (`PDIS-M3-001`–`PDIS-M3-015`) и `ideas/PYTHON_DISCORD_MODERATION_4.md` (`PDIS-M4-001`–`PDIS-M4-011`).
+Дополнительные moderation-пакеты:
+- `PYTHON_DISCORD_MODERATION_2.md` — `PDIS-M2-001`–`PDIS-M2-016`;
+- `PYTHON_DISCORD_MODERATION_3.md` — `PDIS-M3-001`–`PDIS-M3-015`;
+- `PYTHON_DISCORD_MODERATION_4.md` — `PDIS-M4-001`–`PDIS-M4-011`;
+- `PYTHON_DISCORD_MODERATION_5.md` — `PDIS-M5-001`–`PDIS-M5-012`.
 
 ## Следующая точка
 
-Продолжать **только `python-discord/bot`**.
+Продолжать **только `python-discord/bot`**. Следующий этап — большой финальный проход recursive tree по ещё не закрытым каталогам/файлам за пределами уже обработанных `backend`, `filtering`, `fun`, `help_channels`, `info`, `moderation`. После каждого крупного участка обновлять research/state.
 
-Следующий крупный батч:
-1. добить оставшиеся части `bot/exts/moderation/` и проверить вложенные материалы;
-2. повторно сверить recursive tree, чтобы не пропустить файл;
-3. после закрытия moderation перейти к следующему непройденному участку `python-discord/bot`;
-4. только после полного завершения python-discord переходить к `ItzSudhan/Discord-MusicBot`.
+`ItzSudhan/Discord-MusicBot` не трогать до полного закрытия `python-discord/bot`.
 
 **Другие источники не трогать.**
