@@ -35,21 +35,16 @@
 
 Полное recursive tree получено на tree SHA `0e4cd5cb46f2239eacccdded8cdf02ba89028ab9`.
 
-Полностью обработан весь `bot/exts/backend/`. Продолжается последовательный проход `bot/exts/filtering/`.
+Полностью обработаны `bot/exts/backend/` и `bot/exts/filtering/`. Filtering закрыт после последовательной проверки engine, lists, filters, anti-spam, unique/security, settings/actions/validations и UI.
 
-В filtering просмотрены development overview, filter context/settings, anti-spam detector files, actions/validations, специализированные filters и unique security filters.
+В filtering добавлены последние UI-идеи `PDIS-FU009`–`PDIS-FU014`: type-aware setting editor, sequence/list editor, interactive search builder, state-copy views, author-bound controls и compact embed rendering.
 
-Созданы source-specific файлы:
-- `ideas/PYTHON_DISCORD.md`;
-- `ideas/PYTHON_DISCORD_ADVANCED.md`;
-- `ideas/PYTHON_DISCORD_BACKEND.md`;
-- `ideas/PYTHON_DISCORD_BACKEND_2.md`;
-- `ideas/PYTHON_DISCORD_FILTERING_ENGINE.md`;
-- `ideas/PYTHON_DISCORD_FILTERING_UI.md`;
-- `ideas/PYTHON_DISCORD_FILTERING_SPECIAL.md`.
+Начат `bot/exts/fun/`.
 
-Последний батч добавил `PDIS-FS010` (normalization против invisible/Zalgo/URL-encoding bypass), `PDIS-FS011` (перехват Discord token/webhook leaks с safe logging/redaction/revocation) и `PDIS-FS012` (semantic filtering events).
+Создан source-specific файл `ideas/PYTHON_DISCORD_FUN.md`. Из `duck_pond.py` и `off_topic_names.py` добавлены `PDIS-FUN001`–`PDIS-FUN012`: threshold reaction relay, unique-user threshold, trusted-role restrictions, idempotent marker + lock, manual bypass, attachment-preserving webhook relay, marker restoration, scheduled random channel rotation, active/inactive pool, fuzzy similarity guard, normalized fuzzy search, rate-limit-aware deferred rename, pool exhaustion handling.
 
-**Следующая точка:** продолжать `bot/exts/filtering/` по recursive tree. После полного закрытия filtering перейти к следующему каталогу `bot/exts/fun/`. Другие источники не трогать.
+## Следующая точка
 
-**Источник не завершён.**
+Продолжать **только `python-discord/bot`**, после `bot/exts/fun/` идти дальше по recursive tree. После полного завершения python-discord только тогда переходить к `ItzSudhan/Discord-MusicBot`.
+
+**Другие источники не трогать.**
