@@ -19,5 +19,8 @@
 | `BOT_ARCHITECTURE.md` | Архитектурные идеи | ⬜ |
 | `UX_UI.md` | UX/UI | ⬜ |
 | `MISC.md` | Прочее | ⬜ |
+| `CORE_FRAMEWORK.md` | Core, permissions и lifecycle | ⬜ |
+| `HELP_UX.md` | Help и command discovery | ⬜ |
+| `FILTERING.md` | Фильтрация контента | ⬜ |
 
 Файлы будут наполняться по мере исследования репозиториев.
