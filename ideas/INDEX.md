@@ -22,5 +22,8 @@
 | `CORE_FRAMEWORK.md` | Core, permissions и lifecycle | ⬜ |
 | `HELP_UX.md` | Help и command discovery | ⬜ |
 | `FILTERING.md` | Фильтрация контента | ⬜ |
+| `ACCESS_CONTROL.md` | Allowlist / blocklist / ACL | ⬜ |
+| `COG_MANAGEMENT.md` | Управление модулями | ⬜ |
+| `GENERAL_UX.md` | Общие мелкие UX-механики | ⬜ |
 
 Файлы будут наполняться по мере исследования репозиториев.
