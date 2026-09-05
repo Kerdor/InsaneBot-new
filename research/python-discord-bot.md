@@ -35,30 +35,42 @@
 
 ### `bot/exts/moderation/`
 - Все root-файлы moderation — ✅
-- `watchchannels/__init__.py` — ✅ (пустой)
-- `watchchannels/_watchchannel.py` — ✅
-- `watchchannels/bigbrother.py` — ✅
-- `infraction/__init__.py` — ✅ (пустой)
-- `infraction/_scheduler.py` — ✅
-- `infraction/_utils.py` — ✅
-- `infraction/_views.py` — ✅
-- `infraction/infractions.py` — ✅
-- `infraction/management.py` — ✅
-- `infraction/superstarify.py` — ✅
+- `watchchannels/` — ✅
+- `infraction/` — ✅
+
+### `bot/exts/recruitment/`
+- `__init__.py` — ✅ (пустой)
+- `talentpool/__init__.py` — ✅
+- `talentpool/_api.py` — ✅
+- `talentpool/_cog.py` — ✅
+- `talentpool/_review.py` — ✅
+
+### `bot/exts/utils/`
+- `__init__.py` — ✅ (пустой)
+- `attachment_pastebin_uploader.py` — ✅
+- `bot.py` — ✅
+- `extensions.py` — ✅
+- `internal.py` — ✅
+- `ping.py` — ✅
+- `reminders.py` — ✅
+- `thread_bumper.py` — ✅
+- `utils.py` — ✅
+- `snekbox/__init__.py` — ✅
+- `snekbox/_constants.py` — ✅
+- `snekbox/_cog.py` — ✅
+- `snekbox/_eval.py` — ✅
+- `snekbox/_io.py` — ✅
 
 ## Извлечённые идеи
 
-### Moderation
-`ideas/PYTHON_DISCORD_MODERATION_2.md` содержит `PDIS-M2-001`–`PDIS-M2-016`.
+### Recruitment / Talent Pool
+`ideas/PYTHON_DISCORD_RECRUITMENT.md` содержит `PDIS-R001`–`PDIS-R036`: context-menu nominations, optional context modal, source attribution, private/public confirmation, relay в review thread, force nomination, persistent autoreview, execution lock, eligibility gates, weighted priority, review capacity/interval, inactivity pruning, grouped queue, nomination cooldown bucket, evidence batching/pinning, dedicated voting threads, review/archive statistics, lifecycle metadata, typed API и bulk activity lookup.
 
-`ideas/PYTHON_DISCORD_MODERATION_3.md` содержит `PDIS-M3-001`–`PDIS-M3-015`.
-
-`ideas/PYTHON_DISCORD_MODERATION_4.md` содержит `PDIS-M4-001`–`PDIS-M4-011`: комбинированный clean-ban, compromise-response preset, shadow infractions, contextual last/recent selector, resend DM, regex search, actor audit search, state markers, deterministic forced nickname и активный nickname enforcement.
-
-`ideas/PYTHON_DISCORD_MODERATION_5.md` содержит `PDIS-M5-001`–`PDIS-M5-012`: отложенная агрегация watch-сообщений, двухуровневые очереди user/channel, контекстные headers, лимит сообщений на header, token/webhook leak protection, URL embed suppression, attachment fallback, stale-cache fallback, ручной fresh/cache режим, история watch-инцидентов, пометка ушедших участников и безопасный shutdown фоновой relay-задачи.
+### Utilities
+`ideas/PYTHON_DISCORD_UTILS.md` содержит `PDIS-U001`–`PDIS-U050`: consent-gated attachment paste, delete workflow, reminder opt-in/quotas/permissions/persistence/recovery/editing/locking, extension wildcard/batch management и rollback-safe semantics, multi-dimensional ping, WebSocket diagnostics, persistent REPL, Snekbox per-user locking, multi-version rerun, edit-and-react reruns, multi-codeblock/timeit semantics, mention/escape protection, output/file limits, filename normalization, shared output budget, output filtering и routing.
 
 ## Следующая точка
 
-`bot/exts/moderation/` полностью закрыт. Следующий шаг — большой финальный проход оставшейся части `python-discord/bot` по recursive tree: root-файлы, остальные `bot/exts/*`, `.github`, deployment и прочие ещё не закрытые каталоги. Источник остаётся `python-discord/bot`; к `ItzSudhan/Discord-MusicBot` переходить только после полного закрытия этого tree.
+`bot/exts/recruitment/` и `bot/exts/utils/` закрыты. Следующий этап — продолжить строго по оставшейся части recursive tree: другие `bot/exts/*`, `bot/resources/`, `bot/utils/`, `tests/`, root/.github/deployment и прочие файлы, которые ещё не отмечены `✅`.
 
 **Другие источники не трогать.**
