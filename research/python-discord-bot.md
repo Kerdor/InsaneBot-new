@@ -23,50 +23,38 @@
 - `filtering.py` — 🔎
 - `_filter_context.py` — ✅
 - `_filter_lists/*` — 🔎
-- `_filters/antispam/__init__.py` — ✅
-- `_filters/antispam/attachments.py` — ✅
-- `_filters/antispam/burst.py` — ✅
-- `_filters/antispam/chars.py` — ✅
-- `_filters/antispam/duplicates.py` — ✅
-- `_filters/antispam/emoji.py` — ✅
-- `_filters/antispam/links.py` — ✅
-- `_filters/antispam/mentions.py` — ✅
-- `_filters/antispam/newlines.py` — ✅
-- `_filters/antispam/role_mentions.py` — ✅
+- `_filters/antispam/*` — ✅
 - `_filters/domain.py` — ✅
 - `_filters/extension.py` — ✅
 - `_filters/filter.py` — ✅
 - `_filters/image_hash.py` — ✅
 - `_filters/invite.py` — ✅
 - `_filters/token.py` — ✅
-- `_filters/unique/__init__.py` — ✅
-- `_filters/unique/discord_token.py` — ✅
-- `_filters/unique/everyone.py` — ✅
-- `_filters/unique/webhook.py` — ✅
-- `_settings_types/actions/infraction_and_notification.py` — ✅
-- `_settings_types/actions/remove_context.py` — ✅
-- `_settings_types/actions/ping.py` — ✅
-- `_settings_types/actions/send_alert.py` — ✅
+- `_filters/unique/*` — ✅
+- `_settings_types/actions/*` — ✅
 - `_settings_types/settings_entry.py` — ✅
-- `_settings_types/validations/bypass_roles.py` — ✅
-- `_settings_types/validations/channel_scope.py` — ✅
-- `_settings_types/validations/filter_dm.py` — ✅
+- `_settings_types/validations/*` — ✅
 - `_settings.py` — ✅
 - `_utils.py` — ✅
-- Remaining filtering files/directories — ⏳
+- `_image_hash.py` — ✅
+- `_ui/filter.py` — ✅
+- `_ui/filter_list.py` — ✅
+- `_ui/search.py` — ✅
+- `_ui/ui.py` — ✅
+- `_ui/__init__.py` — trivial/empty
+- `_settings_types/__init__.py` — trivial registry/import surface
+- `__init__.py` — trivial/empty
 
 ## Последний батч: что извлечено
 
-### Anti-spam
-Добавлен `PDIS-FS009`: отдельные измерения спама — burst, duplicate messages, character volume, attachment volume, emoji volume, link volume, user mentions, role mentions, total/consecutive newlines — с независимыми окнами/порогами и объяснимым measured quantity.
-
-### Filtering context/settings
-Подтверждён расширяемый FilterContext для входных данных и side effects. Settings framework поддерживает typed entries, наследование defaults, точечные overrides, объединение actions и безопасное игнорирование неизвестных настроек с предупреждением.
-
-### Новые специализированные идеи
-Добавлены `PDIS-FS010` — normalization layer против invisible/Zalgo/URL-encoding/backslash/newline bypasses; `PDIS-FS011` — безопасное перехватывание Discord token/webhook leaks с валидацией, цензурированием и предотвращением повторного логирования; `PDIS-FS012` — semantic filter events независимые от gateway events.
-
-`discord_token` использует структурную проверку потенциального токена, определение bot/user по decoded ID, redaction HMAC и подавление обычного deletion log. Webhook filter не только обнаруживает секретный URL, но и отзывает webhook через API.
+### Filtering UI
+Добавлены `PDIS-FU009`–`PDIS-FU014`:
+- type-aware редактор настроек: bool через True/False select, остальные типы через modal с конвертацией;
+- специализированный редактор последовательностей со снятием/добавлением/полной заменой и подавлением дублей;
+- интерактивный search query builder с выбором типа фильтра, критериями и template;
+- пересоздание stateful view после изменения для предотвращения stale component/select state;
+- привязка argument-completion controls к автору команды с ephemeral отказом посторонним;
+- компактный structured embed renderer с placeholder для пустых значений, truncation, inline-эвристикой и скрытием внутренних полей.
 
 ## Идеи
 
@@ -78,4 +66,6 @@ Filtering specialized: `ideas/PYTHON_DISCORD_FILTERING_SPECIAL.md`.
 
 ## Статус
 
-**Источник не завершён.** Следующая последовательная точка — оставшиеся файлы/подкаталоги `bot/exts/filtering/`, затем следующий каталог `bot/exts/fun/`. Следующие репозитории не трогать.
+Filtering теперь фактически закрыт: просмотрены engine, lists, filters, anti-spam, unique/security, settings/actions/validations и UI. Следующая последовательная точка источника — `bot/exts/fun/`, затем остальные каталоги `bot/` по recursive tree.
+
+**Источник не завершён. Другие репозитории не трогать.**
