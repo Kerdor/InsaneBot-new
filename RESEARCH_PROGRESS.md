@@ -27,40 +27,36 @@
 
 Ветка: `v5`.
 
-### Просмотрено
+### Закрыто
 
-1. `README.md` — ✅
-2. recursive tree — ✅
-3. `config.js` — ✅
-4. `index.js` — ✅
-5. `package.json` — ✅
-6. `lib/DiscordMusicBot.js` — ✅ частично; основной lifecycle/event pipeline просмотрен, файл требует дочитывания
-7. `lib/SlashCommand.js` — ✅
-8. `lib/EpicPlayer.js` — ✅
-9. `util/loadCommands.js` — ✅
-10. `util/Controller.js` — ✅
-11. `events/interactionCreate.js` — ✅
-12. `commands/slash/autoleave.js` — ✅
-13. `commands/slash/autopause.js` — ✅
-14. `commands/slash/autoqueue.js` — ✅
-15. `commands/slash/clean.js` — ✅
-16. `commands/slash/clear.js` — ✅
-17. `commands/slash/filters.js` — ✅
-18. `commands/slash/guildleave.js` — ✅
-19. `commands/slash/help.js` — ✅
-20. `commands/slash/loop.js` — ✅
-21. `commands/slash/loopq.js` — ✅
-22. `commands/slash/queue.js` — ✅
+- root README/tree/config/index/package;
+- `commands/slash/` — все команды из recursive tree;
+- `commands/context/play.js`;
+- `events/interactionCreate.js`;
+- `events/messageCreate.js`;
+- `events/messageDelete.js`;
+- `events/raw.js`;
+- `events/ready.js`;
+- `events/voiceStateUpdate.js`;
+- `lib/DiscordMusicBot.js` — дочитан полностью;
+- `lib/SlashCommand.js`, `lib/EpicPlayer.js`;
+- `util/loadCommands.js`, `util/Controller.js`, `util/db.js`, `util/getChannel.js`, `util/getConfig.js`, `util/getLavalink.js`, `util/guildDb.js`.
+
+### Идеи
+
+- `ideas/MUSIC.md` — MUSIC-001–042;
+- `ideas/MUSIC_COMMANDS.md` — MUSIC-C001–055;
+- `ideas/MUSIC_CONTEXT.md` — MUSIC-X001–007;
+- `ideas/MUSIC_EVENTS.md` — MUSIC-E001–025;
+- `ideas/MUSIC_STORAGE.md` — MUSIC-S001–018;
+- `ideas/MUSIC_CORE.md` — MUSIC-K001–018.
 
 ### Последний батч
 
-Добавлены `ideas/MUSIC.md` и `MUSIC-001`–`MUSIC-042`.
+Закрыты context/event/core/storage-части, добавлены дополнительные варианты UX, voice-state automation, delayed leave/recheck, server mute handling, lazy per-guild JSON DB, queued persistence, command/player factories и controller state rendering.
 
-### Следующая точка
+## Следующая точка
 
-Продолжать `commands/slash/` с:
-`247.js`, `invite.js`, `lyrics.js`, `move.js`, `nowplaying.js`, `pause.js`, `ping.js`, `play.js`, `previous.js`, `reload.js`, `remove.js`, `replay.js`, `resume.js`, `save.js`, `search.js`, `seek.js`, `shuffle.js`, `skip.js`, `skipto.js`, `stats.js`, `stop.js`, `summon.js`, `volume.js`.
+Продолжить `util/` с первой ещё не закрытой позицией recursive tree после уже просмотренных файлов, затем `api/`, `dashboard/`, `deploy/`, `docker/`, `.github/` и остальные root-файлы.
 
-После закрытия slash-команд: `commands/context/`, затем `events/`, `util/`, `api/`, `dashboard/`, `deploy/`, `docker/`, `.github/` и root-файлы.
-
-**`ItzSudhan/Discord-MusicBot` НЕ ЗАВЕРШЁН.**
+**`ItzSudhan/Discord-MusicBot` НЕ ЗАВЕРШЁН. Следующие источники не трогать.**
