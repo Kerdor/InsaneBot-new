@@ -43,3 +43,20 @@
 - Previously triggered deny filters are stored with message metadata.
 - On edit, filters that already triggered on the previous version are not repeatedly actioned.
 - The stored trigger set is replaced with the current result for the next edit.
+
+## PDIS-FS009 — Multi-dimensional anti-spam signal library
+- Anti-spam can measure different abuse dimensions independently instead of relying only on raw message rate.
+- Attachment-volume threshold: count attachments from one user over a configurable time window.
+- Character-volume threshold: count total characters sent by one user over a short window.
+- Emoji-volume threshold: count Unicode/custom emoji while ignoring fenced code blocks.
+- Link-volume threshold: count URLs across recent messages, with an additional requirement that links occur in more than one message to avoid one-message bursts.
+- Mention-volume threshold: count actual Discord-resolved user mentions while excluding bots, self-mentions and the replied-to author.
+- Role-mention threshold: independently count role mentions.
+- Newline threshold supports both total newlines and a separate consecutive-newline limit.
+- Duplicate-message threshold detects repeated identical content from the same user.
+- Burst threshold counts messages from one user in a rolling interval.
+- Each detector records the exact measured quantity in the moderation context, making alerts explainable.
+
+## Дубликаты
+
+Общие anti-spam, keyword filtering, mention limits и moderation alerts уже есть в банке; здесь сохранены именно отдельные detection dimensions и их специальные counting rules.
