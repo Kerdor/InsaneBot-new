@@ -28,5 +28,6 @@
 | `DATA_STORAGE.md` | Данные, storage и конфигурационное состояние | ⬜ |
 | `AUDIO_INFRA.md` | Audio/media backend infrastructure | ⬜ |
 | `MODLOG.md` | Modlog / история кейсов | ⬜ |
+| `QUALITY_AND_RELEASE.md` | CI, security и release engineering | ⬜ |
 
 Файлы будут наполняться по мере исследования репозиториев.
