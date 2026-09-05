@@ -23,22 +23,15 @@
 - Engine, lists, filters, anti-spam, unique/security, settings/actions/validations и UI — просмотрены и сверены.
 
 ### `bot/exts/fun/`
-- `__init__.py` — ✅ (пустой)
-- `duck_pond.py` — ✅
-- `off_topic_names.py` — ✅
+- Весь каталог — ✅
 
 ### `bot/exts/help_channels/`
-- `__init__.py` — ✅
-- `_caches.py` — ✅
-- `_channel.py` — ✅
-- `_cog.py` — ✅
-- `_stats.py` — ✅
+- Весь каталог — ✅
 
 ### `bot/exts/info/`
 - Весь runtime-каталог — ✅
-- codeblock + весь `doc/` включая batch parser/cache/doc item/HTML/inventory/Markdown/parsing — ✅
-- `code_snippets.py`, `information.py`, `patreon.py`, `pep.py`, `python_news.py`, `tags.py` — ✅
-- ранее просмотренные `help.py`, `resources.py`, `pypi.py`, `stats.py`, `source.py`, `subscribe.py` — ✅
+- `doc/` включая batch parser/cache/doc item/HTML/inventory/Markdown/parsing — ✅
+- Основные info-команды — ✅
 
 ### `bot/exts/moderation/`
 - `alts.py` — ✅
@@ -54,30 +47,25 @@
 - `verification.py` — ✅
 - `voice_gate.py` — ✅
 - `metabase.py` — ✅
-- Остальные root moderation files — ⏳
 - `infraction/_scheduler.py` — ✅
 - `infraction/_utils.py` — ✅
 - `infraction/_views.py` — ✅
-- `infraction/infractions.py` — ⏳
-- `infraction/management.py` — ⏳
-- `infraction/superstarify.py` — ⏳
+- `infraction/infractions.py` — 🔎 просмотрен основной command/apply/pardon surface
+- `infraction/management.py` — 🔎 просмотрен основной management/search/edit surface
+- `infraction/superstarify.py` — 🔎 просмотрен полностью
+- Остальные root moderation files — ⏳
 
 ## Извлечённые идеи
 
-### Info
-`ideas/PYTHON_DISCORD_INFO.md` содержит `PDIS-I001`–`PDIS-I026`; `ideas/PYTHON_DISCORD_INFO_2.md` содержит `PDIS-I2-001`–`PDIS-I2-011`. Сюда входят codeblock automation, documentation/inventory pipeline, PEP/news/Patreon, tag UX, raw API inspection и дополнительные documentation/source механики.
-
 ### Moderation
-`ideas/PYTHON_DISCORD_MODERATION_2.md` содержит `PDIS-M2-001`–`PDIS-M2-016`: DEFCON account-age gate, emergency lockdown, incident workflow/catch-up/archive safety, clean composite filters и 14-day deletion strategy, cancellable cleanup и persisted temporary streaming permissions.
+`ideas/PYTHON_DISCORD_MODERATION_2.md` содержит `PDIS-M2-001`–`PDIS-M2-016`.
 
-`ideas/PYTHON_DISCORD_MODERATION_3.md` содержит `PDIS-M3-001`–`PDIS-M3-015`: suppression tokens для служебных audit events, permission-aware modlog blacklist, role/reply/voice audit details, infraction active/history lifecycle, отдельный pardon/user reason, автоматический tidy-up, scheduler resync, callable actions и timeout boundary handling.
+`ideas/PYTHON_DISCORD_MODERATION_3.md` содержит `PDIS-M3-001`–`PDIS-M3-015`.
 
-`modpings.py` дополнительно проверен на scheduled pingable-role behavior; отдельные идеи не дублировались, потому что ключевая схема уже была зафиксирована как `PDIS-A002`.
+`ideas/PYTHON_DISCORD_MODERATION_4.md` содержит `PDIS-M4-001`–`PDIS-M4-011`: комбинированный clean-ban, compromise-response preset, shadow infractions, contextual last/recent selector, resend DM, regex search, actor audit search, state markers, deterministic forced nickname и активный nickname enforcement.
 
 ## Следующая точка
 
-Продолжать **только `python-discord/bot`** и строго внутри `bot/exts/moderation/`. Следующий крупный батч — оставшиеся root moderation files, затем `infraction/infractions.py`, `management.py`, `superstarify.py` и любые вложенные материалы.
-
-После полного завершения python-discord только тогда переходить к `ItzSudhan/Discord-MusicBot`.
+Продолжать **только `python-discord/bot`**. Сначала закрыть оставшиеся части `bot/exts/moderation/` и проверить, не остались ли вложенные файлы/строки в moderation tree. Затем пройти оставшиеся root/.github/deployment части репозитория, если они входят в выбранный полный проход. Только после полного завершения python-discord переходить к `ItzSudhan/Discord-MusicBot`.
 
 **Другие источники не трогать.**
