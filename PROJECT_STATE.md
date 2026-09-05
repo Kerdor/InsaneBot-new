@@ -12,8 +12,7 @@
 - Собираем максимально всё, включая очевидные, маленькие и потенциально бесполезные механики.
 - Перед добавлением сверяем банк идей; идентичные дубликаты не размножаем.
 - Для существующей системы сохраняем только новые UX, поведение, настройки, ограничения или архитектурные варианты.
-- Проверяем исходники, команды, handlers, конфиги, утилиты, API, deployment, тесты и документацию.
-- Идеи сразу распределяются по тематическим `ideas/`; при необходимости создаются новые тематические файлы.
+- Идеи сразу распределяются по тематическим `ideas/`; новые тематические файлы разрешены.
 
 ## Восстановление после смены чата
 
@@ -36,24 +35,21 @@
 
 Полное recursive tree получено на tree SHA `0e4cd5cb46f2239eacccdded8cdf02ba89028ab9`.
 
-Обработаны core/utility/info/moderation surfaces предыдущих батчей, а также весь `bot/exts/backend/`:
-- branding repository/cog;
-- config verifier;
-- error handler;
-- logging;
-- security;
-- sync cog/syncers.
+Полностью обработан весь `bot/exts/backend/`. Далее начат `bot/exts/filtering/`.
 
-Созданы source-specific idea files:
+В filtering уже просмотрены development overview и основные специализированные surfaces: `filtering.py`, `antispam.py`, `domain.py`, `extension.py`, `image_hash.py`, `invite.py`, `token.py`, `unique.py`, `filter_list.py`.
+
+Созданы source-specific файлы:
 - `ideas/PYTHON_DISCORD.md`;
 - `ideas/PYTHON_DISCORD_ADVANCED.md`;
 - `ideas/PYTHON_DISCORD_BACKEND.md`;
-- `ideas/PYTHON_DISCORD_BACKEND_2.md`.
+- `ideas/PYTHON_DISCORD_BACKEND_2.md`;
+- `ideas/PYTHON_DISCORD_FILTERING_ENGINE.md`;
+- `ideas/PYTHON_DISCORD_FILTERING_UI.md`;
+- `ideas/PYTHON_DISCORD_FILTERING_SPECIAL.md`.
 
-В них записаны только новые механики, а не прямые дубликаты общего банка.
+Записаны только отличающиеся механики: event-branding/asset rotation, API reconciliation, global command guards, interactive error help, filtering UI/templates, image hashes, invite anti-obfuscation/trusted-server handling, spoiler-aware tokens, per-filter overrides, edit-trigger suppression, delayed anti-spam aggregation и другие специализированные варианты.
 
-Некоторые filtering-файлы были дополнительно просмотрены заранее для глубокого анализа: antispam, domain, extension, image_hash, invite, token, unique, filter_list. Они отмечены в исследовательском журнале как отдельный предварительный просмотр и будут сверены во время последовательного filtering pass.
-
-**Следующая последовательная точка:** `bot/exts/filtering/FILTERS-DEVELOPMENT.md`.
+**Следующая точка:** продолжать `bot/exts/filtering/` по recursive tree, сверяя уже предварительно просмотренные файлы и добирая остальные.
 
 **Источник не завершён. Следующие репозитории не трогать.**
