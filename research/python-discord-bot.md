@@ -19,42 +19,53 @@
 - Весь каталог — ✅
 
 ### `bot/exts/filtering/`
-- `FILTERS-DEVELOPMENT.md` — ✅
-- `filtering.py` — 🔎
-- `_filter_context.py` — ✅
-- `_filter_lists/*` — 🔎
-- `_filters/antispam/*` — ✅
-- `_filters/domain.py` — ✅
-- `_filters/extension.py` — ✅
-- `_filters/filter.py` — ✅
-- `_filters/image_hash.py` — ✅
-- `_filters/invite.py` — ✅
-- `_filters/token.py` — ✅
-- `_filters/unique/*` — ✅
-- `_settings_types/actions/*` — ✅
-- `_settings_types/settings_entry.py` — ✅
-- `_settings_types/validations/*` — ✅
-- `_settings.py` — ✅
-- `_utils.py` — ✅
-- `_image_hash.py` — ✅
-- `_ui/filter.py` — ✅
-- `_ui/filter_list.py` — ✅
-- `_ui/search.py` — ✅
-- `_ui/ui.py` — ✅
-- `_ui/__init__.py` — trivial/empty
-- `_settings_types/__init__.py` — trivial registry/import surface
-- `__init__.py` — trivial/empty
+- Весь каталог — ✅
+- Engine, lists, filters, anti-spam, unique/security, settings/actions/validations и UI — просмотрены и сверены.
+
+### `bot/exts/fun/`
+- `__init__.py` — ✅ (пустой)
+- `duck_pond.py` — ✅
+- `off_topic_names.py` — ✅
+
+### `bot/exts/help_channels/`
+- `__init__.py` — ✅
+- `_caches.py` — ✅
+- `_channel.py` — ✅
+- `_cog.py` — ✅
+- `_stats.py` — ✅
 
 ## Последний батч: что извлечено
 
-### Filtering UI
-Добавлены `PDIS-FU009`–`PDIS-FU014`:
-- type-aware редактор настроек: bool через True/False select, остальные типы через modal с конвертацией;
-- специализированный редактор последовательностей со снятием/добавлением/полной заменой и подавлением дублей;
-- интерактивный search query builder с выбором типа фильтра, критериями и template;
-- пересоздание stateful view после изменения для предотвращения stale component/select state;
-- привязка argument-completion controls к автору команды с ephemeral отказом посторонним;
-- компактный structured embed renderer с placeholder для пустых значений, truncation, inline-эвристикой и скрытием внутренних полей.
+### Fun
+Добавлены `PDIS-FUN001`–`PDIS-FUN012` в `ideas/PYTHON_DISCORD_FUN.md`:
+- threshold-triggered reaction relay с unique-user counting;
+- restricted reaction promotion;
+- idempotent relay marker + lock;
+- manual bypass;
+- attachment-preserving webhook relay с graceful degradation;
+- восстановление completion marker;
+- scheduled random channel-name rotation;
+- active/deactivated content pool;
+- fuzzy similarity guard + force-add;
+- normalized fuzzy search;
+- rate-limit-aware deferred operation;
+- exhaustion handling конечного random pool.
+
+### Help channels
+Добавлены `PDIS-HF001`–`PDIS-HF013` в `ideas/PYTHON_DISCORD_HELP_CHANNELS.md`:
+- watchdog + per-post inactivity scheduler/rescheduler;
+- разные причины закрытия и аналитика по ним;
+- интеграция с native Forum/Thread lifecycle;
+- автоматическая opener-инструкция;
+- pin starter message;
+- claimant-only close + staff override с silent failure;
+- отдельное переименование help post;
+- уведомление при уходе владельца;
+- answered/unanswered analytics через Redis marker;
+- open-count gauge + session timing;
+- fallback при удалённом starter message;
+- participant-aware ping при закрытии из-за inactivity;
+- graceful closure при ошибке отправки уведомления.
 
 ## Идеи
 
@@ -63,9 +74,11 @@ Backend: `ideas/PYTHON_DISCORD_BACKEND.md`, `ideas/PYTHON_DISCORD_BACKEND_2.md`.
 Filtering engine: `ideas/PYTHON_DISCORD_FILTERING_ENGINE.md`.
 Filtering UI: `ideas/PYTHON_DISCORD_FILTERING_UI.md`.
 Filtering specialized: `ideas/PYTHON_DISCORD_FILTERING_SPECIAL.md`.
+Fun: `ideas/PYTHON_DISCORD_FUN.md`.
+Help channels: `ideas/PYTHON_DISCORD_HELP_CHANNELS.md`.
 
 ## Статус
 
-Filtering теперь фактически закрыт: просмотрены engine, lists, filters, anti-spam, unique/security, settings/actions/validations и UI. Следующая последовательная точка источника — `bot/exts/fun/`, затем остальные каталоги `bot/` по recursive tree.
+`bot/exts/fun/` и `bot/exts/help_channels/` теперь закрыты. Следующая последовательная точка источника — `bot/exts/info/`, начиная с ещё не закрытых файлов/подкаталогов; ранее просмотренные info-файлы повторно не считать новыми без дополнительного материала.
 
 **Источник не завершён. Другие репозитории не трогать.**
