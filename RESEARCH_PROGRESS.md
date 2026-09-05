@@ -24,10 +24,14 @@
 | 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | будет создан при старте |
 | 7 | `Tomato6966/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | будет создан при старте |
 
-## Текущая точка остановки
+## Текущая точка
 
 **Активный источник:** `python-discord/bot`
 
-**Следующее действие:** начать полный последовательный обход структуры `python-discord/bot`, начиная с корня, README/документации и дерева директорий.
+**Обработано:** дерево источника + `README.md`, `bot/bot.py`, `bot/constants.py`, `bot/converters.py`, `bot/decorators.py`, `bot/exts/info/subscribe.py`, `bot/exts/moderation/stream.py`, `bot/exts/moderation/silence.py`, `bot/exts/fun/duck_pond.py`, `bot/exts/info/resources.py`, `bot/exts/info/pypi.py`.
 
-Подробный журнал текущего источника находится в `research/python-discord-bot.md`.
+**Следующий файл:** `bot/exts/utils/ping.py`.
+
+**Источник не завершён.** Следующие репозитории не трогать.
+
+Подробный журнал: `research/python-discord-bot.md`.
