@@ -35,9 +35,9 @@
 
 Полное recursive tree получено на tree SHA `0e4cd5cb46f2239eacccdded8cdf02ba89028ab9`.
 
-Полностью обработан весь `bot/exts/backend/`. Далее начат `bot/exts/filtering/`.
+Полностью обработан весь `bot/exts/backend/`. Далее идёт последовательный проход `bot/exts/filtering/`.
 
-В filtering уже просмотрены development overview и основные специализированные surfaces: `filtering.py`, `antispam.py`, `domain.py`, `extension.py`, `image_hash.py`, `invite.py`, `token.py`, `unique.py`, `filter_list.py`.
+В filtering уже просмотрены development overview и основные специализированные surfaces: `filtering.py`, `_filter_lists/antispam.py`, `domain.py`, `extension.py`, `image_hash.py`, `invite.py`, `token.py`, `unique.py`, `filter_list.py`; а также `_filter_context.py`, anti-spam detector files, action/validation settings.
 
 Созданы source-specific файлы:
 - `ideas/PYTHON_DISCORD.md`;
@@ -48,8 +48,8 @@
 - `ideas/PYTHON_DISCORD_FILTERING_UI.md`;
 - `ideas/PYTHON_DISCORD_FILTERING_SPECIAL.md`.
 
-Записаны только отличающиеся механики: event-branding/asset rotation, API reconciliation, global command guards, interactive error help, filtering UI/templates, image hashes, invite anti-obfuscation/trusted-server handling, spoiler-aware tokens, per-filter overrides, edit-trigger suppression, delayed anti-spam aggregation и другие специализированные варианты.
+Последнее добавление: `PDIS-FS009` — multi-dimensional anti-spam signal library с отдельными burst/duplicates/chars/attachments/emoji/links/mentions/role_mentions/newlines детекторами и их специальными counting rules.
 
-**Следующая точка:** продолжать `bot/exts/filtering/` по recursive tree, сверяя уже предварительно просмотренные файлы и добирая остальные.
+**Следующая точка:** продолжать `bot/exts/filtering/` по recursive tree, не переходя к другим источникам. После полного закрытия filtering перейти к следующему каталогу `bot/exts/fun/`.
 
 **Источник не завершён. Следующие репозитории не трогать.**
