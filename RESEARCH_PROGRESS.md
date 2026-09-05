@@ -2,36 +2,71 @@
 
 Этот файл — контрольная точка для продолжения глубокого исследования в новом чате без потери позиции.
 
-## Как использовать
+## Правила
 
 - Источники исследуются строго по очереди.
-- Внутри активного репозитория фиксируется **каждая обработанная папка и файл в порядке фактического обхода**.
-- Переход к следующему источнику разрешён только после отметки `ЗАВЕРШЁН` у текущего.
-- Если чат прерван, продолжение начинается с первой записи со статусом `⏳` или со следующего элемента после последнего `✅`.
-- Запись означает именно: **файл/папка просмотрены и их идеи/механики сверены с банком идей**.
-- Добавленные механики одновременно раскладываются по тематическим файлам `ideas/`.
-- Дубликаты существующих идей не добавляются; новые детали существующей системы добавляются только при наличии нового поведения, UX, настройки, ограничения или архитектурного варианта.
+- Внутри активного репозитория фиксируется каждая обработанная папка и файл в порядке фактического обхода.
+- Переход к следующему источнику разрешён только после `ЗАВЕРШЁН` у текущего.
+- `✅` означает реальный просмотр + сверку с банком идей.
+- Дубликаты не добавляются; новые детали существующих систем сохраняются.
+- После каждого существенного батча обновляются журнал и `PROJECT_STATE.md`.
 
-## Общий порядок источников
+## Источники
 
-| № | Репозиторий | Статус | Прогресс-документ |
+| № | Репозиторий | Статус | Журнал |
 |---|---|---|---|
 | 1 | `Cog-Creators/Red-DiscordBot` | ✅ ЗАВЕРШЁН | `research/red-discord-bot.md` |
 | 2 | `python-discord/bot` | 🔵 АКТИВЕН | `research/python-discord-bot.md` |
-| 3 | `ItzSudhan/Discord-MusicBot` | ⏳ ОЖИДАЕТ | будет создан при старте |
-| 4 | `codebymitch/TitanBot` | ⏳ ОЖИДАЕТ | будет создан при старте |
-| 5 | `GAwesomeBot/bot` | ⏳ ОЖИДАЕТ | будет создан при старте |
-| 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | будет создан при старте |
-| 7 | `Tomato6966/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | будет создан при старте |
+| 3 | `ItzSudhan/Discord-MusicBot` | ⏳ ОЖИДАЕТ | — |
+| 4 | `codebymitch/TitanBot` | ⏳ ОЖИДАЕТ | — |
+| 5 | `GAwesomeBot/bot` | ⏳ ОЖИДАЕТ | — |
+| 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | — |
+| 7 | `Tomato6966/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
 
-## Текущая точка
+## Текущая точка — `python-discord/bot`
 
-**Активный источник:** `python-discord/bot`
+Полное recursive tree получено на tree SHA `0e4cd5cb46f2239eacccdded8cdf02ba89028ab9`.
 
-**Обработано:** дерево источника + `README.md`, `bot/bot.py`, `bot/constants.py`, `bot/converters.py`, `bot/decorators.py`, `bot/exts/info/subscribe.py`, `bot/exts/moderation/stream.py`, `bot/exts/moderation/silence.py`, `bot/exts/fun/duck_pond.py`, `bot/exts/info/resources.py`, `bot/exts/info/pypi.py`.
+Обработано по порядку:
+1. `README.md` — ✅
+2. дерево — ✅
+3. `bot/bot.py` — ✅
+4. `bot/constants.py` — ✅
+5. `bot/converters.py` — ✅
+6. `bot/decorators.py` — ✅
+7. `bot/exts/info/subscribe.py` — ✅
+8. `bot/exts/moderation/stream.py` — ✅
+9. `bot/exts/moderation/silence.py` — ✅
+10. `bot/exts/fun/duck_pond.py` — ✅
+11. `bot/exts/info/resources.py` — ✅
+12. `bot/exts/info/pypi.py` — ✅
+13. `bot/exts/utils/ping.py` — ✅
+14. `bot/exts/moderation/alts.py` — ✅
+15. `bot/exts/moderation/modpings.py` — ✅
+16. `bot/exts/info/help.py` — ✅
+17. `bot/exts/utils/extensions.py` — ✅
+18. `bot/exts/utils/bot.py` — ✅
+19. `bot/exts/info/source.py` — ✅
+20. `bot/exts/utils/internal.py` — ✅
+21. `bot/exts/info/stats.py` — ✅
+22+. Остальные `bot/exts/...`, `bot/resources/`, `bot/utils/`, `tests/`, root/.github/deployment — ⏳
 
-**Следующий файл:** `bot/exts/utils/ping.py`.
+## Последний батч
 
-**Источник не завершён.** Следующие репозитории не трогать.
+Добавлены `ideas/PYTHON_DISCORD_ADVANCED.md` и PDIS-A001–A012:
+- alternate-account associations;
+- scheduled role state with manual override;
+- interactive help parent/subcommand navigation;
+- fuzzy permission-aware help suggestions;
+- custom help categories;
+- wildcard extension batch management with rollback/locking;
+- multi-source latency healthcheck;
+- WebSocket event-rate diagnostics;
+- persistent REPL eval with paste fallback;
+- exact source-code links;
+- normalized Discord event metrics;
+- moderation-only echo/embed relay.
 
-Подробный журнал: `research/python-discord-bot.md`.
+## Статус
+
+**`python-discord/bot` НЕ ЗАВЕРШЁН.** Следующие репозитории не трогать. Продолжать строго с первой необработанной позиции recursive tree.
