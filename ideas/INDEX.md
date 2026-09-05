@@ -25,5 +25,6 @@
 | `ACCESS_CONTROL.md` | Allowlist / blocklist / ACL | ⬜ |
 | `COG_MANAGEMENT.md` | Управление модулями | ⬜ |
 | `GENERAL_UX.md` | Общие мелкие UX-механики | ⬜ |
+| `DATA_STORAGE.md` | Данные, storage и конфигурационное состояние | ⬜ |
 
 Файлы будут наполняться по мере исследования репозиториев.
