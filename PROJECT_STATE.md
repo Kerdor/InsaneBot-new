@@ -41,17 +41,15 @@
 
 `bot/exts/help_channels/` закрыт: `_caches.py`, `_channel.py`, `_cog.py`, `_stats.py` просмотрены, добавлены `PDIS-HF001`–`PDIS-HF013` в `ideas/PYTHON_DISCORD_HELP_CHANNELS.md`.
 
-`bot/exts/info/codeblock/` закрыт: `_cog.py`, `_instructions.py`, `_parsing.py` просмотрены. Извлечены механики автоматического ревью Markdown code blocks, контекстных инструкций, повторной проверки после edit, Python/REPL detection, антиобхода tick-символами и cooldown по каналам.
+`bot/exts/info/` закрыт по runtime-поверхности: codeblock, doc включая `_cog.py`, `_batch_parser.py`, `_redis_cache.py`, `_doc_item.py`, `_html.py`, `_inventory_parser.py`, `_markdown.py`, `_parsing.py`, а также `code_snippets.py`, `information.py`, `patreon.py`, `pep.py`, `python_news.py`, `tags.py` и ранее просмотренные `help.py`, `resources.py`, `pypi.py`, `stats.py`, `source.py`, `subscribe.py`. Основной банк содержит `PDIS-I001`–`PDIS-I026`; дополнительные уникальные механики вынесены в `ideas/PYTHON_DISCORD_INFO_2.md` (`PDIS-I2-001`–`PDIS-I2-011`).
 
-`bot/exts/info/doc/` просмотрен по основным runtime-файлам `_cog.py`, `_batch_parser.py`, `_redis_cache.py` и структуре каталога. Извлечены documentation inventories/Intersphinx, разрешение конфликтов символов, lazy batch parsing страниц, приоритет пользовательского запроса, stale-inventory warnings, Redis TTL cache, retry/reschedule inventory и diff refresh.
-
-Также просмотрены `code_snippets.py`, `patreon.py`, `pep.py`, `python_news.py`, `tags.py`. Добавлен новый тематический файл `ideas/PYTHON_DISCORD_INFO.md` с `PDIS-I001`–`PDIS-I020`.
+Начат следующий каталог `bot/exts/moderation/`. Просмотрены `alts.py`, `clean.py`, `defcon.py`, `incidents.py`, `modpings.py`, `stream.py`. Дубликаты из уже существующего банка не размножались; новые аварийные, incident, clean и streaming механики вынесены в `ideas/PYTHON_DISCORD_MODERATION_2.md` (`PDIS-M2-001`–`PDIS-M2-016`). `modpings.py` в основном совпал с ранее зафиксированной механикой scheduled role state и не добавлялся повторно.
 
 ## Следующая точка
 
-Продолжать **только `python-discord/bot`**. Каталог `bot/exts/info/` ещё не закрыт полностью: после просмотренного info-батча необходимо добрать оставшиеся/непросмотренные файлы и затем последовательно пройти следующие каталоги recursive tree, включая root/.github/deployment, пока весь источник не будет реально закрыт.
+Продолжать **только `python-discord/bot`** и строго внутри `bot/exts/moderation/`. Не возвращаться к уже закрытым info/fun/help_channels/backend/filtering без появления нового материала.
 
-Уже просмотренные `help`, `resources`, `pypi`, `stats`, `source`, `subscribe`, а также текущие `codeblock`, `doc`, `code_snippets`, `information`, `patreon`, `pep`, `python_news`, `tags` не считать заново без обнаружения дополнительного материала.
+В moderation ещё остаются остальные файлы и подкаталог `infraction`; их нужно последовательно просмотреть и сверить с уже существующими `MODERATION.md`, `MODERATION_DETAILS.md`, `MODLOG.md` и `PYTHON_DISCORD_MODERATION_2.md`.
 
 После полного завершения python-discord только тогда переходить к `ItzSudhan/Discord-MusicBot`.
 
