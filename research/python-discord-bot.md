@@ -31,64 +31,54 @@
 12. `bot/exts/info/resources.py` — ✅
 13. `bot/exts/info/pypi.py` — ✅
 14. `bot/exts/utils/ping.py` — ✅
-   - Multi-source latency: command processing, external healthcheck, Discord API latency.
-   - External HTTP/connection failure is reported independently instead of breaking the whole diagnostic.
 15. `bot/exts/moderation/alts.py` — ✅
-   - Alternate-account associations with actor, creation/update time, context, edit/remove and historical raw IDs.
 16. `bot/exts/moderation/modpings.py` — ✅
-   - Daily role schedule, temporary manual override, status/sync commands, timezone offset and persistent recovery.
 17. `bot/exts/info/help.py` — ✅
-   - Interactive parent/subcommand navigation, fuzzy command discovery, permission-aware candidate filtering and custom cog categories.
 18. `bot/exts/utils/extensions.py` — ✅
-   - Wildcard batch extension management, progress/result aggregation, operation lock, reload fallback and grouped status list.
 19. `bot/exts/utils/bot.py` — ✅
-   - Moderation-only echo/embed utilities and hidden bot information group.
 20. `bot/exts/info/source.py` — ✅
-   - Source lookup for commands/cogs/tags/help with exact GitHub file/line links and dynamic-object diagnostics.
 21. `bot/exts/utils/internal.py` — ✅
-   - REPL-like persistent eval environment with reset, output formatting and paste fallback; WebSocket event-rate diagnostics.
 22. `bot/exts/info/stats.py` — ✅
-   - Normalized event metrics by channel, command counters, member gauges, boost gauges and exclusion of noisy channels.
+
+### `bot/exts/backend/`
+23. `bot/exts/backend/__init__.py` — ⏳
+24. `bot/exts/backend/branding/__init__.py` — ✅
+25. `bot/exts/backend/branding/_cog.py` — ✅
+   - External event branding daemon, persistent Redis state, event/asset discovery, event cache, asset hash tracking, automatic event entry, scheduled asset rotation, upload timeout and debug mocking.
+26. `bot/exts/backend/branding/_repository.py` — ✅
+   - Typed remote GitHub objects, metadata parsing, fallback/year-agnostic event dates, validation, 5-attempt exponential retry for GitHub 5xx responses and cached-by-caller API responsibility.
+27. `bot/exts/backend/config_verifier.py` — ✅
+   - Startup validation of configured Discord channel IDs with aggregated warnings for missing resources.
+28. `bot/exts/backend/error_handler.py` — ✅
+   - Error-specific routing, command/tag/shorthand fallback, interactive help button, fuzzy suggestion fallback, API status classification and structured Sentry context.
+29. `bot/exts/backend/logging.py` — ⏳
+30. `bot/exts/backend/security.py` — ✅
+   - Global command guards against bot users and DM command execution.
+31. `bot/exts/backend/sync/__init__.py` — ⏳
+32. `bot/exts/backend/sync/_cog.py` — ✅
+   - Startup guild chunk readiness loop with manual fallback, delayed background sync, event-driven user/role synchronization and manual role/user sync commands.
+33. `bot/exts/backend/sync/_syncers.py` — ✅
+   - Generic diff-based reconciliation, hashable normalized records, cache-integrity fetch fallback, paginated API traversal and fixed-size bulk writes.
 
 ### Следующая точка
-Продолжить с остальными файлами `bot/exts/...` строго по recursive tree, затем `bot/resources/`, `bot/utils/`, `tests/` и оставшиеся root/.github/deployment surfaces.
+Продолжить с `bot/exts/backend/__init__.py`, затем строго по оставшемуся recursive tree. Уже просмотренные out-of-order extension files остаются отмеченными `✅`; дальнейшие новые позиции фиксируются в фактическом порядке обхода.
 
 ## Найденные новые механики
 
-Распределены в `ideas/PYTHON_DISCORD.md`:
-- PDIS-001 — persistent self-role panel recovery/recreation.
-- PDIS-002 — per-user ephemeral role panel with ownership/state UX.
-- PDIS-003 — temporary permission-role with persistent expiry recovery.
-- PDIS-004 — temporary-to-permanent permission upgrade.
-- PDIS-005 — sorted temporary/permanent permission list.
-- PDIS-006 — forced active-stream termination on permission revoke.
-- PDIS-007 — silence with exact previous-overwrite restoration.
-- PDIS-008 — unified text/voice silence with voice-specific kick/sync modes.
-- PDIS-009 — permanent silence with periodic staff reminders.
-- PDIS-010 — resource lock for concurrent silence operations.
-- PDIS-011 — conditional command-output redirection with paste/removal workflow.
-- PDIS-012 — command context whitelist/blacklist with redirect and override roles.
-- PDIS-013 — reusable target-role hierarchy decorator.
-- PDIS-014 — preflight URL availability validation.
-- PDIS-015 — Snowflake timestamp validation.
-- PDIS-016 — unified composite duration/age converters.
-- PDIS-017 — normalized resource-topic deep links.
-- PDIS-018 — combined persistent public UI + ephemeral private UI pattern.
-- PDIS-019 — alternate-account associations with context and history.
-- PDIS-020 — scheduled role state with temporary manual override.
-- PDIS-021 — interactive help parent/subcommand navigation.
-- PDIS-022 — fuzzy command discovery with permission-aware suggestions.
-- PDIS-023 — custom help categories independent of extension layout.
-- PDIS-024 — batch extension management with wildcard, locking and rollback.
-- PDIS-025 — multi-source latency healthcheck.
-- PDIS-026 — WebSocket event-rate diagnostics.
-- PDIS-027 — persistent REPL eval with progressive paste fallback.
-- PDIS-028 — exact source-code links for commands/cogs/tags/help.
-- PDIS-029 — normalized Discord event metrics.
+Базовые механики записаны в `ideas/PYTHON_DISCORD.md`, дополнительные backend-механики — в `ideas/PYTHON_DISCORD_BACKEND.md`.
+
+К текущему батчу добавлены:
+- persistent event-branding daemon;
+- external repository event discovery and validation;
+- fair asset rotation by usage iterations + compound hashes;
+- startup Discord-resource config verification;
+- global bot-user/DM command guards;
+- error-specific interactive Help and structured diagnostics;
+- diff/reconciliation API synchronization with pagination and chunked writes.
 
 ## Дубликаты
 
-Общие pagination, timestamps, selfroles/button roles, базовые permissions, moderation hierarchy, scheduling, state recovery и integrations не размножаются; фиксируются только новые детали, UX, ограничения или архитектурные варианты.
+Общие pagination, timestamps, selfroles/button roles, базовые permissions, moderation hierarchy, scheduling, state recovery, logging/error handling и integrations не размножаются; фиксируются только новые детали, UX, ограничения или архитектурные варианты.
 
 ## Примечание
 
