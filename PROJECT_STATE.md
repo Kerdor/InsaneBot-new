@@ -35,16 +35,18 @@
 
 Полное recursive tree получено на tree SHA `0e4cd5cb46f2239eacccdded8cdf02ba89028ab9`.
 
-Полностью обработаны `bot/exts/backend/` и `bot/exts/filtering/`. Filtering закрыт после последовательной проверки engine, lists, filters, anti-spam, unique/security, settings/actions/validations и UI.
+Полностью обработаны `bot/exts/backend/` и `bot/exts/filtering/`. Filtering закрыт после проверки engine, lists, filters, anti-spam, unique/security, settings/actions/validations и UI.
 
-В filtering добавлены последние UI-идеи `PDIS-FU009`–`PDIS-FU014`: type-aware setting editor, sequence/list editor, interactive search builder, state-copy views, author-bound controls и compact embed rendering.
+`bot/exts/fun/` закрыт: `duck_pond.py` и `off_topic_names.py` просмотрены, добавлены `PDIS-FUN001`–`PDIS-FUN012` в `ideas/PYTHON_DISCORD_FUN.md`.
 
-Начат `bot/exts/fun/`.
+`bot/exts/help_channels/` закрыт: `_caches.py`, `_channel.py`, `_cog.py`, `_stats.py` просмотрены, добавлены `PDIS-HF001`–`PDIS-HF013` в `ideas/PYTHON_DISCORD_HELP_CHANNELS.md`.
 
-Создан source-specific файл `ideas/PYTHON_DISCORD_FUN.md`. Из `duck_pond.py` и `off_topic_names.py` добавлены `PDIS-FUN001`–`PDIS-FUN012`: threshold reaction relay, unique-user threshold, trusted-role restrictions, idempotent marker + lock, manual bypass, attachment-preserving webhook relay, marker restoration, scheduled random channel rotation, active/inactive pool, fuzzy similarity guard, normalized fuzzy search, rate-limit-aware deferred rename, pool exhaustion handling.
+Help-идеи покрывают native Forum lifecycle, inactivity watchdog/rescheduling, разные причины закрытия, opener guidance, starter pinning, claimant/staff close semantics, title editing, owner-departure notification, answered/unanswered analytics, load/duration metrics, deleted-starter fallback, participant-aware closure ping и graceful failure.
 
 ## Следующая точка
 
-Продолжать **только `python-discord/bot`**, после `bot/exts/fun/` идти дальше по recursive tree. После полного завершения python-discord только тогда переходить к `ItzSudhan/Discord-MusicBot`.
+Продолжать **только `python-discord/bot`**. Следующий каталог по recursive tree — `bot/exts/info/`; ранее просмотренные `help`, `resources`, `pypi`, `stats`, `source`, `subscribe` повторно не считать новыми без обнаружения дополнительного материала. В первую очередь разбирать ещё не закрытые `info/codeblock/`, `info/doc/`, `code_snippets.py`, `information.py`, `patreon.py`, `pep.py`, `python_news.py`, `tags.py`.
+
+После полного завершения python-discord только тогда переходить к `ItzSudhan/Discord-MusicBot`.
 
 **Другие источники не трогать.**
