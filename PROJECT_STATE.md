@@ -34,11 +34,12 @@
 
 - Продолжен глубокий обход Red-DiscordBot без перехода к следующему источнику.
 - Добавлен `ideas/ACCESS_CONTROL.md`: global/local allowlist и blocklist, user/role ACL, bulk operations, ID-only management, очистка списков, диагностика причины отказа и безопасное восстановление доступа.
-- Добавлен `ideas/COG_MANAGEMENT.md`: источники расширений, временные/персистентные paths, install directory, безопасные path checks, discovery, batch lifecycle, детальные batch results, traceback, command conflicts, hot reload/import cache.
+- Расширен `ideas/COG_MANAGEMENT.md`: pin/unpin модулей, отдельная проверка обновлений, управляемый reload после update, обновление до конкретной revision, диагностика неоднозначного короткого SHA, metadata репозитория, install messages, install agreement и переустановка зависимостей.
+- Добавлен `ideas/DATA_STORAGE.md`: изолированное хранилище модулей, разделение core/cog данных, read-only bundled assets, несколько bot instances, temporary instance, storage backend abstraction, bootstrap config, schema migrations и migration locks.
+- Добавлен `DATA_STORAGE.md` в `ideas/INDEX.md`.
 - Добавлен `ideas/GENERAL_UX.md`: toggle-stopwatch, flip пользователя, self-bot joke reaction, интенсивность social-команд, humanized limits, compact/detailed режим serverinfo, расширенный диагностический server snapshot, relative timestamps и server feature indicators.
-- Обновлён `ideas/INDEX.md` новыми категориями.
 - Ранее добавлены уникальные Red-механики custom commands/aliases, warning points, warning thresholds/reasons, name history, reports/communication tunnels, selfroles, role editing, global announcements/serverlock, scoped configuration, advanced permissions, advanced trivia, advanced streams и mute subsystem.
 
 ## Следующий этап внутри Red
 
-Продолжать проверку `core_commands`, `bot`, `_diagnoser`, permissions, downloader, admin, modlog/events, userinfo, data/config/i18n, API keys/RPC, audio и оставшихся cogs. Только после систематического обхода этих поверхностей Red можно считать завершённым и переходить к `python-discord/bot`.
+Сделан ещё один крупный проход по `core_commands`, `bot`, `_diagnoser`, `downloader`, `admin`, `data_manager` и `i18n`. Осталось добить оставшиеся core/cogs, userinfo, modlog/events, API keys/RPC, audio, тесты, docs и deployment-поверхности. После систематической проверки этих поверхностей Red можно считать завершённым и переходить к `python-discord/bot`.
