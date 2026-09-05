@@ -12,10 +12,6 @@
 - `✅` — полностью просмотрено, идеи сверены с `ideas/`, новые механики распределены
 - `➖` — просмотрено, новых переносимых механик не найдено
 
-## Зафиксированная структура источника
-
-Полное recursive tree репозитория получено на commit/tree SHA `0e4cd5cb46f2239eacccdded8cdf02ba89028ab9`. В дереве присутствуют root, `bot/`, `bot/exts/`, `bot/resources/`, `bot/utils/`, `tests/` и вложенные директории. Обход продолжается строго по порядку дерева; получение полного дерева само по себе не считается обработкой файлов.
-
 ## Фактический порядок обработки
 
 ### Корень
@@ -25,29 +21,37 @@
 
 ### `bot/`
 4. `bot/bot.py` — ✅
-   - Lifecycle Bot, extension-load performance transaction, startup API healthcheck с retry/cooldown, централизованный event error handling и special handling Forbidden/block.
 5. `bot/constants.py` — ✅
-   - Env-based nested configuration, scoped channel/role/category settings, event enums и thread archive periods.
 6. `bot/converters.py` — ✅
-   - Extension special `*`/`**`, ValidURL reachability, Inventory validation, Snowflake timestamp validation, composite duration/age parsing.
 7. `bot/decorators.py` — ✅
-   - Whitelist/blacklist checks, redirect-output с paste fallback, hierarchy decorator и debug short-circuit.
 8. `bot/exts/info/subscribe.py` — ✅
-   - Persistent public self-role entry point, ephemeral per-user panel, ownership check, dynamic button state, sorting, startup recovery/recreation.
 9. `bot/exts/moderation/stream.py` — ✅
-   - Temporary/permanent streaming permissions, persistent expiry cache, temp→permanent upgrade, active-stream suspension, sorted access list.
 10. `bot/exts/moderation/silence.py` — ✅
-   - Text/voice silence, exact previous-overwrite restoration, timed/permanent silence, notifier, voice kick/sync, thread restriction, resource locks.
 11. `bot/exts/fun/duck_pond.py` — ✅
-   - Reaction-threshold relay, staff-only counting, channel blacklist, webhook/attachment fallback, idempotency, relay lock, checkmark restoration, admin bypass.
 12. `bot/exts/info/resources.py` — ✅
-   - Topic deep-linking and kebab-case normalization.
 13. `bot/exts/info/pypi.py` — ✅
-   - PyPI package lookup, input validation, release timestamp, rotating response styling, temporary invalid-input/error cleanup.
-14. `bot/exts/utils/ping.py` — ⏳
+14. `bot/exts/utils/ping.py` — ✅
+   - Multi-source latency: command processing, external healthcheck, Discord API latency.
+   - External HTTP/connection failure is reported independently instead of breaking the whole diagnostic.
+15. `bot/exts/moderation/alts.py` — ✅
+   - Alternate-account associations with actor, creation/update time, context, edit/remove and historical raw IDs.
+16. `bot/exts/moderation/modpings.py` — ✅
+   - Daily role schedule, temporary manual override, status/sync commands, timezone offset and persistent recovery.
+17. `bot/exts/info/help.py` — ✅
+   - Interactive parent/subcommand navigation, fuzzy command discovery, permission-aware candidate filtering and custom cog categories.
+18. `bot/exts/utils/extensions.py` — ✅
+   - Wildcard batch extension management, progress/result aggregation, operation lock, reload fallback and grouped status list.
+19. `bot/exts/utils/bot.py` — ✅
+   - Moderation-only echo/embed utilities and hidden bot information group.
+20. `bot/exts/info/source.py` — ✅
+   - Source lookup for commands/cogs/tags/help with exact GitHub file/line links and dynamic-object diagnostics.
+21. `bot/exts/utils/internal.py` — ✅
+   - REPL-like persistent eval environment with reset, output formatting and paste fallback; WebSocket event-rate diagnostics.
+22. `bot/exts/info/stats.py` — ✅
+   - Normalized event metrics by channel, command counters, member gauges, boost gauges and exclusion of noisy channels.
 
 ### Следующая точка
-`bot/exts/utils/ping.py` → затем остальные `bot/exts/...` строго по recursive tree.
+Продолжить с остальными файлами `bot/exts/...` строго по recursive tree, затем `bot/resources/`, `bot/utils/`, `tests/` и оставшиеся root/.github/deployment surfaces.
 
 ## Найденные новые механики
 
@@ -60,7 +64,7 @@
 - PDIS-006 — forced active-stream termination on permission revoke.
 - PDIS-007 — silence with exact previous-overwrite restoration.
 - PDIS-008 — unified text/voice silence with voice-specific kick/sync modes.
-- PDIS-009 — permanent silence notifier with periodic staff reminders.
+- PDIS-009 — permanent silence with periodic staff reminders.
 - PDIS-010 — resource lock for concurrent silence operations.
 - PDIS-011 — conditional command-output redirection with paste/removal workflow.
 - PDIS-012 — command context whitelist/blacklist with redirect and override roles.
@@ -70,13 +74,22 @@
 - PDIS-016 — unified composite duration/age converters.
 - PDIS-017 — normalized resource-topic deep links.
 - PDIS-018 — combined persistent public UI + ephemeral private UI pattern.
+- PDIS-019 — alternate-account associations with context and history.
+- PDIS-020 — scheduled role state with temporary manual override.
+- PDIS-021 — interactive help parent/subcommand navigation.
+- PDIS-022 — fuzzy command discovery with permission-aware suggestions.
+- PDIS-023 — custom help categories independent of extension layout.
+- PDIS-024 — batch extension management with wildcard, locking and rollback.
+- PDIS-025 — multi-source latency healthcheck.
+- PDIS-026 — WebSocket event-rate diagnostics.
+- PDIS-027 — persistent REPL eval with progressive paste fallback.
+- PDIS-028 — exact source-code links for commands/cogs/tags/help.
+- PDIS-029 — normalized Discord event metrics.
 
-## Дубликаты, которые сознательно не размножались
+## Дубликаты
 
-Общие pagination, timestamps, selfroles/button roles, базовые permissions, moderation hierarchy, scheduling, state recovery и integrations уже есть в банке; из текущих файлов фиксируются только новые детали, UX, ограничения или архитектурные варианты.
+Общие pagination, timestamps, selfroles/button roles, базовые permissions, moderation hierarchy, scheduling, state recovery и integrations не размножаются; фиксируются только новые детали, UX, ограничения или архитектурные варианты.
 
-## Примечания для продолжения
+## Примечание
 
-- Не переходить к `ItzSudhan/Discord-MusicBot`, пока этот документ не будет помечен `ЗАВЕРШЁН`.
-- Перед каждой новой записью сверять найденное с существующим банком идей.
-- После каждого существенного батча обновлять этот журнал и `PROJECT_STATE.md`.
+Источник **не завершён**. Следующие репозитории не трогать до полного обхода `python-discord/bot`.
