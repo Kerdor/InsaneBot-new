@@ -26,5 +26,6 @@
 | `COG_MANAGEMENT.md` | Управление модулями | ⬜ |
 | `GENERAL_UX.md` | Общие мелкие UX-механики | ⬜ |
 | `DATA_STORAGE.md` | Данные, storage и конфигурационное состояние | ⬜ |
+| `AUDIO_INFRA.md` | Audio/media backend infrastructure | ⬜ |
 
 Файлы будут наполняться по мере исследования репозиториев.
