@@ -27,3 +27,8 @@
 - INT-023 — bot API for external integrations.
 - INT-024 — per-server integration toggles.
 - INT-025 — integration credentials stored separately from guild settings.
+- INT-026 — Shared API token registry per service.
+- INT-027 — Stable key naming convention for shared API credentials.
+- INT-028 — Cross-module reuse of one service credential set.
+- INT-029 — API-token update event so dependent integrations can react without polling.
+- INT-030 — Separate add/remove/clear operations for one service's credentials.
