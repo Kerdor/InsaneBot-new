@@ -37,6 +37,9 @@
 - Для Red-DiscordBot начат обход реального дерева репозитория: корень, `redbot`, `redbot/cogs`, отдельные cogs и `redbot/core`.
 - Уже обнаружены отдельные поверхности, которые нельзя пропустить: core framework, cog manager, config, events, global checks, i18n, RPC, settings caches, downloader/drivers, встроенные cogs, тесты, schema, docs и служебные файлы.
 - Выполнена сверка первых найденных систем с существующим банком идей: идентичные economy/fun/ticket/customization системы не дублировались.
-- Первые уникальные находки Red теперь разнесены по системным файлам: расширения custom commands/aliases находятся в `ideas/CUSTOMIZATION.md`, warning/cleanup/name-history — в `ideas/MODERATION.md`, role/selfrole — в `ideas/ROLES.md`, reports/communication tunnels — в `ideas/REPORTS.md`, глобальные announcements/serverlock — в `ideas/ARCHITECTURE.md`.
-- Временный `ideas/RED_UNIQUE.md` удалён, чтобы не создавать второй параллельный банк идей.
-- Исследование Red-DiscordBot **не считается завершённым**: необходимо продолжать просмотр файлов и директорий до максимально полного каталога команд, событий, настроек, интеграций, утилит и мелких механик.
+- Первые уникальные находки Red разнесены по системным файлам: расширения custom commands/aliases — `ideas/CUSTOMIZATION.md`; warning/cleanup/name-history — `ideas/MODERATION.md`; role/selfrole — `ideas/ROLES.md`; reports/communication tunnels — `ideas/REPORTS.md`; глобальные announcements/serverlock — `ideas/ARCHITECTURE.md`.
+- Добавлена отдельная система `ideas/CONFIGURATION.md` для уникальной Red-механики иерархического/scoped configuration с fallback и reset override.
+- В рамках дальнейшего обхода подробно просмотрены cleanup, moderation slowmode, kick/ban, modlog, moderation events/settings и core commands.
+- Зафиксированы дополнительные Red-механики для дальнейшей систематизации: продвинутая выборка cleanup, duplicate cleanup, runtime auto-delete повторов, strict mention counting, проверка конфликтов порогов automod, DM при moderation actions, reinvite после unban, обязательная причина, default tempban duration и настраиваемое extra-поле ban DM.
+- Важно: эти дополнительные находки ещё требуют окончательной проверки на пересечения с уже существующими записями; Red **не считается завершённым**.
+- Исследование Red-DiscordBot продолжается до максимально полного каталога команд, событий, настроек, интеграций, утилит и мелких механик.
