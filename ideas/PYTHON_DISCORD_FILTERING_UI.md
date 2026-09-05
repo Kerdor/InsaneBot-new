@@ -32,3 +32,34 @@
 ## PDIS-FU008 — Central filtering webhook alerts
 - Filtering uses a dedicated webhook for moderation alerts.
 - Alerts can contain rich embeds and interactive components without cluttering the original channel.
+
+## PDIS-FU009 — Type-aware setting editor
+- Interactive setting editing derives the input control from the declared setting type.
+- Booleans use a constrained True/False selector instead of free-form text.
+- Other values use a modal with type conversion and validation feedback.
+
+## PDIS-FU010 — Sequence/list setting editor with duplicate suppression
+- List-like settings can be edited through a dedicated UI that supports removing one item, adding one item, or replacing the whole list.
+- New items already present in the list are ignored rather than duplicated.
+- Large lists are bounded to Discord select-menu capacity while preserving the underlying list.
+
+## PDIS-FU011 — Search criteria as an interactive query builder
+- Filter searches can be composed through a UI: add/edit criteria, remove criteria, select filter type, apply a saved filter as a template, then execute.
+- Changing filter type clears criteria belonging to the previous filter type to prevent invalid cross-type searches.
+
+## PDIS-FU012 — Single-use interaction views with reusable state copies
+- After an interaction changes state, the view is rebuilt from current state and the old view is stopped.
+- This avoids stale component/select state while keeping the edit operation visually continuous.
+
+## PDIS-FU013 — Author-bound interactive controls
+- Interactive argument completion verifies that only the original command author can use the dropdown.
+- Unauthorized users receive an ephemeral explanation instead of being allowed to mutate or re-run the command.
+
+## PDIS-FU014 — Compact embed field rendering for configuration UIs
+- Configuration values are rendered from structured dictionaries into embed fields automatically.
+- Empty values become a visible placeholder, sequences are rendered compactly, long values are truncated, and short values are made inline.
+- Internal/private fields can be hidden from the UI based on naming convention.
+
+## Дубликаты
+
+Общие paginator/menu/modal/confirmation UX уже есть в банке; здесь сохранены только специализированные свойства filtering UI.
