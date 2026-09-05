@@ -42,16 +42,11 @@
 
 ## Последние существенные действия
 
-- Завершён финальный глубокий проход Red-DiscordBot без перехода к следующему источнику раньше времени.
-- Добавлен `RESEARCH_PROGRESS.md` для восстановления общей позиции после смены чата.
-- Добавлен `research/python-discord-bot.md` для последовательной фиксации каждой обработанной папки/файла активного источника.
-- Добавлено правило: каждый источник должен иметь отдельный подробный журнал, а переход к следующему источнику невозможен до его завершения.
-- Добавлен `ideas/MODLOG.md`: отдельные case IDs, просмотр/история по пользователю, raw ID, пагинация, редактирование причин, автор правки, timestamps и разные case types.
-- Расширен `ideas/CORE_FRAMEWORK.md`: runtime info, проверка актуальности версии, возраст инстанса и core RPC surface.
-- Добавлен `ideas/QUALITY_AND_RELEASE.md`: CI tests/lint, CodeQL, dependency compile checks, translation workflow, staged releases и security/repository quality automation.
-- Расширен `ideas/INTEGRATIONS.md`: shared API-token registry, единая схема именования ключей, повторное использование credentials между модулями, update events и отдельные операции add/remove/clear.
-- Обновлён `ideas/INDEX.md` для новых категорий.
-- Ранее в рамках Red уже распределены по системам механики custom commands/aliases, warning points/thresholds/reasons, name history, reports/communication tunnels, selfroles, role editing, global announcements/serverlock, scoped configuration, advanced permissions, advanced trivia, advanced streams, mute subsystem, filtering, access control, cog management, data storage и audio infrastructure.
+- `python-discord/bot`: получено полное recursive tree текущей ветки `main` (tree SHA `0e4cd5cb46f2239eacccdded8cdf02ba89028ab9`), включая исходники, resources и tests.
+- Начат фактический последовательный обход `python-discord/bot`.
+- Полностью обработаны и занесены в журнал: `README.md`, `bot/bot.py`, `bot/constants.py`, `bot/converters.py`, `bot/decorators.py`, `bot/exts/info/subscribe.py`, `bot/exts/moderation/stream.py`, `bot/exts/moderation/silence.py`, `bot/exts/fun/duck_pond.py`, `bot/exts/info/resources.py`, `bot/exts/info/pypi.py`.
+- Создан `ideas/PYTHON_DISCORD.md` с 18 дополнительными механиками/вариантами, найденными в этом батче и не являющимися простыми дубликатами существующего банка.
+- `research/python-discord-bot.md` обновлён с точной последней точкой: следующий файл `bot/exts/utils/ping.py`.
 
 ## Статус источника Red
 
@@ -59,4 +54,4 @@
 
 ## Следующий этап
 
-Начать и продолжать **только `python-discord/bot`**. Сначала вести последовательный журнал в `research/python-discord-bot.md`, затем распределять новые механики по тематическим файлам. Не переходить к следующим репозиториям до явной отметки `ЗАВЕРШЁН` в журнале источника и `RESEARCH_PROGRESS.md`.
+Продолжать **только `python-discord/bot`** с `bot/exts/utils/ping.py`. Не переходить к следующим репозиториям до явной отметки `ЗАВЕРШЁН` в `research/python-discord-bot.md` и `RESEARCH_PROGRESS.md`.
