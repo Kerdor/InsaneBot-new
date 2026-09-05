@@ -57,6 +57,24 @@
 - Burst threshold counts messages from one user in a rolling interval.
 - Each detector records the exact measured quantity in the moderation context, making alerts explainable.
 
+## PDIS-FS010 — Normalization layer for anti-filter bypasses
+- Normalize filtered text before matching by removing invisible/control/format characters and Zalgo-style combining marks.
+- URL-percent-decoded content is inspected so encoded links cannot trivially bypass filters.
+- Backslashes and filter-bypassing newlines can be normalized away.
+- Keep normalization separate from the original message so moderation can still inspect/display the original content.
+
+## PDIS-FS011 — Secret/webhook leak interception with safe logging
+- Detect seemingly valid Discord bot/user tokens using structural checks rather than a naive substring search.
+- Validate the encoded user ID, timestamp and non-dummy HMAC before treating a token as real-looking.
+- Replace only the sensitive HMAC portion with a redacted form while retaining enough suffix for diagnostics.
+- Prevent the normal deletion logger from creating a second sensitive-data log entry.
+- Detect Discord webhook URLs and immediately revoke/delete the webhook through the API.
+- Redact webhook secrets from moderation output before logging.
+
+## PDIS-FS012 — Semantic filter events independent of gateway events
+- A filtering system can expose semantic events such as `NICKNAME` or `SNEKBOX` instead of coupling every rule directly to Discord gateway event types.
+- This lets one filter engine process messages, edits, nicknames, thread names and generated code-execution output through a common pipeline.
+
 ## Дубликаты
 
-Общие anti-spam, keyword filtering, mention limits и moderation alerts уже есть в банке; здесь сохранены именно отдельные detection dimensions и их специальные counting rules.
+Общие anti-spam, keyword filtering, mention limits и moderation alerts уже есть в банке; здесь сохранены именно отдельные detection dimensions, normalization/security rules и их специальные counting/handling rules.
