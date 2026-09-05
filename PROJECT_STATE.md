@@ -38,25 +38,22 @@
 
 Полностью обработаны `bot/exts/backend/`, `bot/exts/filtering/`, `bot/exts/fun/`, `bot/exts/help_channels/` и `bot/exts/info/`.
 
-В `info/` закрыты codeblock, весь `doc/` (batch parser, Redis cache, doc item, HTML, inventory parser, Markdown, parsing), `code_snippets.py`, `information.py`, `patreon.py`, `pep.py`, `python_news.py`, `tags.py` и ранее просмотренные `help.py`, `resources.py`, `pypi.py`, `stats.py`, `source.py`, `subscribe.py`.
-
 В `moderation/` просмотрены `alts.py`, `clean.py`, `defcon.py`, `dm_relay.py`, `incidents.py`, `metabase.py`, `modlog.py`, `modpings.py`, `silence.py`, `slowmode.py`, `stream.py`, `verification.py`, `voice_gate.py`, а также `infraction/_scheduler.py`, `infraction/_utils.py`, `infraction/_views.py`.
+
+Дополнительно обработан основной command/management surface `infraction/infractions.py`, `infraction/management.py` и полностью просмотрен `infraction/superstarify.py`. Новый пакет `ideas/PYTHON_DISCORD_MODERATION_4.md` содержит `PDIS-M4-001`–`PDIS-M4-011`.
 
 `modpings.py` не породил новый дубль поверх `PDIS-A002`.
 
-Основные дополнительные moderation-идеи находятся в `ideas/PYTHON_DISCORD_MODERATION_2.md` (`PDIS-M2-001`–`PDIS-M2-016`) и `ideas/PYTHON_DISCORD_MODERATION_3.md` (`PDIS-M3-001`–`PDIS-M3-015`).
+Основные дополнительные moderation-идеи находятся в `ideas/PYTHON_DISCORD_MODERATION_2.md` (`PDIS-M2-001`–`PDIS-M2-016`), `ideas/PYTHON_DISCORD_MODERATION_3.md` (`PDIS-M3-001`–`PDIS-M3-015`) и `ideas/PYTHON_DISCORD_MODERATION_4.md` (`PDIS-M4-001`–`PDIS-M4-011`).
 
 ## Следующая точка
 
-Продолжать **только `python-discord/bot`** и строго внутри `bot/exts/moderation/`.
+Продолжать **только `python-discord/bot`**.
 
 Следующий крупный батч:
-1. оставшиеся root moderation files;
-2. `infraction/infractions.py`;
-3. `infraction/management.py`;
-4. `infraction/superstarify.py`;
-5. затем повторно сверить recursive tree на предмет пропущенных файлов.
-
-Не переходить к `ItzSudhan/Discord-MusicBot`, пока весь `python-discord/bot` реально не закрыт.
+1. добить оставшиеся части `bot/exts/moderation/` и проверить вложенные материалы;
+2. повторно сверить recursive tree, чтобы не пропустить файл;
+3. после закрытия moderation перейти к следующему непройденному участку `python-discord/bot`;
+4. только после полного завершения python-discord переходить к `ItzSudhan/Discord-MusicBot`.
 
 **Другие источники не трогать.**
