@@ -34,21 +34,21 @@
 
 ## `python-discord/bot` — текущая точка
 
-Полное recursive tree получено на tree SHA `0e4cd5cb46f2239eacccdded8cdf02ba89028ab9`.
+Полный recursive tree проверен; уже закрыты все `bot/exts/*`, включая `backend`, `filtering`, `fun`, `help_channels`, `info`, `moderation`, `recruitment`, `utils`.
 
-Полностью обработаны `bot/exts/backend/`, `bot/exts/filtering/`, `bot/exts/fun/`, `bot/exts/help_channels/` и `bot/exts/info/`.
+Дополнительно просмотрены:
+- `bot/utils/` — полностью;
+- `bot/resources/` — содержательные данные/ресурсы проверены;
+- `bot/__main__.py`, `bot/errors.py`, `bot/pagination.py` — финальный инфраструктурный проход.
 
-`bot/exts/moderation/` теперь полностью закрыт: все root-файлы, `infraction/` и `watchchannels/` просмотрены.
-
-Дополнительные moderation-пакеты:
-- `PYTHON_DISCORD_MODERATION_2.md` — `PDIS-M2-001`–`PDIS-M2-016`;
-- `PYTHON_DISCORD_MODERATION_3.md` — `PDIS-M3-001`–`PDIS-M3-015`;
-- `PYTHON_DISCORD_MODERATION_4.md` — `PDIS-M4-001`–`PDIS-M4-011`;
-- `PYTHON_DISCORD_MODERATION_5.md` — `PDIS-M5-001`–`PDIS-M5-012`.
+Новые пакеты идей:
+- `PYTHON_DISCORD_RECRUITMENT.md` — `PDIS-R001`–`PDIS-R036`;
+- `PYTHON_DISCORD_UTILS.md` — `PDIS-U001`–`PDIS-U050`;
+- `PYTHON_DISCORD_CORE_UTILS.md` — `PDIS-CU001`–`PDIS-CU040`.
 
 ## Следующая точка
 
-Продолжать **только `python-discord/bot`**. Следующий этап — большой финальный проход recursive tree по ещё не закрытым каталогам/файлам за пределами уже обработанных `backend`, `filtering`, `fun`, `help_channels`, `info`, `moderation`. После каждого крупного участка обновлять research/state.
+Осталась финальная проверка **`tests/`, `.github/`, deployment/root config и прочих файлов вне уже закрытых runtime-каталогов**. Из них извлекаем только реально полезные механики/архитектурные практики, не превращая обычные тесты/CI в бессмысленные идеи.
 
 `ItzSudhan/Discord-MusicBot` не трогать до полного закрытия `python-discord/bot`.
 
