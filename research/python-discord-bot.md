@@ -34,51 +34,56 @@
 - `_cog.py` — ✅
 - `_stats.py` — ✅
 
+### `bot/exts/info/`
+- `codeblock/__init__.py` — ✅ (структура)
+- `codeblock/_cog.py` — ✅
+- `codeblock/_instructions.py` — ✅
+- `codeblock/_parsing.py` — ✅
+- `doc/__init__.py` — ✅ (структура)
+- `doc/_cog.py` — ✅
+- `doc/_batch_parser.py` — ✅
+- `doc/_redis_cache.py` — ✅
+- `code_snippets.py` — ✅
+- `information.py` — 🔎 основной runtime-код просмотрен, полный файл ещё требует добора после лимита вывода
+- `patreon.py` — ✅
+- `pep.py` — ✅
+- `python_news.py` — ✅
+- `tags.py` — ✅
+- `doc/_doc_item.py`, `_html.py`, `_inventory_parser.py`, `_markdown.py`, `_parsing.py` — ⏳ (структура известна, содержимое ещё нужно добрать)
+
 ## Последний батч: что извлечено
 
-### Fun
-Добавлены `PDIS-FUN001`–`PDIS-FUN012` в `ideas/PYTHON_DISCORD_FUN.md`:
-- threshold-triggered reaction relay с unique-user counting;
-- restricted reaction promotion;
-- idempotent relay marker + lock;
-- manual bypass;
-- attachment-preserving webhook relay с graceful degradation;
-- восстановление completion marker;
-- scheduled random channel-name rotation;
-- active/deactivated content pool;
-- fuzzy similarity guard + force-add;
-- normalized fuzzy search;
-- rate-limit-aware deferred operation;
-- exhaustion handling конечного random pool.
+### Info: Code Block
+Добавлен `ideas/PYTHON_DISCORD_INFO.md`, `PDIS-I001`–`PDIS-I020`:
+- автоматический ревьюер Markdown code blocks;
+- повторная проверка и редактирование/удаление подсказки после edit;
+- уверенное определение Python/REPL перед обучающей подсказкой;
+- распознавание IPython/REPL prompt-последовательностей;
+- антиобход через визуально похожие tick-символы;
+- fallback длинного snippet в bot-commands;
+- GitHub/Gist/GitLab/Bitbucket/paste snippet extraction;
+- защита Markdown injection в коде и безопасное определение language;
+- Intersphinx documentation inventories;
+- разрешение конфликтов одинаковых doc symbols;
+- lazy batch parsing всей HTML-страницы;
+- приоритет пользовательского запроса в parse queue;
+- stale inventory detector с ограничением предупреждений;
+- недельный page-oriented Redis cache;
+- безопасный refresh inventory с retry/reschedule;
+- diff добавленных/удалённых inventories;
+- PEP cache refresh + fuzzy autocomplete;
+- месячная Patreon-supporter публикация по tier;
+- агрегатор Python News из RSS/mailing lists с persistent seen state;
+- News Channel publish после webhook pipeline.
 
-### Help channels
-Добавлены `PDIS-HF001`–`PDIS-HF013` в `ideas/PYTHON_DISCORD_HELP_CHANNELS.md`:
-- watchdog + per-post inactivity scheduler/rescheduler;
-- разные причины закрытия и аналитика по ним;
-- интеграция с native Forum/Thread lifecycle;
-- автоматическая opener-инструкция;
-- pin starter message;
-- claimant-only close + staff override с silent failure;
-- отдельное переименование help post;
-- уведомление при уходе владельца;
-- answered/unanswered analytics через Redis marker;
-- open-count gauge + session timing;
-- fallback при удалённом starter message;
-- participant-aware ping при закрытии из-за inactivity;
-- graceful closure при ошибке отправки уведомления.
+## Что просмотрено, но пока требует более глубокого добора
 
-## Идеи
+`information.py` был получен только частично из-за ограничения вывода инструмента. Основная логика server/user/role information уже просмотрена, но необходимо получить оставшуюся часть файла, чтобы не пропустить команды и мелкие UX-механики.
 
-Основные идеи предыдущих батчей: `ideas/PYTHON_DISCORD.md`.
-Backend: `ideas/PYTHON_DISCORD_BACKEND.md`, `ideas/PYTHON_DISCORD_BACKEND_2.md`.
-Filtering engine: `ideas/PYTHON_DISCORD_FILTERING_ENGINE.md`.
-Filtering UI: `ideas/PYTHON_DISCORD_FILTERING_UI.md`.
-Filtering specialized: `ideas/PYTHON_DISCORD_FILTERING_SPECIAL.md`.
-Fun: `ideas/PYTHON_DISCORD_FUN.md`.
-Help channels: `ideas/PYTHON_DISCORD_HELP_CHANNELS.md`.
+`doc/` также требует добора `_doc_item.py`, `_html.py`, `_inventory_parser.py`, `_markdown.py`, `_parsing.py`; текущий батч фиксирует только основные runtime-поверхности `_cog.py`, `_batch_parser.py`, `_redis_cache.py` и каталог.
 
 ## Статус
 
-`bot/exts/fun/` и `bot/exts/help_channels/` теперь закрыты. Следующая последовательная точка источника — `bot/exts/info/`, начиная с ещё не закрытых файлов/подкаталогов; ранее просмотренные info-файлы повторно не считать новыми без дополнительного материала.
+`bot/exts/fun/` и `bot/exts/help_channels/` закрыты. `bot/exts/info/` **ещё НЕ закрыт**: текущий батч дал 20 уникальных info-идей, но нужно последовательно дочитать остаток `doc/` и полный `information.py`, после чего продолжить по recursive tree.
 
 **Источник не завершён. Другие репозитории не трогать.**
