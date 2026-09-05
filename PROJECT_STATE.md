@@ -32,13 +32,13 @@
 
 ## Последние существенные действия
 
-- Зафиксирован новый порядок исследования: **один источник целиком → следующий источник**.
-- Активным источником назначен `Cog-Creators/Red-DiscordBot`.
-- Для Red-DiscordBot продолжается обход реального дерева репозитория: core framework, cogs, команды, event handlers, конфиги, утилиты, API, deployment, тесты и документация.
-- Выполнена сверка новых находок с существующим банком идей: уже покрытые economy/fun/ticket/social/stats и другие идентичные системы не дублируются.
+- Продолжен глубокий обход Red-DiscordBot без перехода к следующему источнику.
+- Добавлен `ideas/ACCESS_CONTROL.md`: global/local allowlist и blocklist, user/role ACL, bulk operations, ID-only management, очистка списков, диагностика причины отказа и безопасное восстановление доступа.
+- Добавлен `ideas/COG_MANAGEMENT.md`: источники расширений, временные/персистентные paths, install directory, безопасные path checks, discovery, batch lifecycle, детальные batch results, traceback, command conflicts, hot reload/import cache.
+- Добавлен `ideas/GENERAL_UX.md`: toggle-stopwatch, flip пользователя, self-bot joke reaction, интенсивность social-команд, humanized limits, compact/detailed режим serverinfo, расширенный диагностический server snapshot, relative timestamps и server feature indicators.
+- Обновлён `ideas/INDEX.md` новыми категориями.
 - Ранее добавлены уникальные Red-механики custom commands/aliases, warning points, warning thresholds/reasons, name history, reports/communication tunnels, selfroles, role editing, global announcements/serverlock, scoped configuration, advanced permissions, advanced trivia, advanced streams и mute subsystem.
-- Добавлен `ideas/CORE_FRAMEWORK.md`: многоуровневые/временные cog paths, install path, безопасное добавление путей, dynamic module discovery, batch load/unload/reload, подробные статусы загрузки, сохранение последнего traceback, конфликт command/alias, import cache/reload, global/server prefixes, invite visibility, confirmation UX и permission-state mechanics.
-- Добавлен `ideas/HELP_UX.md`: заменяемый help formatter, единый HelpSettings, reactions/buttons/select navigation, фильтрация только доступных команд, прямой показ недоступной команды, custom tagline `[p]`, полные signatures, компактное отображение aliases, пагинация subcommands, embed/code-block режимы, delete/reaction timeout и разные ошибки unknown command/subcommand.
-- Добавлен `ideas/FILTERING.md`: server/channel filters, thread inheritance, name/nickname filtering, безопасный fallback nickname, autoban по count/timeframe, per-user reset counters, word-boundary/case-insensitive matching, проверка poll/attachment/forward/embed/component text, modlog cases, edited messages, automod immunity, regex cache, DM выдача списка и bulk add/remove фраз.
-- Индекс обновлён новыми категориями `CORE_FRAMEWORK.md`, `HELP_UX.md`, `FILTERING.md`.
-- Red **не считается завершённым**. Следующий проход продолжает downloader, admin, modlog/events, userinfo, data/config/i18n, API keys/RPC, audio и оставшиеся cogs/tests/docs/deployment.
+
+## Следующий этап внутри Red
+
+Продолжать проверку `core_commands`, `bot`, `_diagnoser`, permissions, downloader, admin, modlog/events, userinfo, data/config/i18n, API keys/RPC, audio и оставшихся cogs. Только после систематического обхода этих поверхностей Red можно считать завершённым и переходить к `python-discord/bot`.
