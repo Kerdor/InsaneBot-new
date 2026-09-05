@@ -2,11 +2,7 @@
 
 Статус: 🔵 **АКТИВЕН**
 
-Правило: этот репозиторий должен быть полностью обработан до перехода к следующему источнику.
-
-## Порядок обхода
-
-`✅` = реально просмотрено и сверено с банком; `⏳` = ещё не обработано; `➖` = просмотрено без новых переносимых механик.
+`✅` = реально просмотрено и сверено с банком; `⏳` = ещё не обработано; `🔎` = предварительно просмотрено до последовательного прохода.
 
 ## Фактический журнал
 
@@ -16,67 +12,49 @@
 - Остальные root/.github/deployment files — ⏳
 
 ### `bot/`
-- `bot/bot.py` — ✅
-- `bot/constants.py` — ✅
-- `bot/converters.py` — ✅
-- `bot/decorators.py` — ✅
-- `bot/exts/info/subscribe.py` — ✅
-- `bot/exts/moderation/stream.py` — ✅
-- `bot/exts/moderation/silence.py` — ✅
-- `bot/exts/fun/duck_pond.py` — ✅
-- `bot/exts/info/resources.py` — ✅
-- `bot/exts/info/pypi.py` — ✅
-- `bot/exts/utils/ping.py` — ✅
-- `bot/exts/moderation/alts.py` — ✅
-- `bot/exts/moderation/modpings.py` — ✅
-- `bot/exts/info/help.py` — ✅
-- `bot/exts/utils/extensions.py` — ✅
-- `bot/exts/utils/bot.py` — ✅
-- `bot/exts/info/source.py` — ✅
-- `bot/exts/utils/internal.py` — ✅
-- `bot/exts/info/stats.py` — ✅
+- Core: `bot.py`, `constants.py`, `converters.py`, `decorators.py` — ✅
+- Utility/info/moderation/fun surfaces из предыдущих батчей — ✅
 
 ### `bot/exts/backend/`
-- `backend/__init__.py` — ✅
-- `backend/branding/__init__.py` — ✅
-- `backend/branding/_cog.py` — ✅
-- `backend/branding/_repository.py` — ✅
-- `backend/config_verifier.py` — ✅
-- `backend/error_handler.py` — ✅
-- `backend/logging.py` — ✅
-- `backend/security.py` — ✅
-- `backend/sync/__init__.py` — ✅
-- `backend/sync/_cog.py` — ✅
-- `backend/sync/_syncers.py` — ✅
+- `__init__.py` — ✅
+- `branding/__init__.py` — ✅
+- `branding/_cog.py` — ✅
+- `branding/_repository.py` — ✅
+- `config_verifier.py` — ✅
+- `error_handler.py` — ✅
+- `logging.py` — ✅
+- `security.py` — ✅
+- `sync/__init__.py` — ✅
+- `sync/_cog.py` — ✅
+- `sync/_syncers.py` — ✅
 
-### Additional inspected filtering surfaces (помечены отдельно, так как были просмотрены до входа в последовательный filtering pass)
-- `filtering/_filter_lists/antispam.py` — 🔎 просмотрено
-- `filtering/_filter_lists/domain.py` — 🔎 просмотрено
-- `filtering/_filter_lists/extension.py` — 🔎 просмотрено
-- `filtering/_filter_lists/image_hash.py` — 🔎 просмотрено
-- `filtering/_filter_lists/invite.py` — 🔎 просмотрено
-- `filtering/_filter_lists/token.py` — 🔎 просмотрено
-- `filtering/_filter_lists/unique.py` — 🔎 просмотрено
-- `filtering/_filter_lists/filter_list.py` — 🔎 просмотрено
+### `bot/exts/filtering/`
+- `FILTERS-DEVELOPMENT.md` — ✅
+  - Internal semantic filtering events, filter-list/filter inheritance model, typed settings groups and staged bot/site schema evolution.
+- `filtering.py` — 🔎
+  - Main dispatcher, attachment/snapshot content extraction, message/edit/thread/nickname/Snekbox processing, persistent deletion recovery, filter management commands and image-hash utility inspected.
+- `_filter_lists/antispam.py` — 🔎
+- `_filter_lists/domain.py` — 🔎
+- `_filter_lists/extension.py` — 🔎
+- `_filter_lists/filter_list.py` — 🔎
+- `_filter_lists/image_hash.py` — 🔎
+- `_filter_lists/invite.py` — 🔎
+- `_filter_lists/token.py` — 🔎
+- `_filter_lists/unique.py` — 🔎
+- Remaining filtering files/directories — ⏳
 
 ### Следующая последовательная точка
-`bot/exts/filtering/FILTERS-DEVELOPMENT.md` → затем продолжать `bot/exts/filtering/...` по recursive tree. Уже просмотренные filtering-файлы повторно не считать необработанными, но при прохождении их позиции сверить журнал с результатами первого просмотра.
+Продолжить `bot/exts/filtering/` по recursive tree с оставшихся файлов/директорий. Предварительно просмотренные filtering surfaces повторно не терять: при прохождении их места использовать уже полученные результаты и добирать только недостающие детали.
 
-## Найденные новые механики
+## Идеи
 
-Базовые идеи распределены по `ideas/PYTHON_DISCORD.md`; backend — `ideas/PYTHON_DISCORD_BACKEND.md` и `ideas/PYTHON_DISCORD_BACKEND_2.md`.
+Основные идеи предыдущих батчей: `ideas/PYTHON_DISCORD.md`.
+Backend: `ideas/PYTHON_DISCORD_BACKEND.md`, `ideas/PYTHON_DISCORD_BACKEND_2.md`.
+Filtering engine: `ideas/PYTHON_DISCORD_FILTERING_ENGINE.md`.
+Filtering UI: `ideas/PYTHON_DISCORD_FILTERING_UI.md`.
+Filtering specialized: `ideas/PYTHON_DISCORD_FILTERING_SPECIAL.md`.
 
-Дополнительно выявлены специализированные filtering mechanics, подготовленные к записи отдельным тематическим батчем:
-- attachment extension allowlist с контекстными подсказками;
-- perceptual image-hash filtering;
-- invite normalization/anti-obfuscation + verified/partnered exceptions;
-- spoiler-aware regex token filtering;
-- per-filter validation/action overrides;
-- event subscriptions для unique filters;
-- suppression повторных deny triggers при message edit;
-- delayed anti-spam deletion context и aggregated moderation alert;
-- potential phishing signals;
-- event-driven filter pipeline.
+Добавлены специализированные механики: attachment extension allowlist guidance, perceptual image hashes, invite anti-obfuscation/trusted-server handling, spoiler-aware regex tokens, per-filter overrides, unique-event subscriptions, edit-trigger suppression, delayed anti-spam aggregation and potential-phishing signals.
 
 ## Статус
 
