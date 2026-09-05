@@ -26,7 +26,7 @@
 
 1. **Cog-Creators/Red-DiscordBot — ЗАВЕРШЁН.**
 2. **python-discord/bot — ЗАВЕРШЁН.**
-3. **ItzSudhan/Discord-MusicBot — СЛЕДУЮЩИЙ.**
+3. **ItzSudhan/Discord-MusicBot — АКТИВНО ИССЛЕДУЕТСЯ.**
 4. codebymitch/TitanBot — ОЖИДАЕТ.
 5. GAwesomeBot/bot — ОЖИДАЕТ.
 6. CorwinDev/Discord-Bot — ОЖИДАЕТ.
@@ -36,26 +36,42 @@
 
 Полностью закрыт recursive tree.
 
+## `ItzSudhan/Discord-MusicBot` — АКТИВЕН
+
+Ветка: `v5`.
+
+Первый глубокий батч закрыт по корню/ядру и части `commands/slash/`.
+
 Проверены:
-- весь `bot/exts/*`;
-- `bot/utils/*`;
-- `bot/resources/*`;
-- core/shared infrastructure (`__main__`, `errors`, `pagination`, logging и т. д.);
-- `tests/*` и специализированные test helpers/base classes;
-- `.github/*` и reusable workflows;
-- Docker/deployment/root configuration.
+- `README.md` и recursive tree;
+- `config.js`, `index.js`, `package.json`;
+- `lib/DiscordMusicBot.js` — основной lifecycle/event pipeline, файл ещё требует дочитывания;
+- `lib/SlashCommand.js`;
+- `lib/EpicPlayer.js`;
+- `util/loadCommands.js`;
+- `util/Controller.js`;
+- `events/interactionCreate.js`;
+- `commands/slash/autoleave.js`;
+- `commands/slash/autopause.js`;
+- `commands/slash/autoqueue.js`;
+- `commands/slash/clean.js`;
+- `commands/slash/clear.js`;
+- `commands/slash/filters.js`;
+- `commands/slash/guildleave.js`;
+- `commands/slash/help.js`;
+- `commands/slash/loop.js`;
+- `commands/slash/loopq.js`;
+- `commands/slash/queue.js`.
 
-Новые пакеты идей:
-- `ideas/PYTHON_DISCORD_RECRUITMENT.md` — `PDIS-R001`–`PDIS-R036`;
-- `ideas/PYTHON_DISCORD_UTILS.md` — `PDIS-U001`–`PDIS-U050`;
-- `ideas/PYTHON_DISCORD_CORE_UTILS.md` — `PDIS-CU001`–`PDIS-CU040`;
-- `ideas/PYTHON_DISCORD_TESTING.md` — `PDIS-T001`–`PDIS-T025`;
-- `ideas/PYTHON_DISCORD_DEPLOYMENT.md` — `PDIS-D001`–`PDIS-D038`.
+Добавлен `ideas/MUSIC.md` с `MUSIC-001`–`MUSIC-042`.
 
-Журнал: `research/python-discord-bot.md` — статус `✅ ЗАВЕРШЁН`.
+Журнал: `research/discord-music-bot.md`.
 
 ## Следующая точка
 
-Начать **`ItzSudhan/Discord-MusicBot`** с корневого README/tree и идти по нему целиком, большими батчами, не переходя к следующему источнику до полного закрытия.
+Продолжить **`commands/slash/`** с первой необработанной команды:
+`247.js`, затем `invite.js`, `lyrics.js`, `move.js`, `nowplaying.js`, `pause.js`, `ping.js`, `play.js`, `previous.js`, `reload.js`, `remove.js`, `replay.js`, `resume.js`, `save.js`, `search.js`, `seek.js`, `shuffle.js`, `skip.js`, `skipto.js`, `stats.js`, `stop.js`, `summon.js`, `volume.js`.
 
-**Другие источники до завершения MusicBot не трогать.**
+После полного закрытия slash-команд перейти к `commands/context/`, затем `events/`, `util/`, `api/`, `dashboard/`, `deploy/`, `docker/`, `.github/` и root-файлам.
+
+**Другие источники до полного завершения MusicBot не трогать.**
