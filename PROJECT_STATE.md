@@ -13,6 +13,7 @@
 - Перед добавлением сверяем банк идей; идентичные дубликаты не размножаем.
 - Для существующей системы сохраняем только новые UX, поведение, настройки, ограничения или архитектурные варианты.
 - Идеи сразу распределяются по тематическим `ideas/`; новые тематические файлы разрешены.
+- Работа ведётся большими батчами, но с фиксацией точной точки продолжения.
 
 ## Восстановление после смены чата
 
@@ -35,22 +36,27 @@
 
 Полное recursive tree получено на tree SHA `0e4cd5cb46f2239eacccdded8cdf02ba89028ab9`.
 
-Полностью обработаны `bot/exts/backend/` и `bot/exts/filtering/`. Filtering закрыт после проверки engine, lists, filters, anti-spam, unique/security, settings/actions/validations и UI.
+Полностью обработаны `bot/exts/backend/`, `bot/exts/filtering/`, `bot/exts/fun/`, `bot/exts/help_channels/` и `bot/exts/info/`.
 
-`bot/exts/fun/` закрыт: `duck_pond.py` и `off_topic_names.py` просмотрены, добавлены `PDIS-FUN001`–`PDIS-FUN012` в `ideas/PYTHON_DISCORD_FUN.md`.
+В `info/` закрыты codeblock, весь `doc/` (batch parser, Redis cache, doc item, HTML, inventory parser, Markdown, parsing), `code_snippets.py`, `information.py`, `patreon.py`, `pep.py`, `python_news.py`, `tags.py` и ранее просмотренные `help.py`, `resources.py`, `pypi.py`, `stats.py`, `source.py`, `subscribe.py`.
 
-`bot/exts/help_channels/` закрыт: `_caches.py`, `_channel.py`, `_cog.py`, `_stats.py` просмотрены, добавлены `PDIS-HF001`–`PDIS-HF013` в `ideas/PYTHON_DISCORD_HELP_CHANNELS.md`.
+В `moderation/` просмотрены `alts.py`, `clean.py`, `defcon.py`, `dm_relay.py`, `incidents.py`, `metabase.py`, `modlog.py`, `modpings.py`, `silence.py`, `slowmode.py`, `stream.py`, `verification.py`, `voice_gate.py`, а также `infraction/_scheduler.py`, `infraction/_utils.py`, `infraction/_views.py`.
 
-`bot/exts/info/` закрыт по runtime-поверхности: codeblock, doc включая `_cog.py`, `_batch_parser.py`, `_redis_cache.py`, `_doc_item.py`, `_html.py`, `_inventory_parser.py`, `_markdown.py`, `_parsing.py`, а также `code_snippets.py`, `information.py`, `patreon.py`, `pep.py`, `python_news.py`, `tags.py` и ранее просмотренные `help.py`, `resources.py`, `pypi.py`, `stats.py`, `source.py`, `subscribe.py`. Основной банк содержит `PDIS-I001`–`PDIS-I026`; дополнительные уникальные механики вынесены в `ideas/PYTHON_DISCORD_INFO_2.md` (`PDIS-I2-001`–`PDIS-I2-011`).
+`modpings.py` не породил новый дубль поверх `PDIS-A002`.
 
-Начат следующий каталог `bot/exts/moderation/`. Просмотрены `alts.py`, `clean.py`, `defcon.py`, `incidents.py`, `modpings.py`, `stream.py`. Дубликаты из уже существующего банка не размножались; новые аварийные, incident, clean и streaming механики вынесены в `ideas/PYTHON_DISCORD_MODERATION_2.md` (`PDIS-M2-001`–`PDIS-M2-016`). `modpings.py` в основном совпал с ранее зафиксированной механикой scheduled role state и не добавлялся повторно.
+Основные дополнительные moderation-идеи находятся в `ideas/PYTHON_DISCORD_MODERATION_2.md` (`PDIS-M2-001`–`PDIS-M2-016`) и `ideas/PYTHON_DISCORD_MODERATION_3.md` (`PDIS-M3-001`–`PDIS-M3-015`).
 
 ## Следующая точка
 
-Продолжать **только `python-discord/bot`** и строго внутри `bot/exts/moderation/`. Не возвращаться к уже закрытым info/fun/help_channels/backend/filtering без появления нового материала.
+Продолжать **только `python-discord/bot`** и строго внутри `bot/exts/moderation/`.
 
-В moderation ещё остаются остальные файлы и подкаталог `infraction`; их нужно последовательно просмотреть и сверить с уже существующими `MODERATION.md`, `MODERATION_DETAILS.md`, `MODLOG.md` и `PYTHON_DISCORD_MODERATION_2.md`.
+Следующий крупный батч:
+1. оставшиеся root moderation files;
+2. `infraction/infractions.py`;
+3. `infraction/management.py`;
+4. `infraction/superstarify.py`;
+5. затем повторно сверить recursive tree на предмет пропущенных файлов.
 
-После полного завершения python-discord только тогда переходить к `ItzSudhan/Discord-MusicBot`.
+Не переходить к `ItzSudhan/Discord-MusicBot`, пока весь `python-discord/bot` реально не закрыт.
 
 **Другие источники не трогать.**
