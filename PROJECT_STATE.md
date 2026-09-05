@@ -25,31 +25,37 @@
 ## Источники
 
 1. **Cog-Creators/Red-DiscordBot — ЗАВЕРШЁН.**
-2. **python-discord/bot — АКТИВЕН.**
-3. ItzSudhan/Discord-MusicBot — ОЖИДАЕТ.
+2. **python-discord/bot — ЗАВЕРШЁН.**
+3. **ItzSudhan/Discord-MusicBot — СЛЕДУЮЩИЙ.**
 4. codebymitch/TitanBot — ОЖИДАЕТ.
 5. GAwesomeBot/bot — ОЖИДАЕТ.
 6. CorwinDev/Discord-Bot — ОЖИДАЕТ.
 7. Tomato6966/Multipurpose-discord-bot — ОЖИДАЕТ.
 
-## `python-discord/bot` — текущая точка
+## `python-discord/bot` — ЗАВЕРШЁН
 
-Полный recursive tree проверен; уже закрыты все `bot/exts/*`, включая `backend`, `filtering`, `fun`, `help_channels`, `info`, `moderation`, `recruitment`, `utils`.
+Полностью закрыт recursive tree.
 
-Дополнительно просмотрены:
-- `bot/utils/` — полностью;
-- `bot/resources/` — содержательные данные/ресурсы проверены;
-- `bot/__main__.py`, `bot/errors.py`, `bot/pagination.py` — финальный инфраструктурный проход.
+Проверены:
+- весь `bot/exts/*`;
+- `bot/utils/*`;
+- `bot/resources/*`;
+- core/shared infrastructure (`__main__`, `errors`, `pagination`, logging и т. д.);
+- `tests/*` и специализированные test helpers/base classes;
+- `.github/*` и reusable workflows;
+- Docker/deployment/root configuration.
 
 Новые пакеты идей:
-- `PYTHON_DISCORD_RECRUITMENT.md` — `PDIS-R001`–`PDIS-R036`;
-- `PYTHON_DISCORD_UTILS.md` — `PDIS-U001`–`PDIS-U050`;
-- `PYTHON_DISCORD_CORE_UTILS.md` — `PDIS-CU001`–`PDIS-CU040`.
+- `ideas/PYTHON_DISCORD_RECRUITMENT.md` — `PDIS-R001`–`PDIS-R036`;
+- `ideas/PYTHON_DISCORD_UTILS.md` — `PDIS-U001`–`PDIS-U050`;
+- `ideas/PYTHON_DISCORD_CORE_UTILS.md` — `PDIS-CU001`–`PDIS-CU040`;
+- `ideas/PYTHON_DISCORD_TESTING.md` — `PDIS-T001`–`PDIS-T025`;
+- `ideas/PYTHON_DISCORD_DEPLOYMENT.md` — `PDIS-D001`–`PDIS-D038`.
+
+Журнал: `research/python-discord-bot.md` — статус `✅ ЗАВЕРШЁН`.
 
 ## Следующая точка
 
-Осталась финальная проверка **`tests/`, `.github/`, deployment/root config и прочих файлов вне уже закрытых runtime-каталогов**. Из них извлекаем только реально полезные механики/архитектурные практики, не превращая обычные тесты/CI в бессмысленные идеи.
+Начать **`ItzSudhan/Discord-MusicBot`** с корневого README/tree и идти по нему целиком, большими батчами, не переходя к следующему источнику до полного закрытия.
 
-`ItzSudhan/Discord-MusicBot` не трогать до полного закрытия `python-discord/bot`.
-
-**Другие источники не трогать.**
+**Другие источники до завершения MusicBot не трогать.**
