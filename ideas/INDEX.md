@@ -27,5 +27,6 @@
 | `GENERAL_UX.md` | Общие мелкие UX-механики | ⬜ |
 | `DATA_STORAGE.md` | Данные, storage и конфигурационное состояние | ⬜ |
 | `AUDIO_INFRA.md` | Audio/media backend infrastructure | ⬜ |
+| `MODLOG.md` | Modlog / история кейсов | ⬜ |
 
 Файлы будут наполняться по мере исследования репозиториев.
