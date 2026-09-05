@@ -16,31 +16,13 @@
 - Utility/info/moderation/fun surfaces из предыдущих батчей — ✅
 
 ### `bot/exts/backend/`
-- `__init__.py` — ✅
-- `branding/__init__.py` — ✅
-- `branding/_cog.py` — ✅
-- `branding/_repository.py` — ✅
-- `config_verifier.py` — ✅
-- `error_handler.py` — ✅
-- `logging.py` — ✅
-- `security.py` — ✅
-- `sync/__init__.py` — ✅
-- `sync/_cog.py` — ✅
-- `sync/_syncers.py` — ✅
+- Весь каталог — ✅
 
 ### `bot/exts/filtering/`
 - `FILTERS-DEVELOPMENT.md` — ✅
 - `filtering.py` — 🔎
 - `_filter_context.py` — ✅
-  - Единый контекст фильтрации хранит входные данные, результаты, matches, filter_info, related messages/channels, дополнительные actions, uploaded attachments и отдельные potential-phish signals.
-- `_filter_lists/antispam.py` — 🔎
-- `_filter_lists/domain.py` — 🔎
-- `_filter_lists/extension.py` — 🔎
-- `_filter_lists/filter_list.py` — 🔎
-- `_filter_lists/image_hash.py` — 🔎
-- `_filter_lists/invite.py` — 🔎
-- `_filter_lists/token.py` — 🔎
-- `_filter_lists/unique.py` — 🔎
+- `_filter_lists/*` — 🔎
 - `_filters/antispam/__init__.py` — ✅
 - `_filters/antispam/attachments.py` — ✅
 - `_filters/antispam/burst.py` — ✅
@@ -51,6 +33,16 @@
 - `_filters/antispam/mentions.py` — ✅
 - `_filters/antispam/newlines.py` — ✅
 - `_filters/antispam/role_mentions.py` — ✅
+- `_filters/domain.py` — ✅
+- `_filters/extension.py` — ✅
+- `_filters/filter.py` — ✅
+- `_filters/image_hash.py` — ✅
+- `_filters/invite.py` — ✅
+- `_filters/token.py` — ✅
+- `_filters/unique/__init__.py` — ✅
+- `_filters/unique/discord_token.py` — ✅
+- `_filters/unique/everyone.py` — ✅
+- `_filters/unique/webhook.py` — ✅
 - `_settings_types/actions/infraction_and_notification.py` — ✅
 - `_settings_types/actions/remove_context.py` — ✅
 - `_settings_types/actions/ping.py` — ✅
@@ -59,20 +51,22 @@
 - `_settings_types/validations/bypass_roles.py` — ✅
 - `_settings_types/validations/channel_scope.py` — ✅
 - `_settings_types/validations/filter_dm.py` — ✅
+- `_settings.py` — ✅
+- `_utils.py` — ✅
 - Remaining filtering files/directories — ⏳
 
 ## Последний батч: что извлечено
 
 ### Anti-spam
-Добавлен `PDIS-FS009` в `ideas/PYTHON_DISCORD_FILTERING_SPECIAL.md`: отдельные измерения спама — burst, duplicate messages, character volume, attachment volume, emoji volume, link volume, user mentions, role mentions, total/consecutive newlines — с независимыми окнами/порогами и объяснимым measured quantity. Для mentions учитывается Discord-resolved список, с исключением bot/self/replied author; emoji не считаются внутри fenced code blocks.
+Добавлен `PDIS-FS009`: отдельные измерения спама — burst, duplicate messages, character volume, attachment volume, emoji volume, link volume, user mentions, role mentions, total/consecutive newlines — с независимыми окнами/порогами и объяснимым measured quantity.
 
-### Filtering context
-Контекст фильтрации выступает как расширяемый контейнер не только для входа, но и для side effects: связанные сообщения/каналы, отложенные actions, загруженные вложения, DM/alert content, action descriptions, matches, potential-phish signals и флаг удаления.
+### Filtering context/settings
+Подтверждён расширяемый FilterContext для входных данных и side effects. Settings framework поддерживает typed entries, наследование defaults, точечные overrides, объединение actions и безопасное игнорирование неизвестных настроек с предупреждением.
 
-### Action/validation framework
-Обнаружены дополнительные варианты, которые нужно учитывать при дальнейшем сравнении: действие может быть идемпотентно объединено через `union`; `RemoveContext` объединяется через OR; ping-настройки объединяются через set union; отправка alert объединяется через OR. `InfractionAndNotification` объединяет уведомление с наказанием, выбирает более строгое наказание/длительность и использует fallback-канал для модерации при невалидном channel ID. Duration принимает как секунды, так и человекочитаемые строки и сериализуется в секунды.
+### Новые специализированные идеи
+Добавлены `PDIS-FS010` — normalization layer против invisible/Zalgo/URL-encoding/backslash/newline bypasses; `PDIS-FS011` — безопасное перехватывание Discord token/webhook leaks с валидацией, цензурированием и предотвращением повторного логирования; `PDIS-FS012` — semantic filter events независимые от gateway events.
 
-Validation surfaces поддерживают bypass по ролям, сложный channel/category allow+deny scope и отдельное разрешение фильтрации DM.
+`discord_token` использует структурную проверку потенциального токена, определение bot/user по decoded ID, redaction HMAC и подавление обычного deletion log. Webhook filter не только обнаруживает секретный URL, но и отзывает webhook через API.
 
 ## Идеи
 
@@ -84,4 +78,4 @@ Filtering specialized: `ideas/PYTHON_DISCORD_FILTERING_SPECIAL.md`.
 
 ## Статус
 
-**Источник не завершён.** Следующая последовательная точка — оставшиеся файлы `bot/exts/filtering/`, затем следующий каталог `bot/exts/fun/`. Следующие репозитории не трогать.
+**Источник не завершён.** Следующая последовательная точка — оставшиеся файлы/подкаталоги `bot/exts/filtering/`, затем следующий каталог `bot/exts/fun/`. Следующие репозитории не трогать.
