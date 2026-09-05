@@ -15,13 +15,6 @@
 - Идеи сразу распределяются по тематическим `ideas/`; новые тематические файлы разрешены.
 - Работа ведётся большими батчами, но с фиксацией точной точки продолжения.
 
-## Восстановление после смены чата
-
-- `RESEARCH_PROGRESS.md` — глобальная контрольная точка.
-- `research/<source>.md` — последовательный журнал источника.
-- `✅` означает реальный просмотр и сверку.
-- После каждого существенного батча обновляются журнал и `PROJECT_STATE.md`.
-
 ## Источники
 
 1. **Cog-Creators/Red-DiscordBot — ЗАВЕРШЁН.**
@@ -32,46 +25,32 @@
 6. CorwinDev/Discord-Bot — ОЖИДАЕТ.
 7. Tomato6966/Multipurpose-discord-bot — ОЖИДАЕТ.
 
-## `python-discord/bot` — ЗАВЕРШЁН
-
-Полностью закрыт recursive tree.
-
 ## `ItzSudhan/Discord-MusicBot` — АКТИВЕН
 
 Ветка: `v5`.
 
-Первый глубокий батч закрыт по корню/ядру и части `commands/slash/`.
+Закрыты:
+- root README/tree/config/index/package;
+- все `commands/slash/`;
+- `commands/context/play.js`;
+- все 6 файлов `events/`;
+- `lib/DiscordMusicBot.js`, `lib/SlashCommand.js`, `lib/EpicPlayer.js`;
+- `util/Controller.js`, `util/db.js`, `util/getChannel.js`, `util/getConfig.js`, `util/getLavalink.js`, `util/guildDb.js`, `util/loadCommands.js`.
 
-Проверены:
-- `README.md` и recursive tree;
-- `config.js`, `index.js`, `package.json`;
-- `lib/DiscordMusicBot.js` — основной lifecycle/event pipeline, файл ещё требует дочитывания;
-- `lib/SlashCommand.js`;
-- `lib/EpicPlayer.js`;
-- `util/loadCommands.js`;
-- `util/Controller.js`;
-- `events/interactionCreate.js`;
-- `commands/slash/autoleave.js`;
-- `commands/slash/autopause.js`;
-- `commands/slash/autoqueue.js`;
-- `commands/slash/clean.js`;
-- `commands/slash/clear.js`;
-- `commands/slash/filters.js`;
-- `commands/slash/guildleave.js`;
-- `commands/slash/help.js`;
-- `commands/slash/loop.js`;
-- `commands/slash/loopq.js`;
-- `commands/slash/queue.js`.
+Созданы/пополнены пакеты идей:
+- `ideas/MUSIC.md` — MUSIC-001–042;
+- `ideas/MUSIC_COMMANDS.md` — MUSIC-C001–055;
+- `ideas/MUSIC_CONTEXT.md` — MUSIC-X001–007;
+- `ideas/MUSIC_EVENTS.md` — MUSIC-E001–025;
+- `ideas/MUSIC_STORAGE.md` — MUSIC-S001–018;
+- `ideas/MUSIC_CORE.md` — MUSIC-K001–018.
 
-Добавлен `ideas/MUSIC.md` с `MUSIC-001`–`MUSIC-042`.
+Из последних находок особенно зафиксированы: context-menu play по target message, выбор результата поиска через Select Menu с TTL, lyrics candidate/source/tips UX, Stage Channel recovery, составной seek, DM save, короткая/длинная queue с циклической pagination, TTL+idle collectors, dual latency ping, hot reload require cache, voice-state automation с различением JOIN/LEAVE/MOVE, server mute pause/resume, delayed auto-leave с повторной проверкой, lazy per-guild JSON DB, queued persistence, DB registry и player/controller factories.
 
 Журнал: `research/discord-music-bot.md`.
 
 ## Следующая точка
 
-Продолжить **`commands/slash/`** с первой необработанной команды:
-`247.js`, затем `invite.js`, `lyrics.js`, `move.js`, `nowplaying.js`, `pause.js`, `ping.js`, `play.js`, `previous.js`, `reload.js`, `remove.js`, `replay.js`, `resume.js`, `save.js`, `search.js`, `seek.js`, `shuffle.js`, `skip.js`, `skipto.js`, `stats.js`, `stop.js`, `summon.js`, `volume.js`.
-
-После полного закрытия slash-команд перейти к `commands/context/`, затем `events/`, `util/`, `api/`, `dashboard/`, `deploy/`, `docker/`, `.github/` и root-файлам.
+Продолжить строго по recursive tree `v5` с `util/` после уже просмотренных файлов. Затем закрыть `api/`, `dashboard/`, `deploy/`, `docker/`, `.github/` и остальные root-файлы.
 
 **Другие источники до полного завершения MusicBot не трогать.**
