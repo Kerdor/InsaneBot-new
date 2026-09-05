@@ -8,57 +8,68 @@
 
 Идём от корня по recursive tree, затем закрываем каталоги и файлы по порядку. Ничего из следующих источников не исследуется до полного завершения этого репозитория.
 
-## Просмотрено в текущем батче
+## Закрыто в текущем батче
 
-- `README.md` — ✅
-- recursive tree v5 — ✅
-- `config.js` — ✅
-- `index.js` — ✅
-- `package.json` — ✅
-- `lib/DiscordMusicBot.js` — ✅ (основной lifecycle/Manager/event pipeline; файл ещё требует дочитывания)
-- `lib/SlashCommand.js` — ✅
-- `lib/EpicPlayer.js` — ✅
-- `util/loadCommands.js` — ✅
-- `util/Controller.js` — ✅
-- `events/interactionCreate.js` — ✅
-- `commands/slash/autoleave.js` — ✅
-- `commands/slash/autopause.js` — ✅
-- `commands/slash/autoqueue.js` — ✅
-- `commands/slash/clean.js` — ✅
-- `commands/slash/clear.js` — ✅
-- `commands/slash/filters.js` — ✅
-- `commands/slash/guildleave.js` — ✅
-- `commands/slash/help.js` — ✅
-- `commands/slash/loop.js` — ✅
-- `commands/slash/loopq.js` — ✅
-- `commands/slash/queue.js` — ✅
+- `commands/slash/247.js` — ✅
+- `commands/slash/invite.js` — ✅
+- `commands/slash/lyrics.js` — ✅
+- `commands/slash/move.js` — ✅
+- `commands/slash/nowplaying.js` — ✅
+- `commands/slash/pause.js` — ✅
+- `commands/slash/ping.js` — ✅
+- `commands/slash/play.js` — ✅
+- `commands/slash/previous.js` — ✅
+- `commands/slash/reload.js` — ✅
+- `commands/slash/remove.js` — ✅
+- `commands/slash/replay.js` — ✅
+- `commands/slash/resume.js` — ✅
+- `commands/slash/save.js` — ✅
+- `commands/slash/search.js` — ✅
+- `commands/slash/seek.js` — ✅
+- `commands/slash/shuffle.js` — ✅
+- `commands/slash/skip.js` — ✅
+- `commands/slash/skipto.js` — ✅
+- `commands/slash/stats.js` — ✅
+- `commands/slash/stop.js` — ✅
+- `commands/slash/summon.js` — ✅
+- `commands/slash/volume.js` — ✅
 
 ## Найдено и сверено
 
-Добавлен первый пакет `ideas/MUSIC.md`: `MUSIC-001`–`MUSIC-042`.
+Создан дополнительный пакет `ideas/MUSIC_COMMANDS.md`: `MUSIC-C001`–`MUSIC-C055`.
 
-Ключевые группы находок:
-- per-player audio settings;
-- auto pause / auto leave / 24/7 / auto queue;
-- reconnect/disconnect lifecycle и retry policy;
-- track error/stuck recovery UX;
-- now-playing controller;
-- защита от повторного удаления старых control messages;
-- voice-channel authorization для кнопок;
-- replay/next/loop state machine;
-- динамический loader slash/context commands;
-- paginated help + build hash;
-- multi-provider autocomplete;
-- selective bot-message cleanup;
-- centralized audio configuration;
-- debug/Replit recovery;
-- runtime counters.
+Ключевые новые группы:
+- интерактивный search Select Menu с выбором конкретного результата и timeout;
+- раздельный UX для track/search result/playlist;
+- playlist statistics;
+- Stage Channel suppression/request-to-speak recovery;
+- составной человекочитаемый seek;
+- volume read-only режим;
+- сохранение трека в DM;
+- компактный и расширенный режимы queue;
+- циклическая pagination;
+- TTL + idle timeout для collectors;
+- user-bound interaction buttons;
+- remove/move/skipto queue operations;
+- фильтры через единый preset enum и Reset;
+- dual latency ping;
+- объединённые Lavalink/system stats;
+- hot reload command cache;
+- lyrics search по текущему треку с очисткой шумовых суффиксов;
+- lyrics candidate selection, source/tips UI, restricted-content UX и truncation;
+- replay через seek(0);
+- persistent voice semantics stop/247;
+- summon с переносом существующего player;
+- точечные ошибки для отсутствующего player.
+
+## Предыдущие результаты
+
+Первый пакет `ideas/MUSIC.md`: `MUSIC-001`–`MUSIC-042`.
 
 ## Точная точка продолжения
 
-Следующий батч продолжает `commands/slash/` с первой ещё не просмотренной команды после уже закрытых:
-`247.js`, `invite.js`, `lyrics.js`, `move.js`, `nowplaying.js`, `pause.js`, `ping.js`, `play.js`, `previous.js`, `reload.js`, `remove.js`, `replay.js`, `resume.js`, `save.js`, `search.js`, `seek.js`, `shuffle.js`, `skip.js`, `skipto.js`, `stats.js`, `stop.js`, `summon.js`, `volume.js`.
+Каталог `commands/slash/` закрыт по всем командам из recursive tree. Следующая точка — `commands/context/play.js`.
 
-После полного закрытия `commands/slash/` перейти к `commands/context/`, затем `events/`, `util/`, `api/`, `dashboard/`, `deploy/`, `docker/`, `.github/` и остальным root-файлам recursive tree.
+После `commands/context/` продолжить строго по recursive tree: `events/`, `util/`, `api/`, `dashboard/`, `deploy/`, `docker/`, `.github/` и остальные root-файлы.
 
 **Репозиторий НЕ завершён.**
