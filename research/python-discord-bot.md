@@ -13,7 +13,18 @@
 
 ### `bot/`
 - Core: `bot.py`, `constants.py`, `converters.py`, `decorators.py` — ✅
+- `__init__.py`, `__main__.py`, `errors.py`, `log.py`, `pagination.py` — просмотрены в финальном проходе; идеи из инфраструктуры извлечены.
 - Utility/info/moderation/fun surfaces из предыдущих батчей — ✅
+
+### `bot/utils/`
+- Весь каталог — ✅
+- `channel.py`, `checks.py`, `function.py`, `helpers.py`, `lock.py`, `message_cache.py`, `messages.py`, `modlog.py`, `time.py`, `webhooks.py` просмотрены и сверены.
+
+### `bot/resources/`
+- `foods.json` — просмотрен; это статический список данных без отдельной механики.
+- `stars.json` — просмотрен; это статический список данных без отдельной механики.
+- `media/print-return.gif` — ресурс без отдельной механики.
+- `tags/` — каталог статических учебных tag-файлов; отдельные runtime-механики уже покрыты info/tag исследованием.
 
 ### `bot/exts/backend/`
 - Весь каталог — ✅
@@ -55,22 +66,21 @@
 - `reminders.py` — ✅
 - `thread_bumper.py` — ✅
 - `utils.py` — ✅
-- `snekbox/__init__.py` — ✅
-- `snekbox/_constants.py` — ✅
-- `snekbox/_cog.py` — ✅
-- `snekbox/_eval.py` — ✅
-- `snekbox/_io.py` — ✅
+- `snekbox/` — весь runtime-каталог ✅
 
 ## Извлечённые идеи
 
 ### Recruitment / Talent Pool
-`ideas/PYTHON_DISCORD_RECRUITMENT.md` содержит `PDIS-R001`–`PDIS-R036`: context-menu nominations, optional context modal, source attribution, private/public confirmation, relay в review thread, force nomination, persistent autoreview, execution lock, eligibility gates, weighted priority, review capacity/interval, inactivity pruning, grouped queue, nomination cooldown bucket, evidence batching/pinning, dedicated voting threads, review/archive statistics, lifecycle metadata, typed API и bulk activity lookup.
+`ideas/PYTHON_DISCORD_RECRUITMENT.md` содержит `PDIS-R001`–`PDIS-R036`.
 
 ### Utilities
-`ideas/PYTHON_DISCORD_UTILS.md` содержит `PDIS-U001`–`PDIS-U050`: consent-gated attachment paste, delete workflow, reminder opt-in/quotas/permissions/persistence/recovery/editing/locking, extension wildcard/batch management и rollback-safe semantics, multi-dimensional ping, WebSocket diagnostics, persistent REPL, Snekbox per-user locking, multi-version rerun, edit-and-react reruns, multi-codeblock/timeit semantics, mention/escape protection, output/file limits, filename normalization, shared output budget, output filtering и routing.
+`ideas/PYTHON_DISCORD_UTILS.md` содержит `PDIS-U001`–`PDIS-U050`.
+
+### Core / shared infrastructure
+`ideas/PYTHON_DISCORD_CORE_UTILS.md` содержит `PDIS-CU001`–`PDIS-CU040`: resource locks и wait/raise режимы, bounded message cache, context whitelists и redirects, role cooldown bypass, reaction/deletion workflows, attachment relay, unique voter counting, webhook sanitization, централизованный logging/archive, reply-aware responses, timestamp/duration helpers, expiration UX, paginator restrictions, startup dependency handling, intent/mention safety, semantic exceptions и decorator global handling.
 
 ## Следующая точка
 
-`bot/exts/recruitment/` и `bot/exts/utils/` закрыты. Следующий этап — продолжить строго по оставшейся части recursive tree: другие `bot/exts/*`, `bot/resources/`, `bot/utils/`, `tests/`, root/.github/deployment и прочие файлы, которые ещё не отмечены `✅`.
+Продолжать строго по оставшейся части recursive tree: прежде всего `tests/`, `.github/`, deployment/root config и любые ещё не закрытые runtime-каталоги. `bot/utils/` и `bot/resources/` больше не являются следующей точкой. После закрытия всех содержательных файлов можно пометить `python-discord/bot` полностью завершённым.
 
 **Другие источники не трогать.**
