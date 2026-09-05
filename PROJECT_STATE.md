@@ -35,9 +35,9 @@
 
 Полное recursive tree получено на tree SHA `0e4cd5cb46f2239eacccdded8cdf02ba89028ab9`.
 
-Полностью обработан весь `bot/exts/backend/`. Далее идёт последовательный проход `bot/exts/filtering/`.
+Полностью обработан весь `bot/exts/backend/`. Продолжается последовательный проход `bot/exts/filtering/`.
 
-В filtering уже просмотрены development overview и основные специализированные surfaces: `filtering.py`, `_filter_lists/antispam.py`, `domain.py`, `extension.py`, `image_hash.py`, `invite.py`, `token.py`, `unique.py`, `filter_list.py`; а также `_filter_context.py`, anti-spam detector files, action/validation settings.
+В filtering просмотрены development overview, filter context/settings, anti-spam detector files, actions/validations, специализированные filters и unique security filters.
 
 Созданы source-specific файлы:
 - `ideas/PYTHON_DISCORD.md`;
@@ -48,8 +48,8 @@
 - `ideas/PYTHON_DISCORD_FILTERING_UI.md`;
 - `ideas/PYTHON_DISCORD_FILTERING_SPECIAL.md`.
 
-Последнее добавление: `PDIS-FS009` — multi-dimensional anti-spam signal library с отдельными burst/duplicates/chars/attachments/emoji/links/mentions/role_mentions/newlines детекторами и их специальными counting rules.
+Последний батч добавил `PDIS-FS010` (normalization против invisible/Zalgo/URL-encoding bypass), `PDIS-FS011` (перехват Discord token/webhook leaks с safe logging/redaction/revocation) и `PDIS-FS012` (semantic filtering events).
 
-**Следующая точка:** продолжать `bot/exts/filtering/` по recursive tree, не переходя к другим источникам. После полного закрытия filtering перейти к следующему каталогу `bot/exts/fun/`.
+**Следующая точка:** продолжать `bot/exts/filtering/` по recursive tree. После полного закрытия filtering перейти к следующему каталогу `bot/exts/fun/`. Другие источники не трогать.
 
-**Источник не завершён. Следующие репозитории не трогать.**
+**Источник не завершён.**
