@@ -25,7 +25,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music и Reaction_roles.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles и Search.
 
 Пакеты идей:
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
@@ -36,14 +36,19 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
 - `ideas/MODERATION.md` — MOD-001–MOD-135;
 - `ideas/TITAN_MUSIC.md` — TM-001–TM-154;
-- `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170.
+- `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170;
+- `ideas/TITAN_SEARCH.md` — TS-001–TS-080.
 
 ### `Reaction_roles` — ЗАКРЫТ
 
 Просмотрены command, select-menu handler, reaction-role service, panel-status helper и canonical/legacy database-key paths. Зафиксированы setup/dashboard lifecycle, role safety, self-assignment, add/remove/edit/repost/delete, message recovery, reconciliation, persistence и error-isolation механики.
 
+### `Search` — ЗАКРЫТ
+
+Просмотрены `src/commands/Search/search.js` и все три модуля `modules/search_define.js`, `modules/search_google.js`, `modules/search_urban.js`. Зафиксированы TS-001–TS-080: search routing, Dictionary/Urban API, Google URL generation, validation, encoding, timeout/defer lifecycle, result formatting, source metadata, 404/429 handling, centralized errors/logging и расширяемая module architecture.
+
 ### Точная точка продолжения
 
-**Следующий раздел: `src/commands/Search/`.**
+**Следующий раздел: `src/commands/ServerStats/`.**
 
 Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
