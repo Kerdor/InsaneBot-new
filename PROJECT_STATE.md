@@ -27,9 +27,7 @@
 
 ## `ItzSudhan/Discord-MusicBot` — ЗАВЕРШЁН
 
-Ветка: `v5`.
-
-Recursive tree проверен полностью (`truncated=false`). Закрыты все исходные каталоги и root-файлы, включая `commands/`, `events/`, `lib/`, `util/`, `api/`, исходный `dashboard/`, `deploy/`, `docker/`, `.github/` и оставшиеся root/config/runtime files. `dashboard/out/` и `_next` классифицированы как build artifacts и не дублировались поверх исходников.
+Ветка: `v5`. Recursive tree проверен полностью (`truncated=false`), исходные каталоги закрыты и build artifacts отдельно классифицированы.
 
 Пакеты идей:
 - `ideas/MUSIC.md` — MUSIC-001–042;
@@ -41,12 +39,26 @@ Recursive tree проверен полностью (`truncated=false`). Закр
 - `ideas/MUSIC_WEB.md` — MUSIC-W001–031;
 - `ideas/MUSIC_DEPLOY.md` — MUSIC-D001–026.
 
-Последняя сверка добавила Docker/Lavalink варианты: разделение bot/Lavalink на сервисы, `depends_on`, internal network, read-only config mounts, self-hosted Lavalink и отдельные параметры buffering/quality/metrics/request logging/rolling logs.
-
-Журнал: `research/discord-music-bot.md` — статус `✅ ЗАВЕРШЁН`.
-
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Следующая точка: начать с recursive tree репозитория `codebymitch/TitanBot`, определить актуальную ветку и полностью пройти дерево по порядку. Создать `research/titanbot.md`; идеи сразу сравнивать с существующим банком и распределять по тематическим файлам.
+Recursive tree `main` проверен полностью (`truncated=false`). На текущем этапе просмотрены Root/bootstrap, Birthday, Community, Core, Economy, Fun и Giveaway.
 
-**Не переходить к GAwesomeBot и последующим источникам до полного завершения TitanBot.**
+Пакеты TitanBot:
+- `ideas/TITAN_CORE.md`;
+- `ideas/TITAN_APPLICATIONS.md`;
+- `ideas/TITAN_CONFIG.md`;
+- `ideas/TITAN_ECONOMY.md` — E001–E045;
+- `ideas/TITAN_FUN.md` — TF-001–TF-043;
+- `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065.
+
+Fun закрыт на уровне просмотренных command/service файлов: counting game с 8 системами счёта, streak/leaderboard/reset/status, random duel, coin flip и dice notation.
+
+Giveaway закрыт на уровне просмотренных command/service файлов: create/join/end/delete/reroll, автоматическое истечение, random unique winner selection, persistent lifecycle state, rate limit, fallback recovery и audit logging.
+
+### Точная точка продолжения
+
+**`src/commands/JoinToCreate/`**.
+
+Уже начат `src/commands/JoinToCreate/jointocreate.js`; файл большой и был просмотрен частично. Следом полностью выжать его оставшуюся логику, затем `modules/config_setup.js`, `modules/setup.js`, `src/services/joinToCreateService.js`. После этого — `Leveling`.
+
+**Не переходить к GAwesomeBot до полного закрытия TitanBot.**
