@@ -21,11 +21,11 @@
 | 4 | `codebymitch/TitanBot` | 🔵 АКТИВЕН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | ⏳ ОЖИДАЕТ | — |
 | 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | — |
-| 7 | `Tomato6966/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
+| 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats и Ticket.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket и Tools.
 
 Пакеты идей:
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
@@ -39,18 +39,17 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170;
 - `ideas/TITAN_SEARCH.md` — TS-001–TS-080;
 - `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
-- `ideas/TITAN_TICKETS.md` — TT-001–TT-170.
+- `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
+- `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244.
 
-### `ServerStats` — ЗАКРЫТ
+### `Tools` — ЗАКРЫТ
 
-Просмотрены command, все четыре modules, service, counter button handler, member join/leave event paths, scheduler в `src/app.js` и counter config. Зафиксированы TSS-001–TSS-170: типы счётчиков, создание voice/text channels в category, duplicate protection, persistence/sanitization, member counting, configurable names, cron + event-driven updates, orphan cleanup, list/update/delete UX, destructive confirmation, initiator-only buttons, DB-first deletion и error isolation.
+Просмотрены все перечисленные Tool command/handler files: baseconvert, calculate, countdown, countdownButtons, embedbuilder, generatepassword, hexcolor, poll, randomuser, shorten, time, unixtime.
 
-### `Ticket` — ЗАКРЫТ
-
-Просмотрены ticket command/dashboard, service, database helpers, permissions/logging utilities, button/modal handlers, feedback persistence и связанные config/transcript paths. Зафиксированы TT-001–TT-170: panel/dashboard, persistent guild config, role/category selectors, open-ticket limits, ticket lifecycle/counter, permissions, claim/unclaim, priorities, pin/unpin, close/archive, transcript/delete flow, ticket logging, feedback и guild statistics, а также service-layer/error-isolation архитектура.
+Зафиксированы TTOOL-001–TTOOL-244: countdown lifecycle/control/permissions; многобазовая конвертация и BigInt; безопасный calculator и user-scoped history; password generator с crypto RNG и strength scoring; color analysis; reaction polls; filtered random user selection; timezone/Unix utilities; URL shortening с validation/timeout; интерактивный embed builder с live preview, fields, colors, author/footer/images, timestamp, reorder/reset/post и безопасным collector/modal lifecycle.
 
 ### Точная точка продолжения
 
-**Следующий шаг: `src/commands/Tools/`.**
+**Следующий шаг: `src/commands/Utility/`.**
 
 Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
