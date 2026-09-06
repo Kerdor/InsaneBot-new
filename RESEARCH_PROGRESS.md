@@ -25,7 +25,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events и Handlers.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events, Handlers и Interactions.
 
 Пакеты идей:
 - `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
@@ -44,22 +44,19 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
 - `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
 - `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240;
-- `ideas/TITAN_HANDLERS.md` — TH-001–TH-320.
-
-### `Events` — ЗАКРЫТ
-
-Проверены все 14 файлов `src/events/`: channel deletion, guild creation, member join/leave/update, interaction dispatcher, message create/delete/update, ready, role create/delete, user update и voice state update.
-
-Зафиксировано **TE-001–TE-280**.
+- `ideas/TITAN_HANDLERS.md` — TH-001–TH-320;
+- `ideas/TITAN_INTERACTIONS.md` — TI-001–TI-160.
 
 ### `Handlers` — ЗАКРЫТ
 
-Проверена фактическая `src/handlers/` и вложенные `help/`, `interactionHandlers/`, `loaders/`: 16 обнаруженных файлов. Зафиксировано **TH-001–TH-320**.
+Проверена фактическая `src/handlers/` и вложенные `help/`, `interactionHandlers/`, `loaders/`: 16 обнаруженных файлов. Зафиксировано TH-001–TH-320.
 
-Основные блоки: interaction lifecycle и error isolation; modal context/confirmation; countdown state machine; giveaway mutex/rate limits; logging dashboard filters/selectors; music controls; ticket permission timeout и ticket modals; shared todo mutations; verification; reaction-role hierarchy/protected-role checks; warning destructive workflows; full user-data wipe; help generation/pagination; recursive interaction loader и event loader.
+### `Interactions` — ЗАКРЫТ
+
+Проверена фактическая `src/interactions/` во всех трёх ветках `buttons/`, `modals/`, `selectMenus/`. Проверены все обнаруженные definition-файлы. Зафиксировано TI-001–TI-160.
 
 ### Точная точка продолжения
 
-**`src/commands/`, `src/config/`, `src/events/` и `src/handlers/` полностью закрыты.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/interactions/`**.
+**`src/commands/`, `src/config/`, `src/events/`, `src/handlers/` и `src/interactions/` полностью закрыты.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/services/`**.
 
 Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
