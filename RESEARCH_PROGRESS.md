@@ -21,14 +21,15 @@
 | 4 | `codebymitch/TitanBot` | 🔵 АКТИВЕН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | ⏳ ОЖИДАЕТ | — |
 | 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | — |
-| 7 | `Tomato6966/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
+| 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility и Config.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config и Events.
 
 Пакеты идей:
 - `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
+- `ideas/TITAN_EVENTS.md` — TE-001–TE-280;
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
@@ -44,12 +45,14 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
 - `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
 
-### `Config` — ЗАКРЫТ
+### `Events` — ЗАКРЫТ
 
-Полностью проверены все элементы `src/config/`: application, bot, commands/commandAliases, commands/commandCategories, commands/prefixRestrictions, database/postgres, database/schemaVersion, guild/guildConfigDefaults, music/lavalink, shop/index и shop/items. Зафиксированы TITAN-G001–TITAN-G232.
+Проверены все 14 файлов `src/events/`: channel deletion, guild creation, member join/leave/update, interaction dispatcher, message create/delete/update, ready, role create/delete, user update и voice state update.
+
+Зафиксировано **TE-001–TE-280**. Добавлены идеи по event architecture, resilience, interaction routing/tracing, message pipeline, join/leave lifecycle, realtime reconciliation/self-healing, role/message/user audit и temporary voice ownership.
 
 ### Точная точка продолжения
 
-**`src/commands/` и `src/config/` полностью закрыты.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/events/`**.
+**`src/commands/`, `src/config/` и `src/events/` полностью закрыты.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/handlers/`**.
 
 Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
