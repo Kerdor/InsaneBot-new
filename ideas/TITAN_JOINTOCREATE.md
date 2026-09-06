@@ -1,0 +1,84 @@
+# TitanBot — Join to Create
+
+Источник: `codebymitch/TitanBot`
+
+- **TJ-001 — Голосовой Join-to-Create trigger** — вход пользователя в специальный voice channel автоматически создаёт временный voice channel.
+- **TJ-002 — Автоматический перенос пользователя** — после создания временного канала пользователь перемещается в него.
+- **TJ-003 — Guild-scoped конфигурация JTC** — настройки хранятся отдельно для каждого сервера.
+- **TJ-004 — Один trigger channel на guild** — система явно запрещает несколько активных trigger-каналов в одном сервере.
+- **TJ-005 — Выбор категории для временных каналов** — создаваемые комнаты помещаются в указанную Discord category.
+- **TJ-006 — Root-level вариант без категории** — JTC можно настроить без parent category.
+- **TJ-007 — Шаблоны названий комнат** — название временного voice channel строится из configurable template.
+- **TJ-008 — Placeholder username** — имя пользователя доступно как переменная шаблона.
+- **TJ-009 — Placeholder display name** — display name доступен отдельно от username.
+- **TJ-010 — Placeholder user tag** — шаблон может использовать Discord user tag.
+- **TJ-011 — Placeholder guild name** — в имя можно подставить название сервера.
+- **TJ-012 — Placeholder source channel name** — в шаблон можно передать имя trigger channel.
+- **TJ-013 — Несколько синонимичных placeholder-форматов** — поддерживаются варианты вроде `{displayName}`/`{display_name}` и `{guildName}`/`{guild_name}`.
+- **TJ-014 — Нормализация Unicode в шаблонах** — template и значения проходят NFKC normalization.
+- **TJ-015 — Удаление control/invisible characters** — из шаблонов и значений удаляются управляющие и невидимые символы.
+- **TJ-016 — Запрет опасных символов в template** — `@`, `#`, `:`, backtick блокируются до создания канала.
+- **TJ-017 — Запрет неизвестных placeholders** — произвольные `{...}` переменные не принимаются.
+- **TJ-018 — Максимум длины template 100** — настройка ограничена длиной Discord channel name.
+- **TJ-019 — Ограничение длины каждой переменной** — значения placeholder обрезаются до 32 символов.
+- **TJ-020 — Очистка итогового имени после подстановки** — итоговое имя повторно sanitizируется и нормализуется.
+- **TJ-021 — Сжатие последовательных пробелов** — generated channel name приводится к аккуратному виду.
+- **TJ-022 — Fallback имени** — пустой результат превращается в стандартное `Voice Channel`/`Voice Room`.
+- **TJ-023 — Автоматическое усечение итогового имени** — имя ограничивается 100 символами.
+- **TJ-024 — User limit для временной комнаты** — JTC может задавать максимальное количество участников.
+- **TJ-025 — Нулевой user limit = unlimited** — `0` используется как отсутствие ограничения.
+- **TJ-026 — Диапазон user limit 0–99** — значение валидируется до сохранения.
+- **TJ-027 — Настраиваемый bitrate** — каждая временная комната получает заданный bitrate.
+- **TJ-028 — Диапазон bitrate 8–384 kbps** — значение валидируется.
+- **TJ-029 — Clamp bitrate при runtime creation** — даже сохранённый некорректный bitrate ограничивается допустимым диапазоном.
+- **TJ-030 — Default bitrate 64 kbps** — при отсутствии настройки используется стандартное значение.
+- **TJ-031 — Персональные channelOptions для trigger** — настройки конкретного trigger channel могут храниться отдельно от глобальных defaults.
+- **TJ-032 — Dashboard текущих настроек** — администратор видит template, user limit и bitrate.
+- **TJ-033 — Dashboard через интерактивные кнопки** — настройки меняются без повторного ввода slash-команды.
+- **TJ-034 — Select-menu конфигурация** — отдельный вариант UI использует dropdown с действиями.
+- **TJ-035 — Modal/interactive configuration** — отдельные параметры редактируются через modal или ввод сообщения.
+- **TJ-036 — Ограничение конфигурационных controls по инициатору** — collector принимает взаимодействия только от исходного пользователя.
+- **TJ-037 — Проверка Manage Server на каждом control interaction** — недостаточно иметь permission только при открытии dashboard.
+- **TJ-038 — Автоматическое отключение controls после timeout** — expired configuration UI становится disabled.
+- **TJ-039 — Configuration session timeout** — интерактивная сессия имеет ограниченное время жизни.
+- **TJ-040 — Удаление trigger через подтверждение** — destructive action требует отдельного confirmation/cancel UI.
+- **TJ-041 — Удаление очищает trigger configuration** — channel исключается из trigger list и его options удаляются.
+- **TJ-042 — Удаление чистит связанные temporary channel records** — stale temporary state для удалённого trigger также очищается.
+- **TJ-043 — Stale trigger cleanup** — при setup система обнаруживает сохранённые каналы, которых уже нет в Discord, и удаляет их из config.
+- **TJ-044 — Запрет повторной настройки существующего trigger** — активная JTC конфигурация должна быть изменена через dashboard.
+- **TJ-045 — Voice-state event как единственная точка автоматизации** — создание/удаление/transfer отслеживаются через join/leave/move события.
+- **TJ-046 — Игнорирование bot users** — voice state ботов не запускает JTC.
+- **TJ-047 — Раздельная обработка join/leave/move** — перемещение между каналами обрабатывается отдельно от входа и выхода.
+- **TJ-048 — Перенос между voice channels может одновременно закрыть старую комнату** — old channel проверяется на empty state перед обработкой нового.
+- **TJ-049 — Empty temporary channel удаляется автоматически** — когда в комнате никого не осталось, Discord channel и DB record удаляются.
+- **TJ-050 — Ownership temporary channel** — у каждой временной комнаты есть ownerId.
+- **TJ-051 — Передача ownership при уходе владельца** — если владелец вышел, ownership переходит первому оставшемуся участнику.
+- **TJ-052 — Переименование комнаты при смене владельца** — новое имя генерируется по шаблону нового owner.
+- **TJ-053 — Сохранение нового owner в БД** — ownership transfer обновляет persistent temporary state.
+- **TJ-054 — Возврат пользователя в существующую личную комнату** — если owner снова входит в trigger, система пытается вернуть его в уже существующий temporary channel.
+- **TJ-055 — Проверка фактического voice state перед созданием** — если пользователь уже успел выйти из trigger, создание отменяется.
+- **TJ-056 — Проверка voice state перед переносом** — пользователь не перемещается в temporary channel, если его состояние успело измениться.
+- **TJ-057 — Per-guild/per-user creation cooldown** — быстрые повторные voice events одного пользователя ограничиваются cooldown.
+- **TJ-058 — Короткий 2-секундный creation cooldown** — защита от двойного создания из-за быстрых событий.
+- **TJ-059 — Cleanup cooldown map** — просроченные entries удаляются автоматически.
+- **TJ-060 — Ограничение размера cooldown map** — после 10000 entries старые записи вытесняются.
+- **TJ-061 — Permission preflight перед созданием** — проверяются ManageChannels, MoveMembers и Connect.
+- **TJ-062 — Сброс cooldown при невозможности создания** — отсутствие permissions/bot member не блокирует пользователя навсегда.
+- **TJ-063 — DM при ошибке создания комнаты** — пользователь получает уведомление, если temporary channel создать не удалось.
+- **TJ-064 — Ошибка DM не маскирует основную ошибку** — невозможность отправить DM логируется отдельно.
+- **TJ-065 — Persistent registration temporary channels** — временная комната регистрируется в БД с owner и trigger IDs.
+- **TJ-066 — Database-first cleanup при удалении** — temporary channel record unregister выполняется перед Discord delete.
+- **TJ-067 — Graceful handling missing temporary record** — обычные voice channels игнорируются при leave.
+- **TJ-068 — Read-only проверка trigger status** — отдельная функция позволяет быстро определить, является ли channel trigger.
+- **TJ-069 — Read-only получение channel-specific configuration** — dashboard может получить merged config для конкретного trigger.
+- **TJ-070 — Configuration change audit logging** — setup/change/remove действий пишутся в audit log.
+- **TJ-071 — Ошибка audit logging не ломает настройку** — проблемы логирования только предупреждаются.
+- **TJ-072 — JTC disabled state** — система имеет явный `enabled` flag и может быть выключена при отсутствии triggers.
+- **TJ-073 — Setup сохраняет createdAt конфигурации trigger** — можно знать момент создания конкретной JTC настройки.
+- **TJ-074 — Setup summary embed** — после создания администратору показываются все основные параметры системы.
+- **TJ-075 — Несколько способов UI настройки одной системы** — slash options, dashboard buttons/select menu и message/modal input могут сосуществовать.
+- **TJ-076 — Устаревшие записи восстанавливаются/перенаправляются на актуальный config** — сервис умеет работать с global defaults и channel-specific options.
+- **TJ-077 — Безопасный fallback при отсутствии DB** — JTC не пытается выполнять stateful операции без database service.
+- **TJ-078 — Отдельные validation errors для каждого параметра** — template, bitrate и user limit имеют самостоятельную диагностику.
+- **TJ-079 — Канал создаётся с permission overwrites** — owner получает Connect/Speak/PrioritySpeaker/MoveMembers, guild — Connect/Speak.
+- **TJ-080 — Создание канала наследует parent category trigger** — временный канал располагается рядом с trigger в той же категории.
