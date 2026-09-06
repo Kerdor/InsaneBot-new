@@ -27,12 +27,12 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools и Utility.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility и Config.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
 - `ideas/TITAN_APPLICATIONS.md`;
-- `ideas/TITAN_CONFIG.md`;
+- `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
@@ -56,12 +56,16 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 
 Просмотрены все файлы `src/commands/Utility/`, `src/commands/Utility/modules/report.js`, `report_setchannel.js` и связанный `src/handlers/todoButtons.js`. Зафиксированы TUTILITY-001–TUTILITY-240.
 
-Основные блоки Utility: avatar/user/server information, first-message lookup, report filing и report-channel configuration через общий logging service, personal todo, shared todo с persistent share IDs, creator/member access, task lifecycle, interactive button/modal controls, source-message refresh, operation-specific rate limits, validation, DB normalization и error isolation.
+### `Config` — ЗАКРЫТ
+
+Полностью проверены все элементы `src/config/`: `application.js`, `bot.js`, `commands/commandAliases.js`, `commands/commandCategories.js`, `commands/prefixRestrictions.js`, `database/postgres.js`, `database/schemaVersion.js`, `guild/guildConfigDefaults.js`, `music/lavalink.js`, `shop/index.js`, `shop/items.js`.
+
+Зафиксированы **TITAN-G001–TITAN-G232**. Основные блоки: централизованный runtime config, environment validation/defaults, embed branding, application retention, economy/shop pricing and transaction policies, verification safety/audit controls, welcome/goodbye templates, counter resolvers, global feature flags, command aliases/categories, protected commands, granular prefix restrictions, PostgreSQL pooling/SSL/TTL/health/migrations, schema version contract, multi-source Lavalink configuration и API/CORS/logging runtime settings.
 
 ### Точная точка продолжения
 
-**`src/commands/` полностью закрыт.**
+**`src/commands/` и `src/config/` полностью закрыты.**
 
-Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/config/`**.
+Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/events/`**.
 
 Продолжать строго по порядку дерева. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
