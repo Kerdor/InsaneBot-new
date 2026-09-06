@@ -29,75 +29,36 @@
 - ServerStats;
 - Ticket;
 - Tools;
-- Utility.
+- Utility;
+- Config.
 
-### ServerStats
-Просмотрены command/modules/service/handlers/events/scheduler/config paths. Зафиксировано TSS-001–TSS-170.
+### Events — ЗАКРЫТ
 
-### Search
-Просмотрены command и search modules. Зафиксировано TS-001–TS-080.
+Полностью проверен `src/events/` по фактическому дереву:
+- `channelDelete.js`;
+- `guildCreate.js`;
+- `guildMemberAdd.js`;
+- `guildMemberRemove.js`;
+- `guildMemberUpdate.js`;
+- `interactionCreate.js`;
+- `messageCreate.js`;
+- `messageDelete.js`;
+- `messageUpdate.js`;
+- `ready.js`;
+- `roleCreate.js`;
+- `roleDelete.js`;
+- `userUpdate.js`;
+- `voiceStateUpdate.js`.
 
-### Ticket
-Просмотрены ticket command/dashboard, service/database/permissions/logging modules, handlers, feedback persistence и связанные config/transcript paths. Зафиксировано TT-001–TT-170.
+Зафиксировано **TE-001–TE-280** в `ideas/TITAN_EVENTS.md`.
 
-### Tools — ЗАКРЫТ
-
-Просмотрены:
-- `src/commands/Tools/baseconvert.js`;
-- `src/commands/Tools/calculate.js`;
-- `src/commands/Tools/countdown.js`;
-- `src/handlers/countdownButtons.js`;
-- `src/commands/Tools/embedbuilder.js`;
-- `src/commands/Tools/generatepassword.js`;
-- `src/commands/Tools/hexcolor.js`;
-- `src/commands/Tools/poll.js`;
-- `src/commands/Tools/randomuser.js`;
-- `src/commands/Tools/shorten.js`;
-- `src/commands/Tools/time.js`;
-- `src/commands/Tools/unixtime.js`.
-
-Зафиксировано TTOOL-001–TTOOL-244.
-
-### Utility — ЗАКРЫТ
-
-Просмотрены:
-- `src/commands/Utility/avatar.js`;
-- `src/commands/Utility/firstmsg.js`;
-- `src/commands/Utility/report.js`;
-- `src/commands/Utility/serverinfo.js`;
-- `src/commands/Utility/todo.js`;
-- `src/commands/Utility/userinfo.js`;
-- `src/commands/Utility/weather.js`;
-- `src/commands/Utility/wipedata.js`;
-- `src/commands/Utility/modules/report.js`;
-- `src/commands/Utility/modules/report_setchannel.js`;
-- `src/handlers/todoButtons.js`.
-
-Зафиксировано TUTILITY-001–TUTILITY-240.
-
-### Config — ЗАКРЫТ
-
-Полностью проверен `src/config/` по фактическому дереву:
-- `src/config/application.js`;
-- `src/config/bot.js`;
-- `src/config/commands/commandAliases.js`;
-- `src/config/commands/commandCategories.js`;
-- `src/config/commands/prefixRestrictions.js`;
-- `src/config/database/postgres.js`;
-- `src/config/database/schemaVersion.js`;
-- `src/config/guild/guildConfigDefaults.js`;
-- `src/config/music/lavalink.js`;
-- `src/config/shop/index.js`;
-- `src/config/shop/items.js`.
-
-Зафиксировано в `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232.
-
-Существенные новые блоки: production/development config behavior, centralized embed branding, application retention, verification safety/audit limits, welcome/goodbye templates, counter resolver configuration, global feature flags, command/subcommand alias resolution, protected commands, granular prefix restrictions, PostgreSQL connection/SSL/pool/TTL/health/migration configuration, schema version contract, multi-source Lavalink node loading, API/CORS/rate-limit settings и декларативная shop pricing/transaction/event configuration.
+Основные блоки: event-module architecture, isolated error boundaries, guild initialization, welcome/goodbye join-leave pipelines, delayed auto-role, auto-verification, realtime counter updates, birthday preserve/restore lifecycle, application/level cleanup, nickname/username auditing, prefix/counting/leveling message pipeline, message delete/edit audit limits, unified interaction dispatcher with trace context, command/access/cooldown/permission gates, autocomplete/button/select/modal routing, startup reconciliation, role auditing, channel-deletion self-healing, temporary voice lifecycle/ownership transfer, music voice integration и cross-event resilience.
 
 ## Уже зафиксировано в ideas
 - `ideas/TITAN_CORE.md`;
 - `ideas/TITAN_APPLICATIONS.md`;
 - `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
+- `ideas/TITAN_EVENTS.md` — TE-001–TE-280;
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
@@ -115,8 +76,8 @@
 
 ## Точная точка продолжения
 
-`src/commands/` и `src/config/` — полностью закрыты.
+`src/commands/`, `src/config/` и `src/events/` — полностью закрыты.
 
-Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/events/`**.
+Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/handlers/`**.
 
 Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
