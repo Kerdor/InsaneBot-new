@@ -27,7 +27,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config и Events.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events и Handlers.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
@@ -47,18 +47,39 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
 - `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
 - `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
-- `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
+- `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240;
+- `ideas/TITAN_HANDLERS.md` — TH-001–TH-320.
 
 ### `Events` — ЗАКРЫТ
 
-Просмотрены все 14 файлов `src/events/`: `channelDelete.js`, `guildCreate.js`, `guildMemberAdd.js`, `guildMemberRemove.js`, `guildMemberUpdate.js`, `interactionCreate.js`, `messageCreate.js`, `messageDelete.js`, `messageUpdate.js`, `ready.js`, `roleCreate.js`, `roleDelete.js`, `userUpdate.js`, `voiceStateUpdate.js`.
+Просмотрены все 14 файлов `src/events/` и зафиксировано TE-001–TE-280.
 
-Зафиксировано **TE-001–TE-280** в `ideas/TITAN_EVENTS.md`. Основные блоки: event architecture, isolated error boundaries, member join/leave lifecycle, realtime counters, birthday preserve/restore, application/level cleanup, interaction dispatch/tracing, autocomplete/button/select/modal routing, message pipeline, audit limits, startup reconciliation, channel self-healing, temporary voice lifecycle/ownership transfer и music voice integration.
+### `Handlers` — ЗАКРЫТ
+
+Проверена фактическая директория `src/handlers/` со всеми обнаруженными файлами и вложенными каталогами:
+- `calculateModals.js`;
+- `countdownButtons.js`;
+- `counterButtons.js`;
+- `giveawayButtons.js`;
+- `loggingButtons.js`;
+- `musicButtons.js`;
+- `ticketButtons.js`;
+- `todoButtons.js`;
+- `verificationButtons.js`;
+- `warningHandlers.js`;
+- `wipedataButtons.js`;
+- `help/helpButtons.js`;
+- `help/helpSelectMenus.js`;
+- `interactionHandlers/reactionRolesSelectMenu.js`;
+- `loaders/events.js`;
+- `loaders/interactions.js`.
+
+Зафиксировано **TH-001–TH-320** в `ideas/TITAN_HANDLERS.md`.
 
 ### Точная точка продолжения
 
-**`src/commands/`, `src/config/` и `src/events/` полностью закрыты.**
+**`src/commands/`, `src/config/`, `src/events/` и `src/handlers/` полностью закрыты.**
 
-Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/handlers/`**.
+Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/interactions/`**.
 
 Продолжать строго по порядку дерева. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
