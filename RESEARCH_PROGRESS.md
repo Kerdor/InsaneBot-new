@@ -25,7 +25,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config и Events.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events и Handlers.
 
 Пакеты идей:
 - `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
@@ -43,16 +43,23 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
 - `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
 - `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
-- `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
+- `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240;
+- `ideas/TITAN_HANDLERS.md` — TH-001–TH-320.
 
 ### `Events` — ЗАКРЫТ
 
 Проверены все 14 файлов `src/events/`: channel deletion, guild creation, member join/leave/update, interaction dispatcher, message create/delete/update, ready, role create/delete, user update и voice state update.
 
-Зафиксировано **TE-001–TE-280**. Добавлены идеи по event architecture, resilience, interaction routing/tracing, message pipeline, join/leave lifecycle, realtime reconciliation/self-healing, role/message/user audit и temporary voice ownership.
+Зафиксировано **TE-001–TE-280**.
+
+### `Handlers` — ЗАКРЫТ
+
+Проверена фактическая `src/handlers/` и вложенные `help/`, `interactionHandlers/`, `loaders/`: 16 обнаруженных файлов. Зафиксировано **TH-001–TH-320**.
+
+Основные блоки: interaction lifecycle и error isolation; modal context/confirmation; countdown state machine; giveaway mutex/rate limits; logging dashboard filters/selectors; music controls; ticket permission timeout и ticket modals; shared todo mutations; verification; reaction-role hierarchy/protected-role checks; warning destructive workflows; full user-data wipe; help generation/pagination; recursive interaction loader и event loader.
 
 ### Точная точка продолжения
 
-**`src/commands/`, `src/config/` и `src/events/` полностью закрыты.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/handlers/`**.
+**`src/commands/`, `src/config/`, `src/events/` и `src/handlers/` полностью закрыты.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/interactions/`**.
 
 Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
