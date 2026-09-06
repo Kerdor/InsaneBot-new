@@ -61,6 +61,23 @@ Recursive tree корня проверен полностью (`truncated=false`
 - `src/services/leveling/xpSystem.js`;
 - `src/events/messageCreate.js` (leveling path).
 
+### Logging
+- `src/commands/Logging/logging.js`;
+- `src/commands/Logging/modules/logging_dashboard.js`;
+- `src/commands/Logging/modules/logging_channel.js`;
+- `src/services/loggingService.js`;
+- `src/utils/logging/loggingUi.js`;
+- `src/utils/logging/logEmbeds.js`;
+- `src/handlers/loggingButtons.js`;
+- `src/events/channelDelete.js` (связанные cleanup paths);
+- `src/events/guildMemberAdd.js`;
+- `src/events/guildMemberRemove.js`;
+- `src/events/guildMemberUpdate.js`;
+- `src/events/userUpdate.js`;
+- `src/events/roleCreate.js`;
+- `src/events/roleDelete.js`;
+- связанные logging call sites через repository search.
+
 ## Уже зафиксировано в ideas
 
 - `ideas/TITAN_CORE.md`;
@@ -70,7 +87,8 @@ Recursive tree корня проверен полностью (`truncated=false`
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
 - `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
-- `ideas/TITAN_LEVELING.md` — TL-001–TL-100.
+- `ideas/TITAN_LEVELING.md` — TL-001–TL-100;
+- `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100.
 
 ## Существенные находки
 
@@ -99,10 +117,23 @@ Recursive tree корня проверен полностью (`truncated=false`
 - Администратор может add/remove/set level; ручное изменение пересчитывает total XP.
 - Leveling setup и dashboard позволяют выбирать announcement channel, XP range/cooldown, message, role rewards, ignored channels/roles и отдельно включать/выключать system/announcements.
 
+### Logging
+- Logging разделён на глобальный enable/disable, destination channels, event categories и ignore filters.
+- Есть отдельные Audit, Applications и Reports destinations; Applications/Reports маршрутизируются отдельно от audit stream.
+- Dashboard показывает состояние logging, количество включённых категорий, фильтры и настроенные каналы; вложенные views позволяют отдельно управлять категориями и фильтрами.
+- Event taxonomy централизована через `EVENT_TYPES`, с category wildcard (`category.*`), отдельными event toggles, цветами и icon mapping.
+- `logEvent` централизует guild/channel lookup, ignore checks, enable checks, permission checks, embed construction, attachments/content и error isolation.
+- Audit embeds имеют общий builder с title/description/headline/quoted lines/meta/Before-After/inline/block fields/author/avatar/thumbnail/image/footer/timestamp и Discord length limits.
+- Logging покрывает moderation, messages, roles, members, leveling, reaction roles, giveaways, counters, applications и reports.
+- Join/leave/nickname/username изменения и создание/удаление ролей логируются отдельными событиями; username changes проходят по guilds пользователя.
+- Ignore users/channels задаются интерактивными User/Channel Select и могут добавляться/удаляться без ручного ID.
+- Logging channel configuration валидирует тип канала и права бота; удалённые/недоступные каналы не ломают остальной bot runtime.
+- Dashboard interactions повторно проверяют `Manage Server`, ограничивают modal submission инициатором и имеют timeout/error boundaries.
+
 ## Точная точка продолжения
 
-**Следующий раздел дерева: `src/commands/Logging/`.**
+**Следующий раздел дерева: следующий каталог `src/commands/` после `Logging/` по фактическому recursive tree.**
 
-Leveling закрыт по найденным command/service/event файлам. Далее нужно полностью пройти `Logging`, затем продолжать строго по порядку дерева `src/commands/`.
+`Logging` закрыт по command/modules/service/UI/handler и связанным event logging paths, доступным через repository search. Далее нужно определить следующий каталог в уже проверенном tree и продолжать строго по порядку `src/commands/`.
 
 Правило остаётся неизменным: GAwesomeBot не трогаем, пока TitanBot полностью не закрыт.
