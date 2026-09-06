@@ -23,43 +23,26 @@
 | 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | — |
 | 7 | `Tomato6966/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
 
-## `ItzSudhan/Discord-MusicBot` — ЗАВЕРШЁН
-
-Ветка: `v5`. Recursive tree проверен полностью (`truncated=false`). Закрыты все исходные каталоги и root-файлы, включая `commands/`, `events/`, `lib/`, `util/`, `api/`, исходный `dashboard/`, `deploy/`, `docker/`, `.github/` и оставшиеся root/config/runtime files. Build artifacts не считались самостоятельными источниками механик.
-
-Идеи:
-- `ideas/MUSIC.md` — MUSIC-001–042;
-- `ideas/MUSIC_COMMANDS.md` — MUSIC-C001–055;
-- `ideas/MUSIC_CONTEXT.md` — MUSIC-X001–007;
-- `ideas/MUSIC_EVENTS.md` — MUSIC-E001–025;
-- `ideas/MUSIC_STORAGE.md` — MUSIC-S001–018;
-- `ideas/MUSIC_CORE.md` — MUSIC-K001–018;
-- `ideas/MUSIC_WEB.md` — MUSIC-W001–031;
-- `ideas/MUSIC_DEPLOY.md` — MUSIC-D001–026.
-
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Обработаны Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging и Moderation.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation и Music.
 
-Последние пакеты:
+Пакеты идей:
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
 - `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
 - `ideas/TITAN_LEVELING.md` — TL-001–TL-100;
 - `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
-- `ideas/MODERATION.md` — MOD-001–MOD-135.
+- `ideas/MODERATION.md` — MOD-001–MOD-135;
+- `ideas/TITAN_MUSIC.md` — TM-001–TM-154.
 
-### `Logging` — ЗАКРЫТ
+### `Music` — ЗАКРЫТ
 
-Просмотрены command/modules, logging service, logging UI, interaction handler и связанные event logging paths. Зафиксированы destination routing, global/category/event toggles, wildcard logic, ignore filters, permission/error handling, audit embed architecture, Before/After comparison, metadata/attachment support и member/role/message lifecycle logging.
-
-### `Moderation` — ЗАКРЫТ
-
-Просмотрены все файлы `src/commands/Moderation/` из recursive tree и moderation services. Зафиксированы централизованный ModerationService, hierarchy/permission checks, case IDs, warnings, mass actions, purge, lock/unlock, staff DM, say, cases UI, user notes, abuse protection и typed error handling. Пакет добавлен в `ideas/MODERATION.md` как MOD-044–MOD-135.
+Просмотрены все 5 command files, все 9 доступных Music service/config paths и music button handler. Зафиксированы playback/queue controls, duplicate handling, requester metadata, loop/volume/seek, queue pagination, persistent Now Playing UI, auto-pause/resume, idle/24-7 behavior, Lavalink/Riffy setup, node fallback/configuration, voice/shard routing, lifecycle/error handling и shutdown.
 
 ### Точная точка продолжения
 
-**Следующий раздел: `src/commands/Music/`.**
+**Следующий раздел: `src/commands/Reaction_roles/`.**
 
 Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
