@@ -41,7 +41,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Обработаны Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling и Logging на уровне найденных исходников, сервисов, UI/handlers и связанных event paths.
+Recursive tree `main` проверен полностью (`truncated=false`). Обработаны Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging и Moderation.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
@@ -52,7 +52,8 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
 - `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
 - `ideas/TITAN_LEVELING.md` — TL-001–TL-100;
-- `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100.
+- `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
+- `ideas/MODERATION.md` — MOD-001–MOD-135.
 
 JoinToCreate закрыт по просмотренным command/service/event paths: temporary voice channels, ownership transfer, auto-delete, configurable naming, bitrate/user limits, interactive dashboard, stale-state cleanup, cooldowns и permission/error handling.
 
@@ -60,10 +61,12 @@ Leveling закрыт по просмотренным command/service/event path
 
 Logging закрыт по command/modules/service/UI/handler и связанным event logging paths: отдельные Audit/Applications/Reports destinations, global/category/event toggles, wildcard category controls, user/channel ignore filters, permission checks, fallback/legacy channel resolution, unified audit embed builder, Before/After comparison, metadata/attachments, lifecycle logging участников/ролей/сообщений и resilient error handling.
 
+Moderation закрыт по всем файлам `src/commands/Moderation/` и moderation services: centralized ModerationService, moderator/bot hierarchy validation, owner bypass, ban/kick/timeout/untimeout/unban, warnings, case IDs, mass ban/kick, purge, lock/unlock, staff DM, say, cases pagination и user notes. В `ideas/MODERATION.md` добавлен большой TitanBot-пакет MOD-044–MOD-135.
+
 ### Точная точка продолжения
 
-**Следующий раздел: следующий каталог `src/commands/` после `Logging/` по фактическому recursive tree.**
+**Следующий раздел: `src/commands/Music/`.**
 
-После определения следующего каталога продолжать строго по порядку дерева `src/commands/`, закрывая его полностью до перехода дальше.
+После определения и закрытия `Music/` продолжать строго по порядку дерева `src/commands/`.
 
 **Не переходить к GAwesomeBot до полного закрытия TitanBot.**
