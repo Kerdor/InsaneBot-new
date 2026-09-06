@@ -10,6 +10,7 @@
 - `✅` означает реальный просмотр + сверку с банком идей.
 - Дубликаты не добавляются; новые детали существующих систем сохраняются.
 - После каждого существенного батча обновляются журнал и `PROJECT_STATE.md`.
+- На текущем этапе bot implementation не изменяется; исследуются только ideas/research/checkpoints.
 
 ## Источники
 
@@ -18,16 +19,16 @@
 | 1 | `Cog-Creators/Red-DiscordBot` | ✅ ЗАВЕРШЁН | `research/red-discord-bot.md` |
 | 2 | `python-discord/bot` | ✅ ЗАВЕРШЁН | `research/python-discord-bot.md` |
 | 3 | `ItzSudhan/Discord-MusicBot` | ✅ ЗАВЕРШЁН | `research/discord-music-bot.md` |
-| 4 | `codebymitch/TitanBot` | 🔵 АКТИВЕН | `research/titanbot.md` |
-| 5 | `GAwesomeBot/bot` | ⏳ ОЖИДАЕТ | — |
+| 4 | `codebymitch/TitanBot` | ✅ ЗАВЕРШЁН | `research/titanbot.md` |
+| 5 | `GAwesomeBot/bot` | 🔵 СЛЕДУЮЩИЙ | — |
 | 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | — |
 | 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
 
-## `codebymitch/TitanBot` — АКТИВЕН
+## `codebymitch/TitanBot` — ЗАВЕРШЁН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events, Handlers, Interactions и Services.
+Recursive tree `main` проверен полностью (`truncated=false`). Полностью закрыты Root/bootstrap и все обнаруженные top-level каталоги `src/`: Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events, Handlers, Interactions, Services и Utils.
 
-Пакеты идей:
+Пакеты идей включают:
 - `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
 - `ideas/TITAN_EVENTS.md` — TE-001–TE-280;
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
@@ -46,22 +47,19 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240;
 - `ideas/TITAN_HANDLERS.md` — TH-001–TH-320;
 - `ideas/TITAN_INTERACTIONS.md` — TI-001–TI-160;
-- `ideas/TITAN_SERVICES.md` — TSVC-001–TSVC-190.
+- `ideas/TITAN_SERVICES.md` — TSVC-001–TSVC-190;
+- `ideas/TITAN_UTILS.md` — TU-001–TU-292;
+- `ideas/TITAN_UTILS_PRESENTATION.md` — TUP-001–TUP-076;
+- `ideas/TITAN_UTILS_ERRORS.md` — TUE-001–TUE-060.
 
-### `Handlers` — ЗАКРЫТ
+### `Utils` — ЗАКРЫТ
 
-Проверена фактическая `src/handlers/` и вложенные `help/`, `interactionHandlers/`, `loaders/`: 16 обнаруженных файлов. Зафиксировано TH-001–TH-320.
+Проверены все обнаруженные файлы `src/utils/` и вложенных `database/`, `logging/`, `ticket/`, включая database abstraction, migrations, key parsing, structured storage, ticket permissions/logging, interaction lifecycle, rate limiting, mutex, validation, embeds, logging UI, welcome/giveaway helpers и error pipeline.
 
-### `Interactions` — ЗАКРЫТ
+## Точная точка продолжения
 
-Проверена фактическая `src/interactions/` во всех трёх ветках `buttons/`, `modals/`, `selectMenus/`. Проверены все обнаруженные definition-файлы. Зафиксировано TI-001–TI-160.
+**TitanBot полностью завершён.**
 
-### `Services` — ЗАКРЫТ
+Следующий источник: **`GAwesomeBot/bot`**.
 
-Проверен фактический `src/services/` и вложенные `config/`, `leveling/`, `moderation/`, `music/`. Все обнаруженные service-файлы просмотрены и сверены с уже существующими тематическими пакетами. Зафиксировано TSVC-001–TSVC-190 в `ideas/TITAN_SERVICES.md`.
-
-### Точная точка продолжения
-
-**`src/commands/`, `src/config/`, `src/events/`, `src/handlers/`, `src/interactions/` и `src/services/` полностью закрыты.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/utils/`**.
-
-Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
+Начать с фактического recursive tree и идти строго по дереву, не перескакивая к CorwinDev или Tomato6969.
