@@ -1,0 +1,65 @@
+# TitanBot Utils — error handling and resilience mechanics
+
+Источник: `codebymitch/TitanBot`
+Каталог: `src/utils/errorHandler.js`, `errorRegistry.js`, `serviceErrorBoundary.js`
+
+- **TUE-001** — Один errorHandler выступает entry point для command/handler/background error handling.
+- **TUE-002** — Commands могут выбрасывать typed TitanBotError вместо локального try/catch.
+- **TUE-003** — Services используют throw + service boundary, а не `{ success: false }`.
+- **TUE-004** — Background tasks имеют отдельный error-handling путь.
+- **TUE-005** — ErrorTypes централизуют validation/permission/config/database/network/Discord/user-input/rate-limit/unknown.
+- **TUE-006** — TitanBotError хранит technical message отдельно от userMessage.
+- **TUE-007** — TitanBotError хранит context.
+- **TUE-008** — Error получает timestamp создания.
+- **TUE-009** — Error code автоматически выводится из context или ErrorType.
+- **TUE-010** — Discord permission error codes классифицируются отдельно от общих API errors.
+- **TUE-011** — PostgreSQL connection/timeout/deadlock codes классифицируются как database errors.
+- **TUE-012** — Technical error patterns не показываются пользователю как есть.
+- **TUE-013** — Короткие plain errors с пользовательскими формулировками могут автоматически стать user-facing errors.
+- **TUE-014** — Error type может выводиться из текста ошибки, если typed error отсутствует.
+- **TUE-015** — `permission`/`not allowed` автоматически дают Permission category.
+- **TUE-016** — `rate limit`/`cooldown` автоматически дают RateLimit category.
+- **TUE-017** — database/postgres/sql/connection/timeout автоматически дают Database category.
+- **TUE-018** — channel/user/role/mention hints автоматически дают UserInput category.
+- **TUE-019** — `not found`/`disabled`/`not configured` могут классифицироваться как Configuration.
+- **TUE-020** — Numeric Discord API codes выше 10000 классифицируются как Discord API errors.
+- **TUE-021** — Network AbortError/fetch failed/enotconn классифицируются отдельно.
+- **TUE-022** — DiscordAPIError и HTTPError имеют специальную классификацию.
+- **TUE-023** — UserMessages централизованы по error type и subtype.
+- **TUE-024** — Validation имеет missing_required и invalid_format варианты.
+- **TUE-025** — Permission имеет user_permission и bot_permission варианты.
+- **TUE-026** — Configuration имеет missing_config и invalid_config варианты.
+- **TUE-027** — Database имеет connection_failed и timeout варианты.
+- **TUE-028** — Network имеет timeout и unreachable варианты.
+- **TUE-029** — Discord API имеет interaction_expired/already_acknowledged/invalid_form_body варианты.
+- **TUE-030** — RateLimit имеет command_cooldown/global_rate_limit варианты.
+- **TUE-031** — Moderation failures имеют отдельные warn/kick/ban/unban/timeout/untimeout user messages.
+- **TUE-032** — Error metadata содержит severity.
+- **TUE-033** — Error metadata содержит retryable flag.
+- **TUE-034** — Error metadata содержит remediation hint.
+- **TUE-035** — Error code registry позволяет централизованно связать код с severity/retry/remediation.
+- **TUE-036** — Error code resolution сначала учитывает явный context errorCode.
+- **TUE-037** — Затем resolution может использовать nested error context code.
+- **TUE-038** — Затем учитывается native error code.
+- **TUE-039** — Unknown error автоматически получает default code конкретного ErrorType.
+- **TUE-040** — Service boundary добавляет service и operation в typed error context.
+- **TUE-041** — Service boundary сохраняет original error message/name для диагностики.
+- **TUE-042** — Service boundary автоматически вычисляет expected=true для пользовательских типов ошибок.
+- **TUE-043** — Service boundary может переопределить expected через options.
+- **TUE-044** — Service boundary поддерживает статические options или options factory.
+- **TUE-045** — `wrapServiceBoundary` поддерживает и sync, и async функции.
+- **TUE-046** — Async rejection автоматически превращается в typed service error.
+- **TUE-047** — `wrapServiceClassMethods` может автоматически обернуть static methods класса.
+- **TUE-048** — Service class name используется как default service name.
+- **TUE-049** — Method name автоматически используется как operation name.
+- **TUE-050** — Ошибки expected/user-facing логируются на debug вместо error.
+- **TUE-051** — Rate-limit user errors могут вообще не логироваться как обычные user errors.
+- **TUE-052** — Unexpected system errors логируются с stack trace.
+- **TUE-053** — Error log содержит interaction metadata: type/command/customId/user/guild/channel.
+- **TUE-054** — Error log содержит traceId.
+- **TUE-055** — Error log содержит remediation/severity/retryability metadata.
+- **TUE-056** — Error response не отправляется, если interaction invalid.
+- **TUE-057** — Error response не отправляется после usage-finalized state.
+- **TUE-058** — Error handler учитывает почти истёкшие interactions до отправки ответа.
+- **TUE-059** — Error handling сохраняет контекст даже если Discord interaction уже нельзя ответить.
+- **TUE-060** — Единый typed error pipeline уменьшает необходимость дублировать try/catch в каждой command.
