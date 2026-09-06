@@ -42,6 +42,25 @@ Recursive tree корня проверен полностью (`truncated=false`
 - `src/commands/Giveaway/greroll.js`;
 - `src/services/giveawayService.js`.
 
+### JoinToCreate
+- `src/commands/JoinToCreate/jointocreate.js`;
+- `src/commands/JoinToCreate/modules/config_setup.js`;
+- `src/commands/JoinToCreate/modules/setup.js`;
+- `src/services/joinToCreateService.js`;
+- `src/events/voiceStateUpdate.js`.
+
+### Leveling
+- `src/commands/Leveling/leaderboard.js`;
+- `src/commands/Leveling/level.js`;
+- `src/commands/Leveling/leveladd.js`;
+- `src/commands/Leveling/levelremove.js`;
+- `src/commands/Leveling/levelset.js`;
+- `src/commands/Leveling/rank.js`;
+- `src/commands/Leveling/modules/level_dashboard.js`;
+- `src/services/leveling/leveling.js`;
+- `src/services/leveling/xpSystem.js`;
+- `src/events/messageCreate.js` (leveling path).
+
 ## Уже зафиксировано в ideas
 
 - `ideas/TITAN_CORE.md`;
@@ -49,30 +68,41 @@ Recursive tree корня проверен полностью (`truncated=false`
 - `ideas/TITAN_CONFIG.md`;
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
-- `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065.
+- `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
+- `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
+- `ideas/TITAN_LEVELING.md` — TL-001–TL-100.
 
-## Существенные находки текущего батча
+## Существенные находки
 
-- Counting Game — отдельное guild-scoped состояние с несколькими системами представления чисел: decimal, hexadecimal, binary, base36, base64, Roman, math, alphabet.
-- Counting Game хранит next value, last user, current/best streak и персональный leaderboard; reset сбрасывает текущую серию, но сохраняет best streak.
-- Counting Game поддерживает expression/equality parsing в math mode и отдельные правила case normalization для Roman/Alphabet.
-- Fun содержит random mechanics: coin flip, dice notation с modifier и ограничения 20 dice/1000 sides, а также текстовую случайную 1v1 дуэль с несколькими раундами.
-- Giveaway имеет полный lifecycle: create → join → automatic/manual end → winner announcement → reroll/delete.
-- Giveaway хранит Discord message/channel/guild IDs, host, participants, winner IDs, timestamps, end actor и winner announcement ID.
-- Winner selection уникализирует участников и случайно выбирает до N победителей.
-- Giveaway имеет отдельный per-user/per-giveaway interaction rate limit.
-- Expired giveaways обрабатываются фоново; отсутствие guild/channel/message не ломает обработку остальных записей.
-- Delete имеет fallback-поиск сообщения по другим text channels и после удаления из БД проверяет, что запись действительно исчезла.
-- Reroll сохраняет новый набор победителей даже при недоступном исходном Discord message/channel и умеет переиспользовать существующее announcement сообщение.
-- Create/end/delete/reroll/winner действия интегрированы с audit logging, причём ошибка логирования не должна ломать основную операцию.
+### Fun / Giveaway
+- Counting Game имеет отдельное guild-scoped состояние, несколько форматов представления чисел и streak/leaderboard state.
+- Giveaway имеет полный lifecycle create → join → automatic/manual end → winner announcement → reroll/delete, persistent Discord IDs и устойчивые fallback-пути при пропавших Discord objects.
+
+### JoinToCreate
+- Voice-state automation создаёт персональный временный voice channel при входе в trigger.
+- Временная комната имеет owner, user limit, bitrate, category и configurable name template.
+- Поддерживаются username/display name/user tag/guild/channel placeholders с Unicode normalization, sanitization, длиновыми лимитами и запретом неизвестных переменных.
+- При уходе последнего участника временная комната удаляется; при уходе owner ownership передаётся оставшемуся участнику и имя комнаты обновляется.
+- Повторный вход owner в trigger пытается вернуть его в уже существующую комнату.
+- Есть per-guild/per-user creation cooldown, cleanup/size cap cooldown map и проверки voice state перед созданием/перемещением.
+- Setup/dashboard имеют несколько интерактивных UI-подходов: buttons, select menus, modals/message collectors, confirmation для удаления и автоматическое истечение configuration session.
+- Stale trigger channels очищаются из config; JTC configuration и изменения пишутся в audit log.
+
+### Leveling
+- XP выдаётся за сообщения с random range, per-user cooldown и дополнительным event rate limit.
+- XP поддерживает multiplier, ignored channels, ignored roles и blacklisted users.
+- XP updates защищены per-user/guild mutex от race conditions.
+- Level progression использует квадратичную XP-кривую и максимум level 1000; одно начисление может дать несколько уровней.
+- User state хранит current XP, total XP, level и lastMessage; чтение/запись sanitizes числовые значения.
+- Level-up может выдавать role reward, публиковать configurable announcement и писать audit event; сбои side effects не ломают progression.
+- Rank показывает level, XP, total XP и progress bar; leaderboard сортирует по total XP, исключает ботов и умеет переживать missing member fetch.
+- Администратор может add/remove/set level; ручное изменение пересчитывает total XP.
+- Leveling setup и dashboard позволяют выбирать announcement channel, XP range/cooldown, message, role rewards, ignored channels/roles и отдельно включать/выключать system/announcements.
 
 ## Точная точка продолжения
 
-**Следующий раздел дерева: `src/commands/JoinToCreate/`.**
+**Следующий раздел дерева: `src/commands/Logging/`.**
 
-Уже начат просмотр:
-- `src/commands/JoinToCreate/jointocreate.js` — просмотрен частично из-за размера файла; основные setup/dashboard структуры и collector-based configuration уже видны.
-
-Дальше нужно полностью выжать `JoinToCreate`: дочерние `modules/config_setup.js`, `modules/setup.js`, затем `src/services/joinToCreateService.js`, после чего перейти к следующему разделу дерева (`Leveling`).
+Leveling закрыт по найденным command/service/event файлам. Далее нужно полностью пройти `Logging`, затем продолжать строго по порядку дерева `src/commands/`.
 
 Правило остаётся неизменным: GAwesomeBot не трогаем, пока TitanBot полностью не закрыт.
