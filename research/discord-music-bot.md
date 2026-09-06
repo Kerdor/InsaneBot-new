@@ -8,68 +8,38 @@
 
 Идём от корня по recursive tree, затем закрываем каталоги и файлы по порядку. Ничего из следующих источников не исследуется до полного завершения этого репозитория.
 
-## Закрыто в текущем батче
+## Закрыто
 
-- `commands/slash/247.js` — ✅
-- `commands/slash/invite.js` — ✅
-- `commands/slash/lyrics.js` — ✅
-- `commands/slash/move.js` — ✅
-- `commands/slash/nowplaying.js` — ✅
-- `commands/slash/pause.js` — ✅
-- `commands/slash/ping.js` — ✅
-- `commands/slash/play.js` — ✅
-- `commands/slash/previous.js` — ✅
-- `commands/slash/reload.js` — ✅
-- `commands/slash/remove.js` — ✅
-- `commands/slash/replay.js` — ✅
-- `commands/slash/resume.js` — ✅
-- `commands/slash/save.js` — ✅
-- `commands/slash/search.js` — ✅
-- `commands/slash/seek.js` — ✅
-- `commands/slash/shuffle.js` — ✅
-- `commands/slash/skip.js` — ✅
-- `commands/slash/skipto.js` — ✅
-- `commands/slash/stats.js` — ✅
-- `commands/slash/stop.js` — ✅
-- `commands/slash/summon.js` — ✅
-- `commands/slash/volume.js` — ✅
+- `commands/slash/` — все команды из recursive tree;
+- `commands/context/play.js`;
+- все 6 файлов `events/`;
+- `lib/DiscordMusicBot.js`;
+- `lib/SlashCommand.js`, `lib/EpicPlayer.js`;
+- весь `util/`;
+- весь исходный `api/`;
+- исходный `dashboard/` — pages, components, utils;
+- `.github/` — recursive tree и issue/support automation files;
+- root `Dockerfile`, `Procfile`, `app.json`, `.replit`.
 
 ## Найдено и сверено
 
-Создан дополнительный пакет `ideas/MUSIC_COMMANDS.md`: `MUSIC-C001`–`MUSIC-C055`.
+Созданы/пополнены пакеты:
+- `ideas/MUSIC_COMMANDS.md` — `MUSIC-C001`–`MUSIC-C055`;
+- `ideas/MUSIC_CONTEXT.md` — `MUSIC-X001`–`MUSIC-X007`;
+- `ideas/MUSIC_EVENTS.md` — `MUSIC-E001`–`MUSIC-E025`;
+- `ideas/MUSIC_STORAGE.md` — `MUSIC-S001`–`MUSIC-S018`;
+- `ideas/MUSIC_CORE.md` — `MUSIC-K001`–`MUSIC-K018`;
+- `ideas/MUSIC_WEB.md` — `MUSIC-W001`–`MUSIC-W031`;
+- `ideas/MUSIC_DEPLOY.md` — `MUSIC-D001`–`MUSIC-D009`.
 
-Ключевые новые группы:
-- интерактивный search Select Menu с выбором конкретного результата и timeout;
-- раздельный UX для track/search result/playlist;
-- playlist statistics;
-- Stage Channel suppression/request-to-speak recovery;
-- составной человекочитаемый seek;
-- volume read-only режим;
-- сохранение трека в DM;
-- компактный и расширенный режимы queue;
-- циклическая pagination;
-- TTL + idle timeout для collectors;
-- user-bound interaction buttons;
-- remove/move/skipto queue operations;
-- фильтры через единый preset enum и Reset;
-- dual latency ping;
-- объединённые Lavalink/system stats;
-- hot reload command cache;
-- lyrics search по текущему треку с очисткой шумовых суффиксов;
-- lyrics candidate selection, source/tips UI, restricted-content UX и truncation;
-- replay через seek(0);
-- persistent voice semantics stop/247;
-- summon с переносом существующего player;
-- точечные ошибки для отсутствующего player.
+В web-батче зафиксированы Discord OAuth через Passport, session-based auth middleware, автоматическая регистрация API route-файлов, разделение public/protected API, динамический invite URL, dashboard runtime metrics, typed frontend API helpers, stat cards, server selector/avatar UI, общий navbar/layout, login/logout redirects и заготовленная server state model с queue/loop/playing.
 
-## Предыдущие результаты
+В deployment-батче зафиксированы Docker/Alpine runtime, подготовка через package scripts, worker Procfile, Heroku one-click manifest с environment metadata, Replit run configuration и переиспользование единого entrypoint.
 
-Первый пакет `ideas/MUSIC.md`: `MUSIC-001`–`MUSIC-042`.
+## Следующая точка
 
-## Точная точка продолжения
+`util/`, `api/`, исходный `dashboard/`, `.github/` и deployment-файлы закрыты. Перед завершением репозитория проверить оставшиеся root-файлы/каталоги по recursive tree, особенно файлы, которые ещё не были отдельно просмотрены; затем сверить весь source tree с журналом и только после этого поставить `ЗАВЕРШЁН`.
 
-Каталог `commands/slash/` закрыт по всем командам из recursive tree. Следующая точка — `commands/context/play.js`.
+Скомпилированный `dashboard/out/_next` не считать отдельным источником механик после анализа исходного TypeScript; при финальной сверке учитывать его как build artifact.
 
-После `commands/context/` продолжить строго по recursive tree: `events/`, `util/`, `api/`, `dashboard/`, `deploy/`, `docker/`, `.github/` и остальные root-файлы.
-
-**Репозиторий НЕ завершён.**
+**Репозиторий НЕ завершён. Следующие источники не трогать.**
