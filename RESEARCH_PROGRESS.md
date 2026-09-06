@@ -25,7 +25,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search и ServerStats.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats и Ticket.
 
 Пакеты идей:
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
@@ -38,14 +38,19 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_MUSIC.md` — TM-001–TM-154;
 - `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170;
 - `ideas/TITAN_SEARCH.md` — TS-001–TS-080;
-- `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170.
+- `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
+- `ideas/TITAN_TICKETS.md` — TT-001–TT-170.
 
 ### `ServerStats` — ЗАКРЫТ
 
 Просмотрены command, все четыре modules, service, counter button handler, member join/leave event paths, scheduler в `src/app.js` и counter config. Зафиксированы TSS-001–TSS-170: типы счётчиков, создание voice/text channels в category, duplicate protection, persistence/sanitization, member counting, configurable names, cron + event-driven updates, orphan cleanup, list/update/delete UX, destructive confirmation, initiator-only buttons, DB-first deletion и error isolation.
 
+### `Ticket` — ЗАКРЫТ
+
+Просмотрены ticket command/dashboard, service, database helpers, permissions/logging utilities, button/modal handlers, feedback persistence и связанные config/transcript paths. Зафиксированы TT-001–TT-170: panel/dashboard, persistent guild config, role/category selectors, open-ticket limits, ticket lifecycle/counter, permissions, claim/unclaim, priorities, pin/unpin, close/archive, transcript/delete flow, ticket logging, feedback и guild statistics, а также service-layer/error-isolation архитектура.
+
 ### Точная точка продолжения
 
-**Следующий шаг: проверить следующий элемент фактического `src/commands/` recursive tree после `ServerStats/` и продолжить с него.**
+**Следующий шаг: `src/commands/Tools/`.**
 
 Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
