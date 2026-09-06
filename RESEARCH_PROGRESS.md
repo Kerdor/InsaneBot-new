@@ -32,15 +32,12 @@
 - root README/tree/config/index/package;
 - `commands/slash/` — все команды из recursive tree;
 - `commands/context/play.js`;
-- `events/interactionCreate.js`;
-- `events/messageCreate.js`;
-- `events/messageDelete.js`;
-- `events/raw.js`;
-- `events/ready.js`;
-- `events/voiceStateUpdate.js`;
+- все 6 файлов `events/`;
 - `lib/DiscordMusicBot.js` — дочитан полностью;
 - `lib/SlashCommand.js`, `lib/EpicPlayer.js`;
-- `util/loadCommands.js`, `util/Controller.js`, `util/db.js`, `util/getChannel.js`, `util/getConfig.js`, `util/getLavalink.js`, `util/guildDb.js`.
+- весь `util/`: `Controller.js`, `db.js`, `getChannel.js`, `getConfig.js`, `getLavalink.js`, `guildDb.js`, `loadCommands.js`;
+- весь исходный `api/`: `index.js`, `middlewares/auth.js`, `router.js`, `routes/dashboard.js`, `routes/data.js`;
+- исходный `dashboard/`: страницы, components и utils, включая динамическую `pages/servers/[id].tsx`.
 
 ### Идеи
 
@@ -49,14 +46,17 @@
 - `ideas/MUSIC_CONTEXT.md` — MUSIC-X001–007;
 - `ideas/MUSIC_EVENTS.md` — MUSIC-E001–025;
 - `ideas/MUSIC_STORAGE.md` — MUSIC-S001–018;
-- `ideas/MUSIC_CORE.md` — MUSIC-K001–018.
+- `ideas/MUSIC_CORE.md` — MUSIC-K001–018;
+- `ideas/MUSIC_WEB.md` — MUSIC-W001–031.
 
 ### Последний батч
 
-Закрыты context/event/core/storage-части, добавлены дополнительные варианты UX, voice-state automation, delayed leave/recheck, server mute handling, lazy per-guild JSON DB, queued persistence, command/player factories и controller state rendering.
+Проверен весь `util/` и закрыт `api/`. В `api/` найдены Express-сервер, Passport Discord OAuth, session auth middleware, динамическое подключение route-файлов, защищённые dashboard endpoints и public data endpoint с динамическим invite URL. Затем дочитан исходный `dashboard/`: NextUI dark theme, typed API helpers, dashboard stat cards, server selector/avatar UI, общий navbar/layout, login/logout redirects и модель состояния сервера с queue/loop/playing.
+
+Скомпилированный `dashboard/out/` зафиксирован как build artifact и не используется как отдельный источник новых механик поверх исходного TypeScript-кода.
 
 ## Следующая точка
 
-Продолжить `util/` с первой ещё не закрытой позицией recursive tree после уже просмотренных файлов, затем `api/`, `dashboard/`, `deploy/`, `docker/`, `.github/` и остальные root-файлы.
+Продолжить строго по recursive tree `v5`: сначала `deploy/`, затем `docker/`, `.github/`, затем оставшиеся root-файлы и любые ещё не закрытые исходные каталоги/файлы. Скомпилированные `dashboard/out/_next` не дублировать после анализа исходников.
 
 **`ItzSudhan/Discord-MusicBot` НЕ ЗАВЕРШЁН. Следующие источники не трогать.**
