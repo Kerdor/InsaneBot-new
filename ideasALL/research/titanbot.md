@@ -15,55 +15,69 @@
 ### Уже закрытые каталоги
 - Birthday; Community; Core; Economy; Fun; Giveaway; JoinToCreate; Leveling; Logging; Moderation; Music; Reaction_roles; Search; ServerStats; Ticket; Tools; Utility; Config; Events; Handlers; Interactions; Services.
 
-### Handlers — ЗАКРЫТ
-
-Проверена фактическая директория `src/handlers/` и вложенные каталоги `help/`, `interactionHandlers/`, `loaders/`.
-
-Проверены 16 обнаруженных файлов. Зафиксировано **TH-001–TH-320** в `ideas/TITAN_HANDLERS.md`.
-
-### Interactions — ЗАКРЫТ
-
-По фактическому дереву `src/interactions/` проверены все обнаруженные definition-файлы в `buttons/`, `modals/` и `selectMenus/`.
-
-Зафиксировано **TI-001–TI-160** в `ideas/TITAN_INTERACTIONS.md`.
-
 ### Services — ЗАКРЫТ
+Проверен фактический `src/services/` и вложенные каталоги; новые service-layer детали зафиксированы в `ideas/TITAN_SERVICES.md` — TSVC-001–TSVC-190.
 
-Проверен фактический `src/services/` и его вложенные каталоги.
+### Utils — ЗАКРЫТ
+Проверен фактический `src/utils/` и вложенные каталоги `database/`, `logging/`, `ticket/`.
 
-Проверены/перекрёстно сверены:
-- `applicationService.js`;
-- `birthdayService.js`;
-- `commandAccessService.js`;
-- `config/guildConfig.js`;
-- `config/configService.js`;
-- `countingGameService.js`;
-- `economyService.js`;
-- `giveawayService.js`;
-- `joinToCreateService.js`;
-- `leveling/levelRoleSyncService.js`;
-- `leveling/leveling.js`;
-- `leveling/xpSystem.js`;
-- `loggingService.js`;
-- `moderation/moderationService.js`;
-- `moderation/warningService.js`;
-- `music/musicActions.js`;
-- `music/musicEmbeds.js`;
-- `music/musicVoiceState.js`;
-- `music/permissions.js`;
-- `music/playerHandler.js`;
-- `music/playerStore.js`;
-- `music/prefixSupport.js`;
-- `music/riffySetup.js`;
-- `panelHealthService.js`;
-- `reactionRoleService.js`;
-- `serverstatsService.js`;
-- `ticket.js`;
-- `verificationService.js`.
+Проверены utility-файлы:
+- `abuseProtection.js`
+- `collectorComponents.js`
+- `commandInputValidation.js`
+- `commandPipeline.js`
+- `components.js`
+- `constants.js`
+- `dashboardSession.js`
+- `database.js`
+- `economy.js`
+- `embeds.js`
+- `errorHandler.js`
+- `errorRegistry.js`
+- `helpers.js`
+- `interactionHelper.js`
+- `interactionValidator.js`
+- `logger.js`
+- `memoryStorage.js`
+- `messageAdapter.js`
+- `moderation.js`
+- `mutex.js`
+- `panelStatus.js`
+- `prefixParser.js`
+- `rateLimiter.js`
+- `safeMathParser.js`
+- `schemas.js`
+- `serviceErrorBoundary.js`
+- `sqlIdentifiers.js`
+- `validation.js`
+- `welcome.js`
+- `giveaways.js`
+- `responseCoordinator.js`
+- `permissionGuard.js`
 
-Новые service-layer детали после сверки с уже существующими тематическими пакетами зафиксированы в `ideas/TITAN_SERVICES.md` — **TSVC-001–TSVC-190**.
+Проверены вложенные database-файлы:
+- `database/guildConfigStorage.js`
+- `database/keyMigration.js`
+- `database/keyParser.js`
+- `database/keys.js`
+- `database/schema.js`
+- `database/tickets.js`
+- `database/wrapper.js`
 
-Ключевые блоки: service boundaries и typed errors; bounded in-memory state; application validation/cooldowns; guild config normalization/patching/legacy migration/history; command registry/access snapshots; counting state normalization; economy transaction safety/rollback; giveaway validation and background processing; JoinToCreate template sanitization; verification cooldown/attempt tracking and auto-verify criteria; panel health reconciliation and message-ID recovery; startup level-role synchronization; cross-service cache/DB fallbacks and resilience.
+Проверены вложенные logging-файлы:
+- `logging/logEmbeds.js`
+- `logging/loggingUi.js`
+
+Проверены вложенные ticket-файлы:
+- `ticket/ticketLogging.js`
+- `ticket/ticketPermissions.js`
+
+Новые utility-layer детали зафиксированы в:
+- `ideas/TITAN_UTILS.md` — TU-001–TU-292;
+- `ideas/TITAN_UTILS_PRESENTATION.md` — TUP-001–TUP-076;
+- `ideas/TITAN_UTILS_ERRORS.md` — TUE-001–TUE-060.
+
+Ключевые utility-блоки: единый command/prefix pipeline; quoted prefix parsing; slash/prefix response coordination; safe interaction lifecycle; dashboard collector ownership/timeouts; reusable Discord components; validation и context-specific sanitization; risky-command abuse protection/anomaly detection; rate limiting и keyed mutex; AsyncLocalStorage trace IDs; structured rotating logs; standardized embeds/log fields; panel message recovery; welcome placeholder formatting; giveaway storage/fallbacks; PostgreSQL connection retry/backoff/schema ledger; canonical/legacy key migration; structured storage plans; ticket permission/logging helpers; safe math parser; SQL identifier allowlists.
 
 ## Уже зафиксировано в ideas
 - `ideas/TITAN_CORE.md`;
@@ -86,12 +100,17 @@
 - `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240;
 - `ideas/TITAN_HANDLERS.md` — TH-001–TH-320;
 - `ideas/TITAN_INTERACTIONS.md` — TI-001–TI-160;
-- `ideas/TITAN_SERVICES.md` — TSVC-001–TSVC-190.
+- `ideas/TITAN_SERVICES.md` — TSVC-001–TSVC-190;
+- `ideas/TITAN_UTILS.md` — TU-001–TU-292;
+- `ideas/TITAN_UTILS_PRESENTATION.md` — TUP-001–TUP-076;
+- `ideas/TITAN_UTILS_ERRORS.md` — TUE-001–TUE-060.
 
 ## Точная точка продолжения
 
-`src/commands/`, `src/config/`, `src/events/`, `src/handlers/`, `src/interactions/` и `src/services/` полностью просмотрены по фактическому дереву.
+`src/commands/`, `src/config/`, `src/events/`, `src/handlers/`, `src/interactions/`, `src/services/` и `src/utils/` полностью просмотрены по фактическому дереву.
 
-Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/utils/`**.
+**TitanBot: `src/` закрыт полностью.**
 
-Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
+Следующий этап по строгому порядку источников: **GAwesomeBot/bot**.
+
+Не переходить к CorwinDev/Discord-Bot или Tomato6969/Multipurpose-discord-bot до полного завершения GAwesomeBot.
