@@ -73,14 +73,31 @@
 - `src/commands/Utility/modules/report_setchannel.js`;
 - `src/handlers/todoButtons.js`.
 
-Зафиксировано в `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
+Зафиксировано TUTILITY-001–TUTILITY-240.
 
-Существенные находки: avatar с target/self fallback и dynamic 2048px URL; поиск первого сообщения через history; подробный user/server info; report как subcommand-router с отдельным reports logging destination и Manage Server настройкой; personal todo с persistent numeric IDs; shared todo с криптографическими share IDs, creator/member access, task lifecycle, source-message refresh, button/modal UI и operation-specific rate limits; normalization неполных DB records; разделение stateless и persistent utility features.
+### Config — ЗАКРЫТ
+
+Полностью проверен `src/config/` по фактическому дереву:
+- `src/config/application.js`;
+- `src/config/bot.js`;
+- `src/config/commands/commandAliases.js`;
+- `src/config/commands/commandCategories.js`;
+- `src/config/commands/prefixRestrictions.js`;
+- `src/config/database/postgres.js`;
+- `src/config/database/schemaVersion.js`;
+- `src/config/guild/guildConfigDefaults.js`;
+- `src/config/music/lavalink.js`;
+- `src/config/shop/index.js`;
+- `src/config/shop/items.js`.
+
+Зафиксировано в `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232.
+
+Существенные новые блоки: production/development config behavior, centralized embed branding, application retention, verification safety/audit limits, welcome/goodbye templates, counter resolver configuration, global feature flags, command/subcommand alias resolution, protected commands, granular prefix restrictions, PostgreSQL connection/SSL/pool/TTL/health/migration configuration, schema version contract, multi-source Lavalink node loading, API/CORS/rate-limit settings и декларативная shop pricing/transaction/event configuration.
 
 ## Уже зафиксировано в ideas
 - `ideas/TITAN_CORE.md`;
 - `ideas/TITAN_APPLICATIONS.md`;
-- `ideas/TITAN_CONFIG.md`;
+- `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
@@ -98,8 +115,8 @@
 
 ## Точная точка продолжения
 
-`src/commands/` — полностью закрыт.
+`src/commands/` и `src/config/` — полностью закрыты.
 
-Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/config/`**.
+Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/events/`**.
 
 Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
