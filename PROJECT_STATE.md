@@ -27,9 +27,9 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events и Handlers.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events, Handlers и Interactions.
 
-Пакеты TitanBot:
+Пакеты идей:
 - `ideas/TITAN_CORE.md`;
 - `ideas/TITAN_APPLICATIONS.md`;
 - `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
@@ -48,7 +48,8 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
 - `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
 - `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240;
-- `ideas/TITAN_HANDLERS.md` — TH-001–TH-320.
+- `ideas/TITAN_HANDLERS.md` — TH-001–TH-320;
+- `ideas/TITAN_INTERACTIONS.md` — TI-001–TI-160.
 
 ### `Events` — ЗАКРЫТ
 
@@ -56,30 +57,16 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 
 ### `Handlers` — ЗАКРЫТ
 
-Проверена фактическая директория `src/handlers/` со всеми обнаруженными файлами и вложенными каталогами:
-- `calculateModals.js`;
-- `countdownButtons.js`;
-- `counterButtons.js`;
-- `giveawayButtons.js`;
-- `loggingButtons.js`;
-- `musicButtons.js`;
-- `ticketButtons.js`;
-- `todoButtons.js`;
-- `verificationButtons.js`;
-- `warningHandlers.js`;
-- `wipedataButtons.js`;
-- `help/helpButtons.js`;
-- `help/helpSelectMenus.js`;
-- `interactionHandlers/reactionRolesSelectMenu.js`;
-- `loaders/events.js`;
-- `loaders/interactions.js`.
+Проверена фактическая `src/handlers/` и вложенные `help/`, `interactionHandlers/`, `loaders/`: 16 обнаруженных файлов. Зафиксировано TH-001–TH-320.
 
-Зафиксировано **TH-001–TH-320** в `ideas/TITAN_HANDLERS.md`.
+### `Interactions` — ЗАКРЫТ
+
+Проверена фактическая `src/interactions/` во всех трёх ветках: `buttons/`, `modals/`, `selectMenus/`. Проверены все обнаруженные definition-файлы; зафиксировано TI-001–TI-160 в `ideas/TITAN_INTERACTIONS.md`.
 
 ### Точная точка продолжения
 
-**`src/commands/`, `src/config/`, `src/events/` и `src/handlers/` полностью закрыты.**
+**`src/commands/`, `src/config/`, `src/events/`, `src/handlers/` и `src/interactions/` полностью закрыты.**
 
-Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/interactions/`**.
+Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/services/`**.
 
 Продолжать строго по порядку дерева. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
