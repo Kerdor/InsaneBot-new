@@ -30,29 +30,34 @@
 - Ticket;
 - Tools;
 - Utility;
-- Config.
+- Config;
+- Events.
 
-### Events — ЗАКРЫТ
+### Handlers — БАТЧ 1
 
-Полностью проверен `src/events/` по фактическому дереву:
-- `channelDelete.js`;
-- `guildCreate.js`;
-- `guildMemberAdd.js`;
-- `guildMemberRemove.js`;
-- `guildMemberUpdate.js`;
-- `interactionCreate.js`;
-- `messageCreate.js`;
-- `messageDelete.js`;
-- `messageUpdate.js`;
-- `ready.js`;
-- `roleCreate.js`;
-- `roleDelete.js`;
-- `userUpdate.js`;
-- `voiceStateUpdate.js`.
+Проверена фактическая директория `src/handlers/` и её вложенные каталоги `help/`, `interactionHandlers/`, `loaders/`.
 
-Зафиксировано **TE-001–TE-280** в `ideas/TITAN_EVENTS.md`.
+Проверены:
+- `calculateModals.js`;
+- `countdownButtons.js`;
+- `counterButtons.js`;
+- `giveawayButtons.js`;
+- `loggingButtons.js`;
+- `musicButtons.js`;
+- `ticketButtons.js`;
+- `todoButtons.js`;
+- `verificationButtons.js`;
+- `warningHandlers.js`;
+- `wipedataButtons.js`;
+- `help/helpButtons.js`;
+- `help/helpSelectMenus.js`;
+- `interactionHandlers/reactionRolesSelectMenu.js`;
+- `loaders/events.js`;
+- `loaders/interactions.js`.
 
-Основные блоки: event-module architecture, isolated error boundaries, guild initialization, welcome/goodbye join-leave pipelines, delayed auto-role, auto-verification, realtime counter updates, birthday preserve/restore lifecycle, application/level cleanup, nickname/username auditing, prefix/counting/leveling message pipeline, message delete/edit audit limits, unified interaction dispatcher with trace context, command/access/cooldown/permission gates, autocomplete/button/select/modal routing, startup reconciliation, role auditing, channel-deletion self-healing, temporary voice lifecycle/ownership transfer, music voice integration и cross-event resilience.
+Зафиксировано **TH-001–TH-320** в `ideas/TITAN_HANDLERS.md`.
+
+Основные блоки: interaction lifecycle, safe defer/reply/edit, permission rechecks, modal context, countdown runtime registry, giveaway mutex/rate limits, logging dashboard selectors/modals, music controls/pagination, ticket permission timeout и modal workflows, shared todo state mutations, verification, reaction-role validation/hierarchy, warning destructive confirmations, full user-data wipe, help generation/pagination, recursive interaction loading и event loading isolation.
 
 ## Уже зафиксировано в ideas
 - `ideas/TITAN_CORE.md`;
@@ -72,12 +77,13 @@
 - `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
 - `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
 - `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
-- `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
+- `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240;
+- `ideas/TITAN_HANDLERS.md` — TH-001–TH-320.
 
 ## Точная точка продолжения
 
-`src/commands/`, `src/config/` и `src/events/` — полностью закрыты.
+`src/commands/`, `src/config/`, `src/events/` и текущий батч `src/handlers/` просмотрены по фактическому дереву.
 
-Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/handlers/`**.
+**Следующий шаг:** провести контрольную сверку всего `src/handlers/` с полным деревом и закрыть каталог `handlers`, если не осталось необработанных файлов/подкаталогов. После этого перейти к следующему top-level каталогу `src/`.
 
 Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
