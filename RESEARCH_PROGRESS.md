@@ -25,7 +25,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation и Music.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music и Reaction_roles.
 
 Пакеты идей:
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
@@ -35,14 +35,15 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_LEVELING.md` — TL-001–TL-100;
 - `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
 - `ideas/MODERATION.md` — MOD-001–MOD-135;
-- `ideas/TITAN_MUSIC.md` — TM-001–TM-154.
+- `ideas/TITAN_MUSIC.md` — TM-001–TM-154;
+- `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170.
 
-### `Music` — ЗАКРЫТ
+### `Reaction_roles` — ЗАКРЫТ
 
-Просмотрены все 5 command files, все 9 доступных Music service/config paths и music button handler. Зафиксированы playback/queue controls, duplicate handling, requester metadata, loop/volume/seek, queue pagination, persistent Now Playing UI, auto-pause/resume, idle/24-7 behavior, Lavalink/Riffy setup, node fallback/configuration, voice/shard routing, lifecycle/error handling и shutdown.
+Просмотрены command, select-menu handler, reaction-role service, panel-status helper и canonical/legacy database-key paths. Зафиксированы setup/dashboard lifecycle, role safety, self-assignment, add/remove/edit/repost/delete, message recovery, reconciliation, persistence и error-isolation механики.
 
 ### Точная точка продолжения
 
-**Следующий раздел: `src/commands/Reaction_roles/`.**
+**Следующий раздел: `src/commands/Search/`.**
 
 Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
