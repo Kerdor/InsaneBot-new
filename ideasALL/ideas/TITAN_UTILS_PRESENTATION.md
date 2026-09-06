@@ -1,0 +1,81 @@
+# TitanBot Utils — presentation, logging UI and output mechanics
+
+Источник: `codebymitch/TitanBot`
+Каталог: `src/utils/embeds.js`, `src/utils/logging/`, `src/utils/welcome.js`, `src/utils/giveaways.js`
+
+- **TUP-001** — Глобальная sanitization embed text удаляет emoji и лишние пробелы.
+- **TUP-002** — Последовательности из трёх и более переносов строк сводятся к двум.
+- **TUP-003** — Embed fields проходят ту же sanitization, что title/description.
+- **TUP-004** — EmbedBuilder methods могут быть централизованно patched для единых output rules.
+- **TUP-005** — Footer проходит отдельную normalization перед выводом.
+- **TUP-006** — Неинформативный footer может полностью не выводиться.
+- **TUP-007** — Important footer автоматически определяется по ключевым словам вроде close/expire/page/ticket id.
+- **TUP-008** — Timestamp может быть централизованно отключён для всех embeds.
+- **TUP-009** — `createEmbed` имеет единый набор title/description/color/fields/author/footer/thumbnail/image/timestamp/url параметров.
+- **TUP-010** — Цвет embed разрешается через конфигурационный path с fallback.
+- **TUP-011** — Неверный цвет не ломает создание embed и приводит к безопасному fallback.
+- **TUP-012** — Поля embed фильтруются по наличию name/value.
+- **TUP-013** — Количество embed fields ограничивается 25.
+- **TUP-014** — Author может быть строкой или объектом.
+- **TUP-015** — Для всех embeds можно задать default bot author из config.
+- **TUP-016** — Для всех embeds можно задать default footer из config.
+- **TUP-017** — Для всех embeds можно задать default thumbnail из config.
+- **TUP-018** — User-facing errors имеют отдельные title по ErrorType.
+- **TUP-019** — Rate-limit error использует warning color, остальные ошибки — error color.
+- **TUP-020** — Error embed поддерживает title override для специальных сообщений.
+- **TUP-021** — Если title notification содержит Discord mention/ID, он переносится в description.
+- **TUP-022** — Success/info/warning helpers поддерживают как `(body)`, так и `(title, body)` форму.
+- **TUP-023** — Старый `errorEmbed` оставлен как compatibility wrapper поверх нового error embed API.
+- **TUP-024** — Utility formatting helpers централизуют user/date/relative-time representation.
+- **TUP-025** — Date formatter использует Discord timestamp markup.
+- **TUP-026** — Relative-time formatter использует Discord `:R` markup.
+- **TUP-027** — Есть отдельные Markdown helpers для code/inline/bold/italic/underline/strike/spoiler/quote.
+- **TUP-028** — List formatter поддерживает ordered и unordered режимы.
+- **TUP-029** — Duration formatter автоматически разбивает миллисекунды на days/hours/minutes/seconds.
+- **TUP-030** — Progress bar formatter показывает filled/empty blocks и процент.
+- **TUP-031** — Log description builder разделяет headline, lines и meta пустыми строками.
+- **TUP-032** — Log meta entries собираются в компактную inline строку с bullet separator.
+- **TUP-033** — Quoted log sections могут строиться из массива строк.
+- **TUP-034** — Comparison fields автоматически распознаются по old/before/new/after labels.
+- **TUP-035** — Standard log embed builder объединяет inline и обычные fields.
+- **TUP-036** — Standard log embed builder ограничивает title/name/value длины перед отправкой.
+- **TUP-037** — Executor avatar может использоваться как footer icon.
+- **TUP-038** — При отсутствии executor footer fallback-ится на guild identity.
+- **TUP-039** — User author resolver делает API fetch пользователя для красивого author блока.
+- **TUP-040** — User author resolver имеет fallback без avatar при API failure.
+- **TUP-041** — Role audit embed показывает managed/hoist/position свойства роли.
+- **TUP-042** — Role permissions можно ограничить первыми пятью для компактности.
+- **TUP-043** — Остальные role permissions выводятся отдельным количеством `+N more`.
+- **TUP-044** — Role audit может опционально показывать member count.
+- **TUP-045** — Logging dashboard категории представлены emoji + human label.
+- **TUP-046** — Logging dashboard автоматически строит event types по первой части event namespace.
+- **TUP-047** — Category toggle учитывает wildcard disabled state.
+- **TUP-048** — Category toggle проверяет, включены ли все конкретные events категории.
+- **TUP-049** — Logging dashboard автоматически разбивает десять категорий по пять buttons на row.
+- **TUP-050** — Main logging menu объединяет set/clear channel actions и event/filter navigation.
+- **TUP-051** — Audit/applications/reports channels разделены в UI.
+- **TUP-052** — Для каждого logging destination есть отдельное clear action.
+- **TUP-053** — Main dashboard имеет глобальный Audit Logging toggle.
+- **TUP-054** — Main dashboard имеет Refresh action.
+- **TUP-055** — Category view имеет Back/Toggle All/Refresh controls.
+- **TUP-056** — Filter view имеет Add User/Add Channel/Remove Filter actions.
+- **TUP-057** — Logging UI экспортирует grouped event types для повторного использования handlers.
+- **TUP-058** — Welcome formatter имеет fallback user/server text при неполных Discord objects.
+- **TUP-059** — Welcome templates поддерживают `{user}` и `{user.mention}` aliases.
+- **TUP-060** — Welcome templates поддерживают `{user.tag}`, `{user.username}`, `{username}`.
+- **TUP-061** — Welcome templates поддерживают `{user.discriminator}` и `{user.id}`.
+- **TUP-062** — Welcome templates поддерживают `{server}`, `{server.name}`, `{guild.name}` aliases.
+- **TUP-063** — Welcome templates поддерживают `{guild.id}`.
+- **TUP-064** — Welcome templates поддерживают `{guild.memberCount}`, `{memberCount}`, `{membercount}`.
+- **TUP-065** — Long embed field helper обрезает текст с ellipsis, не ломая читаемость.
+- **TUP-066** — Giveaway storage принимает как object-map, так и array representation.
+- **TUP-067** — Giveaway map индексируется по messageId для O(1)-подобного доступа.
+- **TUP-068** — Giveaway save требует messageId и возвращает typed validation error при его отсутствии.
+- **TUP-069** — Giveaway delete является idempotent: отсутствующий giveaway просто возвращает false.
+- **TUP-070** — Giveaway ended state вычисляется по endsAt/endTime.
+- **TUP-071** — Winner picker имеет service implementation и local fallback shuffle.
+- **TUP-072** — Winner count автоматически ограничивается количеством entrants.
+- **TUP-073** — Giveaway buttons имеют разные состояния active/ended.
+- **TUP-074** — Active giveaway UI содержит Join + End.
+- **TUP-075** — Ended giveaway UI содержит Reroll + View.
+- **TUP-076** — Fallback UI позволяет пережить ошибку основного giveaway service.
