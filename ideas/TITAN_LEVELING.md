@@ -1,0 +1,104 @@
+# TitanBot — Leveling
+
+Источник: `codebymitch/TitanBot`
+
+- **TL-001 — XP за сообщения** — активность в текстовом чате приносит XP.
+- **TL-002 — Случайный XP range** — каждое подходящее сообщение получает случайное количество XP между min/max.
+- **TL-003 — XP cooldown per user** — один пользователь не может получать XP с каждого сообщения без паузы.
+- **TL-004 — Отдельный rate-limit XP event** — дополнительно ограничивается частота обработки XP-событий пользователя.
+- **TL-005 — Конфигурируемый XP multiplier** — сервер может умножать базовую награду XP.
+- **TL-006 — Игнорируемые каналы** — отдельные text channels исключаются из XP.
+- **TL-007 — Игнорируемые роли** — пользователи с определёнными ролями не получают XP.
+- **TL-008 — Blacklist пользователей** — конкретные users могут быть полностью исключены из leveling.
+- **TL-009 — Пустые сообщения не дают XP** — whitespace-only content игнорируется.
+- **TL-010 — Bot messages не дают XP** — messageCreate сразу исключает сообщения ботов.
+- **TL-011 — Guild-only leveling** — XP-обработка выполняется только внутри сервера.
+- **TL-012 — Mutex на изменение XP** — операции XP одного user/guild сериализуются через lock.
+- **TL-013 — Защита от race condition при XP** — загрузка, изменение и сохранение user data выполняются внутри эксклюзивной секции.
+- **TL-014 — XP хранится отдельно от total XP** — текущий прогресс уровня и накопленный XP представлены разными полями.
+- **TL-015 — lastMessage timestamp** — время последней XP-активности сохраняется в user state.
+- **TL-016 — Автоматический level-up** — накопление достаточного XP повышает level.
+- **TL-017 — Несколько уровней за одно событие** — while-loop позволяет одному крупному XP начислению пересечь несколько уровней.
+- **TL-018 — Максимальный уровень 1000** — level progression имеет жёсткий верхний предел.
+- **TL-019 — Минимальный уровень 0** — пользовательские данные не опускаются ниже нулевого уровня.
+- **TL-020 — Квадратичная XP-кривая** — стоимость уровня рассчитывается формулой `5L² + 50L + 50`.
+- **TL-021 — Конвертация XP → level** — отдельная функция вычисляет уровень и остаточный XP из общего количества.
+- **TL-022 — Расчёт total XP по level + current XP** — можно восстановить накопленный XP из текущего уровня и остатка.
+- **TL-023 — Sanitize level data при чтении** — XP/level/total XP принудительно ограничиваются неотрицательными значениями и max level.
+- **TL-024 — Sanitize level data при записи** — сохранение нормализует числовые поля перед DB write.
+- **TL-025 — Level rank command** — пользователь может посмотреть собственный или чужой progression.
+- **TL-026 — Rank target опционален** — без user option показывается собственный профиль.
+- **TL-027 — Rank показывает level/xp/total XP** — профиль содержит сразу несколько показателей прогресса.
+- **TL-028 — Визуальный XP progress bar** — прогресс к следующему уровню показывается ASCII/Unicode bar.
+- **TL-029 — Процент прогресса до следующего уровня** — rank вычисляет percentage отдельно.
+- **TL-030 — Аватар пользователя в rank embed** — профиль сопровождается dynamic avatar.
+- **TL-031 — Level leaderboard** — отдельная команда показывает наиболее активных участников.
+- **TL-032 — Leaderboard ограничивает выдачу top N** — command показывает top 10, service допускает configurable limit до 100.
+- **TL-033 — Leaderboard сортируется по total XP** — место определяется накопленным XP, а не только текущим level.
+- **TL-034 — Боты исключаются из leaderboard** — bot accounts не занимают позиции.
+- **TL-035 — Пользователи без XP не попадают в leaderboard** — нулевые записи не засоряют рейтинг.
+- **TL-036 — Rank number сохраняется/вычисляется** — leaderboard entries получают последовательный rank.
+- **TL-037 — Медали top 3** — первые три места имеют отдельные визуальные обозначения.
+- **TL-038 — Graceful handling missing member** — leaderboard использует mention fallback, если guild member fetch не удался.
+- **TL-039 — Ошибка одного пользователя не ломает весь leaderboard** — отдельная запись может заменить имя на error text.
+- **TL-040 — Parallel member formatting** — строки leaderboard строятся через Promise.all.
+- **TL-041 — Leveling setup включает систему сразу** — успешная настройка выставляет configured=true и enabled=true.
+- **TL-042 — Setup требует отдельный level-up channel** — канал объявлений выбирается явно.
+- **TL-043 — Проверка SendMessages + EmbedLinks перед setup** — бот заранее проверяет возможность объявлять level-up.
+- **TL-044 — Setup нельзя повторить поверх configured системы** — повторная настройка блокируется и предлагает dashboard.
+- **TL-045 — Настройка min/max XP через slash options** — range задаётся прямо при initial setup.
+- **TL-046 — Валидация min XP ≤ max XP** — невозможный диапазон отклоняется до записи.
+- **TL-047 — XP option range 1–500** — slash command ограничивает каждое значение XP.
+- **TL-048 — XP cooldown option 0–3600 секунд** — частота выдачи настраивается от без cooldown до часа.
+- **TL-049 — Custom level-up message** — сервер может изменить текст повышения уровня.
+- **TL-050 — Level-up placeholders** — сообщение поддерживает `{user}`, `{level}`, `{xp}`, `{xpNeeded}`.
+- **TL-051 — Отдельный announceLevelUp toggle** — начисление XP и публичное объявление разделены.
+- **TL-052 — System enabled toggle** — leveling можно временно отключить без удаления конфигурации.
+- **TL-053 — Интерактивный leveling dashboard** — настройки доступны через persistent-style session UI.
+- **TL-054 — Dashboard показывает текущий статус системы** — enabled/disabled отображается прямо в embed.
+- **TL-055 — Dashboard показывает announcement status** — состояние объявлений видно отдельно от общего статуса.
+- **TL-056 — Dashboard показывает текущие XP settings** — range и cooldown доступны без входа в отдельные команды.
+- **TL-057 — Dashboard показывает role rewards** — все уровневые награды отображаются в текущей конфигурации.
+- **TL-058 — Dashboard показывает ignored channels/roles** — исключения видны администратору.
+- **TL-059 — Dashboard menu для выбора конкретной настройки** — вместо множества команд используется один select menu.
+- **TL-060 — Toggle buttons для частых переключателей** — system/announcements переключаются отдельными кнопками.
+- **TL-061 — Dashboard session timeout 10 минут** — неактивная конфигурационная сессия автоматически закрывается.
+- **TL-062 — Change level-up channel через channel selector** — channel выбирается интерактивно.
+- **TL-063 — Change message через modal** — длинный текст настройки редактируется через modal input.
+- **TL-064 — Change XP range через modal** — min/max можно изменить без повторного setup.
+- **TL-065 — Change XP cooldown через dashboard** — cooldown редактируется отдельно.
+- **TL-066 — Role reward per level** — достижение конкретного level может автоматически выдавать Discord role.
+- **TL-067 — Role reward задаётся role selector + level** — reward настраивается через Discord role picker и числовой уровень.
+- **TL-068 — Role reward level ограничен 1–500 в UI** — dashboard отдельно ограничивает наградные уровни.
+- **TL-069 — Замена существующей role reward по тому же level** — запись `roleRewards[level]` обновляется новым role ID.
+- **TL-070 — Удаление role reward по level** — reward удаляется без перестройки остальных уровней.
+- **TL-071 — Нет role rewards = понятная ошибка удаления** — dashboard сообщает, что удалять нечего.
+- **TL-072 — Role reward выдаётся только при реальном level-up** — роль проверяется во время progression.
+- **TL-073 — Отсутствующая reward role не ломает XP** — missing Discord role только логируется.
+- **TL-074 — Повторная выдача reward role предотвращается** — если роль уже есть, add operation пропускается.
+- **TL-075 — Level reward action содержит reason** — Discord role assignment получает причину `Level N reward`.
+- **TL-076 — Ошибка выдачи reward role не откатывает level-up** — роль является дополнительным side effect.
+- **TL-077 — Level-up announcement может идти в configured channel** — канал задаётся отдельно в config.
+- **TL-078 — Fallback level-up channel = guild system channel** — при отсутствии специального канала используется system channel.
+- **TL-079 — Проверка прав перед announcement** — SendMessages и EmbedLinks проверяются непосредственно перед отправкой.
+- **TL-080 — Ошибка announcement не ломает XP progression** — send failure логируется отдельно.
+- **TL-081 — Level-up audit logging** — достижение уровня создаёт отдельное событие аудита.
+- **TL-082 — В audit level-up фиксируются old/new level details** — лог содержит новый уровень и число полученных уровней.
+- **TL-083 — Audit logging не ломает level-up** — сбой логирования ловится отдельно.
+- **TL-084 — Admin leveladd** — администратор может вручную добавить пользователю уровни.
+- **TL-085 — Admin levelremove** — администратор может вручную убрать уровни.
+- **TL-086 — Admin levelset** — администратор может установить точный уровень.
+- **TL-087 — Admin operations требуют ManageGuild** — изменение progression защищено permission.
+- **TL-088 — Admin operations проверяют наличие target member** — нельзя изменить уровень пользователя вне guild.
+- **TL-089 — Admin add/remove/set запрещены при disabled leveling** — management actions уважают общий system toggle.
+- **TL-090 — leveladd сбрасывает current XP в 0** — ручное добавление уровней переводит пользователя на начало нового уровня.
+- **TL-091 — levelremove не опускает ниже level 0** — сервис использует MIN_LEVEL clamp.
+- **TL-092 — levelset принимает level 0** — администратор может полностью вернуть пользователя к нулевому уровню.
+- **TL-093 — Ручная установка уровня пересчитывает total XP** — total XP восстанавливается из целевого level.
+- **TL-094 — Ручное изменение level сохраняет существующую user record** — metadata вроде lastMessage остаётся при изменении progression.
+- **TL-095 — Удаление level data как отдельная service operation** — user progression может быть полностью очищен из DB.
+- **TL-096 — Config defaults для leveling** — при отсутствии guild config сервис возвращает рабочие defaults.
+- **TL-097 — Config includes ignoredChannels/ignoredRoles/blacklistedUsers** — система заранее предусматривает несколько уровней исключений.
+- **TL-098 — Config includes roleRewards map** — reward configuration хранится компактным level→role mapping.
+- **TL-099 — Fallback config при DB/config error** — сервис может вернуть defaults вместо полного падения чтения конфигурации.
+- **TL-100 — Service-level validation XP config** — сохранение config повторно проверяет cooldown и XP range независимо от Discord command validation.
