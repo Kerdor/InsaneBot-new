@@ -4,108 +4,69 @@
 Ветка: `main`
 Статус: 🔵 АКТИВЕН
 
-## Стартовая сверка
-
-Recursive tree корня проверен полностью (`truncated=false`). В репозитории присутствуют `src/`, `scripts/`, `lavalink/`, `.github/workflows/` и deployment/config/runtime files.
-
 ## Просмотрено
 
-### Root / bootstrap
-- recursive tree `main`;
+### Root / Bootstrap
+- recursive tree `main` (`truncated=false`);
 - `README.md`;
 - `src/app.js`;
 - `src/handlers/loaders/commandLoader.js`.
 
-### Birthday
-- `src/commands/Birthday/birthday.js`;
-- `src/commands/Birthday/modules/birthday_set.js`;
-- `src/commands/Birthday/modules/birthday_list.js`;
-- `src/commands/Birthday/modules/next_birthdays.js`.
+### Уже закрытые каталоги
+- Birthday;
+- Community;
+- Core;
+- Economy;
+- Fun;
+- Giveaway;
+- JoinToCreate;
+- Leveling;
+- Logging;
+- Moderation.
 
-### Community / Core / Economy
-- Community application subsystem и dashboard;
-- Core config wizard и command dashboard;
-- Economy command family;
-- `src/config/shop/items.js`.
-
-### Fun
-- `src/commands/Fun/count.js`;
-- `src/services/countingGameService.js`;
-- `src/commands/Fun/fight.js`;
-- `src/commands/Fun/flip.js`;
-- `src/commands/Fun/roll.js`.
-
-### Giveaway
-- `src/commands/Giveaway/gcreate.js`;
-- `src/commands/Giveaway/gdelete.js`;
-- `src/commands/Giveaway/gend.js`;
-- `src/commands/Giveaway/greroll.js`;
-- `src/services/giveawayService.js`.
-
-### JoinToCreate
-- `src/commands/JoinToCreate/jointocreate.js`;
-- `src/commands/JoinToCreate/modules/config_setup.js`;
-- `src/commands/JoinToCreate/modules/setup.js`;
-- `src/services/joinToCreateService.js`;
-- `src/events/voiceStateUpdate.js`.
-
-### Leveling
-- `src/commands/Leveling/leaderboard.js`;
-- `src/commands/Leveling/level.js`;
-- `src/commands/Leveling/leveladd.js`;
-- `src/commands/Leveling/levelremove.js`;
-- `src/commands/Leveling/levelset.js`;
-- `src/commands/Leveling/rank.js`;
-- `src/commands/Leveling/modules/level_dashboard.js`;
-- `src/services/leveling/leveling.js`;
-- `src/services/leveling/xpSystem.js`;
-- `src/events/messageCreate.js` (leveling path).
-
-### Logging
-- `src/commands/Logging/logging.js`;
-- `src/commands/Logging/modules/logging_dashboard.js`;
-- `src/commands/Logging/modules/logging_channel.js`;
-- `src/services/loggingService.js`;
-- `src/utils/logging/loggingUi.js`;
-- `src/utils/logging/logEmbeds.js`;
-- `src/handlers/loggingButtons.js`;
-- `src/events/channelDelete.js` (связанные cleanup paths);
-- `src/events/guildMemberAdd.js`;
-- `src/events/guildMemberRemove.js`;
-- `src/events/guildMemberUpdate.js`;
-- `src/events/userUpdate.js`;
-- `src/events/roleCreate.js`;
-- `src/events/roleDelete.js`;
-- связанные logging call sites через repository search.
-
-### Moderation
-Полностью просмотрен каталог `src/commands/Moderation/` и ключевой moderation service.
-
+### Music
 Команды:
-- `ban.js`;
-- `cases.js`;
-- `dm.js`;
-- `kick.js`;
-- `lock.js`;
-- `massban.js`;
-- `masskick.js`;
-- `purge.js`;
-- `say.js`;
-- `timeout.js`;
-- `unban.js`;
-- `unlock.js`;
-- `untimeout.js`;
-- `usernotes.js`;
-- `warn.js`.
+- `src/commands/Music/join.js`;
+- `src/commands/Music/music.js`;
+- `src/commands/Music/nowplaying.js`;
+- `src/commands/Music/play.js`;
+- `src/commands/Music/queue.js`.
 
-Сервисы:
-- `src/services/moderation/moderationService.js`;
-- `src/services/moderation/warningService.js`.
+Сервисы/UI/handlers:
+- `src/services/music/musicActions.js`;
+- `src/services/music/musicEmbeds.js`;
+- `src/services/music/musicVoiceState.js`;
+- `src/services/music/permissions.js`;
+- `src/services/music/playerHandler.js`;
+- `src/services/music/playerStore.js`;
+- `src/services/music/prefixSupport.js`;
+- `src/services/music/riffySetup.js`;
+- `src/handlers/musicButtons.js`;
+- `src/config/music/lavalink.js`.
 
-Зафиксированы: централизованный ModerationService, двойная role hierarchy validation (moderator + bot), owner bypass, permission-aware ban отсутствующих пользователей, self/bot protection, case IDs, warning IDs/counters/timestamps, фиксированные timeout durations, kickable/moderatable checks, unban ban-list validation, mass ban/kick с частичными результатами и лимитом 20 целей, per-command abuse protection, purge limits/old-message handling, channel lock/unlock через @everyone overwrite, staff DM anonymous/sanitization/error handling, say channel/permission/sanitization flow, paginated cases UI с owner-only controls и timeout, типизированные user notes и их lifecycle, centralized typed error handling и guild isolation.
+### Существенные находки Music
+- Единый `/music` интерфейс управляет pause/resume/skip/stop/shuffle/loop/volume/seek/remove/move/clear/leave/24-7.
+- `/play` поддерживает поиск, playlist load, duplicate protection, requester metadata и автоматический старт idle player.
+- Music state изолирован по guild, хранит volume/loop/shuffle/previous tracks/player message/queue pagination/idle timers.
+- Previous track history ограничена 20; queue page state хранится отдельно для каждого пользователя.
+- Stop при очереди от 5 треков требует повторного подтверждения в течение 15 секунд.
+- Skip временно отключает track-loop и восстанавливает сохранённый loop на следующем trackStart.
+- Queue имеет страницы по 10 треков и first/previous/next/last navigation; queue UI ephemeral и permission-aware.
+- Now Playing показывает title/artist/requester/progress/duration/volume/loop/queue/artwork и автоматически обновляется каждые 15 секунд.
+- Постоянное player message редактируется, а при его исчезновении создаётся заново; UI failure не ломает playback.
+- Queue end запускает idle disconnect через 30 секунд, если 24/7 выключен; перед disconnect выполняется повторная проверка состояния player.
+- Voice-state automation игнорирует ботов, автоматически pause'ит пустой voice channel и resume'ит его при возвращении пользователя; `autoPaused` отделяет это от ручной паузы.
+- Все controls требуют same voice channel; кнопки и slash actions используют общий permission layer.
+- Lavalink availability, node availability, voice permissions и connection timeout проверяются до playback.
+- Voice connection ждёт `connectionRestored` до 12 секунд после resolve.
+- Поддерживается несколько Lavalink nodes, environment/file/JSON configuration и fallback single-node configuration.
+- Riffy получает Discord voice gateway packets через raw VoiceStateUpdate/VoiceServerUpdate и маршрутизирует payload на соответствующий shard.
+- Node logging throttled: первый connect логируется отдельно, reconnect может быть silent, error/disconnect ограничены одним сообщением за 5 минут на node.
+- TrackError, TrackStuck, PlayerError и PlayerDisconnect имеют отдельные lifecycle paths.
+- Shutdown уничтожает все активные players с изоляцией ошибок отдельных sessions.
+- Music actions вынесены в переиспользуемый сервис; slash/prefix и button UI используют общий action layer.
 
 ## Уже зафиксировано в ideas
-
 - `ideas/TITAN_CORE.md`;
 - `ideas/TITAN_APPLICATIONS.md`;
 - `ideas/TITAN_CONFIG.md`;
@@ -115,28 +76,14 @@ Recursive tree корня проверен полностью (`truncated=false`
 - `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
 - `ideas/TITAN_LEVELING.md` — TL-001–TL-100;
 - `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
-- `ideas/MODERATION.md` — MOD-001–MOD-135, включая новый пакет codebymitch/TitanBot MOD-044–MOD-135.
-
-## Существенные находки
-
-### Moderation
-- ModerationService централизует ban/kick/timeout/untimeout/unban и выдаёт единый слой hierarchy/permission/error checks.
-- Для модератора и бота используются отдельные role hierarchy проверки; owner получает bypass.
-- Ban отсутствующего на сервере пользователя разрешён только при Manage Server/Administrator/owner.
-- Каждая ключевая операция возвращает Case ID и пишет action metadata; warnings дополнительно имеют warning ID, порядковый номер и total count.
-- Mass ban/kick обрабатывают цели независимо, ограничивают вход 20 пользователями и разделяют successful/skipped/failed.
-- Cases имеют фильтр по action/user, configurable limit 1–50, страницы по 5 записей и 120-секундный owner-only collector.
-- User notes отделены от moderation cases и поддерживают типы, add/view/remove/clear, sanitization, metadata автора/времени и newest-first view.
-- Purge ограничен 1–100 сообщениями, использует bulk delete и автоматически удаляет собственный ответ через 3 секунды.
-- Lock/unlock изменяют SendMessages для @everyone и передают audit reason.
-- Staff DM поддерживает anonymous mode, sanitization, 2000-char limit и отдельную обработку Discord 50007.
-- Say умеет выбрать text/announcement channel, проверяет права обеих сторон и возвращает jump link.
+- `ideas/MODERATION.md` — MOD-001–MOD-135;
+- `ideas/TITAN_MUSIC.md` — TM-001–TM-154.
 
 ## Точная точка продолжения
 
-`src/commands/Moderation/` — **ЗАКРЫТ**.
+`src/commands/Music/` и связанные Music services/handler/config paths — **ЗАКРЫТЫ**.
 
 Следующий каталог по фактическому recursive tree `src/commands/`:
-**`src/commands/Music/`**.
+**`src/commands/Reaction_roles/`**.
 
-Продолжать строго с `Music/`; GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
+Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
