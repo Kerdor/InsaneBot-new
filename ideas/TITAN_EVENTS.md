@@ -1,0 +1,309 @@
+# TITAN EVENTS — Банк идей
+
+Источник: `codebymitch/TitanBot` (`main`), `src/events/**`.
+
+## Event architecture
+- TE-001 — Каждый Discord event оформлен отдельным модулем с `name` и `execute`.
+- TE-002 — One-shot события явно помечаются `once: true` (например ClientReady), остальные — `once: false`.
+- TE-003 — Event handlers используют собственный верхнеуровневый error boundary, чтобы исключение не роняло event loop.
+- TE-004 — Для второстепенных подсистем внутри одного event используются отдельные `try/catch`, позволяя продолжить pipeline после частичного сбоя.
+- TE-005 — Логирование ошибки отдельной подсистемы отделено от основной обработки события.
+- TE-006 — Event handler может завершить только конкретную ветку (`return`), не отменяя уже завершённые независимые действия.
+- TE-007 — Feature-specific event processing включается через runtime feature flag.
+- TE-008 — Один Discord event может последовательно обслуживать несколько независимых подсистем.
+- TE-009 — Для тяжёлых подсистем event может делегировать работу специализированному service вместо хранения бизнес-логики в event-файле.
+- TE-010 — Для deferred/background операций используется `unref()` у timer, чтобы таймер не удерживал процесс Node.js.
+
+## Guild lifecycle
+- TE-011 — `guildCreate` логирует факт присоединения бота к серверу как структурированное событие.
+- TE-012 — Join log содержит guild ID, guild name и member count.
+- TE-013 — При входе на новый сервер конфигурация guild читается через единый config service.
+- TE-014 — После получения конфигурации `guildCreate` повторно сохраняет её, тем самым материализуя defaults в persistent storage.
+- TE-015 — Ошибка инициализации одного guild логируется с guild ID и не выбрасывается наружу.
+
+## Member join pipeline
+- TE-016 — `guildMemberAdd` получает guild/user/member из единого event payload и использует их для всех последующих подсистем.
+- TE-017 — Join pipeline сначала загружает guild config и welcome config, затем выполняет независимые действия.
+- TE-018 — Welcome channel определяется из persistent welcome config, а не hardcoded ID.
+- TE-019 — Перед welcome-send проверяются одновременно `ViewChannel` и `SendMessages`.
+- TE-020 — Проверка permissions выполняется от имени актуального guild bot member.
+- TE-021 — Недостаток welcome permissions пропускает только welcome message, не останавливая auto-role, verification, logging и counters.
+- TE-022 — Welcome template форматируется единым formatter'ом с `{user}`, `{guild}`/member context.
+- TE-023 — Welcome message может содержать отдельный ping content и отдельное embed description.
+- TE-024 — Welcome ping включается конфигурационным boolean.
+- TE-025 — Welcome embed title также проходит template formatting.
+- TE-026 — Welcome footer может быть кастомным template либо fallback с названием guild.
+- TE-027 — При отсутствии `EmbedLinks` welcome автоматически деградирует до plain-text сообщения.
+- TE-028 — Plain-text fallback сохраняет welcome content даже без embed permissions.
+- TE-029 — Embed welcome получает semantic success color по умолчанию.
+- TE-030 — Welcome embed содержит avatar пользователя как thumbnail.
+- TE-031 — Welcome embed показывает user tag/ID как отдельное поле.
+- TE-032 — Welcome embed показывает актуальный member count.
+- TE-033 — Welcome embed получает timestamp отправки.
+- TE-034 — Welcome embed поддерживает отдельное большое изображение.
+- TE-035 — Для изображения поддерживается как legacy string URL, так и nested `{ image: { url } }` форма.
+- TE-036 — Auto-role может запускаться с configurable delay.
+- TE-037 — Delayed auto-role выполняется через `setTimeout`, а не блокирует join event.
+- TE-038 — Delayed auto-role timer использует `unref`, чтобы не удерживать процесс.
+- TE-039 — При auto-role выбирается роль из persistent role ID, а отсутствие роли в cache не роняет join pipeline.
+- TE-040 — Добавление роли вынесено в `assignRoleSafely` с отдельным error isolation.
+- TE-041 — Verification запускается при включённом обычном verification или autoVerifyOnJoin.
+- TE-042 — Verification service загружается динамически непосредственно перед использованием.
+- TE-043 — Auto-verification возвращает структурированный результат `autoVerified`, `roleName`, `criteria`/`reason`.
+- TE-044 — Успешная auto-verification пишет отдельный info log с выбранным criterion.
+- TE-045 — Неуспешная auto-verification пишется как debug с объяснением причины.
+- TE-046 — Ошибка verification не мешает member join logging и counter update.
+- TE-047 — Join audit содержит user mention/display identity, ID, account creation time и member count.
+- TE-048 — Join audit использует relative Discord timestamp для account creation.
+- TE-049 — Join audit может использовать avatar как thumbnail.
+- TE-050 — После join event server counters обновляются немедленно, без ожидания cron.
+- TE-051 — Event updater перечитывает counters перед обработкой join.
+- TE-052 — Disabled counters пропускаются event updater.
+- TE-053 — Один невалидный counter не должен ломать обработку остальных counters.
+- TE-054 — Birthday data покинувшего ранее пользователя может автоматически восстанавливаться при возвращении.
+- TE-055 — Birthday restore использует отдельный backup namespace `birthdays:left`.
+- TE-056 — После восстановления birthday backup entry удаляется.
+- TE-057 — Birthday restore выполняется как независимая post-join операция с собственным error isolation.
+
+## Member leave pipeline
+- TE-058 — `guildMemberRemove` поддерживает отдельный goodbye channel/config, не переиспользуя welcome channel.
+- TE-059 — Goodbye может быть полностью отключён отдельным flag.
+- TE-060 — Goodbye ping настраивается независимо от самого goodbye message.
+- TE-061 — Goodbye ping явно задаёт `allowedMentions`, предотвращая нежелательные дополнительные mentions.
+- TE-062 — При отключённом embed permission goodbye деградирует до plain text.
+- TE-063 — Plain-text goodbye содержит и optional user mention, и formatted message.
+- TE-064 — Goodbye embed использует error/leave semantic color по умолчанию.
+- TE-065 — Goodbye embed показывает avatar покинувшего пользователя.
+- TE-066 — Goodbye embed содержит user identity, ID и текущий member count.
+- TE-067 — Goodbye embed timestamp фиксирует момент выхода.
+- TE-068 — Goodbye image поддерживает как string URL, так и nested URL representation.
+- TE-069 — Leave audit содержит время, прошедшее с момента join.
+- TE-070 — Leave counter update запускается немедленно по событию выхода.
+- TE-071 — Birthday при выходе переносится в отдельный backup storage перед удалением основной записи.
+- TE-072 — Birthday backup сохраняет исходный объект birthday без преобразования полей.
+- TE-073 — Birthday запись удаляется из активных данных после успешного backup.
+- TE-074 — Ошибка birthday backup/delete изолирована от остальной leave pipeline.
+- TE-075 — Все applications пользователя в guild удаляются при его выходе.
+- TE-076 — Application cleanup проходит по всем найденным application records, а не только первой записи.
+- TE-077 — Application cleanup не мешает другим leave actions при ошибке.
+- TE-078 — Leveling data пользователя удаляется при выходе из guild.
+- TE-079 — Level cleanup выполняется отдельным service call после остальных leave actions.
+- TE-080 — Leave pipeline тем самым различает данные, которые должны сохраняться при возврате (birthday), и данные, которые должны удаляться (applications/levels).
+
+## Member updates
+- TE-081 — `guildMemberUpdate` реагирует только на изменения nickname, игнорируя остальные изменения member object.
+- TE-082 — Nickname change логируется отдельным event type.
+- TE-083 — Nickname audit показывает Before и After в одном событии.
+- TE-084 — Отсутствующий nickname отображается отдельным human-readable placeholder.
+- TE-085 — Nickname audit использует avatar пользователя как thumbnail.
+- TE-086 — После обработки nickname change handler делает return, не выполняя дальнейшие ветки.
+- TE-087 — `userUpdate` отслеживает глобальные изменения username независимо от guildMemberUpdate.
+- TE-088 — Bot users исключаются из userUpdate audit.
+- TE-089 — UserUpdate сравнивает username и discriminator отдельно.
+- TE-090 — Audit event создаётся только если действительно изменилось хотя бы одно tracked поле.
+- TE-091 — Username Before/After выводятся отдельными inline fields.
+- TE-092 — Discriminator Before/After также выводятся отдельными fields, если поле реально изменилось.
+- TE-093 — Global user update распространяется по всем guilds, где пользователь есть в member cache.
+- TE-094 — Guilds без cached member пользователя пропускаются без API fetch.
+- TE-095 — Один username-change event может порождать несколько guild-specific audit records.
+- TE-096 — После глобальной обработки логируется число guilds, прошедших через scan.
+
+## Message pipeline
+- TE-097 — `messageCreate` игнорирует bot messages.
+- TE-098 — `messageCreate` игнорирует сообщения вне guild.
+- TE-099 — Message processing выполняется в порядке counting game → prefix command → leveling.
+- TE-100 — Counting game получает возможность перехватить сообщение и завершить дальнейшую обработку через boolean result.
+- TE-101 — Prefix parser использует guild-specific prefix с fallback на global prefix.
+- TE-102 — Prefix command alias разрешается до поиска команды в Collection.
+- TE-103 — Music имеет отдельные prefix shortcuts (`leave`, `pause`, `resume`, `skip`, `stop`, `volume`).
+- TE-104 — Music shortcut преобразуется во внутренний `/music` command с первым argument как action.
+- TE-105 — Prefix execution и slash execution используют общие command access/abuse policies.
+- TE-106 — Prefix maintenance mode показывает embed в channel вместо silent failure.
+- TE-107 — Prefix disabled-category состояние также сообщает пользователю embed'ом.
+- TE-108 — Prefix slash-only restriction объясняет, какую slash command использовать вместо prefix-вызова.
+- TE-109 — Prefix command может быть отключён на уровне конкретного guild access key.
+- TE-110 — Для prefix abuse protection используется lightweight mock interaction с guildId и user.
+- TE-111 — Prefix cooldown отображается человекочитаемой длительностью.
+- TE-112 — Prefix command execution получает уже загруженный guildConfig, избегая повторного fetch внутри adapter.
+- TE-113 — Counting game обрабатывает только configured channel.
+- TE-114 — Counting game валидирует message content до записи результата.
+- TE-115 — Повторная попытка того же пользователя считается нарушением последовательности.
+- TE-116 — При нарушении counting message удаляется.
+- TE-117 — При нарушении streak и sequence atomically-like перезаписываются в reset state.
+- TE-118 — Failure notification временная и удаляется через 10 секунд.
+- TE-119 — Counting handler возвращает `true` после обработки, чтобы message не попал в prefix/XP pipeline.
+- TE-120 — Leveling имеет отдельный event-level rate limit 12 попыток за 10 секунд на guild+user.
+- TE-121 — Rate limit применяется до дорогого leveling processing.
+- TE-122 — Leveling повторно проверяет enabled state из актуального config.
+- TE-123 — Ignored channels проверяются до member fetch.
+- TE-124 — Ignored roles требуют получения member и проверяются через role cache.
+- TE-125 — Blacklisted users проверяются отдельным списком.
+- TE-126 — Пустые/whitespace-only messages не дают XP.
+- TE-127 — Последний XP timestamp хранится per-user и используется для cooldown.
+- TE-128 — XP range имеет безопасный minimum >= 1.
+- TE-129 — Некорректный max XP нормализуется минимумом не ниже safeMin.
+- TE-130 — XP выбирается случайно в inclusive integer range.
+- TE-131 — XP multiplier применяется после случайного base XP.
+- TE-132 — Leveling event логирует level-up, но сама бизнес-логика повышения уровня остаётся в service.
+
+## Message delete/edit
+- TE-133 — `messageDelete` сначала обрабатывает persistent reaction-role metadata, а уже потом обычный audit log.
+- TE-134 — При удалении reaction-role message соответствующая DB record удаляется автоматически.
+- TE-135 — Cleanup reaction-role отдельно логируется как REACTION_ROLE_DELETE.
+- TE-136 — Ошибка cleanup reaction-role не блокирует обычный message-delete audit.
+- TE-137 — Bot messages после специализированного cleanup исключаются из обычного message-delete logging.
+- TE-138 — Deleted-message audit содержит channel, message ID, author и creation time.
+- TE-139 — Deleted content ограничивается 1024 символами.
+- TE-140 — Truncation оставляет suffix `...` внутри общего лимита.
+- TE-141 — Количество attachments включается в metadata при их наличии.
+- TE-142 — `messageUpdate` игнорирует bot messages и сообщения вне guild.
+- TE-143 — Message edit event не создаётся, если content фактически не изменился.
+- TE-144 — Edited-message audit хранит Before и After в отдельных inline fields.
+- TE-145 — Old/new content ограничивается 512 символами каждое.
+- TE-146 — Empty old/new content отображается через явный placeholder.
+- TE-147 — Message metadata у edit содержит channel, message ID, author и creation time.
+
+## Interaction dispatcher
+- TE-148 — Все interaction types проходят через единый `InteractionCreate` dispatcher.
+- TE-149 — Каждой interaction заранее создаётся trace context с traceId.
+- TE-150 — Trace context дополнительно записывается прямо в interaction object.
+- TE-151 — Вся обработка запускается внутри `runWithTraceContext`.
+- TE-152 — Interaction responses патчатся через общий `InteractionHelper`.
+- TE-153 — `ResponseCoordinator` подключается к каждой interaction до branch dispatch.
+- TE-154 — Chat input payload валидируется до поиска и запуска command.
+- TE-155 — Missing command превращается в typed configuration error с user-friendly message.
+- TE-156 — Maintenance mode пропускает только bot owners.
+- TE-157 — Disabled command category проверяется централизованно до command execution.
+- TE-158 — Глобальный default command cooldown хранится в `client.cooldowns` по ключу user+command.
+- TE-159 — Bot owners bypass глобального default cooldown.
+- TE-160 — Cooldown error сообщает remaining seconds.
+- TE-161 — Risky-command abuse protection выполняется отдельно от обычного cooldown.
+- TE-162 — Abuse protection error сохраняет policy window/max-attempts в trace context.
+- TE-163 — Guild command access проверяется по resolved slash access key.
+- TE-164 — Default Discord command permissions дополнительно проверяются runtime guard'ом.
+- TE-165 — Если permission guard уже обработал отказ, dispatcher прекращает дальнейшее execution без второго ответа.
+- TE-166 — Command-specific errors маппятся на subtype taxonomy для диагностического logging.
+- TE-167 — Autocomplete сначала делегируется command module, если у команды есть собственный `autocomplete`.
+- TE-168 — Ошибка custom autocomplete возвращает пустой список вместо падения interaction.
+- TE-169 — Application autocomplete фильтрует варианты по prefix case-insensitively.
+- TE-170 — Autocomplete ограничивается Discord лимитом 25 choices.
+- TE-171 — React-role panel autocomplete проверяет существование channel и message перед показом choice.
+- TE-172 — Stale reaction-role panel records автоматически удаляются во время autocomplete.
+- TE-173 — React-role autocomplete использует embed title + channel name как display label.
+- TE-174 — Display label autocomplete ограничивается 100 символами.
+- TE-175 — Button dispatcher поддерживает специальный namespace `shared_todo_`.
+- TE-176 — Shared-todo custom ID парсится в button type + list ID без отдельного handler lookup по полной строке.
+- TE-177 — Обычные button custom IDs используют `:` как разделитель аргументов.
+- TE-178 — Unknown collector-managed button не считается конфигурационной ошибкой и молча передаётся collector layer.
+- TE-179 — Unknown button без colon и collector context игнорируется.
+- TE-180 — Известный, но сломанный button handler превращается в centralized interaction error.
+- TE-181 — String Select Menu dispatcher использует ту же customId/args схему, что и buttons.
+- TE-182 — Unknown collector-managed select menu пропускается без ошибки.
+- TE-183 — Application modal с `app_modal_` обрабатывается прямым dedicated handler.
+- TE-184 — Некоторые modal namespaces (`app_review_`, `jtc_`, config/log dashboard) специально пропускают global modal lookup, потому что ожидаются inline collector'ом.
+- TE-185 — Generic modal custom ID с `:` разбирается на handler key + args.
+- TE-186 — Generic modal без найденного handler получает typed configuration error.
+- TE-187 — Unhandled interaction errors логируются с traceId, interactionId, guildId и userId.
+- TE-188 — Fallback interaction error response также защищён собственным catch.
+- TE-189 — Ошибка fallback response логируется отдельно как response failure.
+- TE-190 — Interaction error context включает source (`interactionCreate.unhandled`) для диагностики.
+
+## Ready / startup reconciliation
+- TE-191 — `ClientReady` устанавливает presence из application runtime config.
+- TE-192 — Ready event пишет startup summary: bot tag, guild count и loaded command count.
+- TE-193 — Music initialization запускается только при включённом music feature flag.
+- TE-194 — После Ready выполняется reconciliation persistent reaction-role messages.
+- TE-195 — После Ready отдельно проверяется health ticket panels.
+- TE-196 — После Ready отдельно проверяется health verification panels.
+- TE-197 — Reaction-role panel health проверяется отдельным reconciliation pass.
+- TE-198 — Level roles синхронизируются после восстановления Discord connection.
+- TE-199 — Startup reconciliation возвращает структурированные counters: scanned/healthy/deleted/missing/recovered/errors.
+- TE-200 — Startup summary печатает reconciliation metrics в человекочитаемом виде.
+- TE-201 — Один reconciliation failure не требует ручного перезапуска остальных startup tasks внутри общего ready handler.
+- TE-202 — Level-role reconciliation может одновременно чистить stale reward entries и повторно выдавать недостающие роли.
+
+## Role events
+- TE-203 — `roleCreate` логирует создание роли через общий logging service.
+- TE-204 — Role creation audit строится общим `buildRoleAuditLines` helper'ом.
+- TE-205 — Role create audit показывает role mention как headline.
+- TE-206 — `roleDelete` использует тот же audit builder, что и role create.
+- TE-207 — Role delete audit дополнительно включает member count.
+- TE-208 — Role delete headline использует имя роли, сохраняя информацию даже после удаления объекта.
+- TE-209 — Role events пропускаются, если role не принадлежит guild.
+
+## Channel deletion / self-healing
+- TE-210 — `channelDelete` маркирует вручную удалённый open ticket как `deleted` вместо простого удаления DB record.
+- TE-211 — Ticket deleted record получает `closedAt` timestamp.
+- TE-212 — Ошибка ticket cleanup не блокирует остальные channel-delete repairs.
+- TE-213 — Counter channel deletion автоматически удаляет orphaned counter record.
+- TE-214 — Counter cleanup сначала ищет запись по channel ID, а не пересобирает весь counter model.
+- TE-215 — JoinToCreate trigger deletion автоматически удаляет trigger ID из config.
+- TE-216 — JoinToCreate temporary channel deletion удаляет temporary-channel DB registration.
+- TE-217 — Удаление JTC category считается критическим конфигурационным событием.
+- TE-218 — При удалении JTC category система автоматически выключает JoinToCreate.
+- TE-219 — При auto-disable одновременно очищается `categoryId`.
+- TE-220 — ChannelDelete поддерживает self-healing сразу для ticket, ServerStats и JoinToCreate.
+- TE-221 — Cleanup DB operations возвращают success/failure и логируют оба результата.
+- TE-222 — Удалённый channel может одновременно быть связан с несколькими subsystems, поэтому cleanup выполняется по каждой независимо.
+
+## Voice state / temporary rooms
+- TE-223 — VoiceStateUpdate игнорирует bot members.
+- TE-224 — VoiceStateUpdate различает join, leave и move как три разные transitions.
+- TE-225 — JoinToCreate config загружается один раз в рамках одного voice event.
+- TE-226 — Если JTC выключен или trigger list пуст, voice event завершается сразу.
+- TE-227 — Channel creation cooldown ключуется guild+user.
+- TE-228 — JTC creation cooldown составляет 2 секунды.
+- TE-229 — Cooldown map очищается при каждом voice event от просроченных entries.
+- TE-230 — Cooldown map имеет hard cap 10 000 entries.
+- TE-231 — При превышении cap удаляются самые старые cooldown entries.
+- TE-232 — Если пользователь уже владеет temporary channel, система пытается вернуть его туда вместо создания второго.
+- TE-233 — Перед созданием channel повторно проверяется, что пользователь всё ещё находится в trigger channel.
+- TE-234 — Перед созданием проверяются ManageChannels, MoveMembers и Connect.
+- TE-235 — Отсутствие cached bot member сбрасывает creation cooldown и отменяет операцию.
+- TE-236 — Channel options могут переопределять глобальный name template, user limit и bitrate.
+- TE-237 — User limit нормализуется в диапазон 0..99.
+- TE-238 — User limit `0` передаётся как unlimited через отсутствие explicit Discord limit.
+- TE-239 — Voice bitrate имеет default 64 kbps.
+- TE-240 — Voice bitrate runtime clamp ограничен 8–384 kbps.
+- TE-241 — Некорректный bitrate fallback-ится на default.
+- TE-242 — При template с username/displayName используется formatter с user/guild/channel context.
+- TE-243 — При template без username/displayName используется numbered fallback на базе trigger channel name.
+- TE-244 — Numbered fallback учитывает существующие sibling channels.
+- TE-245 — Temporary channel name проходит sanitization после template formatting.
+- TE-246 — Voice channel name ограничивается 100 символами.
+- TE-247 — Sanitization убирает CR/LF/TAB и схлопывает whitespace.
+- TE-248 — Пустое sanitized имя заменяется на `Voice Room`.
+- TE-249 — Перед move пользователя в созданный channel повторно проверяется его voice state.
+- TE-250 — Temporary channel хранит ownerId и triggerChannelId в persistent registration.
+- TE-251 — Temporary channel создаётся в той же category, что и trigger channel.
+- TE-252 — Owner получает Connect/Speak/PrioritySpeaker/MoveMembers overwrite.
+- TE-253 — Guild получает базовые Connect/Speak overwrites.
+- TE-254 — Если пользователь покинул trigger до move, созданный channel не используется для stale move.
+- TE-255 — Если creation operation падает, cooldown сбрасывается для немедленной повторной попытки.
+- TE-256 — Ошибка создания temporary channel дополнительно отправляется пользователю в DM.
+- TE-257 — Ошибка DM failure изолирована и только debug-логируется.
+- TE-258 — При leave temporary channel удаляется автоматически, если участников больше не осталось.
+- TE-259 — Перед удалением temporary channel сначала unregister-ится DB record.
+- TE-260 — Empty temporary channel delete получает явный audit reason.
+- TE-261 — При выходе owner'а ownership передаётся первому оставшемуся member.
+- TE-262 — При transfer ownership persistent ownerId обновляется до нового пользователя.
+- TE-263 — После ownership transfer channel переименовывается под нового owner.
+- TE-264 — New owner fetch выполняется по ID, а не предполагает member cache.
+- TE-265 — Ownership transfer использует trigger-specific channel options для повторного name formatting.
+- TE-266 — VoiceStateUpdate одновременно поддерживает JTC и music voice automation.
+- TE-267 — Music voice handler запускается только при включённом music feature flag.
+- TE-268 — Ошибка music voice handler не блокирует JTC voice processing.
+- TE-269 — Ошибка voice event логируется с guild ID.
+
+## Cross-event resilience
+- TE-270 — Event pipeline предпочитает graceful degradation: отсутствие permission/channel/role/DB record приводит к skip/fallback, а не process crash.
+- TE-271 — Persistent state и Discord state регулярно сверяются по event'ам и исправляются при обнаружении расхождения.
+- TE-272 — Join/leave events используются как realtime refresh для derived resources, а cron остаётся резервным reconciliation mechanism.
+- TE-273 — Delete events используются как realtime orphan cleanup вместо ожидания периодического maintenance.
+- TE-274 — User-scoped data может иметь разные lifecycle policies: preserve-and-restore vs delete-on-leave.
+- TE-275 — Bot-wide UserUpdate требует fan-out по guilds, но ограничивает его cached membership для экономии API requests.
+- TE-276 — Message/interaction events используют centralized error handler, тогда как domain events используют локальные isolated catches.
+- TE-277 — Event-specific logs используют общий logging service, сохраняя единый event taxonomy.
+- TE-278 — Runtime trace context позволяет связать command/input validation/error response в один diagnostic chain.
+- TE-279 — Self-healing logic может автоматически менять configuration state после удаления Discord dependency.
+- TE-280 — Reconciliation summary должен быть метрикой, а не только boolean success/failure.
