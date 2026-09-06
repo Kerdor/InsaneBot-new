@@ -25,7 +25,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events, Handlers и Interactions.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events, Handlers, Interactions и Services.
 
 Пакеты идей:
 - `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
@@ -45,7 +45,8 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
 - `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240;
 - `ideas/TITAN_HANDLERS.md` — TH-001–TH-320;
-- `ideas/TITAN_INTERACTIONS.md` — TI-001–TI-160.
+- `ideas/TITAN_INTERACTIONS.md` — TI-001–TI-160;
+- `ideas/TITAN_SERVICES.md` — TSVC-001–TSVC-190.
 
 ### `Handlers` — ЗАКРЫТ
 
@@ -55,8 +56,12 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 
 Проверена фактическая `src/interactions/` во всех трёх ветках `buttons/`, `modals/`, `selectMenus/`. Проверены все обнаруженные definition-файлы. Зафиксировано TI-001–TI-160.
 
+### `Services` — ЗАКРЫТ
+
+Проверен фактический `src/services/` и вложенные `config/`, `leveling/`, `moderation/`, `music/`. Все обнаруженные service-файлы просмотрены и сверены с уже существующими тематическими пакетами. Зафиксировано TSVC-001–TSVC-190 в `ideas/TITAN_SERVICES.md`.
+
 ### Точная точка продолжения
 
-**`src/commands/`, `src/config/`, `src/events/`, `src/handlers/` и `src/interactions/` полностью закрыты.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/services/`**.
+**`src/commands/`, `src/config/`, `src/events/`, `src/handlers/`, `src/interactions/` и `src/services/` полностью закрыты.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/utils/`**.
 
 Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
