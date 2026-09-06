@@ -19,29 +19,19 @@
 
 1. **Cog-Creators/Red-DiscordBot — ЗАВЕРШЁН.**
 2. **python-discord/bot — ЗАВЕРШЁН.**
-3. **ItzSudhan/Discord-MusicBot — АКТИВНО ИССЛЕДУЕТСЯ.**
-4. codebymitch/TitanBot — ОЖИДАЕТ.
+3. **ItzSudhan/Discord-MusicBot — ЗАВЕРШЁН.**
+4. **codebymitch/TitanBot — АКТИВНО ИССЛЕДУЕТСЯ.**
 5. GAwesomeBot/bot — ОЖИДАЕТ.
 6. CorwinDev/Discord-Bot — ОЖИДАЕТ.
 7. Tomato6966/Multipurpose-discord-bot — ОЖИДАЕТ.
 
-## `ItzSudhan/Discord-MusicBot` — АКТИВЕН
+## `ItzSudhan/Discord-MusicBot` — ЗАВЕРШЁН
 
 Ветка: `v5`.
 
-Закрыты:
-- root README/tree/config/index/package;
-- все `commands/slash/`;
-- `commands/context/play.js`;
-- все 6 файлов `events/`;
-- `lib/DiscordMusicBot.js`, `lib/SlashCommand.js`, `lib/EpicPlayer.js`;
-- весь `util/`;
-- весь исходный `api/`;
-- исходный `dashboard/` — pages, components, utils;
-- `.github/` recursive tree;
-- root `Dockerfile`, `Procfile`, `app.json`, `.replit`.
+Recursive tree проверен полностью (`truncated=false`). Закрыты все исходные каталоги и root-файлы, включая `commands/`, `events/`, `lib/`, `util/`, `api/`, исходный `dashboard/`, `deploy/`, `docker/`, `.github/` и оставшиеся root/config/runtime files. `dashboard/out/` и `_next` классифицированы как build artifacts и не дублировались поверх исходников.
 
-Созданы/пополнены пакеты идей:
+Пакеты идей:
 - `ideas/MUSIC.md` — MUSIC-001–042;
 - `ideas/MUSIC_COMMANDS.md` — MUSIC-C001–055;
 - `ideas/MUSIC_CONTEXT.md` — MUSIC-X001–007;
@@ -49,16 +39,14 @@
 - `ideas/MUSIC_STORAGE.md` — MUSIC-S001–018;
 - `ideas/MUSIC_CORE.md` — MUSIC-K001–018;
 - `ideas/MUSIC_WEB.md` — MUSIC-W001–031;
-- `ideas/MUSIC_DEPLOY.md` — MUSIC-D001–009.
+- `ideas/MUSIC_DEPLOY.md` — MUSIC-D001–026.
 
-Из последнего батча особенно зафиксированы: Passport Discord OAuth и session auth, public/protected API split, динамическая загрузка route-файлов, dashboard runtime metrics, typed frontend API helpers, server selector/avatar UI, общий navbar/layout, login/logout redirects, server state model с queue/loop/playing, Docker/Alpine runtime, worker Procfile, Heroku deployment manifest и Replit runtime configuration.
+Последняя сверка добавила Docker/Lavalink варианты: разделение bot/Lavalink на сервисы, `depends_on`, internal network, read-only config mounts, self-hosted Lavalink и отдельные параметры buffering/quality/metrics/request logging/rolling logs.
 
-Журнал: `research/discord-music-bot.md`.
+Журнал: `research/discord-music-bot.md` — статус `✅ ЗАВЕРШЁН`.
 
-## Следующая точка
+## `codebymitch/TitanBot` — АКТИВЕН
 
-Провести финальную сверку recursive tree `v5` с журналом: убедиться, что все оставшиеся root-файлы и каталоги действительно закрыты и не содержат новых исходных механик. Скомпилированный `dashboard/out/_next` не дублировать после анализа исходников; считать его build artifact.
+Следующая точка: начать с recursive tree репозитория `codebymitch/TitanBot`, определить актуальную ветку и полностью пройти дерево по порядку. Создать `research/titanbot.md`; идеи сразу сравнивать с существующим банком и распределять по тематическим файлам.
 
-Только после финальной сверки поставить `ItzSudhan/Discord-MusicBot` в статус **ЗАВЕРШЁН** и перейти к `codebymitch/TitanBot`.
-
-**Другие источники до полного завершения MusicBot не трогать.**
+**Не переходить к GAwesomeBot и последующим источникам до полного завершения TitanBot.**
