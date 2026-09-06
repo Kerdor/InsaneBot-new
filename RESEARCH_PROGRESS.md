@@ -25,7 +25,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles и Search.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search и ServerStats.
 
 Пакеты идей:
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
@@ -37,18 +37,15 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/MODERATION.md` — MOD-001–MOD-135;
 - `ideas/TITAN_MUSIC.md` — TM-001–TM-154;
 - `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170;
-- `ideas/TITAN_SEARCH.md` — TS-001–TS-080.
+- `ideas/TITAN_SEARCH.md` — TS-001–TS-080;
+- `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170.
 
-### `Reaction_roles` — ЗАКРЫТ
+### `ServerStats` — ЗАКРЫТ
 
-Просмотрены command, select-menu handler, reaction-role service, panel-status helper и canonical/legacy database-key paths. Зафиксированы setup/dashboard lifecycle, role safety, self-assignment, add/remove/edit/repost/delete, message recovery, reconciliation, persistence и error-isolation механики.
-
-### `Search` — ЗАКРЫТ
-
-Просмотрены `src/commands/Search/search.js` и все три модуля `modules/search_define.js`, `modules/search_google.js`, `modules/search_urban.js`. Зафиксированы TS-001–TS-080: search routing, Dictionary/Urban API, Google URL generation, validation, encoding, timeout/defer lifecycle, result formatting, source metadata, 404/429 handling, centralized errors/logging и расширяемая module architecture.
+Просмотрены command, все четыре modules, service, counter button handler, member join/leave event paths, scheduler в `src/app.js` и counter config. Зафиксированы TSS-001–TSS-170: типы счётчиков, создание voice/text channels в category, duplicate protection, persistence/sanitization, member counting, configurable names, cron + event-driven updates, orphan cleanup, list/update/delete UX, destructive confirmation, initiator-only buttons, DB-first deletion и error isolation.
 
 ### Точная точка продолжения
 
-**Следующий раздел: `src/commands/ServerStats/`.**
+**Следующий шаг: проверить следующий элемент фактического `src/commands/` recursive tree после `ServerStats/` и продолжить с него.**
 
 Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
