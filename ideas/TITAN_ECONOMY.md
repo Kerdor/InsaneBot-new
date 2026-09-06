@@ -19,3 +19,31 @@
 - TITAN-E015 — Fishing cooldown составляет отдельный action-specific timer и сохраняется вместе с economy data.
 - TITAN-E016 — Economy state хранит action-specific timestamps (`lastBeg`, `lastFish`, `cooldowns.crime`) вместо одного общего cooldown.
 - TITAN-E017 — Cooldown responses оформлены как структурированные rate-limit errors с machine-readable remaining time/type.
+- TITAN-E018 — Shop purchase поддерживает quantity 1–10 для обычных inventory items.
+- TITAN-E019 — Role-item может иметь отдельное ограничение quantity=1 и проверку, что роль уже не куплена.
+- TITAN-E020 — Покупка роли выполняется как транзакция с rollback денег, если Discord API не смог выдать роль.
+- TITAN-E021 — Shop items разделяются на типы `role`, `upgrade`, `consumable`, `tool`, и каждый тип меняет состояние пользователя по-разному.
+- TITAN-E022 — Покупка upgrade активирует постоянный boolean-флаг в `userData.upgrades`.
+- TITAN-E023 — Consumable/tool покупки накапливаются количеством в inventory.
+- TITAN-E024 — Daily reward использует отдельный 24-часовой cooldown и configurable base amount.
+- TITAN-E025 — Premium role может давать процентный bonus к daily reward.
+- TITAN-E026 — Deposit принимает как числовую сумму, так и специальное значение `all`.
+- TITAN-E027 — Deposit автоматически ограничивает сумму фактическим wallet balance и сообщает пользователю об изменении.
+- TITAN-E028 — Bank имеет отдельную capacity, а deposit автоматически ограничивается свободным местом.
+- TITAN-E029 — При переполненном bank система предлагает Bank Upgrade как способ увеличения лимита.
+- TITAN-E030 — Work генерирует случайную профессию из списка и случайную выплату в заданном диапазоне.
+- TITAN-E031 — Consumable `extra_work` позволяет обойти активный work cooldown, расходуясь при использовании.
+- TITAN-E032 — Инструмент `laptop` даёт +50% к earnings от work.
+- TITAN-E033 — Mining использует отдельные инструменты с разными multiplier tiers: pickaxe +20%, diamond pickaxe +100%.
+- TITAN-E034 — Mining случайно выбирает flavor-location экспедиции для результата.
+- TITAN-E035 — Payment загружает sender/receiver economy data параллельно через `Promise.all` перед transfer.
+- TITAN-E036 — Economy transfer вынесен в отдельный service (`EconomyService.transferMoney`) вместо ручного изменения двух балансов в command.
+- TITAN-E037 — После peer-to-peer payment получатель получает DM-уведомление о входящем платеже.
+- TITAN-E038 — Payment запрещает перевод самому себе и bot accounts.
+- TITAN-E039 — Robbery имеет минимальный порог wallet жертвы, чтобы нельзя было грабить слишком бедных пользователей.
+- TITAN-E040 — Personal Safe жертвы полностью блокирует robbery, но всё равно сжигает cooldown грабителя.
+- TITAN-E041 — Успешный robbery переводит процент wallet жертвы грабителю.
+- TITAN-E042 — Провал robbery штрафует самого грабителя процентом его wallet.
+- TITAN-E043 — Для рискованных economy actions состояние cooldown хранится вместе с результатом действия в одном persisted economy update.
+- TITAN-E044 — Результаты economy actions показывают новый баланс прямо в embed после операции.
+- TITAN-E045 — Action-specific cooldowns могут настраиваться через `botConfig.economy.cooldowns.*`, сохраняя fallback defaults в коде.
