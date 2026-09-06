@@ -27,7 +27,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search и ServerStats.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats и Ticket.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
@@ -43,11 +43,16 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_MUSIC.md` — TM-001–TM-154;
 - `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170;
 - `ideas/TITAN_SEARCH.md` — TS-001–TS-080;
-- `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170.
+- `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
+- `ideas/TITAN_TICKETS.md` — TT-001–TT-170.
 
 ### `ServerStats` — ЗАКРЫТ
 
 Просмотрены `src/commands/ServerStats/serverstats.js`, все четыре ServerStats modules, `src/services/serverstatsService.js`, `src/handlers/counterButtons.js`, member join/leave paths, scheduler/update path в `src/app.js` и counter config. Зафиксированы TSS-001–TSS-170: три типа member counters, voice/text variants, category placement, duplicate protection, creation rollback, persistent guild records, sanitization/legacy DB formats, member counting/fallbacks, configurable channel-name templates, 15-minute cron, immediate join/leave updates, orphan cleanup, list/update/delete UX, destructive confirmation, initiator-only controls, DB-first deletion, audit logging и error isolation.
+
+### `Ticket` — ЗАКРЫТ
+
+Просмотрены `src/commands/Ticket/ticket.js`, `ticket_dashboard.js`, ticket service/database/permissions/logging modules, button/modal handlers, feedback persistence и связанные config/transcript paths. Зафиксированы TT-001–TT-170: persistent panel/dashboard, staff role и open/closed categories, open-ticket limits, ticket numbering/persistence, creator/staff permissions, claim/unclaim, priority, pin/unpin, close/archive, transcript/delete flow, ticket logging, feedback, guild statistics и изолированная service/database/interaction архитектура.
 
 ### `Search` — ЗАКРЫТ
 
@@ -55,7 +60,7 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 
 ### Точная точка продолжения
 
-**Следующий шаг: проверить следующий элемент фактического `src/commands/` recursive tree после `ServerStats/` и продолжить исследование с него.**
+**Следующий шаг: `src/commands/Tools/`.**
 
 После каждого следующего крупного батча обновлять этот файл и `research/titanbot.md` с точным путём.
 
