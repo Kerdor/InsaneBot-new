@@ -27,7 +27,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket и Tools.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools и Utility.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
@@ -45,30 +45,23 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_SEARCH.md` — TS-001–TS-080;
 - `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
 - `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
-- `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244.
-
-### `ServerStats` — ЗАКРЫТ
-
-Просмотрены `src/commands/ServerStats/serverstats.js`, все четыре ServerStats modules, `src/services/serverstatsService.js`, `src/handlers/counterButtons.js`, member join/leave paths, scheduler/update path в `src/app.js` и counter config. Зафиксированы TSS-001–TSS-170.
-
-### `Ticket` — ЗАКРЫТ
-
-Просмотрены ticket command/dashboard, service/database/permissions/logging modules, button/modal handlers, feedback persistence и связанные config/transcript paths. Зафиксированы TT-001–TT-170.
-
-### `Search` — ЗАКРЫТ
-
-Зафиксированы TS-001–TS-080 по `src/commands/Search/`.
+- `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
+- `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
 
 ### `Tools` — ЗАКРЫТ
 
-Просмотрены `src/commands/Tools/baseconvert.js`, `calculate.js`, `countdown.js`, `generatepassword.js`, `hexcolor.js`, `poll.js`, `randomuser.js`, `shorten.js`, `time.js`, `unixtime.js`, `embedbuilder.js` и `src/handlers/countdownButtons.js`. Зафиксированы TTOOL-001–TTOOL-244 в `ideas/TITAN_TOOLS.md`.
+Просмотрены все Tool command/handler files. Зафиксированы TTOOL-001–TTOOL-244.
 
-Основные блоки: countdown controls/lifecycle/permissions; base conversion с BigInt и Base64/Base58/Base62; безопасный calculator с whitelist, защитой от code-like patterns, history и interactive operations; crypto password generation и strength scoring; HEX color analysis; reaction polls; filtered random-user picker; timezone/Unix utilities; URL shortener; интерактивный Embed Builder с live preview, fields, colors, author/footer/images, timestamp, reorder/reset/post и timeout-safe interactions.
+### `Utility` — ЗАКРЫТ
+
+Просмотрены все файлы `src/commands/Utility/`, `src/commands/Utility/modules/report.js`, `report_setchannel.js` и связанный `src/handlers/todoButtons.js`. Зафиксированы TUTILITY-001–TUTILITY-240.
+
+Основные блоки Utility: avatar/user/server information, first-message lookup, report filing и report-channel configuration через общий logging service, personal todo, shared todo с persistent share IDs, creator/member access, task lifecycle, interactive button/modal controls, source-message refresh, operation-specific rate limits, validation, DB normalization и error isolation.
 
 ### Точная точка продолжения
 
-**Следующий шаг: `src/commands/Utility/`.**
+**`src/commands/` полностью закрыт.**
 
-После следующего крупного батча обновить `research/titanbot.md`, `RESEARCH_PROGRESS.md` и этот файл с точным путём.
+Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/config/`**.
 
-**Не переходить к GAwesomeBot до полного закрытия TitanBot.**
+Продолжать строго по порядку дерева. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
