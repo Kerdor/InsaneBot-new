@@ -6,38 +6,73 @@
 
 ## Стартовая сверка
 
-Репозиторий публичный, актуальная default branch — `main`. Recursive tree корня закрыт: есть `src/`, `scripts/`, `lavalink/`, `.github/workflows/` и deployment/config files.
+Recursive tree корня проверен полностью (`truncated=false`). В репозитории присутствуют `src/`, `scripts/`, `lavalink/`, `.github/workflows/` и deployment/config/runtime files.
 
-## Уже просмотрено
+## Просмотрено
 
-- root recursive tree;
+### Root / bootstrap
+- recursive tree `main`;
 - `README.md`;
 - `src/app.js`;
-- `src/handlers/loaders/commandLoader.js`;
+- `src/handlers/loaders/commandLoader.js`.
+
+### Birthday
 - `src/commands/Birthday/birthday.js`;
 - `src/commands/Birthday/modules/birthday_set.js`;
 - `src/commands/Birthday/modules/birthday_list.js`;
 - `src/commands/Birthday/modules/next_birthdays.js`.
 
-## Первые направления находок
+### Community / Core / Economy
+- Community application subsystem и dashboard;
+- Core config wizard и command dashboard;
+- Economy command family;
+- `src/config/shop/items.js`.
 
-- startup orchestration: database → web server → commands → handlers → music → Discord login → global registration;
-- degraded in-memory DB fallback с явным предупреждением о потере данных после restart;
-- `/health` и `/ready` с различными semantics, metrics и HTTP 503 при неготовности;
-- встроенный Express API с CORS и простым IP-based rate limiter;
-- автоматический перебор следующего порта при `EADDRINUSE`;
-- graceful shutdown cron/music/web/database/Discord client;
-- централизованный обработчик uncaught exception/unhandled rejection с классификацией recoverable Discord errors;
-- cron-задачи для birthdays, giveaways и server counters;
-- scheduled cleanup orphaned server counters;
-- рекурсивный command loader с категорией из директории, filePath metadata и пропуском `modules/`;
-- защита от duplicate primary command names;
-- pre-registration validation Discord command names/descriptions/options/choices;
-- предупреждение около лимита глобальных команд и controlled truncation сверх лимита;
-- опциональное удаление существующих global commands перед registration;
-- hot reload command через cache-busting import query;
-- birthday subsystem: set/info/list/remove/next/setchannel, валидация month/day и очистка stale users при выводе списка.
+### Fun
+- `src/commands/Fun/count.js`;
+- `src/services/countingGameService.js`;
+- `src/commands/Fun/fight.js`;
+- `src/commands/Fun/flip.js`;
+- `src/commands/Fun/roll.js`.
 
-## Следующая точка
+### Giveaway
+- `src/commands/Giveaway/gcreate.js`;
+- `src/commands/Giveaway/gdelete.js`;
+- `src/commands/Giveaway/gend.js`;
+- `src/commands/Giveaway/greroll.js`;
+- `src/services/giveawayService.js`.
 
-Продолжить строго по дереву `src/commands/`: сначала завершить `Birthday`, затем `Community`, `Core`, `Economy` и далее по порядку дерева. После каждой существенной пачки обновлять журнал и `PROJECT_STATE.md`. Build/dependency artifacts не считать самостоятельными источниками механик без содержательной логики.
+## Уже зафиксировано в ideas
+
+- `ideas/TITAN_CORE.md`;
+- `ideas/TITAN_APPLICATIONS.md`;
+- `ideas/TITAN_CONFIG.md`;
+- `ideas/TITAN_ECONOMY.md` — E001–E045;
+- `ideas/TITAN_FUN.md` — TF-001–TF-043;
+- `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065.
+
+## Существенные находки текущего батча
+
+- Counting Game — отдельное guild-scoped состояние с несколькими системами представления чисел: decimal, hexadecimal, binary, base36, base64, Roman, math, alphabet.
+- Counting Game хранит next value, last user, current/best streak и персональный leaderboard; reset сбрасывает текущую серию, но сохраняет best streak.
+- Counting Game поддерживает expression/equality parsing в math mode и отдельные правила case normalization для Roman/Alphabet.
+- Fun содержит random mechanics: coin flip, dice notation с modifier и ограничения 20 dice/1000 sides, а также текстовую случайную 1v1 дуэль с несколькими раундами.
+- Giveaway имеет полный lifecycle: create → join → automatic/manual end → winner announcement → reroll/delete.
+- Giveaway хранит Discord message/channel/guild IDs, host, participants, winner IDs, timestamps, end actor и winner announcement ID.
+- Winner selection уникализирует участников и случайно выбирает до N победителей.
+- Giveaway имеет отдельный per-user/per-giveaway interaction rate limit.
+- Expired giveaways обрабатываются фоново; отсутствие guild/channel/message не ломает обработку остальных записей.
+- Delete имеет fallback-поиск сообщения по другим text channels и после удаления из БД проверяет, что запись действительно исчезла.
+- Reroll сохраняет новый набор победителей даже при недоступном исходном Discord message/channel и умеет переиспользовать существующее announcement сообщение.
+- Create/end/delete/reroll/winner действия интегрированы с audit logging, причём ошибка логирования не должна ломать основную операцию.
+
+## Точная точка продолжения
+
+**Следующий раздел дерева: `src/commands/JoinToCreate/`.**
+
+Уже начат просмотр:
+- `src/commands/JoinToCreate/jointocreate.js` — просмотрен частично из-за размера файла; основные setup/dashboard структуры и collector-based configuration уже видны.
+
+Дальше нужно полностью выжать `JoinToCreate`: дочерние `modules/config_setup.js`, `modules/setup.js`, затем `src/services/joinToCreateService.js`, после чего перейти к следующему разделу дерева (`Leveling`).
+
+Правило остаётся неизменным: GAwesomeBot не трогаем, пока TitanBot полностью не закрыт.
