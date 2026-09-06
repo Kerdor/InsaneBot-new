@@ -25,9 +25,10 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools и Utility.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility и Config.
 
 Пакеты идей:
+- `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
@@ -43,12 +44,12 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
 - `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
 
-### `Utility` — ЗАКРЫТ
+### `Config` — ЗАКРЫТ
 
-Просмотрены все файлы `src/commands/Utility/`, оба report modules и связанный `src/handlers/todoButtons.js`. Зафиксированы TUTILITY-001–TUTILITY-240: avatar/user/server info, first-message lookup, report routing/configuration, personal todo, shared todo, persistent IDs, access control, modal/button UI, message refresh, rate limits, validation и DB normalization/error isolation.
+Полностью проверены все элементы `src/config/`: application, bot, commands/commandAliases, commands/commandCategories, commands/prefixRestrictions, database/postgres, database/schemaVersion, guild/guildConfigDefaults, music/lavalink, shop/index и shop/items. Зафиксированы TITAN-G001–TITAN-G232.
 
 ### Точная точка продолжения
 
-**`src/commands/` полностью закрыт.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/config/`**.
+**`src/commands/` и `src/config/` полностью закрыты.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/events/`**.
 
 Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
