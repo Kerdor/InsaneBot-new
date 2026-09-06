@@ -27,7 +27,7 @@
 
 ## `ItzSudhan/Discord-MusicBot` — ЗАВЕРШЁН
 
-Ветка: `v5`. Recursive tree проверен полностью (`truncated=false`), исходные каталоги закрыты и build artifacts отдельно классифицированы.
+Ветка: `v5`. Recursive tree `truncated=false`, исходные каталоги закрыты и build artifacts отдельно классифицированы.
 
 Пакеты идей:
 - `ideas/MUSIC.md` — MUSIC-001–042;
@@ -41,7 +41,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Обработаны Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate и Leveling на уровне найденных исходников, сервисов и связанных event paths.
+Recursive tree `main` проверен полностью (`truncated=false`). Обработаны Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling и Logging на уровне найденных исходников, сервисов, UI/handlers и связанных event paths.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
@@ -51,16 +51,19 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
 - `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
-- `ideas/TITAN_LEVELING.md` — TL-001–TL-100.
+- `ideas/TITAN_LEVELING.md` — TL-001–TL-100;
+- `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100.
 
 JoinToCreate закрыт по просмотренным command/service/event paths: temporary voice channels, ownership transfer, auto-delete, configurable naming, bitrate/user limits, interactive dashboard, stale-state cleanup, cooldowns и permission/error handling.
 
 Leveling закрыт по просмотренным command/service/event paths: XP range/cooldown/multiplier, ignored channels/roles/users, mutex-protected XP updates, level progression до 1000, rank/leaderboard, role rewards, announcements, admin level controls и interactive dashboard.
 
+Logging закрыт по command/modules/service/UI/handler и связанным event logging paths: отдельные Audit/Applications/Reports destinations, global/category/event toggles, wildcard category controls, user/channel ignore filters, permission checks, fallback/legacy channel resolution, unified audit embed builder, Before/After comparison, metadata/attachments, lifecycle logging участников/ролей/сообщений и resilient error handling.
+
 ### Точная точка продолжения
 
-**Следующий раздел: `src/commands/Logging/`.**
+**Следующий раздел: следующий каталог `src/commands/` после `Logging/` по фактическому recursive tree.**
 
-После Logging продолжать строго по порядку дерева `src/commands/`, пока весь TitanBot не будет закрыт.
+После определения следующего каталога продолжать строго по порядку дерева `src/commands/`, закрывая его полностью до перехода дальше.
 
 **Не переходить к GAwesomeBot до полного закрытия TitanBot.**
