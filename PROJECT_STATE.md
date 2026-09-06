@@ -27,7 +27,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation и Music.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music и Reaction_roles.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
@@ -40,16 +40,17 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_LEVELING.md` — TL-001–TL-100;
 - `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
 - `ideas/MODERATION.md` — MOD-001–MOD-135;
-- `ideas/TITAN_MUSIC.md` — TM-001–TM-154.
+- `ideas/TITAN_MUSIC.md` — TM-001–TM-154;
+- `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170.
 
 Music закрыт по command/service/handler/config paths: playback и queue controls, duplicate protection, requester metadata, loop/volume/seek, queue pagination, persistent Now Playing UI, auto-pause/resume, idle/24-7 lifecycle, Lavalink/Riffy setup, multi-node configuration, shard voice routing, lifecycle/error handling и shutdown.
 
-Moderation закрыт по всем файлам `src/commands/Moderation/` и moderation services: centralized ModerationService, moderator/bot hierarchy validation, owner bypass, ban/kick/timeout/untimeout/unban, warnings, case IDs, mass ban/kick, purge, lock/unlock, staff DM, say, cases pagination и user notes.
+Reaction_roles закрыт по command/service/handler/status/database-key paths: setup/dashboard, role safety, 5-panel guild limit, 25-role panel limit, self-assignment через select menu, add/remove/edit/repost/delete lifecycle, deleted-message recovery, message-ID migration, reconciliation, persistence, typed errors, audit logging и isolated partial failures.
 
 ### Точная точка продолжения
 
-**Следующий раздел: `src/commands/Reaction_roles/`.**
+**Следующий раздел: `src/commands/Search/`.**
 
-После закрытия `Reaction_roles/` продолжать строго по порядку дерева `src/commands/`.
+После закрытия `Search/` продолжать строго по порядку дерева `src/commands/`.
 
 **Не переходить к GAwesomeBot до полного закрытия TitanBot.**
