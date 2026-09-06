@@ -25,23 +25,9 @@
 6. CorwinDev/Discord-Bot — ОЖИДАЕТ.
 7. Tomato6966/Multipurpose-discord-bot — ОЖИДАЕТ.
 
-## `ItzSudhan/Discord-MusicBot` — ЗАВЕРШЁН
-
-Ветка: `v5`. Recursive tree `truncated=false`, исходные каталоги закрыты и build artifacts отдельно классифицированы.
-
-Пакеты идей:
-- `ideas/MUSIC.md` — MUSIC-001–042;
-- `ideas/MUSIC_COMMANDS.md` — MUSIC-C001–055;
-- `ideas/MUSIC_CONTEXT.md` — MUSIC-X001–007;
-- `ideas/MUSIC_EVENTS.md` — MUSIC-E001–025;
-- `ideas/MUSIC_STORAGE.md` — MUSIC-S001–018;
-- `ideas/MUSIC_CORE.md` — MUSIC-K001–018;
-- `ideas/MUSIC_WEB.md` — MUSIC-W001–031;
-- `ideas/MUSIC_DEPLOY.md` — MUSIC-D001–026.
-
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Обработаны Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging и Moderation.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation и Music.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
@@ -53,20 +39,17 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
 - `ideas/TITAN_LEVELING.md` — TL-001–TL-100;
 - `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
-- `ideas/MODERATION.md` — MOD-001–MOD-135.
+- `ideas/MODERATION.md` — MOD-001–MOD-135;
+- `ideas/TITAN_MUSIC.md` — TM-001–TM-154.
 
-JoinToCreate закрыт по просмотренным command/service/event paths: temporary voice channels, ownership transfer, auto-delete, configurable naming, bitrate/user limits, interactive dashboard, stale-state cleanup, cooldowns и permission/error handling.
+Music закрыт по command/service/handler/config paths: playback и queue controls, duplicate protection, requester metadata, loop/volume/seek, queue pagination, persistent Now Playing UI, auto-pause/resume, idle/24-7 lifecycle, Lavalink/Riffy setup, multi-node configuration, shard voice routing, lifecycle/error handling и shutdown.
 
-Leveling закрыт по просмотренным command/service/event paths: XP range/cooldown/multiplier, ignored channels/roles/users, mutex-protected XP updates, level progression до 1000, rank/leaderboard, role rewards, announcements, admin level controls и interactive dashboard.
-
-Logging закрыт по command/modules/service/UI/handler и связанным event logging paths: отдельные Audit/Applications/Reports destinations, global/category/event toggles, wildcard category controls, user/channel ignore filters, permission checks, fallback/legacy channel resolution, unified audit embed builder, Before/After comparison, metadata/attachments, lifecycle logging участников/ролей/сообщений и resilient error handling.
-
-Moderation закрыт по всем файлам `src/commands/Moderation/` и moderation services: centralized ModerationService, moderator/bot hierarchy validation, owner bypass, ban/kick/timeout/untimeout/unban, warnings, case IDs, mass ban/kick, purge, lock/unlock, staff DM, say, cases pagination и user notes. В `ideas/MODERATION.md` добавлен большой TitanBot-пакет MOD-044–MOD-135.
+Moderation закрыт по всем файлам `src/commands/Moderation/` и moderation services: centralized ModerationService, moderator/bot hierarchy validation, owner bypass, ban/kick/timeout/untimeout/unban, warnings, case IDs, mass ban/kick, purge, lock/unlock, staff DM, say, cases pagination и user notes.
 
 ### Точная точка продолжения
 
-**Следующий раздел: `src/commands/Music/`.**
+**Следующий раздел: `src/commands/Reaction_roles/`.**
 
-После определения и закрытия `Music/` продолжать строго по порядку дерева `src/commands/`.
+После закрытия `Reaction_roles/` продолжать строго по порядку дерева `src/commands/`.
 
 **Не переходить к GAwesomeBot до полного закрытия TitanBot.**
