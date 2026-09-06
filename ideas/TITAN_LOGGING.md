@@ -1,0 +1,106 @@
+# TitanBot — Logging
+
+Источник: `codebymitch/TitanBot`
+
+## Logging / audit
+
+- **TLOG-001** — Единый `/logging` command с отдельными subcommands для dashboard и быстрого назначения канала.
+- **TLOG-002** — Logging dashboard доступен только участникам с `Manage Server`.
+- **TLOG-003** — Logging запрещён в DM (`setDMPermission(false)`).
+- **TLOG-004** — Разделение логов по destination: Audit, Applications, Reports.
+- **TLOG-005** — Быстрое назначение log channel без открытия dashboard.
+- **TLOG-006** — Возможность очистить destination без удаления всей logging-конфигурации.
+- **TLOG-007** — Назначение канала автоматически включает logging.
+- **TLOG-008** — Перед назначением канала проверяются `View Channel`, `Send Messages`, `Embed Links` у бота.
+- **TLOG-009** — Dashboard показывает общий статус logging.
+- **TLOG-010** — Dashboard показывает количество включённых event categories из общего числа.
+- **TLOG-011** — Dashboard показывает количество ignore-фильтров пользователей и каналов.
+- **TLOG-012** — Dashboard отображает все настроенные log channels.
+- **TLOG-013** — Ticket lifecycle/transcript channels отображаются в logging dashboard как read-only связанные настройки.
+- **TLOG-014** — Отдельная страница Event Categories для управления типами событий.
+- **TLOG-015** — Отдельная страница Ignore Filters для управления исключениями.
+- **TLOG-016** — Категории событий представлены кнопками с визуальным состоянием enabled/disabled.
+- **TLOG-017** — Есть глобальная кнопка Toggle All Categories.
+- **TLOG-018** — Есть кнопка Refresh для синхронизации dashboard с актуальной конфигурацией.
+- **TLOG-019** — Есть Back to Dashboard из вложенных представлений.
+- **TLOG-020** — Настройки dashboard выбираются через string select menu.
+- **TLOG-021** — Выбор log channel в dashboard выполняется через channel select внутри modal.
+- **TLOG-022** — Для добавления user ignore используется User Select, а не ручной ввод ID.
+- **TLOG-023** — Для добавления channel ignore используется Channel Select.
+- **TLOG-024** — Удаление ignore-фильтра выполняется через select menu по существующим записям.
+- **TLOG-025** — Для select/filter interactions повторно проверяется `Manage Server`.
+- **TLOG-026** — Modal submission принимается только от того же пользователя, который открыл modal.
+- **TLOG-027** — Интерактивный modal имеет 5-минутный timeout.
+- **TLOG-028** — Пустой список фильтров не создаёт бессмысленный remove UI, а возвращает понятную ошибку.
+- **TLOG-029** — Remove-filter список ограничивается Discord-лимитом 25 options.
+- **TLOG-030** — Ignore filters разделены на `users` и `channels`.
+- **TLOG-031** — Повторное добавление уже существующего ignore ID не создаёт дубль.
+- **TLOG-032** — Удаление отсутствующего ignore ID безопасно ничего не меняет.
+- **TLOG-033** — Logging поддерживает wildcard-настройку категории (`category.*`).
+- **TLOG-034** — Выключение wildcard категории распространяется на все известные event types этой категории.
+- **TLOG-035** — При переключении wildcard одновременно сохраняется состояние wildcard и отдельных event types.
+- **TLOG-036** — Event enable check сначала учитывает точечное событие, затем wildcard категории.
+- **TLOG-037** — Глобальный `logging.enabled` полностью отключает отправку событий.
+- **TLOG-038** — Для каждого event type можно определить отдельный destination через category routing; Applications идут в applications channel, Reports — в reports channel, остальные — в audit.
+- **TLOG-039** — `logEvent` позволяет явно переопределить destination channel для конкретного события.
+- **TLOG-040** — При отсутствии guild событие не падает, а логируется как warning и пропускается.
+- **TLOG-041** — При отсутствии log channel событие молча не отправляется.
+- **TLOG-042** — Если настроенный log channel удалён/не найден, logging возвращает null и пишет warning.
+- **TLOG-043** — Если log channel не текстовый, событие не отправляется.
+- **TLOG-044** — Проверка permissions выполняется непосредственно перед отправкой каждого log event.
+- **TLOG-045** — Ошибка одного audit event не ломает вызывающую функциональность: `logEvent` ловит ошибку и возвращает null.
+- **TLOG-046** — Успешно отправленный event дополнительно записывается во внутренний runtime logger.
+- **TLOG-047** — Система поддерживает attachments вместе с audit embed.
+- **TLOG-048** — Система поддерживает дополнительный plain-text content вместе с embed.
+- **TLOG-049** — Каждый event имеет централизованный тип, цвет и icon mapping.
+- **TLOG-050** — Неизвестный event type получает fallback icon и fallback color.
+- **TLOG-051** — Неизвестный event type форматируется из dotted identifier в человекочитаемый title.
+- **TLOG-052** — Event title может быть переопределён конкретным вызывающим кодом.
+- **TLOG-053** — Общий embed builder поддерживает headline + строки + metadata.
+- **TLOG-054** — Строки audit log могут форматироваться как Discord quote block.
+- **TLOG-055** — Metadata нескольких параметров компактно объединяется через `•`.
+- **TLOG-056** — Описание audit embed ограничивается Discord limit 4096 символов.
+- **TLOG-057** — Для изменённых объектов поддерживается автоматический Before/After layout.
+- **TLOG-058** — Поля с префиксами old/before/new/after автоматически распознаются как comparison fields.
+- **TLOG-059** — Остальные поля при Before/After раскладываются как metadata lines.
+- **TLOG-060** — Есть отдельные inline fields и block fields для разных вариантов embed layout.
+- **TLOG-061** — Audit embed поддерживает author, thumbnail, image и footer.
+- **TLOG-062** — Footer может использовать executor tag/avatar, а при отсутствии executor — guild name/icon.
+- **TLOG-063** — Footer text ограничивается 2048 символами.
+- **TLOG-064** — Названия embed ограничиваются 256 символами.
+- **TLOG-065** — Значения embed fields ограничиваются 1024 символами.
+- **TLOG-066** — Общий role audit builder показывает name, color, ID, permissions, hoist, managed и position.
+- **TLOG-067** — Role audit ограничивает количество отображаемых permissions и показывает количество скрытых.
+- **TLOG-068** — Для удаления роли audit может дополнительно показывать количество участников с ролью.
+- **TLOG-069** — Создание роли логируется отдельным event type.
+- **TLOG-070** — Удаление роли логируется отдельным event type.
+- **TLOG-071** — Изменение nickname логируется с Before/After.
+- **TLOG-072** — Глобальное изменение username пользователя отслеживается через `UserUpdate`.
+- **TLOG-073** — Username update логируется во все guilds, где пользователь присутствует в cache.
+- **TLOG-074** — Изменение discriminator также может попадать в audit event.
+- **TLOG-075** — Bot users исключаются из username-update logging.
+- **TLOG-076** — Join event содержит user, ID, account creation time и текущий member count.
+- **TLOG-077** — Leave event содержит user, ID, время join и текущий member count.
+- **TLOG-078** — Join/leave/name-change события используют avatar пользователя как thumbnail.
+- **TLOG-079** — Канал может быть исключён из audit logging через channel ignore filter.
+- **TLOG-080** — Пользователь может быть исключён из audit logging через user ignore filter.
+- **TLOG-081** — Application logs автоматически предпочитают role-specific `logChannelId`, затем общий applications channel, затем legacy app setting.
+- **TLOG-082** — Для audit channel сохраняется backward-compatible fallback на legacy `channelId` / `logChannelId`.
+- **TLOG-083** — Для logging-конфига используется guild-scoped persistence.
+- **TLOG-084** — Отдельно можно включать/выключать всю logging-систему без удаления настроенных channels/events.
+- **TLOG-085** — Отдельно можно выключать category/event, сохраняя остальные настройки.
+- **TLOG-086** — Applications и Reports имеют собственные destination channels вместо смешивания с audit stream.
+- **TLOG-087** — UI показывает missing configured channel как warning с ID, а не ломает dashboard.
+- **TLOG-088** — Channel mentions разрешаются из cache с fallback fetch.
+- **TLOG-089** — Неудача fetch отдельного channel не ломает построение dashboard.
+- **TLOG-090** — Logging command имеет централизованный error boundary с user-friendly error response.
+- **TLOG-091** — Интеракции dashboard используют safe defer/edit/update helpers для защиты от interaction lifecycle ошибок.
+- **TLOG-092** — Handler ошибок interaction дополнительно знает тип interaction, customId и имя handler.
+- **TLOG-093** — Успешные изменения channel/filter возвращают ephemeral confirmation.
+- **TLOG-094** — Удаление/очистка channel не требует отдельной команды: действие доступно прямо из dashboard menu.
+- **TLOG-095** — Dashboard отделяет отображение конфигурации от операций изменения: view builders можно повторно использовать после каждого действия.
+- **TLOG-096** — После изменения filter/channel dashboard автоматически refresh-ится без ручного повторного открытия.
+- **TLOG-097** — Для событий модерации, сообщений, ролей, участников, leveling, reaction roles, giveaways, counters, applications и reports существует единая category taxonomy.
+- **TLOG-098** — Встроенный event catalog включает moderation ban/kick/mute/warn/purge/timeout/untimeout/unban/lock/unlock/DM/config.
+- **TLOG-099** — Встроенный event catalog включает message delete/edit/bulk-delete, role create/delete/update, member join/leave/name-change.
+- **TLOG-100** — Встроенный event catalog включает reaction-role add/remove/create/delete/update, giveaway create/winner/reroll/delete, counter update/config, application submit/review и report filed.
