@@ -27,12 +27,13 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility и Config.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config и Events.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
 - `ideas/TITAN_APPLICATIONS.md`;
 - `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
+- `ideas/TITAN_EVENTS.md` — TE-001–TE-280;
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
@@ -48,24 +49,16 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
 - `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
 
-### `Tools` — ЗАКРЫТ
+### `Events` — ЗАКРЫТ
 
-Просмотрены все Tool command/handler files. Зафиксированы TTOOL-001–TTOOL-244.
+Просмотрены все 14 файлов `src/events/`: `channelDelete.js`, `guildCreate.js`, `guildMemberAdd.js`, `guildMemberRemove.js`, `guildMemberUpdate.js`, `interactionCreate.js`, `messageCreate.js`, `messageDelete.js`, `messageUpdate.js`, `ready.js`, `roleCreate.js`, `roleDelete.js`, `userUpdate.js`, `voiceStateUpdate.js`.
 
-### `Utility` — ЗАКРЫТ
-
-Просмотрены все файлы `src/commands/Utility/`, `src/commands/Utility/modules/report.js`, `report_setchannel.js` и связанный `src/handlers/todoButtons.js`. Зафиксированы TUTILITY-001–TUTILITY-240.
-
-### `Config` — ЗАКРЫТ
-
-Полностью проверены все элементы `src/config/`: `application.js`, `bot.js`, `commands/commandAliases.js`, `commands/commandCategories.js`, `commands/prefixRestrictions.js`, `database/postgres.js`, `database/schemaVersion.js`, `guild/guildConfigDefaults.js`, `music/lavalink.js`, `shop/index.js`, `shop/items.js`.
-
-Зафиксированы **TITAN-G001–TITAN-G232**. Основные блоки: централизованный runtime config, environment validation/defaults, embed branding, application retention, economy/shop pricing and transaction policies, verification safety/audit controls, welcome/goodbye templates, counter resolvers, global feature flags, command aliases/categories, protected commands, granular prefix restrictions, PostgreSQL pooling/SSL/TTL/health/migrations, schema version contract, multi-source Lavalink configuration и API/CORS/logging runtime settings.
+Зафиксировано **TE-001–TE-280** в `ideas/TITAN_EVENTS.md`. Основные блоки: event architecture, isolated error boundaries, member join/leave lifecycle, realtime counters, birthday preserve/restore, application/level cleanup, interaction dispatch/tracing, autocomplete/button/select/modal routing, message pipeline, audit limits, startup reconciliation, channel self-healing, temporary voice lifecycle/ownership transfer и music voice integration.
 
 ### Точная точка продолжения
 
-**`src/commands/` и `src/config/` полностью закрыты.**
+**`src/commands/`, `src/config/` и `src/events/` полностью закрыты.**
 
-Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/events/`**.
+Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/handlers/`**.
 
 Продолжать строго по порядку дерева. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
