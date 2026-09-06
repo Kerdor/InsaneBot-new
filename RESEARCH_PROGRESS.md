@@ -25,9 +25,7 @@
 
 ## `ItzSudhan/Discord-MusicBot` — ЗАВЕРШЁН
 
-Ветка: `v5`.
-
-Recursive tree проверен полностью (`truncated=false`). Закрыты все исходные каталоги и root-файлы, включая `commands/`, `events/`, `lib/`, `util/`, `api/`, исходный `dashboard/`, `deploy/`, `docker/`, `.github/` и оставшиеся root/config/runtime files. `dashboard/out/` и `_next` классифицированы как build artifacts и не дублировались поверх исходников.
+Ветка: `v5`. Recursive tree проверен полностью (`truncated=false`). Закрыты все исходные каталоги и root-файлы, включая `commands/`, `events/`, `lib/`, `util/`, `api/`, исходный `dashboard/`, `deploy/`, `docker/`, `.github/` и оставшиеся root/config/runtime files. Build artifacts не считались самостоятельными источниками механик.
 
 Идеи:
 - `ideas/MUSIC.md` — MUSIC-001–042;
@@ -39,10 +37,19 @@ Recursive tree проверен полностью (`truncated=false`). Закр
 - `ideas/MUSIC_WEB.md` — MUSIC-W001–031;
 - `ideas/MUSIC_DEPLOY.md` — MUSIC-D001–026.
 
-Финальная сверка выявила и добавила отдельные Docker/Lavalink варианты: сервисное разделение bot/Lavalink, `depends_on`, отдельная internal network, read-only config mounts, self-hosted Lavalink и параметры buffering/quality/metrics/request logging/rolling logs.
+## `codebymitch/TitanBot` — АКТИВЕН
 
-## Следующая точка
+Recursive tree `main` проверен полностью (`truncated=false`). Уже обработаны Root/bootstrap, Birthday, Community, Core, Economy, Fun и Giveaway на уровне соответствующих исходников/сервисов.
 
-Начать `codebymitch/TitanBot` с его recursive tree. Сначала определить ветку/актуальный основной tree, затем идти строго по дереву, фиксируя каждый просмотренный файл и сравнивая находки с существующим банком идей. Создать `research/titanbot.md` и при необходимости новые тематические `ideas/`.
+Последние пакеты:
+- `ideas/TITAN_ECONOMY.md` — E001–E045;
+- `ideas/TITAN_FUN.md` — TF-001–TF-043;
+- `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065.
 
-**`ItzSudhan/Discord-MusicBot` завершён. `codebymitch/TitanBot` — единственный следующий источник.**
+### Точная точка продолжения
+
+**Следующий раздел: `src/commands/JoinToCreate/`.**
+
+`src/commands/JoinToCreate/jointocreate.js` уже открыт частично; далее полностью разобрать его оставшуюся логику, затем `modules/config_setup.js`, `modules/setup.js`, `src/services/joinToCreateService.js`. После полного закрытия JoinToCreate перейти к `Leveling`.
+
+**GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.**
