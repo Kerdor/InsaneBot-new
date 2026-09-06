@@ -1,0 +1,84 @@
+# TITAN SEARCH — Банк идей
+
+Находки `codebymitch/TitanBot` (main), сверенные по command/module paths.
+
+- TS-001 — Единая `/search` команда объединяет несколько внешних поисковых/справочных сценариев.
+- TS-002 — Search разбит на subcommands `define`, `google` и `urban`.
+- TS-003 — Каждая поисковая операция вынесена в отдельный module вместо монолитного command handler.
+- TS-004 — Основная команда делегирует выполнение выбранному search module.
+- TS-005 — Неизвестный subcommand обрабатывается как отдельная user-facing ошибка.
+- TS-006 — Dictionary lookup принимает обязательное строковое поле `word`.
+- TS-007 — Google lookup принимает обязательное строковое поле `query`.
+- TS-008 — Urban Dictionary lookup принимает обязательное строковое поле `term`.
+- TS-009 — Define использует внешний Dictionary API вместо собственной базы определений.
+- TS-010 — Urban использует отдельный внешний API вместо dictionary API.
+- TS-011 — Google-поиск реализован как генерация прямой ссылки на Google Search, без серверного scraping результатов.
+- TS-012 — Пользователю возвращается кликабельная ссылка на сформированный Google query.
+- TS-013 — Search query URL кодируется через `encodeURIComponent`, предотвращая поломку URL спецсимволами.
+- TS-014 — Google query сохраняется в audit/application log вместе с user ID и guild ID.
+- TS-015 — Define автоматически defer'ит interaction перед сетевым API-запросом.
+- TS-016 — Если safe defer не удался, Define прекращает дальнейшую обработку.
+- TS-017 — Urban использует отложенный defer fallback timer, если внешний API отвечает не сразу.
+- TS-018 — Urban defer fallback запускается через 1.5 секунды, оставляя запас до Discord interaction timeout.
+- TS-019 — После успешного ответа Urban defer timer очищается.
+- TS-020 — Ошибка fallback defer не ломает основной API request и только логируется на debug-уровне.
+- TS-021 — Define и Urban ограничивают минимальную длину запроса двумя символами.
+- TS-022 — Слишком короткий Define word отклоняется до обращения к внешнему API.
+- TS-023 — Слишком короткий Urban term отклоняется до обращения к внешнему API.
+- TS-024 — Валидационные отказы логируются с user ID, guild ID и исходным поисковым словом/термином.
+- TS-025 — Define URL-encodes слово перед передачей внешнему API.
+- TS-026 — Urban URL-encodes термин перед передачей внешнему API.
+- TS-027 — Внешние HTTP-запросы имеют явный timeout 5 секунд.
+- TS-028 — Пустой ответ Dictionary API преобразуется в понятное `No definitions found`.
+- TS-029 — HTTP 404 Dictionary API преобразуется в user-input ошибку отсутствия определения.
+- TS-030 — Не-404 ошибки Dictionary API проходят через централизованный interaction error handler.
+- TS-031 — Ошибки Dictionary API логируются с message, stack, user ID, word, guild ID и command name.
+- TS-032 — Define показывает phonetic notation, если API её предоставляет.
+- TS-033 — Если phonetic отсутствует, embed не заставляет пользователя видеть пустую phonetic строку.
+- TS-034 — Define ограничивает количество meanings до первых пяти.
+- TS-035 — Для каждого meaning показывается part of speech.
+- TS-036 — Для каждого meaning показываются максимум три определения.
+- TS-037 — Определения внутри одного meaning нумеруются начиная с 1.
+- TS-038 — Пример употребления добавляется непосредственно под соответствующим определением, если API его предоставляет.
+- TS-039 — Пустые наборы definitions не создают бесполезное поле embed.
+- TS-040 — Define использует embed как основной формат выдачи результата.
+- TS-041 — Define добавляет footer с указанием источника Free Dictionary API.
+- TS-042 — Urban берёт первый результат из массива API как основной результат выдачи.
+- TS-043 — Отсутствие Urban results превращается в понятную user-input ошибку.
+- TS-044 — Urban удаляет квадратные скобки из definition/example перед публикацией, очищая исходную wiki-style разметку.
+- TS-045 — Urban нормализует лишние пустые строки в definition.
+- TS-046 — Urban ограничивает definition до 2000 символов перед помещением в embed description.
+- TS-047 — Urban переносит пример в отдельное embed field.
+- TS-048 — Urban заменяет переносы строк в example пробелами перед отображением.
+- TS-049 — Urban ограничивает отображаемый example 500 символами.
+- TS-050 — При отсутствии example Urban показывает явный `No example provided`.
+- TS-051 — Urban показывает thumbs-up и thumbs-down statistics результата.
+- TS-052 — Urban форматирует большие значения статистики через локализованное число (`toLocaleString`).
+- TS-053 — Urban показывает автора определения с fallback `Anonymous`.
+- TS-054 — Urban embed содержит permalink исходного определения.
+- TS-055 — Urban embed имеет отдельные поля Example, Stats и Author.
+- TS-056 — Urban указывает источник `Urban Dictionary` в footer.
+- TS-057 — Urban может использовать icon URL источника в footer.
+- TS-058 — Urban 404/отсутствие response трактуется как отсутствие подходящего определения в user-facing сообщении.
+- TS-059 — Urban HTTP 429 преобразуется в отдельное rate-limit сообщение.
+- TS-060 — Urban rate-limit сообщение предлагает повторить запрос через несколько минут.
+- TS-061 — Остальные Urban API ошибки проходят через централизованный interaction error handler.
+- TS-062 — Urban ошибки логируются с API status дополнительно к стандартному error context.
+- TS-063 — Define успешный результат логируется с user ID, word, guild ID и command name.
+- TS-064 — Urban успешный результат логируется с user ID, term, guild ID и command name.
+- TS-065 — Search modules используют общий `InteractionHelper` для safe reply/defer lifecycle.
+- TS-066 — User-facing validation/errors используют централизованный `replyUserError`, а не локальный формат ошибок каждого модуля.
+- TS-067 — Неизвестная команда также проходит через централизованный `replyUserError`.
+- TS-068 — Search API errors различают ошибки пользовательского запроса и инфраструктурные ошибки.
+- TS-069 — Сетевые зависимости Search не требуют сохранения результатов в БД.
+- TS-070 — Search command остаётся guild-aware через logging context, даже когда сам внешний запрос не требует guild.
+- TS-071 — Search subcommand descriptions объясняют пользователю назначение каждого источника непосредственно в Discord command UI.
+- TS-072 — Google search не требует внешнего API key для базового сценария, поскольку бот формирует обычную поисковую URL.
+- TS-073 — Разные источники можно добавлять независимо, не меняя общий `/search` интерфейс.
+- TS-074 — Search module API стандартизирован через `execute(interaction, ...)`, позволяя command router одинаково делегировать разные источники.
+- TS-075 — Define использует первый API entry как canonical word result даже при потенциальном наличии нескольких entries.
+- TS-076 — Define сохраняет исходное слово в error/log context, чтобы диагностировать проблемные запросы.
+- TS-077 — Urban сохраняет исходный term в error/log context для диагностики проблемных запросов.
+- TS-078 — Успешные Search ответы не требуют публичного канала для промежуточных технических сообщений.
+- TS-079 — Ошибки отдельного внешнего источника не должны ломать остальные subcommands `/search`.
+- TS-080 — Архитектура Search допускает расширение новыми lookup modules через отдельный файл + новый subcommand dispatch.
