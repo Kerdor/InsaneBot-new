@@ -17,46 +17,32 @@
 |---|---|---|---|
 | 1 | `Cog-Creators/Red-DiscordBot` | ✅ ЗАВЕРШЁН | `research/red-discord-bot.md` |
 | 2 | `python-discord/bot` | ✅ ЗАВЕРШЁН | `research/python-discord-bot.md` |
-| 3 | `ItzSudhan/Discord-MusicBot` | 🔵 АКТИВЕН | `research/discord-music-bot.md` |
-| 4 | `codebymitch/TitanBot` | ⏳ ОЖИДАЕТ | — |
+| 3 | `ItzSudhan/Discord-MusicBot` | ✅ ЗАВЕРШЁН | `research/discord-music-bot.md` |
+| 4 | `codebymitch/TitanBot` | 🔵 АКТИВЕН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | ⏳ ОЖИДАЕТ | — |
 | 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | — |
 | 7 | `Tomato6966/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
 
-## `ItzSudhan/Discord-MusicBot` — АКТИВЕН
+## `ItzSudhan/Discord-MusicBot` — ЗАВЕРШЁН
 
 Ветка: `v5`.
 
-### Закрыто
+Recursive tree проверен полностью (`truncated=false`). Закрыты все исходные каталоги и root-файлы, включая `commands/`, `events/`, `lib/`, `util/`, `api/`, исходный `dashboard/`, `deploy/`, `docker/`, `.github/` и оставшиеся root/config/runtime files. `dashboard/out/` и `_next` классифицированы как build artifacts и не дублировались поверх исходников.
 
-- root README/tree/config/index/package;
-- `commands/slash/` — все команды из recursive tree;
-- `commands/context/play.js`;
-- все 6 файлов `events/`;
-- `lib/DiscordMusicBot.js` — дочитан полностью;
-- `lib/SlashCommand.js`, `lib/EpicPlayer.js`;
-- весь `util/`: `Controller.js`, `db.js`, `getChannel.js`, `getConfig.js`, `getLavalink.js`, `guildDb.js`, `loadCommands.js`;
-- весь исходный `api/`: `index.js`, `middlewares/auth.js`, `router.js`, `routes/dashboard.js`, `routes/data.js`;
-- исходный `dashboard/`: страницы, components и utils, включая динамическую `pages/servers/[id].tsx`.
-
-### Идеи
-
+Идеи:
 - `ideas/MUSIC.md` — MUSIC-001–042;
 - `ideas/MUSIC_COMMANDS.md` — MUSIC-C001–055;
 - `ideas/MUSIC_CONTEXT.md` — MUSIC-X001–007;
 - `ideas/MUSIC_EVENTS.md` — MUSIC-E001–025;
 - `ideas/MUSIC_STORAGE.md` — MUSIC-S001–018;
 - `ideas/MUSIC_CORE.md` — MUSIC-K001–018;
-- `ideas/MUSIC_WEB.md` — MUSIC-W001–031.
+- `ideas/MUSIC_WEB.md` — MUSIC-W001–031;
+- `ideas/MUSIC_DEPLOY.md` — MUSIC-D001–026.
 
-### Последний батч
-
-Проверен весь `util/` и закрыт `api/`. В `api/` найдены Express-сервер, Passport Discord OAuth, session auth middleware, динамическое подключение route-файлов, защищённые dashboard endpoints и public data endpoint с динамическим invite URL. Затем дочитан исходный `dashboard/`: NextUI dark theme, typed API helpers, dashboard stat cards, server selector/avatar UI, общий navbar/layout, login/logout redirects и модель состояния сервера с queue/loop/playing.
-
-Скомпилированный `dashboard/out/` зафиксирован как build artifact и не используется как отдельный источник новых механик поверх исходного TypeScript-кода.
+Финальная сверка выявила и добавила отдельные Docker/Lavalink варианты: сервисное разделение bot/Lavalink, `depends_on`, отдельная internal network, read-only config mounts, self-hosted Lavalink и параметры buffering/quality/metrics/request logging/rolling logs.
 
 ## Следующая точка
 
-Продолжить строго по recursive tree `v5`: сначала `deploy/`, затем `docker/`, `.github/`, затем оставшиеся root-файлы и любые ещё не закрытые исходные каталоги/файлы. Скомпилированные `dashboard/out/_next` не дублировать после анализа исходников.
+Начать `codebymitch/TitanBot` с его recursive tree. Сначала определить ветку/актуальный основной tree, затем идти строго по дереву, фиксируя каждый просмотренный файл и сравнивая находки с существующим банком идей. Создать `research/titanbot.md` и при необходимости новые тематические `ideas/`.
 
-**`ItzSudhan/Discord-MusicBot` НЕ ЗАВЕРШЁН. Следующие источники не трогать.**
+**`ItzSudhan/Discord-MusicBot` завершён. `codebymitch/TitanBot` — единственный следующий источник.**
