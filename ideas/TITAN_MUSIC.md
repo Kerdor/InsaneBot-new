@@ -1,0 +1,158 @@
+# TITAN MUSIC — Банк идей
+
+Идеи, механики и UX, найденные при глубоком исследовании `codebymitch/TitanBot`.
+
+- TM-001 — Единая `/music` команда с набором playback/queue/session subcommands.
+- TM-002 — Отдельная `/join` команда для подключения к voice без запуска воспроизведения.
+- TM-003 — `/play` принимает поисковый запрос или URL как единый интерфейс добавления музыки.
+- TM-004 — `/play` помечен как slash-only, если конкретный музыкальный сценарий не поддерживает prefix-вызов.
+- TM-005 — `/queue` поддерживает явный номер страницы.
+- TM-006 — `/nowplaying` показывает состояние текущего трека отдельной командой.
+- TM-007 — Playback controls собраны в одном multi-subcommand интерфейсе: pause/resume/skip/stop/shuffle/loop/volume/seek/remove/move/clear/leave/247.
+- TM-008 — Loop имеет три явных режима: off, track, queue.
+- TM-009 — Volume ограничен диапазоном 0–100 на уровне slash option.
+- TM-010 — Seek принимает позицию в секундах с нижней границей 0.
+- TM-011 — Remove и move используют 1-based позиции очереди, удобные для пользователя.
+- TM-012 — Move позволяет независимо задать исходную и новую позицию.
+- TM-013 — 24/7 режим управляется явным boolean toggle.
+- TM-014 — Музыкальные slash-ответы по умолчанию ephemeral, а prefix-команды могут отвечать публично.
+- TM-015 — Для music-команд используется общий defer-wrapper, скрывающий разницу между slash и prefix interaction.
+- TM-016 — Music actions вынесены из command-файлов в единый сервис, чтобы одинаковая логика использовалась командами и кнопками.
+- TM-017 — Проверка наличия Riffy выполняется отдельно от проверки наличия подключённого Lavalink node.
+- TM-018 — При отсутствии Lavalink node пользователь получает отдельное понятное сообщение о временной недоступности музыки.
+- TM-019 — Поддерживается несколько Lavalink nodes через `nodeMap`, а операции требуют хотя бы одного connected node.
+- TM-020 — Voice connection имеет отдельный timeout ожидания подтверждения подключения — 12 секунд.
+- TM-021 — После `connection.resolve()` дополнительно используется event-based ожидание `connectionRestored`.
+- TM-022 — Неуспешное voice-подключение превращается в typed configuration error с инструкцией проверить Lavalink и permissions.
+- TM-023 — Перед созданием player бот проверяет Connect и Speak в конкретном voice channel.
+- TM-024 — Если player уже существует в другом voice channel, старый player уничтожается перед созданием нового подключения.
+- TM-025 — Player создаётся с `deaf: true`.
+- TM-026 — Для guild хранится text channel, связанный с музыкальным player.
+- TM-027 — Guild-specific volume повторно применяется к player при создании/получении session.
+- TM-028 — Музыкальная session изолирована по guild ID.
+- TM-029 — Runtime music state хранится в отдельном `Map`, создавая state только при первом обращении к guild.
+- TM-030 — Music state включает player message ID и channel ID для управления одним постоянным UI-сообщением.
+- TM-031 — Runtime state содержит `previousTracks` для истории предыдущих треков.
+- TM-032 — История previous tracks ограничена 20 элементами.
+- TM-033 — Runtime state хранит персональное состояние queue pagination для разных пользователей.
+- TM-034 — Queue page state хранится отдельно по user ID, поэтому разные пользователи могут иметь разные страницы очереди.
+- TM-035 — При уничтожении player session pagination state очищается.
+- TM-036 — При уничтожении session очищается история previous tracks.
+- TM-037 — При уничтожении session сбрасывается autoPaused state.
+- TM-038 — При уничтожении session отменяются update interval и idle timeout.
+- TM-039 — `Stop` защищён подтверждением, если в очереди накопилось минимум 5 треков.
+- TM-040 — Stop confirmation привязано к конкретному пользователю и действует только 15 секунд.
+- TM-041 — Обычный stop без большой очереди выполняется сразу.
+- TM-042 — Stop полностью очищает queue и уничтожает player session.
+- TM-043 — Skip при track-loop временно отключает loop, чтобы не зациклить пропускаемый трек.
+- TM-044 — После skip track-loop автоматически восстанавливается на следующем `trackStart` согласно guild preference.
+- TM-045 — Pause/resume имеют отдельные low-level `applyPause`/`applyResume`, пригодные для событий voice state и UI-кнопок.
+- TM-046 — Pause/resume low-level операции возвращают boolean, позволяя безопасно определить, было ли реально изменено состояние.
+- TM-047 — Повторный pause уже paused player считается пользовательской ошибкой.
+- TM-048 — Resume непоставленного на паузу player считается пользовательской ошибкой.
+- TM-049 — Shuffle запрещён при пустой очереди.
+- TM-050 — Факт shuffle сохраняется в guild music state и отражается в UI.
+- TM-051 — Loop preference сохраняется отдельно в guild state и синхронизируется с Lavalink player.
+- TM-052 — Есть программный `toggleLoop`, циклически проходящий none → track → queue → none.
+- TM-053 — Изменение volume сохраняется в guild state и немедленно применяется к player.
+- TM-054 — Есть относительная регулировка volume через `adjustVolume`, а не только абсолютная установка.
+- TM-055 — Seek запрещён для live stream или track с `isSeekable === false`.
+- TM-056 — Seek дополнительно проверяет, чтобы позиция не превышала длину трека.
+- TM-057 — Queue remove сначала валидирует диапазон индекса, затем сообщает название удалённого трека.
+- TM-058 — Queue move валидирует обе позиции до изменения очереди.
+- TM-059 — Queue clear отдельно сообщает об ошибке, если очередь уже пуста.
+- TM-060 — Queue display показывает текущий Now Playing перед списком queued tracks.
+- TM-061 — Queue имеет фиксированный размер страницы 10 треков.
+- TM-062 — Queue автоматически clamp'ит запрошенную страницу в допустимый диапазон.
+- TM-063 — Queue pagination использует first/previous/next/last navigation.
+- TM-064 — Queue pagination кнопки доступны только пользователю, управляющему music session в своём voice channel.
+- TM-065 — Queue pagination state обновляется после каждого перехода страницы.
+- TM-066 — Queue может корректно отображать пустую очередь даже при наличии активного player/current track.
+- TM-067 — Now Playing показывает artist, requester, progress, volume, loop и размер очереди.
+- TM-068 — Now Playing использует artwork/thumbnail текущего трека, если источник предоставляет изображение.
+- TM-069 — Duration форматируется автоматически как `m:ss` или `h:mm:ss`, а live/невалидная длительность показывается как Live.
+- TM-070 — Now Playing явно отображает Paused/Playing в footer.
+- TM-071 — Now Playing UI содержит отдельные Pause и Resume buttons, причём неактуальная кнопка отключается.
+- TM-072 — Controller имеет отдельные buttons Skip, Stop и Shuffle.
+- TM-073 — Controller имеет отдельные Loop и Vol-/Vol+ controls.
+- TM-074 — Controller содержит кнопку открытия queue.
+- TM-075 — Цвет/style кнопки shuffle отражает активное состояние shuffle.
+- TM-076 — Цвет/style кнопки loop отражает активный loop mode.
+- TM-077 — После изменения playback state player message перерисовывается.
+- TM-078 — Player message сначала пытается edit существующее сообщение по сохранённому ID.
+- TM-079 — Если старое player message недоступно, его ID сбрасывается и создаётся новое сообщение.
+- TM-080 — Если channel для player message недоступен, UI state очищается без падения music runtime.
+- TM-081 — При невозможности отправить player message ошибка логируется, но player продолжает работать.
+- TM-082 — Now Playing автоматически обновляется каждые 15 секунд для актуального progress.
+- TM-083 — Перед стартом нового update interval старый interval очищается, предотвращая накопление timers.
+- TM-084 — При queueEnd update interval очищается.
+- TM-085 — После queueEnd при выключенном 24/7 запускается idle disconnect timer на 30 секунд.
+- TM-086 — Перед idle disconnect повторно проверяется, что player действительно не играет, не paused и не имеет current track.
+- TM-087 — 24/7 отключает автоматическое уничтожение player после idle.
+- TM-088 — При queueEnd player message удаляется, когда воспроизведение действительно завершено.
+- TM-089 — Если auto-playback функция включена, queueEnd может передать управление autoplay вместо idle disconnect.
+- TM-090 — Voice state automation считает только людей, игнорируя bot members.
+- TM-091 — Когда в музыкальном voice channel не остаётся людей, активный playback автоматически ставится на pause.
+- TM-092 — Автопауза помечается отдельным `autoPaused`, чтобы отличать её от ручной паузы.
+- TM-093 — Когда человек возвращается в channel после auto-pause, playback автоматически возобновляется.
+- TM-094 — Автовозобновление выполняется только если player всё ещё paused и именно `autoPaused` был установлен системой.
+- TM-095 — Auto-pause/resume сопровождаются отдельными пользовательскими embed-сообщениями.
+- TM-096 — Если voice state не связан с существующим player, обработчик сразу прекращает работу.
+- TM-097 — Music voice-state handler корректно работает с событиями, где guild ID можно получить из oldState или newState.
+- TM-098 — Music control permissions реализованы отдельной маленькой функцией `canControlMusic` с правилом same-voice-channel.
+- TM-099 — Все интерактивные music controls повторно проверяют same-channel permission непосредственно перед действием.
+- TM-100 — Кнопки queue также защищены от управления пользователем из другого voice channel.
+- TM-101 — При попытке использовать controller без player возвращается понятная инструкция использовать `/play`.
+- TM-102 — Music button handler отдельно проверяет, что Riffy вообще настроен.
+- TM-103 — Ошибки button actions передаются в централизованный interaction error handler.
+- TM-104 — Queue button открывает queue как ephemeral response, не засоряя музыкальный канал.
+- TM-105 — Для queue button состояние страницы пользователя инициализируется с первой страницы.
+- TM-106 — Stop через button использует тот же destroyPlayerSession, что и slash-команда, обеспечивая единый lifecycle.
+- TM-107 — Volume buttons изменяют громкость фиксированным шагом 10.
+- TM-108 — Volume buttons clamp'ятся к диапазону 0–100.
+- TM-109 — Music button custom IDs централизованы в одном объекте-константе.
+- TM-110 — Music actions возвращают embed/result вместо самостоятельного управления всем interaction lifecycle, упрощая переиспользование.
+- TM-111 — Успешные music actions проходят через единый `replyMusicSuccess` helper.
+- TM-112 — `replyMusicSuccess` автоматически выбирает ephemeral/public ответ в зависимости от типа interaction.
+- TM-113 — Поиск трека передаёт Discord requester в Lavalink result, сохраняя автора запроса внутри track metadata.
+- TM-114 — YouTube URL могут быть явно запрещены через regex до обращения к Lavalink resolver.
+- TM-115 — При playlist load каждый трек получает requester metadata отдельно.
+- TM-116 — При добавлении playlist duplicate tracks пропускаются, а не ломают весь запрос.
+- TM-117 — Playlist response показывает общее количество, добавленное количество и количество пропущенных duplicate tracks.
+- TM-118 — Одиночный duplicate track приводит к отдельной user-facing ошибке с названием уже существующего трека.
+- TM-119 — При одиночном результате первый найденный track используется как фактический playback result.
+- TM-120 — Если resolver не вернул track, пользователь получает понятное `No results`, а не низкоуровневый exception.
+- TM-121 — Первый добавленный track запускается автоматически, если player idle.
+- TM-122 — Если player уже играет, новый track только добавляется в queue.
+- TM-123 — Ответ `/play` различает `Now Playing` и `Track Added`.
+- TM-124 — При добавлении в занятую очередь пользователю показывается рассчитанная queue position.
+- TM-125 — Поддерживаются несколько Lavalink load type вариантов для совместимости разных версий/ответов resolver.
+- TM-126 — Неизвестный loadType превращается в диагностическую user-input ошибку с указанием фактического loadType.
+- TM-127 — Lavalink Gateway packets маршрутизируются через конкретный Discord shard.
+- TM-128 — Для guild без доступного cached shard вычисляется shard ID из guild ID.
+- TM-129 — Riffy инициализируется только после создания client и получает Discord user ID после Ready.
+- TM-130 — Gateway VoiceStateUpdate и VoiceServerUpdate прокидываются в Riffy через raw event.
+- TM-131 — При отсутствии Lavalink nodes initialization завершается безопасно, а music commands позже сообщают о недоступности.
+- TM-132 — Lavalink nodes можно загрузить целиком из JSON в environment variable.
+- TM-133 — Lavalink nodes можно загрузить из отдельного JSON-файла.
+- TM-134 — JSON nodes поддерживает как массив, так и объект с полем `nodes`.
+- TM-135 — Если внешние node-конфиги отсутствуют, используется fallback single-node конфигурация.
+- TM-136 — Single-node fallback получает host/port/password/secure/name из environment variables.
+- TM-137 — Для Lavalink задаётся default search platform через environment variable.
+- TM-138 — REST API version Lavalink задаётся отдельно от search platform.
+- TM-139 — Boolean configuration parser принимает несколько человекочитаемых truthy значений (`true`, `1`, `yes`).
+- TM-140 — Node errors/disconnects логируются с throttling по имени node.
+- TM-141 — Первый node connect логируется отдельно, а повторные connect-события не спамят лог.
+- TM-142 — Node reconnect намеренно может быть silent, если частые reconnect events не являются actionable.
+- TM-143 — Node error/disconnect logging ограничивается одним сообщением за 5 минут на node.
+- TM-144 — TrackStart восстанавливает stored loop mode после временного снятия track-loop для skip.
+- TM-145 — TrackStart очищает idle timeout, когда playback снова реально начинается.
+- TM-146 — PlayerDisconnect удаляет update interval и связанное player message.
+- TM-147 — PlayerDisconnect очищает previous tracks и autoPaused state.
+- TM-148 — TrackError логируется с guild ID, названием трека и payload error.
+- TM-149 — При trackError пользователь получает сообщение с названием проблемного трека и автоматическим skip.
+- TM-150 — TrackStuck отдельно логируется с threshold duration для диагностики зависшего трека.
+- TM-151 — PlayerError логируется отдельно от TrackError как ошибка всей music player session.
+- TM-152 — Shutdown music проходит по всем активным players и уничтожает их.
+- TM-153 — Ошибка уничтожения отдельного player при shutdown не мешает закрытию остальных players.
+- TM-154 — Queue/current/player state очищается при полном destroy lifecycle, предотвращая перенос старых данных в следующую session.
