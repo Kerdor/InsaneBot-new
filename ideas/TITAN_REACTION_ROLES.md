@@ -1,0 +1,174 @@
+# TITAN REACTION ROLES — Банк идей
+
+Находки `codebymitch/TitanBot` (main), сверенные по command/service/handler/status paths.
+
+- TRR-001 — Отдельная `/reactroles` команда для управления role-assignment panels.
+- TRR-002 — Доступ к `/reactroles` ограничен Administrator на уровне slash command.
+- TRR-003 — Setup и dashboard разделены на subcommands.
+- TRR-004 — Setup принимает целевой текстовый или announcement channel.
+- TRR-005 — Setup принимает обязательные title и description панели.
+- TRR-006 — Базовый setup позволяет указать до 5 ролей прямо через slash options.
+- TRR-007 — Для setup достаточно одной роли; остальные role options необязательны.
+- TRR-008 — Перед созданием панели проверяется глобальный ManageRoles у бота.
+- TRR-009 — Перед отправкой панели проверяется SendMessages в выбранном channel.
+- TRR-010 — В guild действует лимит 5 одновременно сохранённых reaction-role panels.
+- TRR-011 — Дубликаты ролей в одном setup обнаруживаются до создания сообщения.
+- TRR-012 — Роль выше или на уровне highest bot role блокируется до публикации панели.
+- TRR-013 — Роли с опасными permissions блокируются как self-assignment targets.
+- TRR-014 — Managed/integration/bot roles нельзя использовать в self-assignment panel.
+- TRR-015 — `@everyone` нельзя использовать как reaction/self-assignment role.
+- TRR-016 — При частично невалидном наборе ролей валидные роли всё равно могут сформировать панель.
+- TRR-017 — При полностью невалидном наборе setup завершается validation error.
+- TRR-018 — Пользователь получает отдельное warning-сообщение со списком невалидных ролей.
+- TRR-019 — Panel публикуется как embed с title/description и списком доступных ролей.
+- TRR-020 — Список ролей в панели показывает Discord role mentions.
+- TRR-021 — В панели используется String Select Menu вместо множества отдельных кнопок.
+- TRR-022 — Select menu имеет placeholder `Select your roles`.
+- TRR-023 — Select menu разрешает 0 выбранных значений, превращая повторную отправку в механизм снятия ролей.
+- TRR-024 — Max selected values динамически равен числу ролей панели.
+- TRR-025 — Каждая role option содержит emoji для визуального различения.
+- TRR-026 — Label role option ограничивается Discord-пределом 100 символов.
+- TRR-027 — Description role option ограничивается 100 символами.
+- TRR-028 — Длинные тексты безопасно обрезаются helper-функцией вместо отправки заведомо невалидного component payload.
+- TRR-029 — После отправки Discord message panel metadata сохраняется в БД с guild/channel/message IDs и role IDs.
+- TRR-030 — Metadata содержит `createdAt` в ISO timestamp.
+- TRR-031 — Если публикация сообщения удалась, а сохранение metadata не удалось, orphan message удаляется rollback-ом.
+- TRR-032 — Создание панели пишет отдельное audit/log событие.
+- TRR-033 — Audit creation event содержит creator, channel, title, количество ролей, список ролей и message link.
+- TRR-034 — Ошибка audit logging не отменяет успешно созданную панель.
+- TRR-035 — Dashboard можно открыть без явного panel ID, если в guild существует ровно одна панель.
+- TRR-036 — При нескольких панелях dashboard требует явного выбора panel.
+- TRR-037 — Panel option использует autocomplete.
+- TRR-038 — Autocomplete для panels ограничен 25 Discord choices.
+- TRR-039 — Autocomplete использует только cached channel/message data, избегая network fetch в коротком 3-секундном interaction window.
+- TRR-040 — Если panel data/channel/cache недоступны, autocomplete безопасно отвечает пустым списком.
+- TRR-041 — Autocomplete label может включать title панели и имя channel.
+- TRR-042 — Если title не найден в cache, autocomplete показывает channel и количество ролей.
+- TRR-043 — Dashboard является ephemeral.
+- TRR-044 — Dashboard показывает текущий title, channel, число ролей и полный список role mentions.
+- TRR-045 — Dashboard показывает отдельный Panel Status, а не предполагает, что сохранённая metadata означает живое Discord message.
+- TRR-046 — Dashboard содержит прямую ссылку на живую panel message, если она найдена.
+- TRR-047 — Dashboard автоматически закрывает/истекает после 10 минут бездействия.
+- TRR-048 — Dashboard поддерживает добавление роли без пересоздания всей панели.
+- TRR-049 — Dashboard поддерживает удаление роли без пересоздания всей панели.
+- TRR-050 — Панель ограничена максимум 25 ролями на уровне runtime/service, несмотря на первоначальные 5 slash role options.
+- TRR-051 — Add Role использует отдельный Discord Role Select Menu.
+- TRR-052 — Add Role выбирает максимум одну роль за операцию.
+- TRR-053 — Перед Add Role повторно проверяется лимит 25 ролей.
+- TRR-054 — Add Role повторно проверяет duplicate role.
+- TRR-055 — Add Role повторно блокирует `@everyone`.
+- TRR-056 — Add Role повторно блокирует managed roles.
+- TRR-057 — Add Role повторно блокирует dangerous permissions.
+- TRR-058 — Add Role повторно проверяет role hierarchy непосредственно перед сохранением.
+- TRR-059 — После Add Role metadata сохраняется в БД до обновления live message.
+- TRR-060 — После изменения состава ролей live panel message автоматически перестраивается.
+- TRR-061 — Rebuild сохраняет существующий embed и заменяет только актуальный role list/component state.
+- TRR-062 — Rebuild создаёт новый select menu с актуальным количеством ролей.
+- TRR-063 — Rebuild фильтрует роли, которые уже исчезли из guild cache.
+- TRR-064 — Если после удаления ролей валидных role objects не осталось, rebuild не ломает исходный message исключением.
+- TRR-065 — Remove Role предлагает выбирать только роли, реально сохранённые в metadata и найденные в guild.
+- TRR-066 — Remove Role использует отдельный String Select Menu.
+- TRR-067 — Remove Role ограничен одной ролью за операцию.
+- TRR-068 — Если сохранённые роли больше не существуют в guild, пользователь получает понятную ошибку вместо пустого select.
+- TRR-069 — Удаление последней роли автоматически удаляет Discord panel message.
+- TRR-070 — Удаление последней роли также удаляет panel metadata из БД.
+- TRR-071 — После удаления последней панели dashboard превращается в состояние `No panels remain`.
+- TRR-072 — Если другие панели ещё есть, dashboard сообщает о завершённом удалении и предлагает открыть dashboard заново.
+- TRR-073 — Delete Panel требует явного подтверждения через modal.
+- TRR-074 — Delete confirmation использует checkbox, а не случайное нажатие кнопки.
+- TRR-075 — Delete modal явно сообщает о необратимости операции.
+- TRR-076 — Delete modal содержит название удаляемой панели для дополнительной проверки пользователем.
+- TRR-077 — Неподтверждённое checkbox удаление не выполняется.
+- TRR-078 — Если delete confirmation modal истёк, dashboard восстанавливается вместо молчаливого удаления.
+- TRR-079 — Delete удаляет Discord message, если он доступен, но не падает из-за уже отсутствующего message.
+- TRR-080 — Delete panel metadata выполняется независимо от наличия Discord message.
+- TRR-081 — Delete пишет отдельное audit/log событие.
+- TRR-082 — Ошибка audit logging при удалении не блокирует завершение удаления.
+- TRR-083 — Edit Panel Text открывает modal непосредственно из dashboard.
+- TRR-084 — Edit modal заполняется текущими title/description как initial values.
+- TRR-085 — Title ограничен 256 символами.
+- TRR-086 — Description ограничен 2048 символами.
+- TRR-087 — Title и description не могут быть пустыми.
+- TRR-088 — Modal submit принимается только от пользователя, открывшего modal.
+- TRR-089 — Modal submit имеет отдельный timeout 120 секунд.
+- TRR-090 — Ошибка показа modal превращается в user-facing interaction error, а не необработанный exception.
+- TRR-091 — После Edit Text live message обновляется без удаления и пересоздания панели.
+- TRR-092 — При редактировании текста role field также восстанавливается из актуальных role objects.
+- TRR-093 — После Edit Text dashboard повторно отображается с обновлённым состоянием.
+- TRR-094 — Если исходное panel message уже отсутствует, dashboard всё равно может работать с сохранённой metadata.
+- TRR-095 — Для удалённой Discord panel предусмотрено отдельное состояние `panel_deleted`.
+- TRR-096 — Dashboard предлагает Repost Panel, если сохранённая panel metadata существует, но исходное message удалено.
+- TRR-097 — Repost использует сохранённый channel ID и актуальные role IDs вместо старого message ID.
+- TRR-098 — Repost создаёт новое Discord message с тем же назначением ролей.
+- TRR-099 — После Repost старый message ID мигрируется на новый.
+- TRR-100 — Миграция message ID записывает новый canonical DB key и удаляет старый key.
+- TRR-101 — Repost сохраняет title/description из старого embed как fallback, если они ещё доступны.
+- TRR-102 — Если старый embed недоступен, Repost использует безопасные стандартные title/description.
+- TRR-103 — Repost блокируется, если channel больше не существует.
+- TRR-104 — Repost блокируется, если в panel metadata больше нет ни одной валидной роли.
+- TRR-105 — Panel status helper сначала пытается найти message по сохранённому ID.
+- TRR-106 — Если старый ID не найден, panel status сканирует последние сообщения channel для восстановления панели.
+- TRR-107 — Восстановление панели идентифицирует message по автору-боту и custom ID select menu, а не по одному embed title.
+- TRR-108 — При успешном восстановлении найденный message ID можно автоматически мигрировать в metadata.
+- TRR-109 — Поиск потерянного panel message имеет ограниченный scan window, по умолчанию 50 сообщений.
+- TRR-110 — Panel status различает `channel_missing`, `panel_deleted`, `no_channel` и активное состояние.
+- TRR-111 — Общий panel-status helper пригоден не только для reaction roles, но и для ticket/verification panels.
+- TRR-112 — Interaction select menu принимает только guild context; DM usage явно отклоняется.
+- TRR-113 — При отсутствии reaction-role metadata interaction сообщает, что menu больше не активно.
+- TRR-114 — Перед выдачей ролей handler повторно проверяет ManageRoles.
+- TRR-115 — Handler получает bot member через cache с fallback на `fetchMe()`.
+- TRR-116 — Для каждой выбранной роли проверяется, входит ли она в whitelist ролей конкретной панели.
+- TRR-117 — Неизвестные/подменённые role IDs игнорируются, даже если пользователь отправил их вручную.
+- TRR-118 — Отсутствующие в guild роли попадают в skipped result вместо падения всей операции.
+- TRR-119 — Dangerous permissions проверяются непосредственно при фактическом self-assignment, а не только при создании панели.
+- TRR-120 — Managed roles повторно блокируются непосредственно при фактическом self-assignment.
+- TRR-121 — Role hierarchy повторно проверяется непосредственно перед `member.roles.add`.
+- TRR-122 — Уже имеющаяся роль не вызывается повторно через Discord API.
+- TRR-123 — При ошибке добавления одной роли остальные выбранные роли продолжают обрабатываться.
+- TRR-124 — Ошибки конкретных `roles.add` локализованы на уровне отдельной роли.
+- TRR-125 — Неуспешные/запрещённые роли собираются в отдельный `skippedRoles` result.
+- TRR-126 — При выборе меньшего набора ролей все остальные роли этой панели автоматически снимаются.
+- TRR-127 — Уже отсутствующая у пользователя роль не вызывается через `roles.remove`.
+- TRR-128 — Ошибка удаления одной роли не прерывает обработку остальных ролей.
+- TRR-129 — Result разделяет `added`, `removed` и `skipped` вместо единого success/failure флага.
+- TRR-130 — Пользователь получает итоговый ephemeral embed после изменения ролей.
+- TRR-131 — Итоговое сообщение отдельно перечисляет добавленные роли.
+- TRR-132 — Итоговое сообщение отдельно перечисляет снятые роли.
+- TRR-133 — При нулевых изменениях пользователь получает явное `No changes were made`.
+- TRR-134 — Количество skipped roles показывается отдельно и объясняется permission issues.
+- TRR-135 — Reaction-role update логируется только если реально произошло хотя бы одно добавление или удаление.
+- TRR-136 — Audit update event содержит member, добавленные роли и снятые роли.
+- TRR-137 — Ошибка audit logging не ломает выдачу/снятие ролей.
+- TRR-138 — Panel metadata хранится по guild + message ID, изолируя одинаковые message IDs между guilds.
+- TRR-139 — Для reaction roles зарегистрирован canonical DB prefix `guild:<guildId>:reaction_roles:`.
+- TRR-140 — Legacy key format `reaction_roles:<guildId>:<messageId>` может быть canonicalized в новый guild-scoped формат.
+- TRR-141 — Service валидирует guild/message/role IDs regex-проверкой Discord snowflake format.
+- TRR-142 — Service валидирует channel ID отдельно от message/role IDs.
+- TRR-143 — Service ограничивает количество ролей в одной panel 25.
+- TRR-144 — `hasDangerousPermissions()` централизует список высокорисковых permissions.
+- TRR-145 — Role safety validation получает guild из cache с fallback на fetch.
+- TRR-146 — Role safety validation получает role из cache с fallback на role fetch.
+- TRR-147 — Service превращает database failures в typed database errors с контекстом guild/message.
+- TRR-148 — Service различает validation, permission и database error types.
+- TRR-149 — Получение всех panels обрабатывает разные формы результата DB list API (`array`, `.value`, wrapped value).
+- TRR-150 — При несовместимом результате DB list service делает fallback на полный список ключей и фильтрацию по prefix.
+- TRR-151 — Повреждённые panel records пропускаются, а не ломают получение остальных panels.
+- TRR-152 — Ошибка чтения одного panel record логируется и не отменяет обработку других records.
+- TRR-153 — Reconciliation может проходить по одной guild или по всем guilds клиента.
+- TRR-154 — Reconciliation считает scanned guilds/messages, removed messages и errors как отдельные metrics.
+- TRR-155 — Если guild недоступна, связанные reaction-role records удаляются как stale data.
+- TRR-156 — Если panel channel удалён или не является text-based, metadata удаляется как stale data.
+- TRR-157 — Если panel message больше не существует, metadata удаляется reconciliation-процессом.
+- TRR-158 — Reconciliation изолирует ошибки отдельных panel checks и продолжает обработку остальных.
+- TRR-159 — Panel status и reconciliation разделяют понятия «message потерян» и «metadata устарела», позволяя dashboard сначала восстановить panel вручную.
+- TRR-160 — Один и тот же `reaction_roles` custom ID используется как стабильный marker для обнаружения и восстановления панели.
+- TRR-161 — Component interaction оборачивается централизованным interaction error handler.
+- TRR-162 — Interaction lifecycle использует safe defer/edit helpers, чтобы повторные/просроченные interactions не превращались в необработанные ошибки.
+- TRR-163 — Dashboard collector/filter привязывает component interactions к пользователю, открывшему dashboard.
+- TRR-164 — Role-selection collectors имеют ограничение по времени 60 секунд.
+- TRR-165 — Role-selection collectors имеют `max: 1`, чтобы одна операция завершалась после одного выбора.
+- TRR-166 — По истечении Add/Remove Role collector без выбора пользователь получает понятное `Nothing was changed`.
+- TRR-167 — Изменение panel metadata выполняется через canonical key helper, а не через ручную сборку ключей в каждом месте.
+- TRR-168 — Panel UI может быть восстановлен из DB metadata даже после удаления исходного Discord message.
+- TRR-169 — При невозможности восстановить channel dashboard показывает отсутствие channel вместо падения.
+- TRR-170 — Reaction-role panel lifecycle покрывает create → edit → add/remove role → repost → delete → reconciliation.
