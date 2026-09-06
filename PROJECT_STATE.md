@@ -27,7 +27,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles и Search.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search и ServerStats.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
@@ -42,16 +42,21 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/MODERATION.md` — MOD-001–MOD-135;
 - `ideas/TITAN_MUSIC.md` — TM-001–TM-154;
 - `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170;
-- `ideas/TITAN_SEARCH.md` — TS-001–TS-080.
+- `ideas/TITAN_SEARCH.md` — TS-001–TS-080;
+- `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170.
 
-Search закрыт по `src/commands/Search/` и трём модулям: `define`, `google`, `urban`. Зафиксированы единый search router, раздельные lookup modules, внешние Dictionary/Urban API, Google URL generation, URL encoding, input validation, HTTP timeout, deferred interaction lifecycle, dictionary meanings/phonetics/examples formatting, Urban cleanup/stats/author/permalink, 404/429/error classification, centralized user errors, logging и расширяемая module architecture.
+### `ServerStats` — ЗАКРЫТ
 
-Reaction_roles закрыт по command/service/handler/status/database-key paths: setup/dashboard, role safety, 5-panel guild limit, 25-role panel limit, self-assignment через select menu, add/remove/edit/repost/delete lifecycle, deleted-message recovery, message-ID migration, reconciliation, persistence, typed errors, audit logging и isolated partial failures.
+Просмотрены `src/commands/ServerStats/serverstats.js`, все четыре ServerStats modules, `src/services/serverstatsService.js`, `src/handlers/counterButtons.js`, member join/leave paths, scheduler/update path в `src/app.js` и counter config. Зафиксированы TSS-001–TSS-170: три типа member counters, voice/text variants, category placement, duplicate protection, creation rollback, persistent guild records, sanitization/legacy DB formats, member counting/fallbacks, configurable channel-name templates, 15-minute cron, immediate join/leave updates, orphan cleanup, list/update/delete UX, destructive confirmation, initiator-only controls, DB-first deletion, audit logging и error isolation.
+
+### `Search` — ЗАКРЫТ
+
+Зафиксированы TS-001–TS-080 по `src/commands/Search/`.
 
 ### Точная точка продолжения
 
-**Следующий раздел: `src/commands/ServerStats/`.**
+**Следующий шаг: проверить следующий элемент фактического `src/commands/` recursive tree после `ServerStats/` и продолжить исследование с него.**
 
-После закрытия `ServerStats/` продолжать строго по порядку дерева `src/commands/`.
+После каждого следующего крупного батча обновлять этот файл и `research/titanbot.md` с точным путём.
 
 **Не переходить к GAwesomeBot до полного закрытия TitanBot.**
