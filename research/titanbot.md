@@ -78,6 +78,32 @@ Recursive tree корня проверен полностью (`truncated=false`
 - `src/events/roleDelete.js`;
 - связанные logging call sites через repository search.
 
+### Moderation
+Полностью просмотрен каталог `src/commands/Moderation/` и ключевой moderation service.
+
+Команды:
+- `ban.js`;
+- `cases.js`;
+- `dm.js`;
+- `kick.js`;
+- `lock.js`;
+- `massban.js`;
+- `masskick.js`;
+- `purge.js`;
+- `say.js`;
+- `timeout.js`;
+- `unban.js`;
+- `unlock.js`;
+- `untimeout.js`;
+- `usernotes.js`;
+- `warn.js`.
+
+Сервисы:
+- `src/services/moderation/moderationService.js`;
+- `src/services/moderation/warningService.js`.
+
+Зафиксированы: централизованный ModerationService, двойная role hierarchy validation (moderator + bot), owner bypass, permission-aware ban отсутствующих пользователей, self/bot protection, case IDs, warning IDs/counters/timestamps, фиксированные timeout durations, kickable/moderatable checks, unban ban-list validation, mass ban/kick с частичными результатами и лимитом 20 целей, per-command abuse protection, purge limits/old-message handling, channel lock/unlock через @everyone overwrite, staff DM anonymous/sanitization/error handling, say channel/permission/sanitization flow, paginated cases UI с owner-only controls и timeout, типизированные user notes и их lifecycle, centralized typed error handling и guild isolation.
+
 ## Уже зафиксировано в ideas
 
 - `ideas/TITAN_CORE.md`;
@@ -88,52 +114,29 @@ Recursive tree корня проверен полностью (`truncated=false`
 - `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
 - `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
 - `ideas/TITAN_LEVELING.md` — TL-001–TL-100;
-- `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100.
+- `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
+- `ideas/MODERATION.md` — MOD-001–MOD-135, включая новый пакет codebymitch/TitanBot MOD-044–MOD-135.
 
 ## Существенные находки
 
-### Fun / Giveaway
-- Counting Game имеет отдельное guild-scoped состояние, несколько форматов представления чисел и streak/leaderboard state.
-- Giveaway имеет полный lifecycle create → join → automatic/manual end → winner announcement → reroll/delete, persistent Discord IDs и устойчивые fallback-пути при пропавших Discord objects.
-
-### JoinToCreate
-- Voice-state automation создаёт персональный временный voice channel при входе в trigger.
-- Временная комната имеет owner, user limit, bitrate, category и configurable name template.
-- Поддерживаются username/display name/user tag/guild/channel placeholders с Unicode normalization, sanitization, длиновыми лимитами и запретом неизвестных переменных.
-- При уходе последнего участника временная комната удаляется; при уходе owner ownership передаётся оставшемуся участнику и имя комнаты обновляется.
-- Повторный вход owner в trigger пытается вернуть его в уже существующую комнату.
-- Есть per-guild/per-user creation cooldown, cleanup/size cap cooldown map и проверки voice state перед созданием/перемещением.
-- Setup/dashboard имеют несколько интерактивных UI-подходов: buttons, select menus, modals/message collectors, confirmation для удаления и автоматическое истечение configuration session.
-- Stale trigger channels очищаются из config; JTC configuration и изменения пишутся в audit log.
-
-### Leveling
-- XP выдаётся за сообщения с random range, per-user cooldown и дополнительным event rate limit.
-- XP поддерживает multiplier, ignored channels, ignored roles и blacklisted users.
-- XP updates защищены per-user/guild mutex от race conditions.
-- Level progression использует квадратичную XP-кривую и максимум level 1000; одно начисление может дать несколько уровней.
-- User state хранит current XP, total XP, level и lastMessage; чтение/запись sanitizes числовые значения.
-- Level-up может выдавать role reward, публиковать configurable announcement и писать audit event; сбои side effects не ломают progression.
-- Rank показывает level, XP, total XP и progress bar; leaderboard сортирует по total XP, исключает ботов и умеет переживать missing member fetch.
-- Администратор может add/remove/set level; ручное изменение пересчитывает total XP.
-- Leveling setup и dashboard позволяют выбирать announcement channel, XP range/cooldown, message, role rewards, ignored channels/roles и отдельно включать/выключать system/announcements.
-
-### Logging
-- Logging разделён на глобальный enable/disable, destination channels, event categories и ignore filters.
-- Есть отдельные Audit, Applications и Reports destinations; Applications/Reports маршрутизируются отдельно от audit stream.
-- Dashboard показывает состояние logging, количество включённых категорий, фильтры и настроенные каналы; вложенные views позволяют отдельно управлять категориями и фильтрами.
-- Event taxonomy централизована через `EVENT_TYPES`, с category wildcard (`category.*`), отдельными event toggles, цветами и icon mapping.
-- `logEvent` централизует guild/channel lookup, ignore checks, enable checks, permission checks, embed construction, attachments/content и error isolation.
-- Audit embeds имеют общий builder с title/description/headline/quoted lines/meta/Before-After/inline/block fields/author/avatar/thumbnail/image/footer/timestamp и Discord length limits.
-- Logging покрывает moderation, messages, roles, members, leveling, reaction roles, giveaways, counters, applications и reports.
-- Join/leave/nickname/username изменения и создание/удаление ролей логируются отдельными событиями; username changes проходят по guilds пользователя.
-- Ignore users/channels задаются интерактивными User/Channel Select и могут добавляться/удаляться без ручного ID.
-- Logging channel configuration валидирует тип канала и права бота; удалённые/недоступные каналы не ломают остальной bot runtime.
-- Dashboard interactions повторно проверяют `Manage Server`, ограничивают modal submission инициатором и имеют timeout/error boundaries.
+### Moderation
+- ModerationService централизует ban/kick/timeout/untimeout/unban и выдаёт единый слой hierarchy/permission/error checks.
+- Для модератора и бота используются отдельные role hierarchy проверки; owner получает bypass.
+- Ban отсутствующего на сервере пользователя разрешён только при Manage Server/Administrator/owner.
+- Каждая ключевая операция возвращает Case ID и пишет action metadata; warnings дополнительно имеют warning ID, порядковый номер и total count.
+- Mass ban/kick обрабатывают цели независимо, ограничивают вход 20 пользователями и разделяют successful/skipped/failed.
+- Cases имеют фильтр по action/user, configurable limit 1–50, страницы по 5 записей и 120-секундный owner-only collector.
+- User notes отделены от moderation cases и поддерживают типы, add/view/remove/clear, sanitization, metadata автора/времени и newest-first view.
+- Purge ограничен 1–100 сообщениями, использует bulk delete и автоматически удаляет собственный ответ через 3 секунды.
+- Lock/unlock изменяют SendMessages для @everyone и передают audit reason.
+- Staff DM поддерживает anonymous mode, sanitization, 2000-char limit и отдельную обработку Discord 50007.
+- Say умеет выбрать text/announcement channel, проверяет права обеих сторон и возвращает jump link.
 
 ## Точная точка продолжения
 
-**Следующий раздел дерева: следующий каталог `src/commands/` после `Logging/` по фактическому recursive tree.**
+`src/commands/Moderation/` — **ЗАКРЫТ**.
 
-`Logging` закрыт по command/modules/service/UI/handler и связанным event logging paths, доступным через repository search. Далее нужно определить следующий каталог в уже проверенном tree и продолжать строго по порядку `src/commands/`.
+Следующий каталог по фактическому recursive tree `src/commands/`:
+**`src/commands/Music/`**.
 
-Правило остаётся неизменным: GAwesomeBot не трогаем, пока TitanBot полностью не закрыт.
+Продолжать строго с `Music/`; GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
