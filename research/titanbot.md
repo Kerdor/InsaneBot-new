@@ -28,49 +28,17 @@
 - Search;
 - ServerStats;
 - Ticket;
-- Tools.
+- Tools;
+- Utility.
 
 ### ServerStats
-Просмотрены:
-- `src/commands/ServerStats/serverstats.js`;
-- `src/commands/ServerStats/modules/serverstats_create.js`;
-- `src/commands/ServerStats/modules/serverstats_list.js`;
-- `src/commands/ServerStats/modules/serverstats_update.js`;
-- `src/commands/ServerStats/modules/serverstats_delete.js`;
-- `src/services/serverstatsService.js`;
-- `src/handlers/counterButtons.js`;
-- `src/events/guildMemberAdd.js`;
-- `src/events/guildMemberRemove.js`;
-- counter scheduler/update path in `src/app.js`;
-- counter configuration path in `src/config/bot.js`.
-
-Зафиксировано в `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170.
+Просмотрены command/modules/service/handlers/events/scheduler/config paths. Зафиксировано TSS-001–TSS-170.
 
 ### Search
-Просмотрены:
-- `src/commands/Search/search.js`;
-- `src/commands/Search/modules/search_define.js`;
-- `src/commands/Search/modules/search_google.js`;
-- `src/commands/Search/modules/search_urban.js`.
-
-Зафиксировано в `ideas/TITAN_SEARCH.md` — TS-001–TS-080.
+Просмотрены command и search modules. Зафиксировано TS-001–TS-080.
 
 ### Ticket
-Просмотрены:
-- `src/commands/Ticket/ticket.js`;
-- `src/commands/Ticket/modules/ticket_dashboard.js`;
-- `src/services/ticket.js`;
-- `src/utils/database/tickets.js`;
-- `src/utils/ticket/ticketPermissions.js`;
-- `src/utils/ticket/ticketLogging.js`;
-- `src/handlers/ticketButtons.js`;
-- `src/interactions/buttons/ticket/ticketFeedback.js`;
-- `src/interactions/modals/ticket/ticketFeedbackComment.js`;
-- `src/utils/database/ticketFeedback.js`;
-- ticket-related configuration in `src/config/bot.js`;
-- ticket feedback/transcript/logging paths.
-
-Зафиксировано в `ideas/TITAN_TICKETS.md` — TT-001–TT-170.
+Просмотрены ticket command/dashboard, service/database/permissions/logging modules, handlers, feedback persistence и связанные config/transcript paths. Зафиксировано TT-001–TT-170.
 
 ### Tools — ЗАКРЫТ
 
@@ -88,9 +56,26 @@
 - `src/commands/Tools/time.js`;
 - `src/commands/Tools/unixtime.js`.
 
-Зафиксировано в `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244.
+Зафиксировано TTOOL-001–TTOOL-244.
 
-Существенные находки: countdown с pause/resume/cancel, 24h cap, runtime lifecycle и permission gate; конвертация BIN/OCT/DEC/HEX/Base36/Base58/Base62/Base64 через BigInt; безопасный калькулятор с whitelist и защитой от code-like syntax, историей последних 5 вычислений и интерактивными арифметическими операциями; криптографическая генерация паролей 8–50 символов с гарантией классов и оценкой силы; HEX→RGB/HSL/brightness/name/closest-color; poll 2–10 вариантов с anonymous режимом и reactions; random user с role/bot/online/mention фильтрами и повторным выбором; timezone/Unix timestamp utilities; URL shortener с custom suffix, timeout и API error parsing; интерактивный Embed Builder с live preview, полями, цветами, author/footer/images/timestamp, JSON/raw data, reorder/reset/post и timeout-safe modal/select lifecycle.
+### Utility — ЗАКРЫТ
+
+Просмотрены:
+- `src/commands/Utility/avatar.js`;
+- `src/commands/Utility/firstmsg.js`;
+- `src/commands/Utility/report.js`;
+- `src/commands/Utility/serverinfo.js`;
+- `src/commands/Utility/todo.js`;
+- `src/commands/Utility/userinfo.js`;
+- `src/commands/Utility/weather.js`;
+- `src/commands/Utility/wipedata.js`;
+- `src/commands/Utility/modules/report.js`;
+- `src/commands/Utility/modules/report_setchannel.js`;
+- `src/handlers/todoButtons.js`.
+
+Зафиксировано в `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
+
+Существенные находки: avatar с target/self fallback и dynamic 2048px URL; поиск первого сообщения через history; подробный user/server info; report как subcommand-router с отдельным reports logging destination и Manage Server настройкой; personal todo с persistent numeric IDs; shared todo с криптографическими share IDs, creator/member access, task lifecycle, source-message refresh, button/modal UI и operation-specific rate limits; normalization неполных DB records; разделение stateless и persistent utility features.
 
 ## Уже зафиксировано в ideas
 - `ideas/TITAN_CORE.md`;
@@ -108,13 +93,13 @@
 - `ideas/TITAN_SEARCH.md` — TS-001–TS-080;
 - `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
 - `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
-- `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244.
+- `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
+- `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
 
 ## Точная точка продолжения
 
-`src/commands/Tools/` и связанные countdown handler — **ЗАКРЫТЫ**.
+`src/commands/` — полностью закрыт.
 
-Следующий каталог по фактическому recursive tree `src/commands/`:
-**`src/commands/Utility/`**.
+Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/config/`**.
 
-Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
+Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
