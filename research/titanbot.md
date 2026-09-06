@@ -24,21 +24,21 @@
 - Logging;
 - Moderation;
 - Music;
-- Reaction_roles.
+- Reaction_roles;
+- Search.
 
-### Reaction_roles
-Команды/handlers/services/status:
-- `src/commands/Reaction_roles/reactroles.js`;
-- `src/handlers/interactionHandlers/reactionRolesSelectMenu.js`;
-- `src/services/reactionRoleService.js`;
-- `src/utils/panelStatus.js`;
-- `src/utils/database/keys.js` (reaction-role keys + legacy canonicalization).
+### Search
+Просмотрены:
+- `src/commands/Search/search.js`;
+- `src/commands/Search/modules/search_define.js`;
+- `src/commands/Search/modules/search_google.js`;
+- `src/commands/Search/modules/search_urban.js`.
 
-Зафиксировано в `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170.
+Зафиксировано в `ideas/TITAN_SEARCH.md` — TS-001–TS-080.
 
-Существенные находки: setup до 5 ролей и guild limit 5 panels; runtime limit 25 roles; Administrator-only management; channel/ManageRoles/role hierarchy/managed/dangerous permission validation; partial invalid-role acceptance; String Select Menu self-assignment; zero-value selection для снятия всех ролей панели; persistent guild+message metadata; rollback orphan message при DB failure; ephemeral dashboard; autocomplete без network fetch; 10-minute dashboard sessions; add/remove role через Role Select/String Select; live panel rebuild; last-role auto deletion; checkbox delete confirmation; text-edit modal; repost удалённой панели; automatic message-ID migration/recovery; panel status scanning; guild-only interaction; whitelist role validation; partial add/remove failures; added/removed/skipped result; audit logging; canonical/legacy DB keys; robust DB list handling; malformed record isolation; guild-wide reconciliation; stale-record cleanup; centralized typed errors и safe interaction lifecycle.
+Существенные находки: единый `/search` router с `define/google/urban`; отдельные modules; Dictionary API, Urban Dictionary API и Google URL generation; обязательные query fields; minimum length 2; URL encoding; HTTP timeout 5 секунд; safe defer; Urban defer fallback через 1.5 секунды; Dictionary meanings/phonetics/examples formatting; лимиты meanings/definitions; Urban cleanup, 2000-char definition и 500-char example; stats/author/permalink; 404/429 classification; centralized user errors; structured error logging; source footers; module-level extensibility и отсутствие необходимости в БД для Search.
 
-## Уже зафиксировано в ideas
+### Уже зафиксировано в ideas
 - `ideas/TITAN_CORE.md`;
 - `ideas/TITAN_APPLICATIONS.md`;
 - `ideas/TITAN_CONFIG.md`;
@@ -50,13 +50,14 @@
 - `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
 - `ideas/MODERATION.md` — MOD-001–MOD-135;
 - `ideas/TITAN_MUSIC.md` — TM-001–TM-154;
-- `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170.
+- `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170;
+- `ideas/TITAN_SEARCH.md` — TS-001–TS-080.
 
 ## Точная точка продолжения
 
-`src/commands/Reaction_roles/` и связанные reaction-role handler/service/status/database-key paths — **ЗАКРЫТЫ**.
+`src/commands/Search/` и связанные Search modules — **ЗАКРЫТЫ**.
 
 Следующий каталог по фактическому recursive tree `src/commands/`:
-**`src/commands/Search/`**.
+**`src/commands/ServerStats/`**.
 
 Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
