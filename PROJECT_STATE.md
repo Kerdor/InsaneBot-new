@@ -41,7 +41,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). На текущем этапе просмотрены Root/bootstrap, Birthday, Community, Core, Economy, Fun и Giveaway.
+Recursive tree `main` проверен полностью (`truncated=false`). Обработаны Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate и Leveling на уровне найденных исходников, сервисов и связанных event paths.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
@@ -49,16 +49,18 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_CONFIG.md`;
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
-- `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065.
+- `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
+- `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
+- `ideas/TITAN_LEVELING.md` — TL-001–TL-100.
 
-Fun закрыт на уровне просмотренных command/service файлов: counting game с 8 системами счёта, streak/leaderboard/reset/status, random duel, coin flip и dice notation.
+JoinToCreate закрыт по просмотренным command/service/event paths: temporary voice channels, ownership transfer, auto-delete, configurable naming, bitrate/user limits, interactive dashboard, stale-state cleanup, cooldowns и permission/error handling.
 
-Giveaway закрыт на уровне просмотренных command/service файлов: create/join/end/delete/reroll, автоматическое истечение, random unique winner selection, persistent lifecycle state, rate limit, fallback recovery и audit logging.
+Leveling закрыт по просмотренным command/service/event paths: XP range/cooldown/multiplier, ignored channels/roles/users, mutex-protected XP updates, level progression до 1000, rank/leaderboard, role rewards, announcements, admin level controls и interactive dashboard.
 
 ### Точная точка продолжения
 
-**`src/commands/JoinToCreate/`**.
+**Следующий раздел: `src/commands/Logging/`.**
 
-Уже начат `src/commands/JoinToCreate/jointocreate.js`; файл большой и был просмотрен частично. Следом полностью выжать его оставшуюся логику, затем `modules/config_setup.js`, `modules/setup.js`, `src/services/joinToCreateService.js`. После этого — `Leveling`.
+После Logging продолжать строго по порядку дерева `src/commands/`, пока весь TitanBot не будет закрыт.
 
 **Не переходить к GAwesomeBot до полного закрытия TitanBot.**
