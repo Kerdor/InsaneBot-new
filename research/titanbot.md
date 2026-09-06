@@ -27,7 +27,8 @@
 - Reaction_roles;
 - Search;
 - ServerStats;
-- Ticket.
+- Ticket;
+- Tools.
 
 ### ServerStats
 Просмотрены:
@@ -44,8 +45,6 @@
 - counter configuration path in `src/config/bot.js`.
 
 Зафиксировано в `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170.
-
-Существенные находки: три типа member counters (members+bots / humans / bots); voice/text channel variants; обязательная категория; Manage Channels; duplicate type protection; channel creation rollback при DB save failure; Counter ID и persistent guild-scoped records; enabled/createdAt/updatedAt; DB format compatibility и sanitization; full member fetch с cache fallback; memberCount fallback; configurable `{name}-{count}` channel template; 15-minute cron; immediate join/leave updates; orphan cleanup; missing-channel fetch; no-op rename optimization; counter update audit logging; list dashboard/status heuristic; update с old→new diff; destructive deletion confirmation; initiator-only buttons; DB-first deletion safety; service-boundary errors; centralized interaction lifecycle.
 
 ### Search
 Просмотрены:
@@ -73,7 +72,25 @@
 
 Зафиксировано в `ideas/TITAN_TICKETS.md` — TT-001–TT-170.
 
-Существенные находки: persistent ticket panel/dashboard; custom panel text and button label limits; configurable staff role; open/closed categories; max open tickets per user 1–10; DM-on-close; panel recovery/repost; initiator-only dashboard collectors; 60-second role/category collectors and 120-second modal waits; guild/channel ticket records; per-guild ticket counter with padded numbers; optimized PostgreSQL open-ticket count with DB-key-scan fallback; creator/staff permission model; 2.5-second permission timeout and typed rate-limit error; claim/unclaim; priority levels none/low/medium/high/urgent with emoji/color/label; pin/unpin; configurable delete delay and warning; transcript generation and delivery with isolated failures; separate ticket logs/transcript channels; event-specific ticket logging; attachment-capable logs; feedback rating/comment persistence restricted to creator; guild ticket statistics; separated service/database/permissions/logging/interaction layers; graceful missing Discord resources and restart persistence.
+### Tools — ЗАКРЫТ
+
+Просмотрены:
+- `src/commands/Tools/baseconvert.js`;
+- `src/commands/Tools/calculate.js`;
+- `src/commands/Tools/countdown.js`;
+- `src/handlers/countdownButtons.js`;
+- `src/commands/Tools/embedbuilder.js`;
+- `src/commands/Tools/generatepassword.js`;
+- `src/commands/Tools/hexcolor.js`;
+- `src/commands/Tools/poll.js`;
+- `src/commands/Tools/randomuser.js`;
+- `src/commands/Tools/shorten.js`;
+- `src/commands/Tools/time.js`;
+- `src/commands/Tools/unixtime.js`.
+
+Зафиксировано в `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244.
+
+Существенные находки: countdown с pause/resume/cancel, 24h cap, runtime lifecycle и permission gate; конвертация BIN/OCT/DEC/HEX/Base36/Base58/Base62/Base64 через BigInt; безопасный калькулятор с whitelist и защитой от code-like syntax, историей последних 5 вычислений и интерактивными арифметическими операциями; криптографическая генерация паролей 8–50 символов с гарантией классов и оценкой силы; HEX→RGB/HSL/brightness/name/closest-color; poll 2–10 вариантов с anonymous режимом и reactions; random user с role/bot/online/mention фильтрами и повторным выбором; timezone/Unix timestamp utilities; URL shortener с custom suffix, timeout и API error parsing; интерактивный Embed Builder с live preview, полями, цветами, author/footer/images/timestamp, JSON/raw data, reorder/reset/post и timeout-safe modal/select lifecycle.
 
 ## Уже зафиксировано в ideas
 - `ideas/TITAN_CORE.md`;
@@ -90,13 +107,14 @@
 - `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170;
 - `ideas/TITAN_SEARCH.md` — TS-001–TS-080;
 - `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
-- `ideas/TITAN_TICKETS.md` — TT-001–TT-170.
+- `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
+- `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244.
 
 ## Точная точка продолжения
 
-`src/commands/Ticket/` и связанные Ticket service/database/handler/config paths — **ЗАКРЫТЫ**.
+`src/commands/Tools/` и связанные countdown handler — **ЗАКРЫТЫ**.
 
 Следующий каталог по фактическому recursive tree `src/commands/`:
-**`src/commands/Tools/`**.
+**`src/commands/Utility/`**.
 
 Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
