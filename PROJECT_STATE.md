@@ -35,7 +35,11 @@
 - `commands/context/play.js`;
 - все 6 файлов `events/`;
 - `lib/DiscordMusicBot.js`, `lib/SlashCommand.js`, `lib/EpicPlayer.js`;
-- `util/Controller.js`, `util/db.js`, `util/getChannel.js`, `util/getConfig.js`, `util/getLavalink.js`, `util/guildDb.js`, `util/loadCommands.js`.
+- весь `util/`;
+- весь исходный `api/`;
+- исходный `dashboard/` — pages, components, utils;
+- `.github/` recursive tree;
+- root `Dockerfile`, `Procfile`, `app.json`, `.replit`.
 
 Созданы/пополнены пакеты идей:
 - `ideas/MUSIC.md` — MUSIC-001–042;
@@ -43,14 +47,18 @@
 - `ideas/MUSIC_CONTEXT.md` — MUSIC-X001–007;
 - `ideas/MUSIC_EVENTS.md` — MUSIC-E001–025;
 - `ideas/MUSIC_STORAGE.md` — MUSIC-S001–018;
-- `ideas/MUSIC_CORE.md` — MUSIC-K001–018.
+- `ideas/MUSIC_CORE.md` — MUSIC-K001–018;
+- `ideas/MUSIC_WEB.md` — MUSIC-W001–031;
+- `ideas/MUSIC_DEPLOY.md` — MUSIC-D001–009.
 
-Из последних находок особенно зафиксированы: context-menu play по target message, выбор результата поиска через Select Menu с TTL, lyrics candidate/source/tips UX, Stage Channel recovery, составной seek, DM save, короткая/длинная queue с циклической pagination, TTL+idle collectors, dual latency ping, hot reload require cache, voice-state automation с различением JOIN/LEAVE/MOVE, server mute pause/resume, delayed auto-leave с повторной проверкой, lazy per-guild JSON DB, queued persistence, DB registry и player/controller factories.
+Из последнего батча особенно зафиксированы: Passport Discord OAuth и session auth, public/protected API split, динамическая загрузка route-файлов, dashboard runtime metrics, typed frontend API helpers, server selector/avatar UI, общий navbar/layout, login/logout redirects, server state model с queue/loop/playing, Docker/Alpine runtime, worker Procfile, Heroku deployment manifest и Replit runtime configuration.
 
 Журнал: `research/discord-music-bot.md`.
 
 ## Следующая точка
 
-Продолжить строго по recursive tree `v5` с `util/` после уже просмотренных файлов. Затем закрыть `api/`, `dashboard/`, `deploy/`, `docker/`, `.github/` и остальные root-файлы.
+Провести финальную сверку recursive tree `v5` с журналом: убедиться, что все оставшиеся root-файлы и каталоги действительно закрыты и не содержат новых исходных механик. Скомпилированный `dashboard/out/_next` не дублировать после анализа исходников; считать его build artifact.
+
+Только после финальной сверки поставить `ItzSudhan/Discord-MusicBot` в статус **ЗАВЕРШЁН** и перейти к `codebymitch/TitanBot`.
 
 **Другие источники до полного завершения MusicBot не трогать.**
