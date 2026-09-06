@@ -21,11 +21,11 @@
 | 4 | `codebymitch/TitanBot` | 🔵 АКТИВЕН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | ⏳ ОЖИДАЕТ | — |
 | 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | — |
-| 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
+| 7 | `Tomato6966/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket и Tools.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools и Utility.
 
 Пакеты идей:
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
@@ -40,16 +40,15 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_SEARCH.md` — TS-001–TS-080;
 - `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
 - `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
-- `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244.
+- `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
+- `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240.
 
-### `Tools` — ЗАКРЫТ
+### `Utility` — ЗАКРЫТ
 
-Просмотрены все перечисленные Tool command/handler files: baseconvert, calculate, countdown, countdownButtons, embedbuilder, generatepassword, hexcolor, poll, randomuser, shorten, time, unixtime.
-
-Зафиксированы TTOOL-001–TTOOL-244: countdown lifecycle/control/permissions; многобазовая конвертация и BigInt; безопасный calculator и user-scoped history; password generator с crypto RNG и strength scoring; color analysis; reaction polls; filtered random user selection; timezone/Unix utilities; URL shortening с validation/timeout; интерактивный embed builder с live preview, fields, colors, author/footer/images, timestamp, reorder/reset/post и безопасным collector/modal lifecycle.
+Просмотрены все файлы `src/commands/Utility/`, оба report modules и связанный `src/handlers/todoButtons.js`. Зафиксированы TUTILITY-001–TUTILITY-240: avatar/user/server info, first-message lookup, report routing/configuration, personal todo, shared todo, persistent IDs, access control, modal/button UI, message refresh, rate limits, validation и DB normalization/error isolation.
 
 ### Точная точка продолжения
 
-**Следующий шаг: `src/commands/Utility/`.**
+**`src/commands/` полностью закрыт.** Следующий необработанный top-level каталог по фактическому дереву `src/`: **`src/config/`**.
 
-Продолжать строго по порядку дерева `src/commands/`. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
+Продолжать строго по порядку. GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.
