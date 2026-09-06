@@ -39,17 +39,19 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Уже обработаны Root/bootstrap, Birthday, Community, Core, Economy, Fun и Giveaway на уровне соответствующих исходников/сервисов.
+Recursive tree `main` проверен полностью (`truncated=false`). Обработаны Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate и Leveling на уровне найденных исходников, сервисов и связанных event paths.
 
 Последние пакеты:
 - `ideas/TITAN_ECONOMY.md` — E001–E045;
 - `ideas/TITAN_FUN.md` — TF-001–TF-043;
-- `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065.
+- `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
+- `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
+- `ideas/TITAN_LEVELING.md` — TL-001–TL-100.
 
 ### Точная точка продолжения
 
-**Следующий раздел: `src/commands/JoinToCreate/`.**
+**Следующий раздел: `src/commands/Logging/`.**
 
-`src/commands/JoinToCreate/jointocreate.js` уже открыт частично; далее полностью разобрать его оставшуюся логику, затем `modules/config_setup.js`, `modules/setup.js`, `src/services/joinToCreateService.js`. После полного закрытия JoinToCreate перейти к `Leveling`.
+Leveling закрыт по найденным command/service/event файлам. Далее полностью пройти `Logging`, затем продолжать строго по порядку дерева `src/commands/`.
 
 **GAwesomeBot и последующие источники не трогать до полного завершения TitanBot.**
