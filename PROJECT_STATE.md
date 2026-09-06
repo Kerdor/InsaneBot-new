@@ -27,7 +27,7 @@
 
 ## `codebymitch/TitanBot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music и Reaction_roles.
+Recursive tree `main` проверен полностью (`truncated=false`). Закрыты Root/bootstrap, Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles и Search.
 
 Пакеты TitanBot:
 - `ideas/TITAN_CORE.md`;
@@ -41,16 +41,17 @@ Recursive tree `main` проверен полностью (`truncated=false`). �
 - `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
 - `ideas/MODERATION.md` — MOD-001–MOD-135;
 - `ideas/TITAN_MUSIC.md` — TM-001–TM-154;
-- `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170.
+- `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170;
+- `ideas/TITAN_SEARCH.md` — TS-001–TS-080.
 
-Music закрыт по command/service/handler/config paths: playback и queue controls, duplicate protection, requester metadata, loop/volume/seek, queue pagination, persistent Now Playing UI, auto-pause/resume, idle/24-7 lifecycle, Lavalink/Riffy setup, multi-node configuration, shard voice routing, lifecycle/error handling и shutdown.
+Search закрыт по `src/commands/Search/` и трём модулям: `define`, `google`, `urban`. Зафиксированы единый search router, раздельные lookup modules, внешние Dictionary/Urban API, Google URL generation, URL encoding, input validation, HTTP timeout, deferred interaction lifecycle, dictionary meanings/phonetics/examples formatting, Urban cleanup/stats/author/permalink, 404/429/error classification, centralized user errors, logging и расширяемая module architecture.
 
 Reaction_roles закрыт по command/service/handler/status/database-key paths: setup/dashboard, role safety, 5-panel guild limit, 25-role panel limit, self-assignment через select menu, add/remove/edit/repost/delete lifecycle, deleted-message recovery, message-ID migration, reconciliation, persistence, typed errors, audit logging и isolated partial failures.
 
 ### Точная точка продолжения
 
-**Следующий раздел: `src/commands/Search/`.**
+**Следующий раздел: `src/commands/ServerStats/`.**
 
-После закрытия `Search/` продолжать строго по порядку дерева `src/commands/`.
+После закрытия `ServerStats/` продолжать строго по порядку дерева `src/commands/`.
 
 **Не переходить к GAwesomeBot до полного закрытия TitanBot.**
