@@ -36,12 +36,22 @@
 
 Зафиксировано **GAB-PM-001–GAB-PM-125** в `ideas/GAWESOME_COMMANDS_PM.md`.
 
-Основные блоки: глобальный AFK; personal profile wizard; privacy/background/Bio; per-step timeout и quit; reminders; персональные server aliases; remote say/poll/giveaway; relay статусы none/multi/success; DM-контроль giveaway; secret prize; duration parser/default duration; membership/blocklist/permission checks; динамический PM help; dashboard redirect для deprecated config; OAuth invite.
+### `Commands/Private/` — ЗАКРЫТ
+
+Проверены все 4 файла:
+- `giveaway.js`
+- `index.js`
+- `poll.js`
+- `say.js`
+
+Зафиксировано **GAB-PR-001–GAB-PR-049** в `ideas/GAWESOME_COMMANDS_PRIVATE.md`.
+
+Ключевые блоки: private execution namespace; server resolution + membership gate; blocklist gate; channel resolution/type validation; lazy channel-state creation; remote say attribution и permission checks; poll end/revoke/re-vote; anonymous DM voting; pagination; callback validation; per-step timeouts; default options; giveaway state machine; secret prize; duration parser/fallback; maintainer bypass; nested state operations; initMsg correlation.
 
 ## Точная точка продолжения
 
-**Следующий необработанный каталог: `Commands/Private/`.**
+**Следующий необработанный каталог: `Commands/Public/`.**
 
-После `Private` продолжать `Public`, затем `Shared`. Только после полного `Commands/` переходить к `Configurations/`.
+После `Public` продолжать `Shared`. Только после полного завершения `Commands/` переходить к `Configurations/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
