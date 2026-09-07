@@ -17,47 +17,48 @@
 6. `Temp/`
 7. `Web/`
 
-### Commands — в процессе
+### `Commands/PM/` — ЗАВЕРШЁН
 
-Обнаружены `Commands/PM/`, `Commands/Private/`, `Commands/Public/`, `Commands/Shared/`.
-
-#### `Commands/PM/` — ЗАВЕРШЁН
-
-Проверены все 11 файлов:
-- `_base.js`
-- `afk.js`
-- `config.js`
-- `giveaway.js`
-- `help.js`
-- `join.js`
-- `poll.js`
-- `profile.js`
-- `remindme.js`
-- `say.js`
-- `servernick.js`
-
-Связанный `Commands/Private/giveaway.js` также просмотрен как фактический исполнитель DM giveaway relay.
+Проверены все 11 файлов и связанный `Commands/Private/giveaway.js`.
 
 Зафиксировано **GAB-PM-001–GAB-PM-125** в `ideas/GAWESOME_COMMANDS_PM.md`.
 
-#### `Commands/Private/` — ЗАВЕРШЁН
+### `Commands/Private/` — ЗАВЕРШЁН
 
-Проверены все 4 файла:
-- `giveaway.js`
-- `index.js`
-- `poll.js`
-- `say.js`
+Проверены все 4 файла.
 
 Зафиксировано **GAB-PR-001–GAB-PR-049** в `ideas/GAWESOME_COMMANDS_PRIVATE.md`.
 
-Основные новые находки после сверки с PM: отдельный Private execution namespace; повторяемый server resolution с membership gate; blocklist gate; отдельный channel resolution; lazy channel-state creation; remote say с авторской атрибуцией и проверкой VIEW_CHANNEL/SEND_MESSAGES; poll owner-end и vote-revoke flows; anonymous DM voting; pagination по 10 вариантов; callback validation; command-specific timeouts; poll default No/Yes; giveaway state-dependent join/leave/end flows; secret prize separation; natural duration parser и safe fallback; maintainer bypass; addressable nested state updates; correlation через initMsg; private-layer reuse общих search/permission primitives.
+### `Commands/Public/` — 🔵 В РАБОТЕ
+
+Recursive tree подтвердил полный набор Public-файлов; каталог не объявляется закрытым, пока каждый файл не будет полностью просмотрен.
+
+В текущем батче полностью повторно просмотрены/проверены исходники:
+- `anime.js`
+- `appstore.js`
+- `archive.js`
+- `avatar.js`
+- `calc.js`
+- `cool.js`
+- `count.js`
+- `nuke.js`
+- `mute.js`
+- `quiet.js`
+- `reason.js`
+- `strikes.js`
+
+Ранее в Public уже были подробно проверены также команды/ветки `urban.js`, `wolfram.js`, `reddit.js`, `strike.js`, `nick.js`, `modlog.js`, `alert.js`, `say.js`, `remindme.js`, а также остальные файлы из уже обработанного батча Public. Все новые отличающиеся детали сверены с банком и добавлены в `ideas/GAWESOME_COMMANDS_PUBLIC.md`.
+
+Зафиксировано **GAB-PUB-001–GAB-PUB-080**.
+
+Основные подтверждённые блоки этого батча: интерактивный выбор результатов внешнего поиска; ограничение количества результатов серверными настройками; per-item failure; rich metadata; JSON-архив сообщений с embed/attachment/edit metadata; cursor-based archive; фильтры массового удаления по автору/тексту/ID; channel-level cooldown с natural duration и hard cap; timed/indefinite/all-channel quiet; lazy creation счётчиков через подтверждение; символьные операции счётчиков; защита от отрицательного значения; пагинация; worker-based calculator с help mode и progress message; moderation hierarchy checks; duplicate mute prevention; lazy strike state; paginated strike history; ModLog linkage; отдельное редактирование причины существующего кейса.
 
 ## Точная точка продолжения
 
-`Commands/PM/` и `Commands/Private/` полностью просмотрены.
+**Следующий шаг: продолжать `Commands/Public/` и добрать ВСЕ оставшиеся Public-файлы с полным содержимым.**
 
-Следующий каталог по строгому порядку дерева `Commands/`: **`Commands/Public/`**.
+После фактического закрытия `Public` перейти к `Commands/Shared/`.
 
-После `Public` продолжать `Shared`. Только после полного завершения `Commands/` переходить к `Configurations/`.
+Только после полного `Commands/` переходить к `Configurations/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
