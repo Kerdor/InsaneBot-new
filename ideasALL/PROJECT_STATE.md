@@ -22,30 +22,28 @@
 2. **python-discord/bot — ЗАВЕРШЁН.**
 3. **ItzSudhan/Discord-MusicBot — ЗАВЕРШЁН.**
 4. **codebymitch/TitanBot — ЗАВЕРШЁН.**
-5. **GAwesomeBot/bot — АКТИВНО ИССЛЕДУЕТСЯ СЛЕДУЮЩИМ.**
+5. **GAwesomeBot/bot — АКТИВНО ИССЛЕДУЕТСЯ.**
 6. CorwinDev/Discord-Bot — ОЖИДАЕТ.
 7. Tomato6969/Multipurpose-discord-bot — ОЖИДАЕТ.
 
-## `codebymitch/TitanBot` — ЗАВЕРШЁН
+## `GAwesomeBot/bot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Полностью закрыты все обнаруженные top-level каталоги `src/`, включая `src/utils/` и вложенные `database/`, `logging/`, `ticket/`.
+Исследуется ветка `indev-4.0.2`. Фактический recursive tree проверен через Git Tree API; `truncated=false`.
 
-Пакеты идей TitanBot включают все ранее созданные каталоги плюс:
-- `ideas/TITAN_SERVICES.md` — TSVC-001–TSVC-190;
-- `ideas/TITAN_UTILS.md` — TU-001–TU-292;
-- `ideas/TITAN_UTILS_PRESENTATION.md` — TUP-001–TUP-076;
-- `ideas/TITAN_UTILS_ERRORS.md` — TUE-001–TUE-060.
+Корневой порядок: `Commands/` → `Configurations/` → `Database/` → `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
-### `Utils` — ЗАКРЫТ
+### `Commands/PM/` — ЗАКРЫТ
 
-Проверены utility-файлы `src/utils/` и вложенные `database/`, `logging/`, `ticket/`.
+Проверены все 11 файлов PM и связанный `Commands/Private/giveaway.js` как исполнитель DM giveaway relay.
 
-Зафиксированы механики command/prefix pipeline, interaction response coordination, safe interaction lifecycle, dashboard collectors, reusable components, validation/sanitization, abuse protection, rate limiting, mutex/state storage, trace logging, structured embeds, panel recovery, welcome formatting, giveaway helpers, PostgreSQL abstraction/retry/schema/migration, canonical key system, ticket permissions/logging и safe math parser.
+Зафиксировано **GAB-PM-001–GAB-PM-125** в `ideas/GAWESOME_COMMANDS_PM.md`.
+
+Основные блоки: глобальный AFK; personal profile wizard; privacy/background/Bio; per-step timeout и quit; reminders; персональные server aliases; remote say/poll/giveaway; relay статусы none/multi/success; DM-контроль giveaway; secret prize; duration parser/default duration; membership/blocklist/permission checks; динамический PM help; dashboard redirect для deprecated config; OAuth invite.
 
 ### Точная точка продолжения
 
-**TitanBot полностью закрыт по фактическому `src/` дереву.**
+**Следующий необработанный каталог: `Commands/Private/`.**
 
-Следующий источник по строгому порядку: **GAwesomeBot/bot**.
+После него: `Commands/Public/`, затем `Commands/Shared/`. Только после полного `Commands/` переходить к `Configurations/`.
 
-До полного завершения GAwesomeBot не переходить к CorwinDev/Discord-Bot или Tomato6969/Multipurpose-discord-bot.
+Не переходить к CorwinDev/Discord-Bot или Tomato6969/Multipurpose-discord-bot до полного завершения GAwesomeBot.
