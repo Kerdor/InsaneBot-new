@@ -34,26 +34,24 @@
 
 ### `Commands/PM/` — ЗАКРЫТ
 
-Проверены все 11 файлов PM и связанный `Commands/Private/giveaway.js` как исполнитель DM giveaway relay.
-
-Зафиксировано **GAB-PM-001–GAB-PM-125** в `ideas/GAWESOME_COMMANDS_PM.md`.
+Зафиксировано **GAB-PM-001–GAB-PM-125**.
 
 ### `Commands/Private/` — ЗАКРЫТ
 
-Проверены все 4 файла:
-- `giveaway.js`
-- `index.js`
-- `poll.js`
-- `say.js`
+Зафиксировано **GAB-PR-001–GAB-PR-049**.
 
-Зафиксировано **GAB-PR-001–GAB-PR-049** в `ideas/GAWESOME_COMMANDS_PRIVATE.md`.
+### `Commands/Public/` — В РАБОТЕ
 
-Ключевые блоки: узкий private execution namespace; server resolution по имени/ID/personal alias + membership gate; blocklist gate; channel resolution и type validation; lazy channel-state creation; remote say с авторской атрибуцией и пользовательской проверкой VIEW_CHANNEL/SEND_MESSAGES; poll end/revoke/re-vote; anonymous DM voting; pagination по 10 вариантов; callback input validation; разные timeout по шагам; default No/Yes; giveaway join/leave/end state machine; secret prize; duration parser и safe fallback; maintainer bypass; nested state push/pull; correlation через initMsg; переиспользование общих search/permission primitives.
+Создан `ideas/GAWESOME_COMMANDS_PUBLIC.md`, зафиксировано **GAB-PUB-001–GAB-PUB-080**.
+
+В последнем батче полностью просмотрены: `anime.js`, `appstore.js`, `archive.js`, `avatar.js`, `calc.js`, `cool.js`, `count.js`, `nuke.js`, `mute.js`, `quiet.js`, `reason.js`, `strikes.js`. Дополнительно ранее были подробно просмотрены `urban.js`, `wolfram.js`, `reddit.js`, `strike.js`, `nick.js`, `modlog.js`, `alert.js`, `say.js`, `remindme.js` и другие Public-команды.
+
+Public **НЕ ЗАКРЫТ**: часть файлов требует полного просмотра, а затем финальной сверки всего каталога с банком идей.
 
 ### Точная точка продолжения
 
-**Следующий необработанный каталог: `Commands/Public/`.**
+Продолжать **`Commands/Public/`**. Не переходить в `Commands/Shared/`, пока весь Public не будет реально просмотрен и закрыт.
 
-После него: `Commands/Shared/`. Только после полного `Commands/` переходить к `Configurations/`.
+После `Public` → `Commands/Shared/`. Только после полного `Commands/` → `Configurations/`.
 
 Не переходить к CorwinDev/Discord-Bot или Tomato6969/Multipurpose-discord-bot до полного завершения GAwesomeBot.
