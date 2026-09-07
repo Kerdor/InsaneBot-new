@@ -32,26 +32,22 @@
 
 ### `Commands/PM/` — ЗАКРЫТ
 
-Проверены все 11 файлов PM и связанный `Commands/Private/giveaway.js`.
-
-Зафиксировано **GAB-PM-001–GAB-PM-125** в `ideas/GAWESOME_COMMANDS_PM.md`.
+**GAB-PM-001–GAB-PM-125**.
 
 ### `Commands/Private/` — ЗАКРЫТ
 
-Проверены все 4 файла:
-- `giveaway.js`
-- `index.js`
-- `poll.js`
-- `say.js`
+**GAB-PR-001–GAB-PR-049**.
 
-Зафиксировано **GAB-PR-001–GAB-PR-049** в `ideas/GAWESOME_COMMANDS_PRIVATE.md`.
+### `Commands/Public/` — 🔵 В РАБОТЕ
 
-Ключевые блоки: private execution namespace; server resolution + membership gate; blocklist gate; channel resolution/type validation; lazy channel-state creation; remote say attribution и permission checks; poll end/revoke/re-vote; anonymous DM voting; pagination; callback validation; per-step timeouts; default options; giveaway state machine; secret prize; duration parser/fallback; maintainer bypass; nested state operations; initMsg correlation.
+Создан `ideas/GAWESOME_COMMANDS_PUBLIC.md` с **GAB-PUB-001–GAB-PUB-080**.
 
-## Точная точка продолжения
+Последний подтверждённый батч: `anime.js`, `appstore.js`, `archive.js`, `avatar.js`, `calc.js`, `cool.js`, `count.js`, `nuke.js`, `mute.js`, `quiet.js`, `reason.js`, `strikes.js`. Ранее в каталоге Public были отдельно подробно проверены `urban.js`, `wolfram.js`, `reddit.js`, `strike.js`, `nick.js`, `modlog.js`, `alert.js`, `say.js`, `remindme.js` и другие команды.
 
-**Следующий необработанный каталог: `Commands/Public/`.**
+### Точная точка продолжения
 
-После `Public` продолжать `Shared`. Только после полного завершения `Commands/` переходить к `Configurations/`.
+**Продолжать `Commands/Public/`: добить оставшиеся файлы полным просмотром, затем сделать финальную сверку всего Public.**
+
+Только после закрытия Public переходить к `Commands/Shared/`, затем к `Configurations/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
