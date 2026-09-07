@@ -20,46 +20,28 @@
 | 2 | `python-discord/bot` | ✅ ЗАВЕРШЁН | `research/python-discord-bot.md` |
 | 3 | `ItzSudhan/Discord-MusicBot` | ✅ ЗАВЕРШЁН | `research/discord-music-bot.md` |
 | 4 | `codebymitch/TitanBot` | ✅ ЗАВЕРШЁН | `research/titanbot.md` |
-| 5 | `GAwesomeBot/bot` | 🔵 СЛЕДУЮЩИЙ | — |
+| 5 | `GAwesomeBot/bot` | 🔵 АКТИВЕН | `research/gawesomebot.md` |
 | 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | — |
 | 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
 
-## `codebymitch/TitanBot` — ЗАВЕРШЁН
+## `GAwesomeBot/bot` — АКТИВЕН
 
-Recursive tree `main` проверен полностью (`truncated=false`). Полностью закрыты Root/bootstrap и все обнаруженные top-level каталоги `src/`: Birthday, Community, Core, Economy, Fun, Giveaway, JoinToCreate, Leveling, Logging, Moderation, Music, Reaction_roles, Search, ServerStats, Ticket, Tools, Utility, Config, Events, Handlers, Interactions, Services и Utils.
+Ветка: `indev-4.0.2`. Фактический recursive tree проверен через Git Tree API; `truncated=false`.
 
-Пакеты идей включают:
-- `ideas/TITAN_CONFIG.md` — TITAN-G001–TITAN-G232;
-- `ideas/TITAN_EVENTS.md` — TE-001–TE-280;
-- `ideas/TITAN_ECONOMY.md` — E001–E045;
-- `ideas/TITAN_FUN.md` — TF-001–TF-043;
-- `ideas/TITAN_GIVEAWAY.md` — TG-001–TG-065;
-- `ideas/TITAN_JOINTOCREATE.md` — TJ-001–TJ-080;
-- `ideas/TITAN_LEVELING.md` — TL-001–TL-100;
-- `ideas/TITAN_LOGGING.md` — TLOG-001–TLOG-100;
-- `ideas/MODERATION.md` — MOD-001–MOD-135;
-- `ideas/TITAN_MUSIC.md` — TM-001–TM-154;
-- `ideas/TITAN_REACTION_ROLES.md` — TRR-001–TRR-170;
-- `ideas/TITAN_SEARCH.md` — TS-001–TS-080;
-- `ideas/TITAN_SERVERSTATS.md` — TSS-001–TSS-170;
-- `ideas/TITAN_TICKETS.md` — TT-001–TT-170;
-- `ideas/TITAN_TOOLS.md` — TTOOL-001–TTOOL-244;
-- `ideas/TITAN_UTILITY.md` — TUTILITY-001–TUTILITY-240;
-- `ideas/TITAN_HANDLERS.md` — TH-001–TH-320;
-- `ideas/TITAN_INTERACTIONS.md` — TI-001–TI-160;
-- `ideas/TITAN_SERVICES.md` — TSVC-001–TSVC-190;
-- `ideas/TITAN_UTILS.md` — TU-001–TU-292;
-- `ideas/TITAN_UTILS_PRESENTATION.md` — TUP-001–TUP-076;
-- `ideas/TITAN_UTILS_ERRORS.md` — TUE-001–TUE-060.
+Корневой порядок: `Commands/` → `Configurations/` → `Database/` → `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
-### `Utils` — ЗАКРЫТ
+### `Commands/PM/` — ЗАКРЫТ
 
-Проверены все обнаруженные файлы `src/utils/` и вложенных `database/`, `logging/`, `ticket/`, включая database abstraction, migrations, key parsing, structured storage, ticket permissions/logging, interaction lifecycle, rate limiting, mutex, validation, embeds, logging UI, welcome/giveaway helpers и error pipeline.
+Проверены все 11 файлов PM и связанный `Commands/Private/giveaway.js`.
+
+Зафиксировано **GAB-PM-001–GAB-PM-125** в `ideas/GAWESOME_COMMANDS_PM.md`.
+
+Основные блоки: глобальный AFK; personal profile wizard; privacy/background/Bio; per-step timeout и quit; reminders; персональные server aliases; remote say/poll/giveaway; relay статусы none/multi/success; DM-контроль giveaway; secret prize; duration parser/default duration; membership/blocklist/permission checks; динамический PM help; dashboard redirect для deprecated config; OAuth invite.
 
 ## Точная точка продолжения
 
-**TitanBot полностью завершён.**
+**Следующий необработанный каталог: `Commands/Private/`.**
 
-Следующий источник: **`GAwesomeBot/bot`**.
+После `Private` продолжать `Public`, затем `Shared`. Только после полного `Commands/` переходить к `Configurations/`.
 
-Начать с фактического recursive tree и идти строго по дереву, не перескакивая к CorwinDev или Tomato6969.
+Другие репозитории не трогать до полного завершения GAwesomeBot.
