@@ -40,14 +40,24 @@
 
 Зафиксировано **GAB-PM-001–GAB-PM-125** в `ideas/GAWESOME_COMMANDS_PM.md`.
 
-Ключевые находки: глобальный AFK; многошаговый profile setup с privacy/background/Bio/quit/timeout; reminders; персональные server aliases; remote say/poll/giveaway из DM; статусы none/multi/success; DM-контроль giveaway; secret prize; duration parser; membership/blocklist/permission checks; динамический PM help; deprecated dashboard redirect; OAuth invite URL.
+#### `Commands/Private/` — ЗАВЕРШЁН
+
+Проверены все 4 файла:
+- `giveaway.js`
+- `index.js`
+- `poll.js`
+- `say.js`
+
+Зафиксировано **GAB-PR-001–GAB-PR-049** в `ideas/GAWESOME_COMMANDS_PRIVATE.md`.
+
+Основные новые находки после сверки с PM: отдельный Private execution namespace; повторяемый server resolution с membership gate; blocklist gate; отдельный channel resolution; lazy channel-state creation; remote say с авторской атрибуцией и проверкой VIEW_CHANNEL/SEND_MESSAGES; poll owner-end и vote-revoke flows; anonymous DM voting; pagination по 10 вариантов; callback validation; command-specific timeouts; poll default No/Yes; giveaway state-dependent join/leave/end flows; secret prize separation; natural duration parser и safe fallback; maintainer bypass; addressable nested state updates; correlation через initMsg; private-layer reuse общих search/permission primitives.
 
 ## Точная точка продолжения
 
-`Commands/PM/` полностью просмотрен.
+`Commands/PM/` и `Commands/Private/` полностью просмотрены.
 
-Следующий каталог по строгому порядку дерева `Commands/`: **`Commands/Private/`**.
+Следующий каталог по строгому порядку дерева `Commands/`: **`Commands/Public/`**.
 
-После `Private` продолжать `Public`, затем `Shared`. Только после полного завершения `Commands/` переходить к `Configurations/`.
+После `Public` продолжать `Shared`. Только после полного завершения `Commands/` переходить к `Configurations/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
