@@ -38,12 +38,22 @@
 
 Зафиксировано **GAB-PM-001–GAB-PM-125** в `ideas/GAWESOME_COMMANDS_PM.md`.
 
-Основные блоки: глобальный AFK; personal profile wizard; privacy/background/Bio; per-step timeout и quit; reminders; персональные server aliases; remote say/poll/giveaway; relay статусы none/multi/success; DM-контроль giveaway; secret prize; duration parser/default duration; membership/blocklist/permission checks; динамический PM help; dashboard redirect для deprecated config; OAuth invite.
+### `Commands/Private/` — ЗАКРЫТ
+
+Проверены все 4 файла:
+- `giveaway.js`
+- `index.js`
+- `poll.js`
+- `say.js`
+
+Зафиксировано **GAB-PR-001–GAB-PR-049** в `ideas/GAWESOME_COMMANDS_PRIVATE.md`.
+
+Ключевые блоки: узкий private execution namespace; server resolution по имени/ID/personal alias + membership gate; blocklist gate; channel resolution и type validation; lazy channel-state creation; remote say с авторской атрибуцией и пользовательской проверкой VIEW_CHANNEL/SEND_MESSAGES; poll end/revoke/re-vote; anonymous DM voting; pagination по 10 вариантов; callback input validation; разные timeout по шагам; default No/Yes; giveaway join/leave/end state machine; secret prize; duration parser и safe fallback; maintainer bypass; nested state push/pull; correlation через initMsg; переиспользование общих search/permission primitives.
 
 ### Точная точка продолжения
 
-**Следующий необработанный каталог: `Commands/Private/`.**
+**Следующий необработанный каталог: `Commands/Public/`.**
 
-После него: `Commands/Public/`, затем `Commands/Shared/`. Только после полного `Commands/` переходить к `Configurations/`.
+После него: `Commands/Shared/`. Только после полного `Commands/` переходить к `Configurations/`.
 
 Не переходить к CorwinDev/Discord-Bot или Tomato6969/Multipurpose-discord-bot до полного завершения GAwesomeBot.
