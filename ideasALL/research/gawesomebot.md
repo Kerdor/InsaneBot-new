@@ -19,7 +19,7 @@
 
 ### `Commands/PM/` — ЗАВЕРШЁН
 
-Проверены все 11 файлов и связанный `Commands/Private/giveaway.js`.
+Проверены все 11 файлов и связанные PM/private flows.
 
 Зафиксировано **GAB-PM-001–GAB-PM-125** в `ideas/GAWESOME_COMMANDS_PM.md`.
 
@@ -31,31 +31,41 @@
 
 ### `Commands/Public/` — 🔵 В РАБОТЕ
 
-Recursive tree подтвердил полный набор Public-файлов; каталог не объявляется закрытым, пока каждый файл не будет полностью просмотрен.
+Recursive tree подтвердил полный набор Public-файлов; каталог не объявляется закрытым, пока каждый файл не будет полностью просмотрен и сверён с банком.
 
-В текущем батче полностью повторно просмотрены/проверены исходники:
-- `anime.js`
-- `appstore.js`
-- `archive.js`
-- `avatar.js`
-- `calc.js`
+В текущем продолжении полностью просмотрены/перепроверены:
 - `cool.js`
-- `count.js`
-- `nuke.js`
-- `mute.js`
-- `quiet.js`
-- `reason.js`
-- `strikes.js`
+- `countdown.js`
+- `disable.js`
+- `enable.js`
+- `e621.js`
+- `emoji.js`
+- `emotes.js`
+- `gif.js`
+- `giveaway.js`
+- `help.js`
+- `info.js`
+- `invite.js`
+- `kick.js`
+- `list.js`
+- `lottery.js`
+- `messages.js`
+- `poll.js`
+- `prefix.js`
+- `ranks.js`
+- `roleinfo.js`
 
-Ранее в Public уже были подробно проверены также команды/ветки `urban.js`, `wolfram.js`, `reddit.js`, `strike.js`, `nick.js`, `modlog.js`, `alert.js`, `say.js`, `remindme.js`, а также остальные файлы из уже обработанного батча Public. Все новые отличающиеся детали сверены с банком и добавлены в `ideas/GAWESOME_COMMANDS_PUBLIC.md`.
+Ранее подробно проверенные Public-команды и батчи сохранены в основной идее `GAWESOME_COMMANDS_PUBLIC.md`.
 
-Зафиксировано **GAB-PUB-001–GAB-PUB-080**.
+Текущий дополнительный батч зафиксирован в `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH2.md` как **GAB-PUB-110–GAB-PUB-205**.
 
-Основные подтверждённые блоки этого батча: интерактивный выбор результатов внешнего поиска; ограничение количества результатов серверными настройками; per-item failure; rich metadata; JSON-архив сообщений с embed/attachment/edit metadata; cursor-based archive; фильтры массового удаления по автору/тексту/ID; channel-level cooldown с natural duration и hard cap; timed/indefinite/all-channel quiet; lazy creation счётчиков через подтверждение; символьные операции счётчиков; защита от отрицательного значения; пагинация; worker-based calculator с help mode и progress message; moderation hierarchy checks; duplicate mute prevention; lazy strike state; paginated strike history; ModLog linkage; отдельное редактирование причины существующего кейса.
+Основные подтверждённые новые блоки: named countdowns с duplicate prevention и stale-channel filtering; server to-do list с auto-ID, completion toggle и inline editing; emoji worker с animated/static output и caveat disclosure; глубокий custom emoji inspection с creator/integration/role metadata; permission-filtered help catalog и interactive category menu; aggregate server info и feature detection; destructive kick confirmation/timeout/DM/ModLog flow; poll voting по номеру или тексту, one-vote enforcement и live percentages; giveaway participant controls; progressive lottery pricing/prize, ticket cap и tiered multipliers; weekly message statistics; rank lookup/catalog; aggregate role permissions и role feature metadata.
 
 ## Точная точка продолжения
 
 **Следующий шаг: продолжать `Commands/Public/` и добрать ВСЕ оставшиеся Public-файлы с полным содержимым.**
+
+В частности, ещё необходимо полностью проверить оставшиеся/неполностью просмотренные Public-файлы, затем сделать финальную сверку Public с idea bank.
 
 После фактического закрытия `Public` перейти к `Commands/Shared/`.
 
