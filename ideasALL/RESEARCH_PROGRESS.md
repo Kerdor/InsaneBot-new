@@ -40,14 +40,14 @@
 
 ### `Commands/Public/` — 🔵 В РАБОТЕ
 
-Создан `ideas/GAWESOME_COMMANDS_PUBLIC.md` с **GAB-PUB-001–GAB-PUB-080**.
+Основной банк и пять батчей Public. Последний: `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH5.md`, **GAB-PUB-386–GAB-PUB-452**.
 
-Последний подтверждённый батч: `anime.js`, `appstore.js`, `archive.js`, `avatar.js`, `calc.js`, `cool.js`, `count.js`, `nuke.js`, `mute.js`, `quiet.js`, `reason.js`, `strikes.js`. Ранее в каталоге Public были отдельно подробно проверены `urban.js`, `wolfram.js`, `reddit.js`, `strike.js`, `nick.js`, `modlog.js`, `alert.js`, `say.js`, `remindme.js` и другие команды.
+В последнем продолжении полностью просмотрены/перепроверены `_base.js`, `cool.js`, `giveaway.js`, `kick.js`, `modlog.js`, `mute.js`, `points.js`, `room.js`, `shorten.js`, `stats.js`, `streamers.js`, `tag.js`, `time.js`, `translate.js`, `trivia.js`, `twitter.js`, `unban.js`, `unmute.js`, `wiki.js`, `weather.js`, `wolfram.js`, `xkcd.js`, `youtube.js`, `year.js`.
 
 ### Точная точка продолжения
 
-**Продолжать `Commands/Public/`: добить оставшиеся файлы полным просмотром, затем сделать финальную сверку всего Public.**
+**Продолжать `Commands/Public/`: пройти оставшиеся Public-файлы, затем выполнить финальную сверку всего Public с банком.**
 
-Только после закрытия Public переходить к `Commands/Shared/`, затем к `Configurations/`.
+Не переходить в `Commands/Shared/`, пока Public не будет реально закрыт. После Public → Shared → только после полного Commands → Configurations.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
