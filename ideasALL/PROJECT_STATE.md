@@ -28,7 +28,7 @@
 
 ## `GAwesomeBot/bot` — АКТИВЕН
 
-Исследуется ветка `indev-4.0.2`. Фактический recursive tree проверен через Git Tree API; `truncated=false`.
+Исследуется ветка `indev-4.0.2`. Фактический recursive tree проверен через Git tree API; `truncated=false`.
 
 Корневой порядок: `Commands/` → `Configurations/` → `Database/` → `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
@@ -40,17 +40,15 @@
 
 Зафиксировано **GAB-PR-001–GAB-PR-049**.
 
-### `Commands/Public/` — В РАБОТЕ
+### `Commands/Public/` — ФИНАЛЬНАЯ СВЕРКА
 
-Последний idea batch расширен до **GAB-PUB-590** в `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH6.md`.
+Все файлы Public из recursive tree фактически просмотрены. Последний новый batch: `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH8.md`, **GAB-PUB-591–GAB-PUB-672**.
 
-В последнем продолжении перепроверены дополнительные Public-команды: command base, cooldown, giveaway runtime, moderation, points, streamers, tags, anime, App Store, GIF, animals, counting, archive, convert и redirect-chain safety.
-
-Public **НЕ ЗАКРЫТ**: остаётся полный обход/перепроверка оставшихся файлов и финальная сверка всего каталога с банком.
+Проверены и сопоставлены с банком: moderation, tags, counters, help, archive, Imgur, RSS, Safebooru/NSFW, strikes, roles, media/search, weather, conversion и остальные Public-команды.
 
 ### Точная точка продолжения
 
-Продолжать **`Commands/Public/`**. Не переходить в `Commands/Shared/` до фактического закрытия Public.
+**Финально сверить весь `Commands/Public/` по recursive tree против GAB-PUB-001–672. Если пропусков нет — закрыть Public и перейти к `Commands/Shared/`.**
 
 После Public → Shared → только после полного Commands → Configurations.
 
