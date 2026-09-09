@@ -42,16 +42,16 @@
 
 ### `Commands/Public/` — В РАБОТЕ
 
-Public уже имеет основной банк и четыре предыдущих батча. Последний созданный батч — `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH5.md`, **GAB-PUB-386–GAB-PUB-452**.
+Последний idea batch расширен до **GAB-PUB-590** в `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH6.md`.
 
-В батче 5 дополнительно подтверждены детали `_base.js`, moderation confirmation/DM/ModLog flows, weekly server statistics, streamer watchlist, tags, temporary rooms, trivia, timezone/translation и URL/media edge cases.
+В последнем продолжении перепроверены дополнительные Public-команды: command base, cooldown, giveaway runtime, moderation, points, streamers, tags, anime, App Store, GIF, animals, counting, archive, convert и redirect-chain safety.
 
-Public **НЕ ЗАКРЫТ**: необходимо продолжить полный просмотр оставшихся файлов и только после этого сделать финальную сверку всего каталога.
+Public **НЕ ЗАКРЫТ**: остаётся полный обход/перепроверка оставшихся файлов и финальная сверка всего каталога с банком.
 
 ### Точная точка продолжения
 
-Продолжать **`Commands/Public/`**. Следующая работа — пройти оставшиеся Public-файлы, сверить каждую новую механику с GAB-PUB-001–452 и не переходить в `Shared` до фактического закрытия Public.
+Продолжать **`Commands/Public/`**. Не переходить в `Commands/Shared/` до фактического закрытия Public.
 
-После `Public` → `Commands/Shared/`. Только после полного `Commands/` → `Configurations/`.
+После Public → Shared → только после полного Commands → Configurations.
 
 Не переходить к CorwinDev/Discord-Bot или Tomato6969/Multipurpose-discord-bot до полного завершения GAwesomeBot.
