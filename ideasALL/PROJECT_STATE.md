@@ -40,16 +40,16 @@
 
 Зафиксировано **GAB-PR-001–GAB-PR-049**.
 
-### `Commands/Public/` — ФИНАЛЬНАЯ СВЕРКА
+### `Commands/Public/` — ЗАКРЫТ
 
-Все файлы Public из recursive tree фактически просмотрены. Последний новый batch: `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH8.md`, **GAB-PUB-591–GAB-PUB-672**.
+Финальная сверка выполнена по recursive tree ветки `indev-4.0.2`. Каталог содержит **74 файла**, включая `_base.js`; все файлы сопоставлены с просмотренными материалами и банком идей.
 
-Проверены и сопоставлены с банком: moderation, tags, counters, help, archive, Imgur, RSS, Safebooru/NSFW, strikes, roles, media/search, weather, conversion и остальные Public-команды.
+Зафиксирован диапазон **GAB-PUB-001–GAB-PUB-672**. Пропусков в текущей нумерации не выявлено; историческое перекрытие `BATCH7` сохранено без удаления.
 
 ### Точная точка продолжения
 
-**Финально сверить весь `Commands/Public/` по recursive tree против GAB-PUB-001–672. Если пропусков нет — закрыть Public и перейти к `Commands/Shared/`.**
+**Следующий шаг: перейти к `Commands/Shared/` и исследовать его полностью.**
 
-После Public → Shared → только после полного Commands → Configurations.
+После Shared → только после полного `Commands/` → `Configurations/`.
 
 Не переходить к CorwinDev/Discord-Bot или Tomato6969/Multipurpose-discord-bot до полного завершения GAwesomeBot.
