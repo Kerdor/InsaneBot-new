@@ -27,9 +27,9 @@
 Проверены все 4 файла.
 Зафиксировано **GAB-PR-001–GAB-PR-049**.
 
-### `Commands/Public/` — 🔵 ФИНАЛЬНАЯ СВЕРКА
+### `Commands/Public/` — ЗАВЕРШЁН
 
-Recursive tree подтвердил полный набор Public-файлов; все 73 файла каталога фактически просмотрены и сопоставлены с idea bank.
+Финальная сверка выполнена по recursive tree ветки `indev-4.0.2`. Каталог содержит **74 файла**, включая `_base.js`; все файлы сопоставлены с просмотренными материалами и банком идей.
 
 Зафиксированные Public-батчи:
 - `GAWESOME_COMMANDS_PUBLIC.md`
@@ -41,11 +41,11 @@ Recursive tree подтвердил полный набор Public-файлов;
 - `GAWESOME_COMMANDS_PUBLIC_BATCH7.md` — дополнительные **GAB-PUB-496–556**; сохранён как отдельный исторический батч
 - `GAWESOME_COMMANDS_PUBLIC_BATCH8.md` — **GAB-PUB-591–672**
 
-В последнем обходе полностью просмотрены и перепроверены оставшиеся/ранее незафиксированные Public-файлы, включая `_base.js`, `8ball.js`, `avatar.js`, `ban.js`, `calc.js`, `cat.js`, `catfact.js`, `choose.js`, `convert.js`, `cool.js`, `count.js`, `countdown.js`, `e621.js`, `emoji.js`, `emotes.js`, `fortune.js`, `help.js`, `imgur.js`, `info.js`, `joke.js`, `kick.js`, `list.js`, `messages.js`, `mute.js`, `numfact.js`, `poll.js`, `prefix.js`, `quiet.js`, `ranks.js`, `reason.js`, `roleinfo.js`, `room.js`, `roll.js`, `rss.js`, `safebooru.js`, `strikes.js`, `streamers.js`, `tag.js`, `time.js`, `translate.js`, `trivia.js`, `twitter.js`, `unban.js`, `unmute.js`, `weather.js`, `wiki.js`, `wolfram.js`, `xkcd.js`, `youtube.js`, `year.js`, а также остальные файлы из recursive tree.
+Итоговый диапазон Public: **GAB-PUB-001–GAB-PUB-672**. Пропусков в текущей нумерации не выявлено; историческое перекрытие BATCH7 сохранено без удаления.
 
 ### Точная точка продолжения
 
-**Следующий шаг: выполнить финальную сверку всего `Commands/Public/` по recursive tree против диапазона GAB-PUB-001–672. Если пропусков нет — закрыть Public и перейти к `Commands/Shared/`.**
+**Следующий шаг: перейти к `Commands/Shared/` и исследовать его полностью.**
 
 Не переходить в `Configurations/`, пока полностью не закрыт весь `Commands/`.
 
