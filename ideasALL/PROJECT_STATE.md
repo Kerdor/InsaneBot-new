@@ -42,15 +42,15 @@
 
 ### `Commands/Public/` — В РАБОТЕ
 
-Создан `ideas/GAWESOME_COMMANDS_PUBLIC.md`, зафиксировано **GAB-PUB-001–GAB-PUB-080**.
+Public уже имеет основной банк и четыре предыдущих батча. Последний созданный батч — `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH5.md`, **GAB-PUB-386–GAB-PUB-452**.
 
-В последнем батче полностью просмотрены: `anime.js`, `appstore.js`, `archive.js`, `avatar.js`, `calc.js`, `cool.js`, `count.js`, `nuke.js`, `mute.js`, `quiet.js`, `reason.js`, `strikes.js`. Дополнительно ранее были подробно просмотрены `urban.js`, `wolfram.js`, `reddit.js`, `strike.js`, `nick.js`, `modlog.js`, `alert.js`, `say.js`, `remindme.js` и другие Public-команды.
+В батче 5 дополнительно подтверждены детали `_base.js`, moderation confirmation/DM/ModLog flows, weekly server statistics, streamer watchlist, tags, temporary rooms, trivia, timezone/translation и URL/media edge cases.
 
-Public **НЕ ЗАКРЫТ**: часть файлов требует полного просмотра, а затем финальной сверки всего каталога с банком идей.
+Public **НЕ ЗАКРЫТ**: необходимо продолжить полный просмотр оставшихся файлов и только после этого сделать финальную сверку всего каталога.
 
 ### Точная точка продолжения
 
-Продолжать **`Commands/Public/`**. Не переходить в `Commands/Shared/`, пока весь Public не будет реально просмотрен и закрыт.
+Продолжать **`Commands/Public/`**. Следующая работа — пройти оставшиеся Public-файлы, сверить каждую новую механику с GAB-PUB-001–452 и не переходить в `Shared` до фактического закрытия Public.
 
 После `Public` → `Commands/Shared/`. Только после полного `Commands/` → `Configurations/`.
 
