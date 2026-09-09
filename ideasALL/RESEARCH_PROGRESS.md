@@ -44,10 +44,17 @@
 
 Последний диапазон идей: **GAB-PUB-001–GAB-PUB-672**. Пропусков в текущей нумерации не выявлено; историческое перекрытие `BATCH7` сохранено без удаления.
 
+### `Commands/Shared/` — ЗАКРЫТ
+
+Проверены все **4 файла**: `_base.js`, `debug.js`, `eval.js`, `reload.js`.
+Зафиксировано **GAB-SH-001–GAB-SH-094**.
+
+Разобраны общий контракт Shared-команд, shard/process/OS/master diagnostics, maintainer permission diagnostics, безопасный eval, secret censoring, async eval, большие результаты через gist, execution timing, hot-reload команд/events и wildcard reload.
+
 ### Точная точка продолжения
 
-**Следующий шаг: перейти к `Commands/Shared/` и исследовать его полностью.**
+**Весь `Commands/` GAwesomeBot закрыт. Следующий шаг — начать `Configurations/` и пройти его полностью.**
 
-После Shared → только после полного `Commands/` → `Configurations/`.
+Не переходить к `Database/`, пока полностью не закрыт `Configurations/`.
 
-Не переходить к CorwinDev/Discord-Bot или Tomato6969/Multipurpose-discord-bot до полного завершения GAwesomeBot.
+Другие репозитории не трогать до полного завершения GAwesomeBot.
