@@ -33,39 +33,41 @@
 
 Recursive tree подтвердил полный набор Public-файлов; каталог не объявляется закрытым, пока каждый файл не будет полностью просмотрен и сверён с банком.
 
-В текущем продолжении полностью просмотрены/перепроверены:
+В этом продолжении полностью просмотрены/перепроверены дополнительные Public-файлы, включая:
+- `_base.js`
 - `cool.js`
-- `countdown.js`
-- `disable.js`
-- `enable.js`
-- `e621.js`
-- `emoji.js`
-- `emotes.js`
-- `gif.js`
 - `giveaway.js`
-- `help.js`
-- `info.js`
-- `invite.js`
 - `kick.js`
-- `list.js`
-- `lottery.js`
-- `messages.js`
-- `poll.js`
-- `prefix.js`
-- `ranks.js`
-- `roleinfo.js`
+- `modlog.js`
+- `mute.js`
+- `points.js`
+- `room.js`
+- `shorten.js`
+- `stats.js`
+- `streamers.js`
+- `tag.js`
+- `time.js`
+- `translate.js`
+- `trivia.js`
+- `twitter.js`
+- `unban.js`
+- `unmute.js`
+- `wiki.js`
+- `weather.js`
+- `wolfram.js`
+- `xkcd.js`
+- `youtube.js`
+- `year.js`
 
-Ранее подробно проверенные Public-команды и батчи сохранены в основной идее `GAWESOME_COMMANDS_PUBLIC.md`.
+Создан `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH5.md` с **GAB-PUB-386–GAB-PUB-452**.
 
-Текущий дополнительный батч зафиксирован в `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH2.md` как **GAB-PUB-110–GAB-PUB-205**.
+Основные новые блоки этого батча: документированный контракт Public-команд; confirmation/notification/ModLog детали moderation; weekly server statistics с activity score и top-5 срезами; dashboard-backed streamer watchlist; глубокая permission-модель tags, lock/command flags, defaults и внешняя публикация длинного контента; временные talk rooms с multi-member grants, hidden-by-default permissions и auto-category; trivia sets/skip/progress; timezone validation; dual translation syntax; RSS/media edge cases; Bitly expand/shorten и capability gates.
 
-Основные подтверждённые новые блоки: named countdowns с duplicate prevention и stale-channel filtering; server to-do list с auto-ID, completion toggle и inline editing; emoji worker с animated/static output и caveat disclosure; глубокий custom emoji inspection с creator/integration/role metadata; permission-filtered help catalog и interactive category menu; aggregate server info и feature detection; destructive kick confirmation/timeout/DM/ModLog flow; poll voting по номеру или тексту, one-vote enforcement и live percentages; giveaway participant controls; progressive lottery pricing/prize, ticket cap и tiered multipliers; weekly message statistics; rank lookup/catalog; aggregate role permissions и role feature metadata.
+Ранее созданные батчи Public: `GAWESOME_COMMANDS_PUBLIC.md`, `GAWESOME_COMMANDS_PUBLIC_BATCH2.md`, `GAWESOME_COMMANDS_PUBLIC_BATCH3.md`, `GAWESOME_COMMANDS_PUBLIC_BATCH4.md`.
 
 ## Точная точка продолжения
 
-**Следующий шаг: продолжать `Commands/Public/` и добрать ВСЕ оставшиеся Public-файлы с полным содержимым.**
-
-В частности, ещё необходимо полностью проверить оставшиеся/неполностью просмотренные Public-файлы, затем сделать финальную сверку Public с idea bank.
+**Следующий шаг: продолжать `Commands/Public/` — проверить оставшиеся Public-файлы, которых ещё не было полного просмотра, затем выполнить финальную сверку всего Public с idea bank.**
 
 После фактического закрытия `Public` перейти к `Commands/Shared/`.
 
