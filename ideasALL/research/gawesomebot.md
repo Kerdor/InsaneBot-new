@@ -21,29 +21,44 @@
 
 Проверены все 11 файлов и связанные PM/private flows.
 
-Зафиксировано **GAB-PM-001–GAB-PM-125** в `ideas/GAWESOME_COMMANDS_PM.md`.
+Зафиксировано **GAB-PM-001–GAB-PM-125**.
 
 ### `Commands/Private/` — ЗАВЕРШЁН
 
 Проверены все 4 файла.
 
-Зафиксировано **GAB-PR-001–GAB-PR-049** в `ideas/GAWESOME_COMMANDS_PRIVATE.md`.
+Зафиксировано **GAB-PR-001–GAB-PR-049**.
 
 ### `Commands/Public/` — 🔵 В РАБОТЕ
 
-Recursive tree подтвердил полный набор Public-файлов; каталог не объявляется закрытым, пока каждый файл не будет полностью просмотрен и сверён с банком.
+Recursive tree подтвердил полный набор Public-файлов; каталог всё ещё не объявляется закрытым до финальной сверки.
 
-В этом продолжении полностью просмотрены/перепроверены дополнительные Public-файлы, включая:
+В последнем продолжении дополнительно полностью просмотрены/перепроверены:
 - `_base.js`
+- `8ball.js`
+- `about.js`
+- `afk.js`
+- `anime.js`
+- `appstore.js`
+- `archive.js`
+- `cat.js`
+- `catfact.js`
+- `choose.js`
+- `convert.js`
 - `cool.js`
+- `count.js`
+- `dog.js`
+- `dogfact.js`
+- `expand.js`
+- `games.js`
+- `gif.js`
 - `giveaway.js`
+- `invite.js`
 - `kick.js`
-- `modlog.js`
 - `mute.js`
+- `ping.js`
 - `points.js`
-- `room.js`
-- `shorten.js`
-- `stats.js`
+- `ranks.js`
 - `streamers.js`
 - `tag.js`
 - `time.js`
@@ -52,25 +67,23 @@ Recursive tree подтвердил полный набор Public-файлов;
 - `twitter.js`
 - `unban.js`
 - `unmute.js`
-- `wiki.js`
 - `weather.js`
+- `wiki.js`
 - `wolfram.js`
 - `xkcd.js`
 - `youtube.js`
 - `year.js`
 
-Создан `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH5.md` с **GAB-PUB-386–GAB-PUB-452**.
+Последний idea batch расширен до **GAB-PUB-590** в `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH6.md`.
 
-Основные новые блоки этого батча: документированный контракт Public-команд; confirmation/notification/ModLog детали moderation; weekly server statistics с activity score и top-5 срезами; dashboard-backed streamer watchlist; глубокая permission-модель tags, lock/command flags, defaults и внешняя публикация длинного контента; временные talk rooms с multi-member grants, hidden-by-default permissions и auto-category; trivia sets/skip/progress; timezone validation; dual translation syntax; RSS/media edge cases; Bitly expand/shorten и capability gates.
+Новые блоки этого продолжения: channel-local cooldown, active giveaway runtime, moderation preflight/confirmation/reason flows, points leaderboard semantics, concurrent streamer checks, глубокая tag policy/lock/command модель, anime/appstore/GIPHY UX, named counters, structured message archive и redirect-chain safety reporting.
 
-Ранее созданные батчи Public: `GAWESOME_COMMANDS_PUBLIC.md`, `GAWESOME_COMMANDS_PUBLIC_BATCH2.md`, `GAWESOME_COMMANDS_PUBLIC_BATCH3.md`, `GAWESOME_COMMANDS_PUBLIC_BATCH4.md`.
+### Точная точка продолжения
 
-## Точная точка продолжения
+**Следующий шаг: продолжать `Commands/Public/` и добить фактически не просмотренные/не перепроверенные Public-файлы. После этого сделать финальную сверку всего Public с GAB-PUB-001–590.**
 
-**Следующий шаг: продолжать `Commands/Public/` — проверить оставшиеся Public-файлы, которых ещё не было полного просмотра, затем выполнить финальную сверку всего Public с idea bank.**
+Только после фактического закрытия Public перейти к `Commands/Shared/`.
 
-После фактического закрытия `Public` перейти к `Commands/Shared/`.
-
-Только после полного `Commands/` переходить к `Configurations/`.
+После полного `Commands/` перейти к `Configurations/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
