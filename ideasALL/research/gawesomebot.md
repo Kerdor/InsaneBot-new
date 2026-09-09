@@ -20,70 +20,33 @@
 ### `Commands/PM/` — ЗАВЕРШЁН
 
 Проверены все 11 файлов и связанные PM/private flows.
-
 Зафиксировано **GAB-PM-001–GAB-PM-125**.
 
 ### `Commands/Private/` — ЗАВЕРШЁН
 
 Проверены все 4 файла.
-
 Зафиксировано **GAB-PR-001–GAB-PR-049**.
 
-### `Commands/Public/` — 🔵 В РАБОТЕ
+### `Commands/Public/` — 🔵 ФИНАЛЬНАЯ СВЕРКА
 
-Recursive tree подтвердил полный набор Public-файлов; каталог всё ещё не объявляется закрытым до финальной сверки.
+Recursive tree подтвердил полный набор Public-файлов; все 73 файла каталога фактически просмотрены и сопоставлены с idea bank.
 
-В последнем продолжении дополнительно полностью просмотрены/перепроверены:
-- `_base.js`
-- `8ball.js`
-- `about.js`
-- `afk.js`
-- `anime.js`
-- `appstore.js`
-- `archive.js`
-- `cat.js`
-- `catfact.js`
-- `choose.js`
-- `convert.js`
-- `cool.js`
-- `count.js`
-- `dog.js`
-- `dogfact.js`
-- `expand.js`
-- `games.js`
-- `gif.js`
-- `giveaway.js`
-- `invite.js`
-- `kick.js`
-- `mute.js`
-- `ping.js`
-- `points.js`
-- `ranks.js`
-- `streamers.js`
-- `tag.js`
-- `time.js`
-- `translate.js`
-- `trivia.js`
-- `twitter.js`
-- `unban.js`
-- `unmute.js`
-- `weather.js`
-- `wiki.js`
-- `wolfram.js`
-- `xkcd.js`
-- `youtube.js`
-- `year.js`
+Зафиксированные Public-батчи:
+- `GAWESOME_COMMANDS_PUBLIC.md`
+- `GAWESOME_COMMANDS_PUBLIC_BATCH2.md`
+- `GAWESOME_COMMANDS_PUBLIC_BATCH3.md`
+- `GAWESOME_COMMANDS_PUBLIC_BATCH4.md`
+- `GAWESOME_COMMANDS_PUBLIC_BATCH5.md`
+- `GAWESOME_COMMANDS_PUBLIC_BATCH6.md` — до **GAB-PUB-590**
+- `GAWESOME_COMMANDS_PUBLIC_BATCH7.md` — дополнительные **GAB-PUB-496–556**; сохранён как отдельный исторический батч
+- `GAWESOME_COMMANDS_PUBLIC_BATCH8.md` — **GAB-PUB-591–672**
 
-Последний idea batch расширен до **GAB-PUB-590** в `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH6.md`.
-
-Новые блоки этого продолжения: channel-local cooldown, active giveaway runtime, moderation preflight/confirmation/reason flows, points leaderboard semantics, concurrent streamer checks, глубокая tag policy/lock/command модель, anime/appstore/GIPHY UX, named counters, structured message archive и redirect-chain safety reporting.
+В последнем обходе полностью просмотрены и перепроверены оставшиеся/ранее незафиксированные Public-файлы, включая `_base.js`, `8ball.js`, `avatar.js`, `ban.js`, `calc.js`, `cat.js`, `catfact.js`, `choose.js`, `convert.js`, `cool.js`, `count.js`, `countdown.js`, `e621.js`, `emoji.js`, `emotes.js`, `fortune.js`, `help.js`, `imgur.js`, `info.js`, `joke.js`, `kick.js`, `list.js`, `messages.js`, `mute.js`, `numfact.js`, `poll.js`, `prefix.js`, `quiet.js`, `ranks.js`, `reason.js`, `roleinfo.js`, `room.js`, `roll.js`, `rss.js`, `safebooru.js`, `strikes.js`, `streamers.js`, `tag.js`, `time.js`, `translate.js`, `trivia.js`, `twitter.js`, `unban.js`, `unmute.js`, `weather.js`, `wiki.js`, `wolfram.js`, `xkcd.js`, `youtube.js`, `year.js`, а также остальные файлы из recursive tree.
 
 ### Точная точка продолжения
 
-**Следующий шаг: продолжать `Commands/Public/` и добить фактически не просмотренные/не перепроверенные Public-файлы. После этого сделать финальную сверку всего Public с GAB-PUB-001–590.**
+**Следующий шаг: выполнить финальную сверку всего `Commands/Public/` по recursive tree против диапазона GAB-PUB-001–672. Если пропусков нет — закрыть Public и перейти к `Commands/Shared/`.**
 
-Только после фактического закрытия Public перейти к `Commands/Shared/`.
-
-После полного `Commands/` перейти к `Configurations/`.
+Не переходить в `Configurations/`, пока полностью не закрыт весь `Commands/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
