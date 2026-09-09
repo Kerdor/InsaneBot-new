@@ -40,13 +40,13 @@
 
 ### `Commands/Public/` — 🔵 В РАБОТЕ
 
-Основной банк и пять батчей Public. Последний: `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH5.md`, **GAB-PUB-386–GAB-PUB-452**.
+Idea bank Public расширен до **GAB-PUB-590**. Последние записи находятся в `ideas/GAWESOME_COMMANDS_PUBLIC_BATCH6.md`.
 
-В последнем продолжении полностью просмотрены/перепроверены `_base.js`, `cool.js`, `giveaway.js`, `kick.js`, `modlog.js`, `mute.js`, `points.js`, `room.js`, `shorten.js`, `stats.js`, `streamers.js`, `tag.js`, `time.js`, `translate.js`, `trivia.js`, `twitter.js`, `unban.js`, `unmute.js`, `wiki.js`, `weather.js`, `wolfram.js`, `xkcd.js`, `youtube.js`, `year.js`.
+Дополнительно просмотрены/перепроверены command base, cooldown, giveaway, moderation, points, streamers, tags, anime, App Store, GIF/animals, counting, archive, conversion и redirect-chain flows.
 
 ### Точная точка продолжения
 
-**Продолжать `Commands/Public/`: пройти оставшиеся Public-файлы, затем выполнить финальную сверку всего Public с банком.**
+**Продолжать `Commands/Public/`: пройти ещё не закрытые Public-файлы, затем выполнить финальную сверку всего каталога с GAB-PUB-001–590.**
 
 Не переходить в `Commands/Shared/`, пока Public не будет реально закрыт. После Public → Shared → только после полного Commands → Configurations.
 
