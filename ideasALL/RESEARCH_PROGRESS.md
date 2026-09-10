@@ -55,7 +55,13 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - Добавлены `TOM-001–005` в `ideasALL/ideas/TOMATO_BATCH1.md`.
 - `compile.js` и `coliru.js` признаны дублем одной механики и объединены.
 
+### Batch 2
+- `commands/⚙️ Settings` — ✅ обработано полностью.
+- Просмотрены все 20 файлов области.
+- Добавлены `TOM-006–011` в `ideasALL/ideas/TOMATO_BATCH2.md`.
+- Дубли сверены с `CORE`, `ECONOMY`, `SOCIAL` и `MUSIC`; закомментированные `toggledjonly.js` / `togglerequestonly.js` не учитывались как рабочие механики.
+
 ### Текущая точка
-Следующая область: `commands/⚙️ Settings`.
+Следующая область: продолжить обход `commands` по дереву ветки `new_2025`.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
