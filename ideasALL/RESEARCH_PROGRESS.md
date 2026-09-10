@@ -71,14 +71,19 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - Добавлены `TOM-034–058`.
 - Отключённые `.js.disabled`, `uno.js` и unsupported `poker-night.js` как рабочие механики не учитывались.
 
-### Batch 6 — текущий
-- `commands/🎶 Music` — 🔄 в работе.
-- Добавлены `TOM-059–071` в `ideasALL/ideas/TOMATO_BATCH5.md`.
-- Новые находки: previous/similar track, DM-grab, playtop, moveme, radio catalog/search, radio reconnect, shuffle rollback, queue deduplication, queue status, Music Mix и Song of the Day.
-- Базовые music controls проверяются на дубли и новые детали.
-- `voteskip.js` / `removevoteskip.js` полностью закомментированы; `lyrics.js` / `searchplaylist.js` не выполняют заявленную механику.
+### Batch 6
+- `commands/🎶 Music` — ✅ обработано полностью.
+- Добавлены `TOM-059–072` в `ideasALL/ideas/TOMATO_BATCH5.md`.
+- Новые находки: previous/similar track, DM-grab, playtop, moveme, radio catalog/search, radio reconnect, shuffle rollback, queue deduplication, queue status, Music Mix, Song of the Day и отдельный searchsimilar.
+- Базовые music controls проверены на дубли; нерабочие/закомментированные варианты не учитывались.
+
+### Batch 7
+- `commands/🏫 School Commands` — ✅ обработано полностью.
+- Просмотрены все 5 файлов.
+- Добавлены `TOM-073–077` в `ideasALL/ideas/TOMATO_BATCH6.md`.
+- Зафиксированы текстовый калькулятор, интерактивный calculator UI, вывод числа e, вывод числа π и пользовательские отложенные напоминания.
 
 ### Текущая точка
-`commands/🎶 Music` **ЕЩЁ НЕ ЗАКРЫТА**. Продолжить с оставшихся файлов Music, затем закрыть папку только после полного прохода.
+`commands/🏫 School Commands` закрыта. Следующая область: `commands/👀 Filter`.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
