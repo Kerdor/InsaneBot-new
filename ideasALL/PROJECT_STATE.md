@@ -80,10 +80,17 @@
 
 Зафиксированы `TOM-021–033` в `ideasALL/ideas/TOMATO_BATCH3.md` — lock/unlock, stage/unstage, kick, персональный invite, ban/unban, trust/untrust, изменение user limit, изменение bitrate с учётом серверных бустов и передача ownership временного Join-to-Create voice-канала.
 
+### Batch 5
+`commands/🎮 MiniGames` обработано полностью: проверена вся директория.
+
+Зафиксированы `TOM-034–058` в `ideasALL/ideas/TOMATO_BATCH4.md` — интерактивные одиночные и PvP-игры, текстовые эффекты, генератор цвета, угадайки, Discord Activities и связанные UX-механики.
+
+Отключённые `.js.disabled` файлы не учитывались. `uno.js` и недостижимый после раннего return `poker-night.js` не добавлялись как рабочие игровые механики.
+
 ## Текущая точка
-Следующая область: `commands/🎮 MiniGames`.
+`commands/🎮 MiniGames` закрыта.
 
 ## Следующий шаг
-Инспектировать `commands/🎮 MiniGames` Tomato6966, обработать все файлы области, сверить каждую механику с банком идей и только после этого записать новый батч и обновить checkpoints.
+Продолжить с следующей областью внутри `commands` по дереву `new_2025`, обработать её крупным батчем, полностью сверить с банком идей и обновить checkpoints.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
