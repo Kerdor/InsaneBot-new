@@ -90,7 +90,14 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - Зафиксированы 8D rotation, Bass Boost, Equalizer presets, reset EQ/filter, готовые voice/timescale эффекты и ручные pitch/speed/rate.
 - `cleareq.js` сверён с `clearfilter.js` и не добавлен отдельно.
 
+### Batch 9
+- `commands/👑 Owner` — ✅ обработано полностью.
+- Просмотрены все 19 файлов.
+- Добавлены `TOM-093–106` в `ideasALL/ideas/TOMATO_BATCH8.md`.
+- Зафиксированы owner-инструменты для управления ботом, конфигурацией, статусом, owner list, slash deploy, reload/restart, reset данных, рекламой и диагностикой.
+- `addmoney.js` / `removemoney.js` сверены с существующей экономикой; `stopbot.js` и отключённый `reloadbot.js` не считались рабочими командами.
+
 ### Текущая точка
-Следующая область: `commands/👑 Owner`.
+`commands/👑 Owner` закрыта. Следующая область — следующая директория `commands` по дереву `new_2025`.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
