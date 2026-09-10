@@ -26,41 +26,28 @@
 6. CorwinDev/Discord-Bot — ОЖИДАЕТ.
 7. Tomato6969/Multipurpose-discord-bot — ОЖИДАЕТ.
 
-## `GAwesomeBot/bot` — АКТИВЕН
+## GAwesomeBot — ACTIVE
 
-Исследуется ветка `indev-4.0.2`. Фактический recursive tree проверен через Git tree API; `truncated=false`.
+Ветка: `indev-4.0.2`. Recursive tree проверен через Git Tree API; `truncated=false`.
 
-Корневой порядок: `Commands/` → `Configurations/` → `Database/` → `Internals/` → `Modules/` → `Temp/` → `Web/`.
+### Commands — ЗАКРЫТ
 
-### `Commands/PM/` — ЗАКРЫТ
+- PM: **GAB-PM-001–125**
+- Private: **GAB-PR-001–049**
+- Public: **GAB-PUB-001–672**, 74 файла включая `_base.js`; финальная сверка выполнена, пропусков не выявлено.
+- Shared: **GAB-SH-001–094**, 4 файла.
 
-Зафиксировано **GAB-PM-001–GAB-PM-125**.
+### Configurations — ЗАКРЫТ
 
-### `Commands/Private/` — ЗАКРЫТ
+Проверены все 13 файлов каталога `Configurations/` по recursive tree и сопоставлены с банком идей.
+Зафиксировано **GAB-CONF-001–086** в `ideasALL/ideas/GAWESOME_CONFIG.md`.
 
-Зафиксировано **GAB-PR-001–GAB-PR-049**.
-
-### `Commands/Public/` — ЗАКРЫТ
-
-Финальная сверка выполнена по recursive tree ветки `indev-4.0.2`. Каталог содержит **74 файла**, включая `_base.js`; все файлы сопоставлены с просмотренными материалами и банком идей.
-
-Зафиксирован диапазон **GAB-PUB-001–GAB-PUB-672**. Пропусков в текущей нумерации не выявлено; историческое перекрытие `BATCH7` сохранено без удаления.
-
-### `Commands/Shared/` — ЗАКРЫТ
-
-Проверены все **4 файла**: `_base.js`, `debug.js`, `eval.js`, `reload.js`.
-Зафиксировано **GAB-SH-001–GAB-SH-094**.
-
-Разобраны общий контракт Shared-команд, shard/process/OS/master diagnostics, maintainer permission diagnostics, безопасный eval, secret censoring, async eval, большие результаты через gist, execution timing, hot-reload команд/events и wildcard reload.
-
-### `Commands/` — ЗАКРЫТ
-
-Все четыре подкаталога `Commands/PM/`, `Commands/Private/`, `Commands/Public/`, `Commands/Shared/` исследованы и закрыты.
+Разобраны command registry/metadata, aliases/categories/defaults, admin levels и named permissions, shard/web/database/runtime settings, logging levels, encryption/session secrets, global blocklists, maintainer roles, activity/status, event routing, modular event pipelines, rank thresholds, RSS streaming, status-message pools, tags, NSFW/profanity dictionary и trivia dataset.
 
 ### Точная точка продолжения
 
-**Следующий шаг: начать `Configurations/` и пройти его полностью.**
+**Следующий шаг: начать `Database/` и пройти его полностью.**
 
-После `Configurations/` → `Database/` → `Internals/` → `Modules/` → `Temp/` → `Web/`.
+После `Database/` → `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
