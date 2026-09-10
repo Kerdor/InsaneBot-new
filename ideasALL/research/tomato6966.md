@@ -55,8 +55,17 @@
 - `remind.js` реализует отложенное пользовательское напоминание с составной длительностью и сохранением контекста пользователя/канала/сервера.
 - `commands/🏫 School Commands` **ЗАВЕРШЁН**.
 
+## Batch 8
+### `commands/👀 Filter`
+- Проверены все файлы области Filter: `3d.js`, `bassboost.js`, `china.js`, `chipmunk.js`, `cleareq.js`, `clearfilter.js`, `darthvader.js`, `equalizer.js`, `nightcore.js`, `pitch.js`, `rate.js`, `slowmo.js`, `speed.js`, `tremolo.js`, `vibrate.js`, `vibrato.js`.
+- Зафиксированы `TOM-078–092` в `ideas/TOMATO_BATCH7.md`.
+- Найдены 8D rotation, Bass Boost presets, Equalizer presets, сброс EQ/filter, China/Chipmunk/Darth Vader/Nightcore/Slowmo/Tremolo/Vibrato/Vibrate эффекты и ручные pitch/speed/rate.
+- `cleareq.js` не добавлен отдельно: механика сброса EQ совпадает с `clearfilter.js`.
+- `speed.js` и `rate.js` сохранены отдельно от `pitch.js`, так как управляют разными параметрами timescale.
+- `commands/👀 Filter` **ЗАВЕРШЁН**.
+
 ## Точка продолжения
-Следующая область внутри `commands` по дереву `new_2025`: `👀 Filter`.
+Следующая область внутри `commands` по дереву `new_2025`: `👑 Owner`.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
