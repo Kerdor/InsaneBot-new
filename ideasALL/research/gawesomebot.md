@@ -58,15 +58,37 @@ Recursive tree показал 6 файлов верхнего уровня и 13
 - reminders, profile privacy, activity/voice/game statistics;
 - RSS/streamer/tag/trivia/room state;
 - gallery version lifecycle;
-- wiki update history и ratings;
+- wiki history/ratings;
 - traffic analytics;
 - database-specific error wrapping и безопасные lookup helpers.
 
+### `Internals/` — 🔵 В ПРОЦЕССЕ
+
+Проверены core-направления:
+- `Boot.js`
+- `Client.js`
+- `Constants.js`
+- `Errors/` (`GABError.js`, `Messages.js`, `index.js`)
+- `Events/` framework (`BaseEvent.js`, `EventHandler.js`) и ряд фактических event handlers;
+- `Extendables/` (`Postable.js`, `Readable.js`)
+- `ExtendableBase.js`
+- `Extensions/` (`ExtensionManager.js`, `EventsHandler.js`, API sandbox/modules/structures/utils)
+- `IPC.js`
+- `Logger.js`
+- `ShardUtil.js`
+- `Sharder.js`
+- `Worker.js`
+- `README.md`
+
+Зафиксировано **GAB-INT-001–123** в `ideasALL/ideas/GAWESOME_INTERNALS.md`.
+
+Крупные находки: staged boot lifecycle, Safe Mode, runtime timers, hot reload, entity resolvers, централизованный violation pipeline, кодированные ошибки, event requirements/prerequisites, event registry, extendables, shard-aware IPC, supervised shard respawn, structured logging/Sentry, plugin sandbox/scopes/storage, validated Embed builder, worker isolation, cascade cleanup Discord entities и audit/status pipelines.
+
 ### Точная точка продолжения
 
-**Следующий шаг: начать `Internals/` и пройти его полностью.**
+**Продолжить полный обход оставшихся файлов `Internals/Events/` и остальных элементов `Internals/`, чтобы закрыть каталог без пропусков.**
 
-После `Internals/` → `Modules/` → `Temp/` → `Web/`.
+После полного `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
 
