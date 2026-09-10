@@ -34,7 +34,7 @@
 
 Ветка: `main`.
 
-Recursive Git Tree проверен полностью (`truncated=false`). Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
+Recursive Git Tree проверен полностью. Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
 
 ### Batch 1
 
@@ -48,17 +48,21 @@ Recursive Git Tree проверен полностью (`truncated=false`). Ос
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH3.md` — **COR-126–201**.
 
-Фактически просмотрены в продолжении `src/commands` файлы из `fun`, `games`, `giveaway`, `guild`, `moderation`, `profile`, `reactionroles`, `tickets`, `tools`, `search`, `images` и `music`.
-
 ### Batch 4
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH4.md` — **COR-202–248**.
 
-`src/commands` подтверждённо закрыт. Начат `src/events`; фактически просмотрены `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js` и `role`.
+`src/commands` подтверждённо закрыт. В Batch 4 начат `src/events`; просмотрены `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js` и `role`.
+
+### Batch 5
+
+Каталог: `ideasALL/ideas/CORWIN_BATCH5.md` — **COR-249–293**.
+
+Закрыты оставшиеся ветки `src/events`: `invite`, остальные `message`, `stats`, `sticker`, `thread`, `voice`, `warn`.
 
 ### Точная точка продолжения
 
-Продолжить **`src/events`** с оставшихся веток: `invite`, остальные файлы `message`, `stats`, `sticker`, `thread`, `voice`, `warn` и другие фактически присутствующие категории. После полного закрытия `events`: `src/handlers` → `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
+**`src/events` ЗАКРЫТ.** Следующий этап: `src/handlers` → `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
 
 Только после полного закрытия CorwinDev перейти к Tomato6969.
 
