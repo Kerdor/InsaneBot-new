@@ -23,43 +23,51 @@
 3. **ItzSudhan/Discord-MusicBot — ЗАВЕРШЁН.**
 4. **codebymitch/TitanBot — ЗАВЕРШЁН.**
 5. **GAwesomeBot/bot — ЗАВЕРШЁН.**
-6. CorwinDev/Discord-Bot — ОЖИДАЕТ.
+6. **CorwinDev/Discord-Bot — АКТИВНО ИССЛЕДУЕТСЯ.**
 7. Tomato6969/Multipurpose-discord-bot — ОЖИДАЕТ.
 
 ## GAwesomeBot — COMPLETE
 
-Ветка: `indev-4.0.2`. Recursive tree проверен через Git Tree API.
+Ветка: `indev-4.0.2`. Полный обход закрыт: Commands, Configurations, Database, Internals, Modules, Temp, Web.
 
-### Commands — ЗАКРЫТ
-- PM: **GAB-PM-001–125**
-- Private: **GAB-PR-001–049**
-- Public: **GAB-PUB-001–672**
-- Shared: **GAB-SH-001–094**
+## CorwinDev/Discord-Bot — ACTIVE
 
-### Configurations — ЗАКРЫТ
-Проверены все **13 файлов**. **GAB-CONF-001–086**.
+Ветка: `main`.
 
-### Database — ЗАКРЫТ
-Проверены все **19 файлов**: 6 верхнего уровня + 13 схем. **GAB-DB-001–096**.
+Recursive Git Tree проверен. Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
 
-### Internals — ЗАКРЫТ
-Полный каталог закрыт. **GAB-INT-001–123**.
+### Первый батч
 
-### Modules — ЗАКРЫТ
-Проверены все фактические файлы `Modules/` и вложенных `Emoji/`, `MessageUtils/ReactionMenus/`, `Timeouts/`, `Utils/`. **GAB-MOD-001–080**.
+Закрыты для текущего батча:
+- `commands/automod`
+- `commands/autosetup`
+- `commands/casino`
+- `commands/custom-commands`
+- `commands/economy`
+- `commands/family`
+- `commands/games`
+- `handlers/security/antiad.js`
+- `handlers/security/antispam.js`
+- `handlers/security/blacklist.js`
+- ключевая transcript/ticket-инфраструктура `handlers/functions/ticket.js`
 
-### Temp — ЗАКРЫТ
-`Temp/` — служебный каталог без дополнительных рабочих механик, требующих отдельного idea-каталога.
+Каталог: `ideasALL/ideas/CORWIN_BATCH1.md` — **COR-001–080**.
+Журнал: `ideasALL/research/corwindev.md`.
 
-### Web — ЗАКРЫТ
-Проверены web server, controllers, dashboard controllers, routes, middleware, helpers/parsers и связанные web-поверхности.
+### Важные находки первого батча
+- autosetup создаёт инфраструктуру нескольких систем и сохраняет созданные сущности;
+- automod поддерживает channel whitelist и bypass для модераторов;
+- security проверяет edited messages;
+- antispam использует локальное временное состояние с отдельными окнами;
+- economy содержит предметы с состоянием/прочностью и role shop;
+- casino использует живое редактирование одного сообщения;
+- family хранит relationship graph и запрещает брак с родственниками;
+- custom commands регистрируются как реальные guild slash commands и имеют Normal/Embed/DM response modes;
+- ticket transcript строится как HTML с sanitization, reply references и мультимедиа.
 
-Зафиксировано **GAB-WEB-001–060** в `ideasALL/ideas/GAWESOME_WEB.md`.
+### Точная точка продолжения
+**Продолжить CorwinDev/Discord-Bot с оставшихся `src/commands`, затем `src/events`, `src/handlers`, `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочих файлов.**
 
-Ключевые направления: web DTO/parsers; публичные user/server profiles; mutual servers; extension gallery/versioning/scopes; Discord authentication; membership/permission gates; dashboard control plane; per-channel command configuration; API/route separation; XSS-safe Markdown; blog/wiki/activity/donation surfaces; maintainer/debug panels; operational statistics; graceful missing entities; web lifecycle isolation.
-
-## Точная точка продолжения
-
-**GAwesomeBot полностью завершён. Следующий источник: `CorwinDev/Discord-Bot`.**
+Только после полного закрытия CorwinDev перейти к Tomato6969.
 
 `bot/main.py` и другая реализация InsaneBot не изменяются.
