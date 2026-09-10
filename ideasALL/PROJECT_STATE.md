@@ -34,39 +34,25 @@
 
 Ветка: `main`.
 
-Recursive Git Tree проверен. Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
+Recursive Git Tree проверен полностью (`truncated=false`). Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
 
-### Первый батч
-
-Закрыты для текущего батча:
-- `commands/automod`
-- `commands/autosetup`
-- `commands/casino`
-- `commands/custom-commands`
-- `commands/economy`
-- `commands/family`
-- `commands/games`
-- `handlers/security/antiad.js`
-- `handlers/security/antispam.js`
-- `handlers/security/blacklist.js`
-- ключевая transcript/ticket-инфраструктура `handlers/functions/ticket.js`
+### Batch 1
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH1.md` — **COR-001–080**.
-Журнал: `ideasALL/research/corwindev.md`.
 
-### Важные находки первого батча
-- autosetup создаёт инфраструктуру нескольких систем и сохраняет созданные сущности;
-- automod поддерживает channel whitelist и bypass для модераторов;
-- security проверяет edited messages;
-- antispam использует локальное временное состояние с отдельными окнами;
-- economy содержит предметы с состоянием/прочностью и role shop;
-- casino использует живое редактирование одного сообщения;
-- family хранит relationship graph и запрещает брак с родственниками;
-- custom commands регистрируются как реальные guild slash commands и имеют Normal/Embed/DM response modes;
-- ticket transcript строится как HTML с sanitization, reply references и мультимедиа.
+Обработаны: `commands/automod`, `commands/autosetup`, `commands/casino`, `commands/custom-commands`, `commands/economy`, `commands/family`, `commands/games`, security handlers и ключевая ticket/transcript инфраструктура.
+
+### Batch 2
+
+Каталог: `ideasALL/ideas/CORWIN_BATCH2.md` — **COR-081–125**.
+
+Дополнительно фактически просмотрены отдельные файлы birthdays, bot info, guild info, levels, message rewards, notepad, sticky messages, suggestions, thanks, invites и voice.
+
+Журнал продолжения: `ideasALL/research/corwindev_batch2.md`.
 
 ### Точная точка продолжения
-**Продолжить CorwinDev/Discord-Bot с оставшихся `src/commands`, затем `src/events`, `src/handlers`, `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочих файлов.**
+
+**Не считать `src/commands` закрытым. Продолжить его полный фактический обход с оставшихся команд/категорий. Затем: `src/events` → `src/handlers` → `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.**
 
 Только после полного закрытия CorwinDev перейти к Tomato6969.
 
