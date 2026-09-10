@@ -115,13 +115,36 @@ Branch: `main`
 
 `src/database` **ЗАКРЫТ**.
 
+## 2026-09-11 — Batch 10
+
+### Фактически просмотрено
+- `src/music/error.js`.
+- `src/music/playerDisconnect.js`.
+- `src/music/playerMove.js`.
+- `src/music/queueEnd.js`.
+- `src/music/ready.js`.
+- `src/music/trackStart.js`.
+
+### Зафиксировано
+- `ideasALL/ideas/CORWIN_BATCH10.md` — **COR-343–346**.
+- `COR-343`: уничтожение player при disconnect с уведомлением в text channel.
+- `COR-344`: автоматический выход из voice channel после полного окончания queue.
+- `COR-345`: стабилизация player после voice move через задержку `WebSocket ping × 2`.
+- `COR-346`: Now Playing Embed с URL, thumbnail, requester, author и Discord timestamp окончания.
+
+### Закрытие music
+Большая часть музыкальной логики уже была покрыта Batch 7; дополнительные lifecycle/UX детали зафиксированы в Batch 10.
+
+`src/music` **ЗАКРЫТ**.
+
 ### Точная точка продолжения
 `src/events` **ЗАКРЫТ**.
 `src/handlers` **ЗАКРЫТ**.
 `src/interactions` **ЗАКРЫТ**.
 `src/config` **ЗАКРЫТ**.
 `src/database` **ЗАКРЫТ**.
+`src/music` **ЗАКРЫТ**.
 
-Следующий этап: `src/music` → `src/packages` → прочие файлы.
+Следующий этап: `src/packages` → прочие файлы.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
