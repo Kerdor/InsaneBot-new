@@ -34,20 +34,27 @@
 
 - PM: **GAB-PM-001–125**
 - Private: **GAB-PR-001–049**
-- Public: **GAB-PUB-001–672**, 74 файла включая `_base.js`; финальная сверка выполнена, пропусков не выявлено.
+- Public: **GAB-PUB-001–672**, 74 файла включая `_base.js`.
 - Shared: **GAB-SH-001–094**, 4 файла.
 
 ### Configurations — ЗАКРЫТ
 
-Проверены все 13 файлов каталога `Configurations/` по recursive tree и сопоставлены с банком идей.
+Проверены все 13 файлов каталога.
 Зафиксировано **GAB-CONF-001–086** в `ideasALL/ideas/GAWESOME_CONFIG.md`.
 
-Разобраны command registry/metadata, aliases/categories/defaults, admin levels и named permissions, shard/web/database/runtime settings, logging levels, encryption/session secrets, global blocklists, maintainer roles, activity/status, event routing, modular event pipelines, rank thresholds, RSS streaming, status-message pools, tags, NSFW/profanity dictionary и trivia dataset.
+### Database — ЗАКРЫТ
+
+Проверены все **19 файлов**: 6 файлов верхнего уровня и 13 схем в `Database/Schemas/`.
+Зафиксировано **GAB-DB-001–096** в `ideasALL/ideas/GAWESOME_DATABASE.md`.
+
+Разобраны ODM Driver/Model/Document/Query/Cursor, atomic updates, document lifecycle, cache hooks, nested query API, typed schemas/maps/subdocuments, validation/casting/defaults, dynamic command config schema, persisted feature state, modlog ledger, user/member separation, reminders/profile/privacy, activity/voice/game statistics, gallery versions, wiki history/ratings, traffic analytics и database error boundaries.
 
 ### Точная точка продолжения
 
-**Следующий шаг: начать `Database/` и пройти его полностью.**
+**Следующий шаг: начать `Internals/` и пройти его полностью.**
 
-После `Database/` → `Internals/` → `Modules/` → `Temp/` → `Web/`.
+После `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
+
+`bot/main.py` и другая реализация InsaneBot не изменяются.
