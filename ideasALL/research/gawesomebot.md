@@ -33,16 +33,41 @@
 Все четыре подкаталога закрыты.
 
 ### `Configurations/` — ЗАВЕРШЁН
-Recursive tree показал 13 файлов. Все файлы каталога просмотрены и сопоставлены с банком идей: auth template, command registry, runtime/config templates, event routing, filter dictionary, ranks, RSS feeds, status messages, tag reactions, tags, trivia dataset и оставшийся configuration entry.
+Recursive tree показал 13 файлов. Все файлы каталога просмотрены и сопоставлены с банком идей.
 
 Зафиксировано **GAB-CONF-001–086** в `ideasALL/ideas/GAWESOME_CONFIG.md`.
 
-Разобраны command metadata/aliases/categories/defaults, access levels, named permissions, shard/web/database/runtime settings, logging levels, encryption/session secrets, blocklists, maintainers, activity/status, event routing, modular pipelines, rank thresholds, RSS streaming, configurable status-message pools, tags, profanity/NSFW dictionary и trivia data.
+### `Database/` — ЗАВЕРШЁН
+Recursive tree показал 6 файлов верхнего уровня и 13 файлов `Schemas/`. Все **19 файлов** просмотрены и сопоставлены с банком идей.
+
+Зафиксировано **GAB-DB-001–096** в `ideasALL/ideas/GAWESOME_DATABASE.md`.
+
+Разобраны:
+- собственный ODM-слой Driver/Model/Document/Query/Cursor;
+- chainable cursor/query API;
+- document lifecycle и отложенное сохранение;
+- atomic `$set/$inc/$unset/$push/$pull/$pullAll` и их слияние;
+- cache hooks;
+- typed nested documents, arrays и maps;
+- defaults, required, enum, min/max, длина строк, lowercase и casting;
+- структурированные и агрегированные ValidationError;
+- динамическая генерация server command config из command registry;
+- per-channel feature state и persisted interactive state;
+- modlog/case ledger, sequence IDs и soft-invalid state;
+- user/global и guild/member разделение данных;
+- reminders, profile privacy, activity/voice/game statistics;
+- RSS/streamer/tag/trivia/room state;
+- gallery version lifecycle;
+- wiki update history и ratings;
+- traffic analytics;
+- database-specific error wrapping и безопасные lookup helpers.
 
 ### Точная точка продолжения
 
-**Следующий шаг: начать `Database/` и пройти его полностью.**
+**Следующий шаг: начать `Internals/` и пройти его полностью.**
 
-После `Database/` → `Internals/` → `Modules/` → `Temp/` → `Web/`.
+После `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
+
+`bot/main.py` и другая реализация InsaneBot не изменяются.
