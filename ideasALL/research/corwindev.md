@@ -17,7 +17,6 @@ Branch: `main`
 
 ### Зафиксировано
 - `ideasALL/ideas/CORWIN_BATCH1.md` — **COR-001–080**.
-- Основные новые направления: autosetup infrastructure, channel whitelists для automod, edited-message security checks, in-memory antispam windows, economy item durability, interactive casino UX, family graph restrictions, custom slash commands с разными типами ответа, HTML ticket transcripts с sanitization и media/reply reconstruction.
 
 ## 2026-09-10 — Batch 2
 
@@ -25,7 +24,7 @@ Branch: `main`
 - `src/commands/birthdays/*`
 - `src/commands/bot/info.js`
 - `src/commands/guild/info.js`
-- `src/commands/levels/*` — reward/rank/message progression related files
+- `src/commands/levels/*`
 - `src/commands/messages/*`
 - `src/commands/notepad/*`
 - `src/commands/stickymessages/*`
@@ -36,33 +35,38 @@ Branch: `main`
 
 ### Зафиксировано
 - `ideasALL/ideas/CORWIN_BATCH2.md` — **COR-081–125**.
-- Новые направления: birthdays, shard-wide diagnostics, expanded guild info, level/message rewards, personal notes, sticky messages, suggestions, thanks reputation, invite leaderboard и custom voice controls.
 
 ## 2026-09-10 — Batch 3
 
 ### Фактически просмотрено в продолжении `src/commands`
-- `src/commands/fun`: `hack.js`, `worldclock.js`, `dinochrome.js`, `roast.js`, `ascii.js`, `token.js`, `reverse.js`
-- `src/commands/games`: `rps.js`, `trivia.js`, `wouldyourather.js`, `willyoupressthebutton.js`, `8ball.js`, `skipword.js`, `roll.js`
-- `src/commands/giveaway`: `start.js`, `drop.js`, `pause.js`, `edit.js`, `reroll.js`, `delete.js`
-- `src/commands/guild`: `info.js`, `inviteinfo.js`, `stealemoji.js`
-- `src/commands/moderation`: `clear.js`, `clearuser.js`, `lockdown.js`, `ban.js`, `tempban.js`, `warn.js`, `warnings.js`, `unwarn.js`
-- `src/commands/profile`: `profile.js`, `addhobby.js`, `gender.js`, `bday.js`, `aboutme.js`
-- `src/commands/reactionroles`: `menu.js`, `button.js`
-- `src/commands/tickets`: `create.js`, `claim.js`, `notice.js`
-- `src/commands/tools`: `remind.js`, `calculator.js`, `qrcode.js`, `anagram.js`, `button.js`, `sourcebin.js`, `pwdgen.js`, `decode.js`, `encode.js`, `mcstatus.js`, `mcskin.js`, `url.js`, `emojify.js`, `enlarge.js`
-- `src/commands/search`: `weather.js`, `crypto.js`, `translate.js`, `github.js`, `itunes.js`, `steam.js`, `docs.js`, `npm.js`, `youtube.js`, `hexcolour.js`
-- `src/commands/images`: `banner.js`, `meme.js`, `podium.js`, `tweet.js`, `wanted.js`, `avatar.js`, `colorify.js`, `bed.js`, `drake.js`
-- `src/commands/music`: `play.js`, `playing.js`, `queue.js`, `seek.js`, `shuffle.js`, `skipto.js`, `loop.js`, `volume.js`, `previous.js`, `remove.js`, `clear.js`, `pause.js`, `resume.js`, `stop.js`, `bassboost.js`, `lyrics.js`
+- `fun`, `games`, `giveaway`, `guild`, `moderation`, `profile`, `reactionroles`, `tickets`, `tools`, `search`, `images`, `music`.
 
 ### Зафиксировано
 - `ideasALL/ideas/CORWIN_BATCH3.md` — **COR-126–201**.
-- Основные новые направления: интерактивная trivia, community-vote games, giveaway lifecycle controls, warning cases, global lockdown, profile/reputation details, select/button reaction roles, интерактивный music search, queue management, seek/loop/audio filters, calculator, QR/sourcebin/encoding utilities, external search cards и avatar-based image generation.
 
 ### Важное
 Batch 3 — продолжение обхода, а не закрытие `src/commands`. Идеи сверены с уже существующими Corwin batch-файлами и текущими тематическими банками; точные дубли не размножались.
 
+## 2026-09-10 — Batch 4
+
+### Переход к `src/events`
+`src/commands` подтверждённо закрыт. Начат фактический обход `src/events`.
+
+### Просмотрено
+- `src/events/channel`: `channelCreate.js`, `channelDelete.js`, `channelNameUpdate.js`, `channelPinsUpdate.js`, `channelTopicUpdate.js`.
+- `src/events/client`: `clientReady.js`, `error.js`, `errorCreate.js`, `guildCreate.js`, `guildDelete.js`, `interactionCreate.js`, `raw.js`.
+- `src/events/emoji`: `emojiCreate.js`, `emojiDelete.js`, `emojiUpdate.js`.
+- `src/events/event`: `guildScheduledEventCreate.js`, `guildScheduledEventDelete.js`, `guildScheduledEventUpdate.js`.
+- `src/events/giveaway`: `endedGiveawayReactionAdded.js`, `giveawayEnded.js`, `giveawayReactionAdded.js`, `giveawayRerolled.js`.
+- `src/events/guild`: `guildAfkChannelAdd.js`, `guildBanAdd.js`, `guildBanRemove.js`, `guildBannerAdd.js`, `guildBoostLevelDown.js`, `guildBoostLevelUp.js`, `guildMemberAdd.js`, `guildMemberBoost.js`, `guildMemberRemove.js`, `guildMemberUnboost.js`, `guildMemberUpdate.js`, `guildVanityURLAdd.js` (дерево проверено; отдельная глубокая фиксация продолжится по оставшимся event-категориям).
+- `src/events/message/messageCreate.js`.
+- `src/events/role`: `roleColorUpdate.js`, `roleCreate.js`, `roleDelete.js`, `roleNameUpdate.js`, `rolePermissionsUpdate.js`.
+
+### Зафиксировано
+- `ideasALL/ideas/CORWIN_BATCH4.md` — **COR-202–248**.
+- Основные новые направления: shard-aware startup/status, глобальные error codes, guild lifecycle и очистка данных, channel/emoji/event/role audit logs, boost/unboost templates, invite-aware leave processing, DM logging, message XP/rewards, AFK automation, dedicated chatbot channel, sticky re-publish, prefix compatibility, CAPTCHA verification и единый routing interaction components.
+
+### Точная точка продолжения
+Продолжить полный фактический обход **оставшихся `src/events`**: `invite`, `message` (остальные файлы кроме `messageCreate.js`), `stats`, `sticker`, `thread`, `voice`, `warn` и другие фактически присутствующие ветки. После полного закрытия `src/events` перейти к `src/handlers`, затем `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочим файлам.
+
 `bot/main.py` и реализация InsaneBot не изменялись.
-
-## Точная точка продолжения
-
-Продолжить **полный фактический обход оставшихся файлов `src/commands`**. После подтверждённого закрытия `src/commands` перейти к `src/events`, затем `src/handlers`, `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочим файлам. Не переходить к Tomato6969 до полного закрытия CorwinDev.
