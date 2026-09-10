@@ -36,9 +36,14 @@ Recursive Git Tree проверен полностью. Основные обл�
 - `src/commands` подтверждённо закрыт.
 - Batch 4: `src/events` — `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js`, `role`; **COR-202–248**.
 - Batch 5: оставшиеся ветки `invite`, `message`, `stats`, `sticker`, `thread`, `voice`, `warn`; **COR-249–293**.
+- Batch 6: начат `src/handlers`; обработаны `functions` (выбранные файлы), `components` и `security`; **COR-294–314**.
 
 ### Точная точка продолжения
-`src/events` **ЗАКРЫТ**. Следующий этап: полный фактический обход `src/handlers`, затем `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочих файлов.
+`src/events` **ЗАКРЫТ**.
+
+`src/handlers` **НЕ ЗАКРЫТ**. Продолжить `audio`, `games`, `helppanel`, `linkspanel`, `loaders`, остальные фактически присутствующие файлы `functions` и детальную сверку `security`.
+
+После полного закрытия `handlers`: `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
 
 **Не переходить к Tomato6969 до полного закрытия CorwinDev.**
 
