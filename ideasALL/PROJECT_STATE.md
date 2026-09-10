@@ -55,42 +55,39 @@
 ### Batch 1
 `commands/⌨️ Programming` обработано полностью: `coliru.js`, `compile.js`, `github.js`, `httpstatus.js`, `npm.js`, `npmpkgsize.js`.
 
-Зафиксированы `TOM-001–005` в `ideasALL/ideas/TOMATO_BATCH1.md`. `compile.js` и `coliru.js` объединены как одна механика онлайн-компиляции.
+Зафиксированы `TOM-001–005` в `ideasALL/ideas/TOMATO_BATCH1.md`.
 
 ### Batch 2
 `commands/⚙️ Settings` обработано полностью: просмотрены все 20 файлов.
 
-Зафиксированы `TOM-006–011` в `ideasALL/ideas/TOMATO_BATCH2.md`:
-- bot-only command channels;
-- несколько DJ-ролей;
-- персональный toggle DM-ответов;
-- toggle показа disabled-команд в Help;
-- toggle информационного ответа для неизвестных команд;
-- owner-only полный reset server setup с подтверждением.
-
-Дубликаты с существующими `CORE`, `ECONOMY`, `SOCIAL` и `MUSIC` не добавлялись; полностью закомментированные команды `toggledjonly` и `togglerequestonly` не учитывались.
+Зафиксированы `TOM-006–011` в `ideasALL/ideas/TOMATO_BATCH2.md`.
 
 ### Batch 3
-`commands/⚜️ Custom Queue(s)` обработано полностью: просмотрен единственный файл `savedqueue.js` целиком.
-
-Зафиксированы `TOM-012–020` в `ideasALL/ideas/TOMATO_BATCH3.md` — персональные именованные сохранённые очереди, добавление текущих треков/очереди, удаление, shuffle, удаление дублей, просмотр, удаление очереди и воспроизведение.
+`commands/⚜️ Custom Queue(s)` обработано полностью: `TOM-012–020`.
 
 ### Batch 4
-`commands/🎤 Voice` обработано полностью: просмотрен единственный файл `voice.js` целиком.
-
-Зафиксированы `TOM-021–033` в `ideasALL/ideas/TOMATO_BATCH3.md` — lock/unlock, stage/unstage, kick, персональный invite, ban/unban, trust/untrust, изменение user limit, изменение bitrate с учётом серверных бустов и передача ownership временного Join-to-Create voice-канала.
+`commands/🎤 Voice` обработано полностью: `TOM-021–033`.
 
 ### Batch 5
-`commands/🎮 MiniGames` обработано полностью: проверена вся директория.
+`commands/🎮 MiniGames` обработано полностью: `TOM-034–058`.
 
-Зафиксированы `TOM-034–058` в `ideasALL/ideas/TOMATO_BATCH4.md` — интерактивные одиночные и PvP-игры, текстовые эффекты, генератор цвета, угадайки, Discord Activities и связанные UX-механики.
+### Batch 6
+`commands/🎶 Music` обработано полностью: `TOM-059–072` в `ideasALL/ideas/TOMATO_BATCH5.md`.
 
-Отключённые `.js.disabled` файлы не учитывались. `uno.js` и недостижимый после раннего return `poker-night.js` не добавлялись как рабочие игровые механики.
+### Batch 7
+`commands/🏫 School Commands` обработано полностью: `TOM-073–077` в `ideasALL/ideas/TOMATO_BATCH6.md`.
+
+Зафиксированы:
+- текстовый математический калькулятор;
+- интерактивный calculator UI;
+- вывод большого количества знаков числа e;
+- вывод большого количества знаков числа π;
+- пользовательские отложенные напоминания с составной длительностью и сохранением контекста.
 
 ## Текущая точка
-`commands/🎮 MiniGames` закрыта.
+`commands/🏫 School Commands` закрыта.
 
 ## Следующий шаг
-Продолжить с следующей областью внутри `commands` по дереву `new_2025`, обработать её крупным батчем, полностью сверить с банком идей и обновить checkpoints.
+Перейти к `commands/👀 Filter`, полностью проверить все файлы области, сверить с банком идей, записать новые механики и обновить checkpoints. После закрытия Filter продолжать по следующему разделу дерева `commands`.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
