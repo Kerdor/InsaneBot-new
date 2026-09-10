@@ -71,17 +71,22 @@
 - `playsongoftheday` запускает заранее сохранённый трек из `songoftheday.json`.
 - Команда не требует существующего player.
 
+### TOM-072 — Поиск похожих треков отдельной командой
+- `searchsimilar` строит YouTube Radio URL на основе identifier текущего трека.
+- В отличие от `addsimilar`, команда использует режим `similar:search`, то есть предназначена для поиска/подбора похожего материала, а не просто добавления результата в очередь.
+
 ## Уже просмотрено, но без новой отдельной идеи
 - `play.js` — обычное воспроизведение YouTube; базовая механика уже покрыта существующим банком.
 - `playsc.js` / `searchsc.js` — SoundCloud-варианты play/search; проверены как отдельные source-варианты, но не размножены без новой отличительной механики.
 - `playskip.js` — play + немедленный skip текущего трека; проверен как существующая композиция базовых play/skip.
 - `pause.js`, `resume.js`, `restart.js`, `forward.js`, `rewind.js`, `seek.js`, `volume.js`, `clearqueue.js`, `removetrack.js`, `queue.js`, `stop.js` — базовые music controls; проверены, но отдельные дубли не создавались.
+- `autoplay.js` — toggle autoplay; проверен и покрыт описанием TOM-069 как частью player status/существующей music-функциональности.
 - `loop.js`, `loopqueue.js`, `loopsong.js`, `stoploop.js` — варианты track/queue repeat; сверены между собой и не размножены.
 - `playlist.js`, `search.js` — базовые YouTube playlist/search.
 - `lyrics.js` — в текущей ветке намеренно отключён из-за legal reasons.
 - `searchplaylist.js` — текущая команда только сообщает о недоступности; рабочей механики поиска нет.
+- `searchsc.js` — отдельный SoundCloud search source без новой логики сверх существующего поиска.
 - `voteskip.js` и `removevoteskip.js` — код полностью закомментирован.
-- `poker-night` находится в MiniGames и уже исключён как unsupported; не относится к этой папке.
 
 ## Примечание по `move.js`
 Команда заявлена как `move <from> <to>`, но фактическая реализация игнорирует переданные позиции и переносит последний элемент очереди в начало. Это отмечено как дефект реализации, а не как отдельная новая механика позиционного move.
