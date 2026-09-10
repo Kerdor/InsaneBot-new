@@ -24,11 +24,7 @@
 4. **codebymitch/TitanBot — ЗАВЕРШЁН.**
 5. **GAwesomeBot/bot — ЗАВЕРШЁН.**
 6. **CorwinDev/Discord-Bot — ЗАВЕРШЁН.**
-7. **Tomato6969/Multipurpose-discord-bot — СЛЕДУЮЩИЙ.**
-
-## GAwesomeBot — COMPLETE
-
-Ветка: `indev-4.0.2`. Полный обход закрыт: Commands, Configurations, Database, Internals, Modules, Temp, Web.
+7. **Tomato6966/Multipurpose-discord-bot — В РАБОТЕ.**
 
 ## CorwinDev/Discord-Bot — COMPLETE
 
@@ -50,15 +46,21 @@
 - Batch 11: `ideasALL/ideas/CORWIN_BATCH11.md` — `COR-347–354`.
 - Batch 12: `ideasALL/ideas/CORWIN_BATCH12.md` — `COR-355–359`.
 
-### Финализация CorwinDev
-Проверены root-level `package.json`, `README.md`, `.env.example`, Docker/Replit/start scripts, `.github` workflow/config files, `src/index.js`, `src/bot.js`, `src/dev.js`, `src/assets/utils/*` и полный recursive tree.
-
-Новые root/startup механики зафиксированы в Batch 12: проверка версии при запуске, Top.gg metrics/command publishing, автоматический respawn shard, reconnect/disconnect logging и единый webhook credential override через env.
-
 `CorwinDev/Discord-Bot` **ПОЛНОСТЬЮ ЗАВЕРШЁН**.
 
-## Следующий источник
+## Tomato6966/Multipurpose-discord-bot — IN PROGRESS
 
-**Tomato6969/Multipurpose-discord-bot** — можно начинать полный обход.
+Ветка: `new_2025`.
 
-`bot/main.py` и другая реализация InsaneBot не изменяются.
+### Batch 1
+`commands/⌨️ Programming` обработано полностью: `coliru.js`, `compile.js`, `github.js`, `httpstatus.js`, `npm.js`, `npmpkgsize.js`.
+
+Зафиксированы `TOM-001–005` в `ideasALL/ideas/TOMATO_BATCH1.md`. `compile.js` и `coliru.js` объединены как одна механика онлайн-компиляции.
+
+### Текущая точка
+Следующая область: `commands/⚙️ Settings`.
+
+## Следующий шаг
+Продолжить полный обход Tomato6966, начиная с `commands/⚙️ Settings`.
+
+`bot/main.py` и другая реализация InsaneBot не изменялись.
