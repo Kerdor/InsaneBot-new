@@ -91,9 +91,37 @@ Branch: `main`
 - `ideasALL/ideas/CORWIN_BATCH8.md` — **COR-333–341**.
 - Новые направления: общий subcommand dispatcher и help-subcommands, deferred interaction flow, Discord Activities, интерактивный Embed builder, message collectors для пошагового ввода, временный webhook для отправки Embed и User Context Menu для profile/warn/unwarn/warnings.
 
+### Закрытие interactions/config
+Финальная сверка полного дерева `src/interactions` выполнена. Новых уникальных механик сверх Batch 8 не найдено.
+
+`src/interactions` **ЗАКРЫТ**.
+
+`src/config` полностью просмотрен: `bot.js`, `changelogs.js`, `emojis.json`, `template.html`, `webhooks.json`. Новых уникальных механик не найдено; `template.html` относится к уже исследованным ticket transcripts, остальные файлы — конфигурация/ресурсы уже известных систем.
+
+`src/config` **ЗАКРЫТ**.
+
+## 2026-09-11 — Batch 9
+
+### Фактически просмотрено
+- `src/database/connect.js`.
+- Полное дерево `src/database/models`, включая модели AFK, badges, birthdays, boost channels/messages, channel lists, chatbot, counting, custom commands, developers, economy и economy store/items/timeout, family, giveaways, guessing games, invites/rewards/messages, join/leave/level/log/message/reaction-role configs, music/radio, notes, private channels, profile, reviews, stats, sticky messages, suggestions, thanks, tickets, tempban, user bans, verification, voice channels и warnings.
+
+### Зафиксировано
+- `ideasALL/ideas/CORWIN_BATCH9.md` — **COR-342**.
+- `COR-342`: кэширование Mongoose-запросов в памяти через `ts-cache-mongoose`, TTL 60 секунд, максимум 5000 записей.
+
+### Закрытие database
+Схемы моделей в основном являются хранилищем уже исследованных систем и их настроек. Новых уникальных пользовательских механик не найдено. Отдельно зафиксирован архитектурный вариант database caching.
+
+`src/database` **ЗАКРЫТ**.
+
 ### Точная точка продолжения
 `src/events` **ЗАКРЫТ**.
 `src/handlers` **ЗАКРЫТ**.
-`src/interactions` ещё **НЕ ЗАКРЫТ** — требуется финальная сверка полного дерева interactions перед переходом к `src/config`.
+`src/interactions` **ЗАКРЫТ**.
+`src/config` **ЗАКРЫТ**.
+`src/database` **ЗАКРЫТ**.
+
+Следующий этап: `src/music` → `src/packages` → прочие файлы.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
