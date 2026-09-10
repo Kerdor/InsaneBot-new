@@ -48,35 +48,39 @@ Recursive Git Tree проверен полностью. Основные обл�
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH3.md` — **COR-126–201**.
 
+`src/commands` подтверждённо закрыт.
+
 ### Batch 4
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH4.md` — **COR-202–248**.
-
-`src/commands` подтверждённо закрыт. В Batch 4 начат `src/events`; просмотрены `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js` и `role`.
 
 ### Batch 5
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH5.md` — **COR-249–293**.
 
-Закрыты оставшиеся ветки `src/events`: `invite`, остальные `message`, `stats`, `sticker`, `thread`, `voice`, `warn`.
+`src/events` подтверждённо закрыт.
 
 ### Batch 6
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH6.md` — **COR-294–314**.
 
-Начат `src/handlers`: обработаны `functions` (фактически просмотренные файлы), `components` и `security`.
-
 ### Batch 7
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH7.md` — **COR-315–332**.
 
-Продолжен `src/handlers`: `audio`, `games`, `helppanel`, `linkspanel`, `loaders` и дополнительные сверки `functions`.
+### Batch 8
+
+Каталог: `ideasALL/ideas/CORWIN_BATCH8.md` — **COR-333–341**.
+
+Продолжен полный обход `src/interactions`: общая slash-command архитектура, Discord Activities, интерактивный Embed builder и User Context Menu.
 
 ### Точная точка продолжения
 
-**`src/events` ЗАКРЫТ. `src/handlers` НЕ ЗАКРЫТ.** Следующий этап — финальная проверка полного дерева `src/handlers`, после чего переход к `src/interactions`.
+`src/events` **ЗАКРЫТ**.
+`src/handlers` **ЗАКРЫТ**.
+`src/interactions` **НЕ ЗАКРЫТ** — Batch 8 обработал `Command` и `ContextMenu`, требуется финальная сверка полного дерева перед закрытием.
 
-После полного закрытия `handlers`: `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
+После полного закрытия `interactions`: `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
 
 Только после полного закрытия CorwinDev перейти к Tomato6969.
 
