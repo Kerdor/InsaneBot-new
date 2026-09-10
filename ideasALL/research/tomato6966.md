@@ -64,8 +64,20 @@
 - `speed.js` и `rate.js` сохранены отдельно от `pitch.js`, так как управляют разными параметрами timescale.
 - `commands/👀 Filter` **ЗАВЕРШЁН**.
 
+## Batch 9
+### `commands/👑 Owner`
+- Проверены все 19 файлов области Owner.
+- Зафиксированы `TOM-093–106` в `ideas/TOMATO_BATCH8.md`.
+- Найдены смена аватара/имени бота, глобальная смена prefix, интерактивная настройка статуса с двумя текстами/placeholders/типом/Twitch URL/state, управление owner list, выход с сервера, reload одной/всех команд, архитектурный full hot-reload, PM2 restart, global/guild slash deploy, полный reset данных guild, управление рекламой и owner diagnostic card.
+- `addmoney.js` / `removemoney.js` сверены с существующими `ECON-014–016` и не добавлены.
+- `stopbot.js` не добавлен как рабочая механика: фактический stop недостижим из-за раннего `return`.
+- `reloadbot.js` отключён ранним `return`; его архитектурный hot-reload сохранён как `TOM-101` с соответствующей пометкой.
+- `restartbot.js` использует PM2, но содержит небезопасное отсутствие owner-check; это отмечено в идее.
+- `detailedeval.js` / `eval.js` не добавлены отдельно как пользовательские системы.
+- `commands/👑 Owner` **ЗАВЕРШЁН**.
+
 ## Точка продолжения
-Следующая область внутри `commands` по дереву `new_2025`: `👑 Owner`.
+Следующая область внутри `commands` по дереву `new_2025`: следующая директория после `👑 Owner`.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
