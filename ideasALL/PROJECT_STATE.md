@@ -66,9 +66,15 @@ Recursive Git Tree проверен полностью. Основные обл�
 
 Начат `src/handlers`: обработаны `functions` (фактически просмотренные файлы), `components` и `security`.
 
+### Batch 7
+
+Каталог: `ideasALL/ideas/CORWIN_BATCH7.md` — **COR-315–332**.
+
+Продолжен `src/handlers`: `audio`, `games`, `helppanel`, `linkspanel`, `loaders` и дополнительные сверки `functions`.
+
 ### Точная точка продолжения
 
-**`src/events` ЗАКРЫТ. `src/handlers` НЕ ЗАКРЫТ.** Продолжить `audio` → `games` → `helppanel` → `linkspanel` → `loaders` → остальные `functions` → детальная сверка `security`.
+**`src/events` ЗАКРЫТ. `src/handlers` НЕ ЗАКРЫТ.** Следующий этап — финальная проверка полного дерева `src/handlers`, после чего переход к `src/interactions`.
 
 После полного закрытия `handlers`: `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
 
