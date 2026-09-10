@@ -53,7 +53,7 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - `commands/⌨️ Programming` — ✅ обработано.
 - Файлы: `coliru.js`, `compile.js`, `github.js`, `httpstatus.js`, `npm.js`, `npmpkgsize.js`.
 - Добавлены `TOM-001–005` в `ideasALL/ideas/TOMATO_BATCH1.md`.
-- `compile.js` и `coliru.js признаны дублем одной механики и объединены.
+- `compile.js` и `coliru.js` признаны дублем одной механики и объединены.
 
 ### Batch 2
 - `commands/⚙️ Settings` — ✅ обработано полностью.
@@ -67,7 +67,13 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - Добавлены `TOM-012–020` в `ideasALL/ideas/TOMATO_BATCH3.md`.
 - Зафиксирована система персональных именованных сохранённых музыкальных очередей и отдельные операции её редактирования, просмотра и воспроизведения.
 
+### Batch 4
+- `commands/🎤 Voice` — ✅ обработано полностью.
+- Просмотрен единственный файл `voice.js` целиком по всем веткам команд.
+- Добавлены `TOM-021–033` в `ideasALL/ideas/TOMATO_BATCH3.md`.
+- Зафиксированы lock/unlock, stage/unstage, kick, invite, ban/unban, trust/untrust, user limit, bitrate и передача ownership для временных Join-to-Create voice-каналов.
+
 ### Текущая точка
-Следующая область: `commands/🎤 Voice`.
+Следующая область: `commands/🎮 MiniGames`.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
