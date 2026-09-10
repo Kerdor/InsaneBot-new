@@ -37,11 +37,12 @@ Recursive Git Tree проверен полностью. Основные обл�
 - Batch 4: `src/events` — `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js`, `role`; **COR-202–248**.
 - Batch 5: оставшиеся ветки `invite`, `message`, `stats`, `sticker`, `thread`, `voice`, `warn`; **COR-249–293**.
 - Batch 6: начат `src/handlers`; обработаны `functions` (выбранные файлы), `components` и `security`; **COR-294–314**.
+- Batch 7: продолжен `src/handlers`; обработаны `audio`, `games`, `helppanel`, `linkspanel`, `loaders` и дополнительные сверки `functions`; **COR-315–332**.
 
 ### Точная точка продолжения
 `src/events` **ЗАКРЫТ**.
 
-`src/handlers` **НЕ ЗАКРЫТ**. Продолжить `audio`, `games`, `helppanel`, `linkspanel`, `loaders`, остальные фактически присутствующие файлы `functions` и детальную сверку `security`.
+`src/handlers` **НЕ ЗАКРЫТ**. Выполнена основная часть обхода, но требуется финальная проверка дерева handlers и оставшихся файлов/веток перед закрытием.
 
 После полного закрытия `handlers`: `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
 
