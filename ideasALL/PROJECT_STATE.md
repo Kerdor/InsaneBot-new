@@ -72,15 +72,23 @@ Recursive Git Tree проверен полностью. Основные обл�
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH8.md` — **COR-333–341**.
 
-Продолжен полный обход `src/interactions`: общая slash-command архитектура, Discord Activities, интерактивный Embed builder и User Context Menu.
+`src/interactions` полностью сверён и закрыт. Новых уникальных механик сверх Batch 8 не найдено.
+
+### Batch 9
+
+Каталог: `ideasALL/ideas/CORWIN_BATCH9.md` — **COR-342**.
+
+`src/database` полностью просмотрен: `connect.js` и все модели. Новых пользовательских механик не найдено; отдельно зафиксирован архитектурный вариант кэширования MongoDB-запросов в памяти с TTL 60 секунд и лимитом 5000 записей.
 
 ### Точная точка продолжения
 
 `src/events` **ЗАКРЫТ**.
 `src/handlers` **ЗАКРЫТ**.
-`src/interactions` **НЕ ЗАКРЫТ** — Batch 8 обработал `Command` и `ContextMenu`, требуется финальная сверка полного дерева перед закрытием.
+`src/interactions` **ЗАКРЫТ**.
+`src/config` **ЗАКРЫТ**.
+`src/database` **ЗАКРЫТ**.
 
-После полного закрытия `interactions`: `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
+Следующий этап: `src/music` → `src/packages` → прочие файлы.
 
 Только после полного закрытия CorwinDev перейти к Tomato6969.
 
