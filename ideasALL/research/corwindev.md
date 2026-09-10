@@ -62,7 +62,21 @@ Branch: `main`
 - `ideasALL/ideas/CORWIN_BATCH6.md` — **COR-294–314**.
 - Новые направления: централизованные permission checks, channel lookup и mention escaping, Beta subcommand routing, leaderboard pagination, Discord Activity invite generation, генераторы buttons/selects, единый Embed/error/success response layer, guild-specific embed colors, Discord length guard и защита anti-link/anti-invite при редактировании сообщений.
 
+## 2026-09-11 — Batch 7
+
+### Фактически просмотрено
+- `src/handlers/audio`: `music.js`, `radio.js`.
+- `src/handlers/games`: `counting.js`, `economy.js`, `guessNumber.js`, `guessWord.js`, `levels.js`, `wordsnake.js`.
+- `src/handlers/helppanel`: `changelogs.js`, `commands.js`, `invite.js`, `support.js`.
+- `src/handlers/linkspanel`: `botInvite.js`, `communityServer.js`, `supportServer.js`, `topGG.js`.
+- `src/handlers/loaders`: `commands.js`, `event.js`.
+- Дополнительно повторно сверены `functions.js`, `databaseFunctions.js`, `giveaway.js`, `inviteTracker.js`, `serverstats.js`, `soundboard.js`, `ticket.js` и security handlers.
+
+### Зафиксировано
+- `ideasALL/ideas/CORWIN_BATCH7.md` — **COR-315–332**.
+- Новые направления: music control buttons, radio persistence/recovery, soundboard queue, counting/guessing/word games, XP helpers, help/links panels и динамический event loader.
+
 ### Точная точка продолжения
-`src/handlers` ещё **не закрыт**. Продолжить `audio`, `games`, `helppanel`, `linkspanel`, `loaders`, остальные фактически присутствующие файлы `functions` и детальную сверку `security`; после полного закрытия handlers перейти к `src/interactions`.
+`src/handlers` ещё **не закрыт**. Необходимо завершить финальную проверку оставшихся handler-файлов/веток и только после этого перейти к `src/interactions`.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
