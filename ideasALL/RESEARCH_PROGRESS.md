@@ -21,38 +21,32 @@
 | 3 | `ItzSudhan/Discord-MusicBot` | ✅ ЗАВЕРШЁН | `research/discord-music-bot.md` |
 | 4 | `codebymitch/TitanBot` | ✅ ЗАВЕРШЁН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | 🔵 АКТИВЕН | `research/gawesomebot.md` |
-| 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | — |
-| 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | — |
+| 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | `—` |
+| 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | `—` |
 
 ## `GAwesomeBot/bot` — АКТИВЕН
 
 Ветка: `indev-4.0.2`. Фактический recursive tree проверен через Git Tree API; `truncated=false`.
 
-### `Commands/PM/` — ЗАКРЫТ
-**GAB-PM-001–GAB-PM-125**.
-
-### `Commands/Private/` — ЗАКРЫТ
-**GAB-PR-001–GAB-PR-049**.
-
-### `Commands/Public/` — ЗАКРЫТ
-74 файла, включая `_base.js`; финальная сверка выполнена. **GAB-PUB-001–GAB-PUB-672**, пропусков не выявлено.
-
-### `Commands/Shared/` — ЗАКРЫТ
-4 файла: `_base.js`, `debug.js`, `eval.js`, `reload.js`. **GAB-SH-001–GAB-SH-094**.
-
 ### `Commands/` — ЗАКРЫТ
-Все четыре подкаталога исследованы и закрыты.
+- PM: **GAB-PM-001–125**
+- Private: **GAB-PR-001–049**
+- Public: **GAB-PUB-001–672**
+- Shared: **GAB-SH-001–094**
 
 ### `Configurations/` — ЗАКРЫТ
-Проверены все **13 файлов** каталога по recursive tree и сопоставлены с банком идей.
-Зафиксировано **GAB-CONF-001–GAB-CONF-086** в `ideasALL/ideas/GAWESOME_CONFIG.md`.
+Проверены все **13 файлов** каталога. Зафиксировано **GAB-CONF-001–086**.
 
-Разобраны command registry/metadata, aliases/categories/defaults, admin levels и named permissions, shard/web/database/runtime settings, logging levels, encryption/session secrets, global blocklists, maintainer roles, activity/status, event routing, modular event pipelines, rank thresholds, RSS streaming, status-message pools, tags, NSFW/profanity dictionary и trivia dataset.
+### `Database/` — ЗАКРЫТ
+Recursive tree показал **6 файлов верхнего уровня + 13 файлов Schemas = 19 файлов**. Все просмотрены и сопоставлены с банком идей.
+Зафиксировано **GAB-DB-001–096** в `ideasALL/ideas/GAWESOME_DATABASE.md`.
+
+Разобраны ODM Driver/Model/Document/Query/Cursor, atomic updates, document lifecycle, cache hooks, nested query API, typed schemas/maps/subdocuments, validation/casting/defaults, dynamic command config schema, persisted feature state, modlog ledger, user/member separation, reminders/profile/privacy, activity/voice/game statistics, gallery versions, wiki history/ratings, traffic analytics и database error boundaries.
 
 ### Точная точка продолжения
 
-**Следующий шаг: начать `Database/` и пройти его полностью.**
+**Следующий шаг: начать `Internals/` и пройти его полностью.**
 
-После `Database/` → `Internals/` → `Modules/` → `Temp/` → `Web/`.
+После `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
