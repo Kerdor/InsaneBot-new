@@ -137,6 +137,28 @@ Branch: `main`
 
 `src/music` **ЗАКРЫТ**.
 
+## 2026-09-11 — Batch 11
+
+### Фактически просмотрено
+- `src/packages/discord-giveaways/src/Giveaway.js`.
+- `src/packages/discord-giveaways/src/Manager.js`.
+- `src/packages/discord-giveaways/src/Constants.js`.
+- `src/packages/discord-giveaways/src/utils.js`.
+- `src/packages/discord-giveaways/typings/index.d.ts`.
+- `src/packages/discord-giveaways/readme.md`.
+- `src/packages/weather-js/index.js`.
+- Полное дерево `src/packages`.
+
+### Зафиксировано
+- `ideasALL/ideas/CORWIN_BATCH11.md` — **COR-347–354**.
+- Giveaway: bonus entries, permission/member eligibility filters, bot eligibility, автоматическая очистка завершённых giveaway, force-update и сравнение Embed перед обновлением.
+- Weather: выбор языка и единиц температуры.
+
+### Закрытие packages
+Оба пакета из `src/packages` полностью просмотрены. Уже известные giveaway lifecycle-механики и базовая weather card не дублировались.
+
+`src/packages` **ЗАКРЫТ**.
+
 ### Точная точка продолжения
 `src/events` **ЗАКРЫТ**.
 `src/handlers` **ЗАКРЫТ**.
@@ -144,7 +166,8 @@ Branch: `main`
 `src/config` **ЗАКРЫТ**.
 `src/database` **ЗАКРЫТ**.
 `src/music` **ЗАКРЫТ**.
+`src/packages` **ЗАКРЫТ**.
 
-Следующий этап: `src/packages` → прочие файлы.
+Следующий этап: **прочие файлы/каталоги корня CorwinDev** → финальная recursive-tree сверка → закрытие CorwinDev.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
