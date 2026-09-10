@@ -28,32 +28,32 @@
 
 ## GAwesomeBot — ACTIVE
 
-Ветка: `indev-4.0.2`. Recursive tree проверен через Git tree API; `truncated=false`.
+Ветка: `indev-4.0.2`. Recursive tree проверен через Git Tree API; `truncated=false`.
 
 ### Commands — ЗАКРЫТ
-
 - PM: **GAB-PM-001–125**
 - Private: **GAB-PR-001–049**
 - Public: **GAB-PUB-001–672**, 74 файла включая `_base.js`.
-- Shared: **GAB-SH-001–094**, 4 файла.
+- Shared: **GAB-SH-001–094**.
 
 ### Configurations — ЗАКРЫТ
-
-Проверены все 13 файлов каталога.
-Зафиксировано **GAB-CONF-001–086** в `ideasALL/ideas/GAWESOME_CONFIG.md`.
+Проверены все **13 файлов**. Зафиксировано **GAB-CONF-001–086**.
 
 ### Database — ЗАКРЫТ
+Проверены все **19 файлов**: 6 верхнего уровня + 13 схем. Зафиксировано **GAB-DB-001–096**.
 
-Проверены все **19 файлов**: 6 файлов верхнего уровня и 13 схем в `Database/Schemas/`.
-Зафиксировано **GAB-DB-001–096** в `ideasALL/ideas/GAWESOME_DATABASE.md`.
+### Internals — 🔵 В ПРОЦЕССЕ
+Проверены core-направления `Boot`, `Client`, `Constants`, `Errors`, event framework, `Extendables`, `Extensions`, `IPC`, `Logger`, `ShardUtil`, `Sharder`, `Worker`, README и доступные Extension API-компоненты.
 
-Разобраны ODM Driver/Model/Document/Query/Cursor, atomic updates, document lifecycle, cache hooks, nested query API, typed schemas/maps/subdocuments, validation/casting/defaults, dynamic command config schema, persisted feature state, modlog ledger, user/member separation, reminders/profile/privacy, activity/voice/game statistics, gallery versions, wiki history/ratings, traffic analytics и database error boundaries.
+Зафиксировано **GAB-INT-001–123** в `ideasALL/ideas/GAWESOME_INTERNALS.md`.
+
+Обработаны staged boot lifecycle, Safe Mode, runtime timers, hot reload, entity resolvers, violation pipeline, coded errors, event requirements/prerequisites, event registry, extendables, shard-aware IPC, shard respawn, structured logging/Sentry, plugin sandbox/scopes/storage, validated Embed builder, worker isolation, entity cleanup и audit/status pipelines.
 
 ### Точная точка продолжения
 
-**Следующий шаг: начать `Internals/` и пройти его полностью.**
+**Продолжить полный обход оставшихся фактических файлов `Internals/Events/` и остальных элементов `Internals/`, затем только после проверки всех файлов поставить `Internals` в ЗАВЕРШЁН.**
 
-После `Internals/` → `Modules/` → `Temp/` → `Web/`.
+После полного `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
 
