@@ -41,12 +41,19 @@
 Recursive tree показал **6 файлов верхнего уровня + 13 файлов Schemas = 19 файлов**. Все просмотрены и сопоставлены с банком идей.
 Зафиксировано **GAB-DB-001–096** в `ideasALL/ideas/GAWESOME_DATABASE.md`.
 
-Разобраны ODM Driver/Model/Document/Query/Cursor, atomic updates, document lifecycle, cache hooks, nested query API, typed schemas/maps/subdocuments, validation/casting/defaults, dynamic command config schema, persisted feature state, modlog ledger, user/member separation, reminders/profile/privacy, activity/voice/game statistics, gallery versions, wiki history/ratings, traffic analytics и database error boundaries.
+### `Internals/` — 🔵 В ПРОЦЕССЕ
+Проверены core-направления `Boot`, `Client`, `Constants`, `Errors`, event framework, `Extendables`, `Extensions`, `IPC`, `Logger`, `ShardUtil`, `Sharder`, `Worker`, README и доступные Extension API-компоненты.
+
+Зафиксировано **GAB-INT-001–123** в `ideasALL/ideas/GAWESOME_INTERNALS.md`.
+
+Обработаны staged boot lifecycle, Safe Mode, runtime timers, hot reload, entity resolvers, violation pipeline, coded errors, event requirements/prerequisites, event registry, extendables, shard-aware IPC, shard respawn, structured logging/Sentry, plugin sandbox/scopes/storage, validated Embed builder, worker isolation, entity cleanup и audit/status pipelines.
 
 ### Точная точка продолжения
 
-**Следующий шаг: начать `Internals/` и пройти его полностью.**
+**Продолжить полный обход оставшихся фактических файлов `Internals/Events/` и остальных элементов `Internals/`, затем только после проверки всех файлов поставить `Internals` в ЗАВЕРШЁН.**
 
-После `Internals/` → `Modules/` → `Temp/` → `Web/`.
+После полного `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
+
+`bot/main.py` и другая реализация InsaneBot не изменяются.
