@@ -53,7 +53,7 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - `commands/⌨️ Programming` — ✅ обработано.
 - Файлы: `coliru.js`, `compile.js`, `github.js`, `httpstatus.js`, `npm.js`, `npmpkgsize.js`.
 - Добавлены `TOM-001–005` в `ideasALL/ideas/TOMATO_BATCH1.md`.
-- `compile.js` и `coliru.js` признаны дублем одной механики и объединены.
+- `compile.js` и `coliru.js признаны дублем одной механики и объединены.
 
 ### Batch 2
 - `commands/⚙️ Settings` — ✅ обработано полностью.
@@ -61,7 +61,13 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - Добавлены `TOM-006–011` в `ideasALL/ideas/TOMATO_BATCH2.md`.
 - Дубли сверены с `CORE`, `ECONOMY`, `SOCIAL` и `MUSIC`; закомментированные `toggledjonly.js` / `togglerequestonly.js` не учитывались как рабочие механики.
 
+### Batch 3
+- `commands/⚜️ Custom Queue(s)` — ✅ обработано полностью.
+- Просмотрен единственный файл `savedqueue.js` целиком.
+- Добавлены `TOM-012–020` в `ideasALL/ideas/TOMATO_BATCH3.md`.
+- Зафиксирована система персональных именованных сохранённых музыкальных очередей и отдельные операции её редактирования, просмотра и воспроизведения.
+
 ### Текущая точка
-Следующая область: продолжить обход `commands` по дереву ветки `new_2025`.
+Следующая область: `commands/🎤 Voice`.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
