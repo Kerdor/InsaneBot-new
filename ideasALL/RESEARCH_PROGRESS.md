@@ -21,7 +21,7 @@
 | 4 | `codebymitch/TitanBot` | ✅ ЗАВЕРШЁН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | ✅ ЗАВЕРШЁН | `research/gawesomebot.md` |
 | 6 | `CorwinDev/Discord-Bot` | ✅ ЗАВЕРШЁН | `research/corwindev.md` |
-| 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | `—` |
+| 7 | `Tomato6966/Multipurpose-discord-bot` | 🔄 В РАБОТЕ | `research/tomato6966.md` |
 
 ## CorwinDev/Discord-Bot — COMPLETE
 
@@ -43,14 +43,19 @@ Repository: `CorwinDev/Discord-Bot`, branch `main`.
 - Batch 11: `src/packages` — `COR-347–354`.
 - Batch 12: root/startup/infrastructure verification — `COR-355–359`.
 
-### Root-level / startup проверка
-Проверены `src/index.js`, `src/bot.js`, `src/dev.js`, `src/assets/utils/*`, `package.json`, `.env.example`, `README.md`, `Dockerfile`, `.replit`, `replit.nix`, `start.bat`, `start.sh`, `.editorconfig`, `.gitignore`, `.vscode/settings.json`, `.github/FUNDING.yml`, `.github/dependabot.yml`, `.github/workflows/codeql.yml`, `LICENSE`, `package-lock.json`.
-
-Зафиксированы новые механики `COR-355–359`: startup version check, Top.gg metrics/command publishing, shard respawn, shard reconnect/disconnect logs и единый webhook credential override через env.
-
 `CorwinDev/Discord-Bot` **ЗАВЕРШЁН**.
 
-## Текущая точка
-Следующий источник: `Tomato6969/Multipurpose-discord-bot`.
+## Tomato6966/Multipurpose-discord-bot — IN PROGRESS
+
+Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
+
+### Batch 1
+- `commands/⌨️ Programming` — ✅ обработано.
+- Файлы: `coliru.js`, `compile.js`, `github.js`, `httpstatus.js`, `npm.js`, `npmpkgsize.js`.
+- Добавлены `TOM-001–005` в `ideasALL/ideas/TOMATO_BATCH1.md`.
+- `compile.js` и `coliru.js` признаны дублем одной механики и объединены.
+
+### Текущая точка
+Следующая область: `commands/⚙️ Settings`.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
