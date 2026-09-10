@@ -19,38 +19,28 @@
 | 2 | `python-discord/bot` | ✅ ЗАВЕРШЁН | `research/python-discord-bot.md` |
 | 3 | `ItzSudhan/Discord-MusicBot` | ✅ ЗАВЕРШЁН | `research/discord-music-bot.md` |
 | 4 | `codebymitch/TitanBot` | ✅ ЗАВЕРШЁН | `research/titanbot.md` |
-| 5 | `GAwesomeBot/bot` | 🔵 АКТИВЕН | `research/gawesomebot.md` |
+| 5 | `GAwesomeBot/bot` | ✅ ЗАВЕРШЁН | `research/gawesomebot.md` |
 | 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | `—` |
 | 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | `—` |
 
-## GAwesomeBot/bot — АКТИВЕН
+## GAwesomeBot/bot — ЗАВЕРШЁН
 
-Ветка: `indev-4.0.2`. Фактический recursive tree проверен через Git tree API; `truncated=false`.
+Ветка: `indev-4.0.2`.
 
-### Commands — ЗАКРЫТ
-- PM: **GAB-PM-001–125**
-- Private: **GAB-PR-001–049**
-- Public: **GAB-PUB-001–672**
-- Shared: **GAB-SH-001–094**
+### Закрытые области
+- Commands: PM **GAB-PM-001–125**, Private **GAB-PR-001–049**, Public **GAB-PUB-001–672**, Shared **GAB-SH-001–094**.
+- Configurations: **GAB-CONF-001–086**.
+- Database: **GAB-DB-001–096**.
+- Internals: **GAB-INT-001–123**.
+- Modules: **GAB-MOD-001–080**.
+- Temp: служебный каталог, дополнительных механик нет.
+- Web: **GAB-WEB-001–060**, файл `ideasALL/ideas/GAWESOME_WEB.md`.
 
-### Configurations — ЗАКРЫТ
-Проверены все **13 файлов**. **GAB-CONF-001–086**.
+### Web — основные группы
+Web DTO/parsers; публичные профили пользователей и серверов; mutual servers; extension gallery/versioning/scopes; Discord authentication; membership/permission gates; dashboard control plane; per-channel command configuration; API/route separation; XSS-safe Markdown; blog/wiki/activity/donation surfaces; maintainer/debug panels; operational statistics; graceful missing entities; web lifecycle isolation.
 
-### Database — ЗАКРЫТ
-Проверены все **19 файлов**: 6 верхнего уровня + 13 схем. **GAB-DB-001–096**.
+## Точная точка продолжения
 
-### Internals — ЗАКРЫТ
-Полный каталог закрыт: core, Errors, Events, Extendables, Extensions/API, IPC, Logger, Sharding, Worker и связанные handlers/components. **GAB-INT-001–123**.
-
-### Modules — ЗАКРЫТ
-Проверены все фактические файлы `Modules/` и вложенных `Emoji/`, `MessageUtils/ReactionMenus/`, `Timeouts/`, `Utils/`. Зафиксировано **GAB-MOD-001–080** в `ideasALL/ideas/GAWESOME_MODULES.md`.
-
-Ключевые находки: conversion/cache и shard coordination; emoji/media normalization и GIF composition; entity resolvers; API wrappers; RSS incremental streaming; reusable paginated/reaction menus; duration/reminder parsing; long-duration timers; ModLog CRUD/case linkage; voice→text access control; onboarding; polls/trivia; activity/streamer state; safe text/regex/URL helpers; MOTD scheduler; temporary storage; encryption; Central updater; extension sandbox.
-
-### Точная точка продолжения
-
-**Следующий каталог: `GAwesomeBot/bot → Temp/`. После него — `Web/`.**
-
-Другие репозитории не трогать до полного завершения GAwesomeBot.
+**Следующий источник: `CorwinDev/Discord-Bot`.**
 
 `bot/main.py` и другая реализация InsaneBot не изменяются.
