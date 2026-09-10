@@ -38,8 +38,20 @@
 - Для owner-check используется как сохранённый `owner_<guild>_<channel>`, так и наличие `MANAGE_CHANNELS` в overwrite пользователя.
 - Перед изменением канала проверяются необходимые права бота; invite дополнительно требует `CREATE_INSTANT_INVITE`.
 
-### Точка продолжения
-Следующая область внутри `commands` — `🎮 MiniGames`.
+## Batch 5
+
+### `commands/🎮 MiniGames`
+- Проверена вся директория `MiniGames` по текущей ветке `new_2025`.
+- Рабочие файлы: `2024.js`, `bent.js`, `betrayal-io.js`, `chaoswords.js`, `chess.js`, `connect4.js`, `fasttype.js`, `fishington-io.js`, `flip.js`, `guessthenumber.js`, `hangman.js`, `lieswatter.js`, `mirror.js`, `pokemon.js`, `randomcase.js`, `randomcolor.js`, `reverse.js`, `rockpaperscissors.js`, `snake.js`, `tictactoe.js`, `tiny.js`, `vaporwave.js`, `willyoupressthebutton.js`, `wouldyourather.js`, `youtubetogether.js`.
+- Зафиксированы `TOM-034–058` в `ideas/TOMATO_BATCH4.md`.
+- Отдельно учтены интерактивные игры, PvP-приглашения, Discord Activities, текстовые преобразования и простые генераторы.
+- Отключённые `.js.disabled` файлы не считались рабочими механиками.
+- `uno.js` намеренно возвращает сообщение о недоступности из-за legal reasons, поэтому игровой механизм не добавлялся.
+- `poker-night.js` сразу возвращает сообщение о неподдерживаемой команде; последующий код недостижим и не добавлялся.
+- При глобальной дедупликации потребуется сравнить не только название игры, но и UX: подтверждение соперника, таймауты, публичность, ограничения участника, состояние кнопок и Discord Activity-интеграцию.
+
+## Точка продолжения
+Следующая область внутри `commands` определяется по текущему дереву репозитория `new_2025`; `commands/🎮 MiniGames` закрыта.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
