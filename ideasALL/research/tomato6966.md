@@ -21,8 +21,16 @@
 - Музыкальные default/play-message настройки сверены с существующим `MUSIC` и не дублированы.
 - `toggledjonly.js` и `togglerequestonly.js` содержат полностью закомментированный код и как рабочие механики не учитывались.
 
+## Batch 3
+
+### `commands/⚜️ Custom Queue(s)`
+- Обработан единственный файл `savedqueue.js`.
+- Просмотрен полный файл, включая все операции `create`, `addcurrenttrack`, `addcurrentqueue`, `removetrack`, `shuffle`, `removedupes`, `showall`, `createsave`, `delete`, `play`, `showdetails`.
+- Зафиксированы `TOM-012–020` в `ideas/TOMATO_BATCH3.md`.
+- Основная новая система — персональные именованные сохранённые музыкальные очереди с редактированием, просмотром и воспроизведением.
+
 ### Точка продолжения
-Следующая область внутри `commands` определяется по дереву репозитория `new_2025` после `⚙️ Settings`.
+Следующая область внутри `commands` — `🎤 Voice`.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
