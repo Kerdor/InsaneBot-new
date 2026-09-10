@@ -71,6 +71,10 @@ Recursive Git Tree проверен полностью. Основные обл�
 Каталог: `ideasALL/ideas/CORWIN_BATCH10.md` — **COR-343–346**.
 `src/music` полностью просмотрен: `error.js`, `playerDisconnect.js`, `playerMove.js`, `queueEnd.js`, `ready.js`, `trackStart.js`. Новые детали: lifecycle music player, выход при пустой очереди/disconnect, стабилизация после move и Now Playing Embed.
 
+### Batch 11
+Каталог: `ideasALL/ideas/CORWIN_BATCH11.md` — **COR-347–354**.
+`src/packages` полностью просмотрен: `discord-giveaways` (основные исходники, Constants, typings, utils) и `weather-js`. Зафиксированы bonus entries, eligibility filters, bot eligibility, cleanup/update policies, Embed comparison optimization и weather language/unit selection.
+
 ### Точная точка продолжения
 
 `src/events` **ЗАКРЫТ**.
@@ -79,8 +83,9 @@ Recursive Git Tree проверен полностью. Основные обл�
 `src/config` **ЗАКРЫТ**.
 `src/database` **ЗАКРЫТ**.
 `src/music` **ЗАКРЫТ**.
+`src/packages` **ЗАКРЫТ**.
 
-Следующий этап: `src/packages` → прочие файлы.
+Следующий этап: **прочие файлы/каталоги корня CorwinDev** → финальная recursive-tree сверка → закрытие CorwinDev.
 
 Только после полного закрытия CorwinDev перейти к Tomato6969.
 
