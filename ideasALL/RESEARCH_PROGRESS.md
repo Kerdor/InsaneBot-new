@@ -20,41 +20,37 @@
 | 3 | `ItzSudhan/Discord-MusicBot` | ✅ ЗАВЕРШЁН | `research/discord-music-bot.md` |
 | 4 | `codebymitch/TitanBot` | ✅ ЗАВЕРШЁН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | ✅ ЗАВЕРШЁН | `research/gawesomebot.md` |
-| 6 | `CorwinDev/Discord-Bot` | 🔵 АКТИВЕН | `research/corwindev.md` |
+| 6 | `CorwinDev/Discord-Bot` | ✅ ЗАВЕРШЁН | `research/corwindev.md` |
 | 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | `—` |
 
-## CorwinDev/Discord-Bot — ACTIVE
+## CorwinDev/Discord-Bot — COMPLETE
 
 Repository: `CorwinDev/Discord-Bot`, branch `main`.
 
-Recursive Git Tree проверен полностью. Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
+Полный recursive Git Tree проверен повторно. Все обнаруженные области и root-level файлы просмотрены и сверены с банком идей.
 
-### Уже обработано
+### Batch'и
 - Batch 1: `COR-001–080`.
 - Batch 2: `COR-081–125`.
 - Batch 3: `COR-126–201`; `src/commands` закрыт.
-- Batch 4: `src/events` — `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js`, `role`; `COR-202–248`.
-- Batch 5: оставшиеся ветки `invite`, `message`, `stats`, `sticker`, `thread`, `voice`, `warn`; `COR-249–293`.
-- Batch 6: `src/handlers`, `COR-294–314`.
-- Batch 7: продолжение `src/handlers`, `COR-315–332`.
-- `src/handlers` подтверждённо закрыт после финальной recursive-tree сверки.
-- Batch 8: `src/interactions/Command` и `src/interactions/ContextMenu`, `COR-333–341`; после финальной сверки `src/interactions` закрыт.
-- `src/config` полностью просмотрен; новых уникальных механик не найдено.
-- Batch 9: `src/database`, `COR-342`; database полностью закрыт.
-- Batch 10: `src/music`, `COR-343–346`; music полностью закрыт.
-- Batch 11: `src/packages`, `COR-347–354`; оба пакета (`discord-giveaways`, `weather-js`) полностью закрыты.
+- Batch 4: `src/events` — `COR-202–248`.
+- Batch 5: оставшиеся ветки `src/events` — `COR-249–293`.
+- Batch 6: `src/handlers` — `COR-294–314`.
+- Batch 7: `src/handlers` — `COR-315–332`.
+- Batch 8: `src/interactions` — `COR-333–341`.
+- Batch 9: `src/database` — `COR-342`.
+- Batch 10: `src/music` — `COR-343–346`.
+- Batch 11: `src/packages` — `COR-347–354`.
+- Batch 12: root/startup/infrastructure verification — `COR-355–359`.
 
-### Точная точка продолжения
-`src/events` **ЗАКРЫТ**.
-`src/handlers` **ЗАКРЫТ**.
-`src/interactions` **ЗАКРЫТ**.
-`src/config` **ЗАКРЫТ**.
-`src/database` **ЗАКРЫТ**.
-`src/music` **ЗАКРЫТ**.
-`src/packages` **ЗАКРЫТ**.
+### Root-level / startup проверка
+Проверены `src/index.js`, `src/bot.js`, `src/dev.js`, `src/assets/utils/*`, `package.json`, `.env.example`, `README.md`, `Dockerfile`, `.replit`, `replit.nix`, `start.bat`, `start.sh`, `.editorconfig`, `.gitignore`, `.vscode/settings.json`, `.github/FUNDING.yml`, `.github/dependabot.yml`, `.github/workflows/codeql.yml`, `LICENSE`, `package-lock.json`.
 
-Следующий этап: **прочие файлы/каталоги корня CorwinDev** → финальная recursive-tree сверка → закрытие CorwinDev.
+Зафиксированы новые механики `COR-355–359`: startup version check, Top.gg metrics/command publishing, shard respawn, shard reconnect/disconnect logs и единый webhook credential override через env.
 
-**Не переходить к Tomato6969 до полного закрытия CorwinDev.**
+`CorwinDev/Discord-Bot` **ЗАВЕРШЁН**.
 
-`bot/main.py` и другая реализация InsaneBot не изменяются.
+## Текущая точка
+Следующий источник: `Tomato6969/Multipurpose-discord-bot`.
+
+`bot/main.py` и другая реализация InsaneBot не изменялись.
