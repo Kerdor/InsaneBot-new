@@ -34,18 +34,29 @@
 - Отключённые `.js.disabled` файлы не учитывались.
 - `uno.js` и `poker-night.js` не учитывались как рабочие игровые механики.
 
-## Batch 6 — текущий крупный проход
+## Batch 6
 ### `commands/🎶 Music`
-- Проверена структура всей области и выполнен подробный проход по ключевым music-командам и их фактическому поведению.
-- Зафиксированы `TOM-059–071` в `ideas/TOMATO_BATCH5.md`.
-- Новые механики: добавление previous/similar треков, DM-grab текущего трека, playtop, перемещение пользователя к voice-каналу бота, большой каталог radio, поиск radio через RadioBrowser, reconnect сохранённого radio stream, восстановление очереди после shuffle, удаление дублей из очереди, единый queue status, преднастроенные Music Mix и Song of the Day.
-- Проверены базовые play/search/playlist/skip/pause/resume/restart/seek/forward/rewind/volume/clearqueue/removetrack/stop и loop-варианты; отдельные дубли не создавались.
+- Проверена вся директория Music по дереву `new_2025` и просмотрены оставшиеся команды/варианты поведения.
+- Зафиксированы `TOM-059–072` в `ideas/TOMATO_BATCH5.md`.
+- Новые механики: previous/similar треки, DM-grab текущего трека, playtop, moveme, radio-каталог и RadioBrowser search, reconnect radio, восстановление shuffle, dedupe очереди, queue status, Music Mix, Song of the Day и отдельный режим поиска похожих треков.
+- Базовые play/search/playlist/skip/pause/resume/restart/seek/forward/rewind/volume/clearqueue/removetrack/stop и loop-варианты сверены и не размножены.
 - `voteskip.js` и `removevoteskip.js` содержат полностью закомментированный код.
-- `lyrics.js` и `searchplaylist.js` в текущей ветке намеренно не выполняют заявленную механику.
-- В `move.js` обнаружен дефект: заявленные `from/to` фактически игнорируются, а последний трек переносится в начало; это отмечено в batch-файле как дефект, а не как полноценная позиционная механика.
+- `lyrics.js` и `searchplaylist.js` в текущей ветке не выполняют заявленную механику.
+- В `move.js` обнаружен дефект: заявленные `from/to` игнорируются, фактически последний трек переносится в начало; полноценной позиционной механикой это не считается.
+- `autoplay.js` и остальные оставшиеся базовые варианты также проверены.
+- `commands/🎶 Music` **ЗАВЕРШЁН**.
+
+## Batch 7
+### `commands/🏫 School Commands`
+- Проверены все 5 файлов: `calc.js`, `calculator.js`, `e.js`, `pi.js`, `remind.js`.
+- Зафиксированы `TOM-073–077` в `ideas/TOMATO_BATCH6.md`.
+- `calc.js` и `calculator.js` оставлены отдельными идеями: текстовый математический ввод и интерактивный calculator UI.
+- `e.js` и `pi.js` дают отдельные команды вывода большого количества знаков математических констант.
+- `remind.js` реализует отложенное пользовательское напоминание с составной длительностью и сохранением контекста пользователя/канала/сервера.
+- `commands/🏫 School Commands` **ЗАВЕРШЁН**.
 
 ## Точка продолжения
-`commands/🎶 Music` **ЕЩЁ НЕ ЗАКРЫТА**. Нужно продолжить проверку оставшихся файлов этой области и только после полного прохода закрыть Music.
+Следующая область внутри `commands` по дереву `new_2025`: `👀 Filter`.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
