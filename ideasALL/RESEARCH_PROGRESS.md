@@ -51,36 +51,34 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 
 ### Batch 1
 - `commands/⌨️ Programming` — ✅ обработано.
-- Файлы: `coliru.js`, `compile.js`, `github.js`, `httpstatus.js`, `npm.js`, `npmpkgsize.js`.
-- Добавлены `TOM-001–005` в `ideasALL/ideas/TOMATO_BATCH1.md`.
-- `compile.js` и `coliru.js` признаны дублем одной механики и объединены.
+- Добавлены `TOM-001–005`.
 
 ### Batch 2
 - `commands/⚙️ Settings` — ✅ обработано полностью.
-- Просмотрены все 20 файлов области.
-- Добавлены `TOM-006–011` в `ideasALL/ideas/TOMATO_BATCH2.md`.
-- Дубли сверены с `CORE`, `ECONOMY`, `SOCIAL` и `MUSIC`; закомментированные `toggledjonly.js` / `togglerequestonly.js` не учитывались как рабочие механики.
+- Добавлены `TOM-006–011`.
+- Дубли и полностью закомментированные команды не учитывались.
 
 ### Batch 3
 - `commands/⚜️ Custom Queue(s)` — ✅ обработано полностью.
-- Просмотрен единственный файл `savedqueue.js` целиком.
-- Добавлены `TOM-012–020` в `ideasALL/ideas/TOMATO_BATCH3.md`.
-- Зафиксирована система персональных именованных сохранённых музыкальных очередей и отдельные операции её редактирования, просмотра и воспроизведения.
+- Добавлены `TOM-012–020`.
 
 ### Batch 4
 - `commands/🎤 Voice` — ✅ обработано полностью.
-- Просмотрен единственный файл `voice.js` целиком по всем веткам команд.
-- Добавлены `TOM-021–033` в `ideasALL/ideas/TOMATO_BATCH3.md`.
-- Зафиксированы lock/unlock, stage/unstage, kick, invite, ban/unban, trust/untrust, user limit, bitrate и передача ownership для временных Join-to-Create voice-каналов.
+- Добавлены `TOM-021–033`.
 
 ### Batch 5
 - `commands/🎮 MiniGames` — ✅ обработано полностью.
-- Проверена вся директория, включая 25 рабочих файлов и 7 `.js.disabled` файлов.
-- Добавлены `TOM-034–058` в `ideasALL/ideas/TOMATO_BATCH4.md`.
-- Зафиксированы 2048, Connect4, Snake, Tic-Tac-Toe, RPS, Hangman, Guess The Number, Guess The Pokémon, ChaosWords, Lie Swatter, Will You Press The Button, Would You Rather, FastType, текстовые эффекты и Discord Activities (Betrayal.io, Chess, Fishington.io, YouTube Together).
-- `uno.js` и `poker-night.js` не учитывались как рабочие механики; `.js.disabled` файлы не учитывались.
+- Добавлены `TOM-034–058`.
+- Отключённые `.js.disabled`, `uno.js` и unsupported `poker-night.js` как рабочие механики не учитывались.
+
+### Batch 6 — текущий
+- `commands/🎶 Music` — 🔄 в работе.
+- Добавлены `TOM-059–071` в `ideasALL/ideas/TOMATO_BATCH5.md`.
+- Новые находки: previous/similar track, DM-grab, playtop, moveme, radio catalog/search, radio reconnect, shuffle rollback, queue deduplication, queue status, Music Mix и Song of the Day.
+- Базовые music controls проверяются на дубли и новые детали.
+- `voteskip.js` / `removevoteskip.js` полностью закомментированы; `lyrics.js` / `searchplaylist.js` не выполняют заявленную механику.
 
 ### Текущая точка
-`commands/🎮 MiniGames` закрыта. Следующая область определяется по дереву `commands` ветки `new_2025`.
+`commands/🎶 Music` **ЕЩЁ НЕ ЗАКРЫТА**. Продолжить с оставшихся файлов Music, затем закрыть папку только после полного прохода.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
