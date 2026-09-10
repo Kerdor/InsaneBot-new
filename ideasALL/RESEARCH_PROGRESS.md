@@ -27,21 +27,18 @@
 
 Repository: `CorwinDev/Discord-Bot`, branch `main`.
 
-Recursive Git Tree проверен полностью (`truncated=false`). Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
+Recursive Git Tree проверен полностью. Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
 
 ### Уже обработано
-- Batch 1: `automod`, `autosetup`, `casino`, `custom-commands`, `economy`, `family`, `games`, security handlers и ticket/transcript infrastructure.
-- `CORWIN_BATCH1.md` — **COR-001–080**.
-- Batch 2: birthdays, bot info, guild info, levels, message rewards, notepad, sticky messages, suggestions, thanks, invites и voice.
-- `CORWIN_BATCH2.md` — **COR-081–125**.
-- Batch 3: `fun`, `games`, `giveaway`, `guild`, `moderation`, `profile`, `reactionroles`, `tickets`, `tools`, `search`, `images`, `music`.
-- `CORWIN_BATCH3.md` — **COR-126–201**.
+- Batch 1: `COR-001–080`.
+- Batch 2: `COR-081–125`.
+- Batch 3: `COR-126–201`.
 - `src/commands` подтверждённо закрыт.
-- Batch 4: начат `src/events`; фактически просмотрены `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js`, `role`.
-- `CORWIN_BATCH4.md` — **COR-202–248**.
+- Batch 4: `src/events` — `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js`, `role`; **COR-202–248**.
+- Batch 5: оставшиеся ветки `invite`, `message`, `stats`, `sticker`, `thread`, `voice`, `warn`; **COR-249–293**.
 
 ### Точная точка продолжения
-Продолжить фактический полный обход **оставшихся `src/events`**: `invite`, остальные файлы `message`, `stats`, `sticker`, `thread`, `voice`, `warn` и другие фактически присутствующие ветки. После полного закрытия `src/events` перейти к `src/handlers`, затем `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочим файлам.
+`src/events` **ЗАКРЫТ**. Следующий этап: полный фактический обход `src/handlers`, затем `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочих файлов.
 
 **Не переходить к Tomato6969 до полного закрытия CorwinDev.**
 
