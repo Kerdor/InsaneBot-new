@@ -48,7 +48,21 @@ Branch: `main`
 - `ideasALL/ideas/CORWIN_BATCH5.md` — **COR-249–293**.
 - Новые направления: invite tracking/rewards, message audit logs, starboard, server statistics counters, timezone clock, sticker/thread audit logs, temporary voice channels и warn audit events.
 
+### Точка перехода
+`src/events` закрыт по всем фактически присутствующим веткам. Начат полный обход `src/handlers`.
+
+## 2026-09-11 — Batch 6
+
+### Фактически просмотрено
+- `src/handlers/functions`: `birthdays.js`, `databaseFunctions.js`, `functions.js`, `giveaway.js`, `inviteTracker.js`, `serverstats.js`, `soundboard.js`, `ticket.js`.
+- `src/handlers/components`: `button.js`, `customEvents.js`, `embed.js`, `select.js`.
+- `src/handlers/security`: `antiad.js`, `antispam.js`, `blacklist.js`, `tempban.js`.
+
+### Зафиксировано
+- `ideasALL/ideas/CORWIN_BATCH6.md` — **COR-294–314**.
+- Новые направления: централизованные permission checks, channel lookup и mention escaping, Beta subcommand routing, leaderboard pagination, Discord Activity invite generation, генераторы buttons/selects, единый Embed/error/success response layer, guild-specific embed colors, Discord length guard и защита anti-link/anti-invite при редактировании сообщений.
+
 ### Точная точка продолжения
-`src/events` теперь закрыт по всем фактически присутствующим веткам. Следующий этап — полный фактический обход `src/handlers`, затем `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочих файлов.
+`src/handlers` ещё **не закрыт**. Продолжить `audio`, `games`, `helppanel`, `linkspanel`, `loaders`, остальные фактически присутствующие файлы `functions` и детальную сверку `security`; после полного закрытия handlers перейти к `src/interactions`.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
