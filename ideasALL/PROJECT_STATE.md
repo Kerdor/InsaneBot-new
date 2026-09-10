@@ -28,7 +28,7 @@
 
 ## GAwesomeBot — ACTIVE
 
-Ветка: `indev-4.0.2`. Recursive tree проверен через Git Tree API; `truncated=false`.
+Ветка: `indev-4.0.2`. Recursive tree проверен через Git tree API; `truncated=false`.
 
 ### Commands — ЗАКРЫТ
 
