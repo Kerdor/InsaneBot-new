@@ -20,7 +20,7 @@
 | 3 | `ItzSudhan/Discord-MusicBot` | ✅ ЗАВЕРШЁН | `research/discord-music-bot.md` |
 | 4 | `codebymitch/TitanBot` | ✅ ЗАВЕРШЁН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | ✅ ЗАВЕРШЁН | `research/gawesomebot.md` |
-| 6 | `CorwinDev/Discord-Bot` | 🔵 АКТИВЕН | `research/corwindev.md` |
+| 6 | `CorwinDev/Discord-Bot` | 🔵 АКТИВЕН | `research/corwindev.md` + `research/corwindev_batch2.md` |
 | 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | `—` |
 
 ## CorwinDev/Discord-Bot — ACTIVE
@@ -30,24 +30,14 @@ Repository: `CorwinDev/Discord-Bot`, branch `main`.
 ### Начальный обход
 Recursive Git Tree проверен. Репозиторий содержит крупные области `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
 
-### Закрытые в текущем батче
-- `src/commands/automod`
-- `src/commands/autosetup`
-- `src/commands/casino`
-- `src/commands/custom-commands`
-- `src/commands/economy`
-- `src/commands/family`
-- `src/commands/games`
-- `src/handlers/security/antiad.js`
-- `src/handlers/security/antispam.js`
-- `src/handlers/security/blacklist.js`
-- `src/handlers/functions/ticket.js` — просмотр ключевой transcript/ticket инфраструктуры
-
-### Каталог
-`ideasALL/ideas/CORWIN_BATCH1.md` — **COR-001–080**.
+### Уже обработано
+- Batch 1: `automod`, `autosetup`, `casino`, `custom-commands`, `economy`, `family`, `games`, security handlers и ключевая ticket/transcript инфраструктура.
+- Batch 1 каталог: `ideasALL/ideas/CORWIN_BATCH1.md` — **COR-001–080**.
+- Batch 2: дополнительно просмотрены фактические файлы birthdays, bot info, guild info, levels rewards/rank, message rewards, notepad, sticky messages, suggestions, thanks, invites и voice rename.
+- Batch 2 каталог: `ideasALL/ideas/CORWIN_BATCH2.md` — **COR-081–125**.
 
 ### Точная точка продолжения
-Продолжить CorwinDev с оставшихся областей `src/commands`, затем `src/events`, `src/handlers`, `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочих файлов.
+Продолжить **фактический полный обход оставшихся `src/commands`**. Не считать `src/commands` закрытым по отдельным выборочным файлам. После полного закрытия commands перейти к `src/events`, затем `src/handlers`, `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочим файлам.
 
 **Не переходить к Tomato6969 до полного закрытия CorwinDev.**
 
