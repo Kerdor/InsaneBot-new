@@ -37,48 +37,39 @@
 Recursive Git Tree проверен полностью. Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
 
 ### Batch 1
-
 Каталог: `ideasALL/ideas/CORWIN_BATCH1.md` — **COR-001–080**.
 
 ### Batch 2
-
 Каталог: `ideasALL/ideas/CORWIN_BATCH2.md` — **COR-081–125**.
 
 ### Batch 3
-
 Каталог: `ideasALL/ideas/CORWIN_BATCH3.md` — **COR-126–201**.
-
 `src/commands` подтверждённо закрыт.
 
 ### Batch 4
-
 Каталог: `ideasALL/ideas/CORWIN_BATCH4.md` — **COR-202–248**.
 
 ### Batch 5
-
 Каталог: `ideasALL/ideas/CORWIN_BATCH5.md` — **COR-249–293**.
-
 `src/events` подтверждённо закрыт.
 
 ### Batch 6
-
 Каталог: `ideasALL/ideas/CORWIN_BATCH6.md` — **COR-294–314**.
 
 ### Batch 7
-
 Каталог: `ideasALL/ideas/CORWIN_BATCH7.md` — **COR-315–332**.
 
 ### Batch 8
-
 Каталог: `ideasALL/ideas/CORWIN_BATCH8.md` — **COR-333–341**.
-
 `src/interactions` полностью сверён и закрыт. Новых уникальных механик сверх Batch 8 не найдено.
 
 ### Batch 9
-
 Каталог: `ideasALL/ideas/CORWIN_BATCH9.md` — **COR-342**.
-
 `src/database` полностью просмотрен: `connect.js` и все модели. Новых пользовательских механик не найдено; отдельно зафиксирован архитектурный вариант кэширования MongoDB-запросов в памяти с TTL 60 секунд и лимитом 5000 записей.
+
+### Batch 10
+Каталог: `ideasALL/ideas/CORWIN_BATCH10.md` — **COR-343–346**.
+`src/music` полностью просмотрен: `error.js`, `playerDisconnect.js`, `playerMove.js`, `queueEnd.js`, `ready.js`, `trackStart.js`. Новые детали: lifecycle music player, выход при пустой очереди/disconnect, стабилизация после move и Now Playing Embed.
 
 ### Точная точка продолжения
 
@@ -87,8 +78,9 @@ Recursive Git Tree проверен полностью. Основные обл�
 `src/interactions` **ЗАКРЫТ**.
 `src/config` **ЗАКРЫТ**.
 `src/database` **ЗАКРЫТ**.
+`src/music` **ЗАКРЫТ**.
 
-Следующий этап: `src/music` → `src/packages` → прочие файлы.
+Следующий этап: `src/packages` → прочие файлы.
 
 Только после полного закрытия CorwinDev перейти к Tomato6969.
 
