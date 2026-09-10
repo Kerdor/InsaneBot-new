@@ -27,17 +27,18 @@
 
 Repository: `CorwinDev/Discord-Bot`, branch `main`.
 
-### Начальный обход
-Recursive Git Tree проверен. Репозиторий содержит крупные области `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
+Recursive Git Tree проверен полностью (`truncated=false`). Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
 
 ### Уже обработано
 - Batch 1: `automod`, `autosetup`, `casino`, `custom-commands`, `economy`, `family`, `games`, security handlers и ключевая ticket/transcript инфраструктура.
-- Batch 1 каталог: `ideasALL/ideas/CORWIN_BATCH1.md` — **COR-001–080**.
-- Batch 2: дополнительно просмотрены фактические файлы birthdays, bot info, guild info, levels rewards/rank, message rewards, notepad, sticky messages, suggestions, thanks, invites и voice rename.
-- Batch 2 каталог: `ideasALL/ideas/CORWIN_BATCH2.md` — **COR-081–125**.
+- `CORWIN_BATCH1.md` — **COR-001–080**.
+- Batch 2: birthdays, bot info, guild info, levels, message rewards, notepad, sticky messages, suggestions, thanks, invites и voice.
+- `CORWIN_BATCH2.md` — **COR-081–125**.
+- Batch 3: фактическое продолжение по `fun`, `games`, `giveaway`, `guild`, `moderation`, `profile`, `reactionroles`, `tickets`, `tools`, `search`, `images` и `music`.
+- `CORWIN_BATCH3.md` — **COR-126–201**.
 
 ### Точная точка продолжения
-Продолжить **фактический полный обход оставшихся `src/commands`**. Не считать `src/commands` закрытым по отдельным выборочным файлам. После полного закрытия commands перейти к `src/events`, затем `src/handlers`, `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочим файлам.
+Продолжить **фактический полный обход оставшихся `src/commands`**. Batch 3 добавил большой набор найденных механик, но `src/commands` ещё не считается закрытым. После полного закрытия commands перейти к `src/events`, затем `src/handlers`, `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочим файлам.
 
 **Не переходить к Tomato6969 до полного закрытия CorwinDev.**
 
