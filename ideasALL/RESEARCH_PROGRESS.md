@@ -41,6 +41,7 @@ Recursive Git Tree проверен полностью. Основные обл�
 - Batch 8: `src/interactions/Command` и `src/interactions/ContextMenu`, `COR-333–341`; после финальной сверки `src/interactions` закрыт.
 - `src/config` полностью просмотрен; новых уникальных механик не найдено.
 - Batch 9: `src/database`, `COR-342`; database полностью закрыт.
+- Batch 10: `src/music`, `COR-343–346`; music полностью закрыт.
 
 ### Точная точка продолжения
 `src/events` **ЗАКРЫТ**.
@@ -48,8 +49,9 @@ Recursive Git Tree проверен полностью. Основные обл�
 `src/interactions` **ЗАКРЫТ**.
 `src/config` **ЗАКРЫТ**.
 `src/database` **ЗАКРЫТ**.
+`src/music` **ЗАКРЫТ**.
 
-Следующий этап: `src/music` → `src/packages` → прочие файлы.
+Следующий этап: `src/packages` → прочие файлы.
 
 **Не переходить к Tomato6969 до полного закрытия CorwinDev.**
 
