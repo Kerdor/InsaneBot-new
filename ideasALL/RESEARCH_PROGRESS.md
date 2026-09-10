@@ -1,15 +1,14 @@
 # RESEARCH PROGRESS
 
-Этот файл — контрольная точка для продолжения глубокого исследования в новом чате без потери позиции.
+Этот файл — контрольная точка для продолжения глубокого исследования без потери позиции.
 
 ## Правила
 
 - Источники исследуются строго по очереди.
-- Внутри активного репозитория фиксируется каждая обработанная папка и файл в порядке фактического обхода.
+- Внутри активного репозитория фиксируется каждая обработанная папка и файл.
 - Переход к следующему источнику разрешён только после `ЗАВЕРШЁН` у текущего.
 - `✅` означает реальный просмотр + сверку с банком идей.
 - Дубликаты не добавляются; новые детали существующих систем сохраняются.
-- После каждого существенного батча обновляются журнал и `PROJECT_STATE.md`.
 - На текущем этапе bot implementation не изменяется; исследуются только ideas/research/checkpoints.
 
 ## Источники
@@ -24,35 +23,33 @@
 | 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | `—` |
 | 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | `—` |
 
-## `GAwesomeBot/bot` — АКТИВЕН
+## GAwesomeBot/bot — АКТИВЕН
 
 Ветка: `indev-4.0.2`. Фактический recursive tree проверен через Git tree API; `truncated=false`.
 
-### `Commands/` — ЗАКРЫТ
+### Commands — ЗАКРЫТ
 - PM: **GAB-PM-001–125**
 - Private: **GAB-PR-001–049**
 - Public: **GAB-PUB-001–672**
 - Shared: **GAB-SH-001–094**
 
-### `Configurations/` — ЗАКРЫТ
-Проверены все **13 файлов** каталога. Зафиксировано **GAB-CONF-001–086**.
+### Configurations — ЗАКРЫТ
+Проверены все **13 файлов**. **GAB-CONF-001–086**.
 
-### `Database/` — ЗАКРЫТ
-Recursive tree показал **6 файлов верхнего уровня + 13 файлов Schemas = 19 файлов**. Все просмотрены и сопоставлены с банком идей.
-Зафиксировано **GAB-DB-001–096** в `ideasALL/ideas/GAWESOME_DATABASE.md`.
+### Database — ЗАКРЫТ
+Проверены все **19 файлов**: 6 верхнего уровня + 13 схем. **GAB-DB-001–096**.
 
-### `Internals/` — 🔵 В ПРОЦЕССЕ
-Проверены core-направления `Boot`, `Client`, `Constants`, `Errors`, event framework, `Extendables`, `Extensions`, `IPC`, `Logger`, `ShardUtil`, `Sharder`, `Worker`, README и доступные Extension API-компоненты.
+### Internals — ЗАКРЫТ
+Полный каталог закрыт: core, Errors, Events, Extendables, Extensions/API, IPC, Logger, Sharding, Worker и связанные handlers/components. **GAB-INT-001–123**.
 
-Зафиксировано **GAB-INT-001–123** в `ideasALL/ideas/GAWESOME_INTERNALS.md`.
+### Modules — ЗАКРЫТ
+Проверены все фактические файлы `Modules/` и вложенных `Emoji/`, `MessageUtils/ReactionMenus/`, `Timeouts/`, `Utils/`. Зафиксировано **GAB-MOD-001–080** в `ideasALL/ideas/GAWESOME_MODULES.md`.
 
-Обработаны staged boot lifecycle, Safe Mode, runtime timers, hot reload, entity resolvers, violation pipeline, coded errors, event requirements/prerequisites, event registry, extendables, shard-aware IPC, shard respawn, structured logging/Sentry, plugin sandbox/scopes/storage, validated Embed builder, worker isolation, entity cleanup и audit/status pipelines.
+Ключевые находки: conversion/cache и shard coordination; emoji/media normalization и GIF composition; entity resolvers; API wrappers; RSS incremental streaming; reusable paginated/reaction menus; duration/reminder parsing; long-duration timers; ModLog CRUD/case linkage; voice→text access control; onboarding; polls/trivia; activity/streamer state; safe text/regex/URL helpers; MOTD scheduler; temporary storage; encryption; Central updater; extension sandbox.
 
 ### Точная точка продолжения
 
-**Продолжить полный обход оставшихся фактических файлов `Internals/Events/` и остальных элементов `Internals/`, затем только после проверки всех файлов поставить `Internals` в ЗАВЕРШЁН.**
-
-После полного `Internals/` → `Modules/` → `Temp/` → `Web/`.
+**Следующий каталог: `GAwesomeBot/bot → Temp/`. После него — `Web/`.**
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
 
