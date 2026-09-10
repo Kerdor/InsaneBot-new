@@ -29,8 +29,17 @@
 - Зафиксированы `TOM-012–020` в `ideas/TOMATO_BATCH3.md`.
 - Основная новая система — персональные именованные сохранённые музыкальные очереди с редактированием, просмотром и воспроизведением.
 
+## Batch 4
+
+### `commands/🎤 Voice`
+- Обработан единственный файл `voice.js` целиком по всем веткам команд.
+- Зафиксированы `TOM-021–033` в `ideas/TOMATO_BATCH3.md`.
+- Найдены операции управления собственными временными Join-to-Create voice-каналами: lock/unlock, stage/unstage, kick, invite, ban/unban, trust/untrust, изменение user limit и bitrate, передача ownership.
+- Для owner-check используется как сохранённый `owner_<guild>_<channel>`, так и наличие `MANAGE_CHANNELS` в overwrite пользователя.
+- Перед изменением канала проверяются необходимые права бота; invite дополнительно требует `CREATE_INSTANT_INVITE`.
+
 ### Точка продолжения
-Следующая область внутри `commands` — `🎤 Voice`.
+Следующая область внутри `commands` — `🎮 MiniGames`.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
