@@ -133,7 +133,7 @@ Branch: `main`
 - `COR-346`: Now Playing Embed с URL, thumbnail, requester, author и Discord timestamp окончания.
 
 ### Закрытие music
-Большая часть музыкальной логики уже была покрыта Batch 7; дополнительные lifecycle/UX детали зафиксированы в Batch 10.
+Большая часть музыкальной логики уже была покрыта Batch 3/7; дополнительные lifecycle/UX детали зафиксированы в Batch 10.
 
 `src/music` **ЗАКРЫТ**.
 
@@ -159,15 +159,43 @@ Branch: `main`
 
 `src/packages` **ЗАКРЫТ**.
 
-### Точная точка продолжения
-`src/events` **ЗАКРЫТ**.
-`src/handlers` **ЗАКРЫТ**.
-`src/interactions` **ЗАКРЫТ**.
-`src/config` **ЗАКРЫТ**.
-`src/database` **ЗАКРЫТ**.
-`src/music` **ЗАКРЫТ**.
-`src/packages` **ЗАКРЫТ**.
+## 2026-09-11 — Batch 12 / Финальная проверка
 
-Следующий этап: **прочие файлы/каталоги корня CorwinDev** → финальная recursive-tree сверка → закрытие CorwinDev.
+### Фактически просмотрено
+- `src/index.js`.
+- `src/bot.js`.
+- `src/dev.js`.
+- `src/assets/utils/forhumans.js`.
+- `src/assets/utils/static.js`.
+- `package.json`.
+- `.env.example`.
+- `README.md`.
+- `Dockerfile`.
+- `.replit`.
+- `replit.nix`.
+- `start.bat`.
+- `start.sh`.
+- `.editorconfig`.
+- `.gitignore`.
+- `.vscode/settings.json`.
+- `.github/FUNDING.yml`.
+- `.github/dependabot.yml`.
+- `.github/workflows/codeql.yml`.
+- `LICENSE`.
+- `package-lock.json`.
+- Полный recursive Git Tree после завершения обхода.
 
-`bot/main.py` и реализация InsaneBot не изменялись.
+### Зафиксировано
+- `ideasALL/ideas/CORWIN_BATCH12.md` — **COR-355–359**.
+- `COR-355`: проверка актуальности версии через последний GitHub release при запуске.
+- `COR-356`: публикация Top.gg metrics и slash-команд при наличии токена.
+- `COR-357`: автоматический respawn умершего shard.
+- `COR-358`: webhook-логирование shard disconnect/reconnect.
+- `COR-359`: единый override webhook credentials через `WEBHOOK_ID`/`WEBHOOK_TOKEN`.
+
+### Финальное решение
+Весь recursive tree `CorwinDev/Discord-Bot` просмотрен и сверён с банком идей. Все значимые пользовательские/архитектурные механики зафиксированы, дубликаты не размножены.
+
+`CorwinDev/Discord-Bot` **ЗАВЕРШЁН**.
+
+Следующий источник по строгому порядку: `Tomato6969/Multipurpose-discord-bot`.
