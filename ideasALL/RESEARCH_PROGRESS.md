@@ -20,27 +20,35 @@
 | 3 | `ItzSudhan/Discord-MusicBot` | ✅ ЗАВЕРШЁН | `research/discord-music-bot.md` |
 | 4 | `codebymitch/TitanBot` | ✅ ЗАВЕРШЁН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | ✅ ЗАВЕРШЁН | `research/gawesomebot.md` |
-| 6 | `CorwinDev/Discord-Bot` | ⏳ ОЖИДАЕТ | `—` |
+| 6 | `CorwinDev/Discord-Bot` | 🔵 АКТИВЕН | `research/corwindev.md` |
 | 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | `—` |
 
-## GAwesomeBot/bot — ЗАВЕРШЁН
+## CorwinDev/Discord-Bot — ACTIVE
 
-Ветка: `indev-4.0.2`.
+Repository: `CorwinDev/Discord-Bot`, branch `main`.
 
-### Закрытые области
-- Commands: PM **GAB-PM-001–125**, Private **GAB-PR-001–049**, Public **GAB-PUB-001–672**, Shared **GAB-SH-001–094**.
-- Configurations: **GAB-CONF-001–086**.
-- Database: **GAB-DB-001–096**.
-- Internals: **GAB-INT-001–123**.
-- Modules: **GAB-MOD-001–080**.
-- Temp: служебный каталог, дополнительных механик нет.
-- Web: **GAB-WEB-001–060**, файл `ideasALL/ideas/GAWESOME_WEB.md`.
+### Начальный обход
+Recursive Git Tree проверен. Репозиторий содержит крупные области `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
 
-### Web — основные группы
-Web DTO/parsers; публичные профили пользователей и серверов; mutual servers; extension gallery/versioning/scopes; Discord authentication; membership/permission gates; dashboard control plane; per-channel command configuration; API/route separation; XSS-safe Markdown; blog/wiki/activity/donation surfaces; maintainer/debug panels; operational statistics; graceful missing entities; web lifecycle isolation.
+### Закрытые в текущем батче
+- `src/commands/automod`
+- `src/commands/autosetup`
+- `src/commands/casino`
+- `src/commands/custom-commands`
+- `src/commands/economy`
+- `src/commands/family`
+- `src/commands/games`
+- `src/handlers/security/antiad.js`
+- `src/handlers/security/antispam.js`
+- `src/handlers/security/blacklist.js`
+- `src/handlers/functions/ticket.js` — просмотр ключевой transcript/ticket инфраструктуры
 
-## Точная точка продолжения
+### Каталог
+`ideasALL/ideas/CORWIN_BATCH1.md` — **COR-001–080**.
 
-**Следующий источник: `CorwinDev/Discord-Bot`.**
+### Точная точка продолжения
+Продолжить CorwinDev с оставшихся областей `src/commands`, затем `src/events`, `src/handlers`, `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочих файлов.
+
+**Не переходить к Tomato6969 до полного закрытия CorwinDev.**
 
 `bot/main.py` и другая реализация InsaneBot не изменяются.
