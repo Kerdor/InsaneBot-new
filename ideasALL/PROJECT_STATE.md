@@ -40,19 +40,19 @@ Recursive Git Tree проверен полностью (`truncated=false`). Ос
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH1.md` — **COR-001–080**.
 
-Обработаны: `commands/automod`, `commands/autosetup`, `commands/casino`, `commands/custom-commands`, `commands/economy`, `commands/family`, `commands/games`, security handlers и ключевая ticket/transcript инфраструктура.
-
 ### Batch 2
 
 Каталог: `ideasALL/ideas/CORWIN_BATCH2.md` — **COR-081–125**.
 
-Дополнительно фактически просмотрены отдельные файлы birthdays, bot info, guild info, levels, message rewards, notepad, sticky messages, suggestions, thanks, invites и voice.
+### Batch 3
 
-Журнал продолжения: `ideasALL/research/corwindev_batch2.md`.
+Каталог: `ideasALL/ideas/CORWIN_BATCH3.md` — **COR-126–201**.
+
+Фактически просмотрены в продолжении `src/commands` файлы из `fun`, `games`, `giveaway`, `guild`, `moderation`, `profile`, `reactionroles`, `tickets`, `tools`, `search`, `images` и `music`. Выделены интерактивные игры, giveaway lifecycle, moderation cases, profile/reaction-role UX, music queue/player controls и utility/search/image mechanics.
 
 ### Точная точка продолжения
 
-**Не считать `src/commands` закрытым. Продолжить его полный фактический обход с оставшихся команд/категорий. Затем: `src/events` → `src/handlers` → `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.**
+**`src/commands` всё ещё НЕ закрыт.** Продолжить его полный фактический обход с оставшихся файлов и категорий. После подтверждённого закрытия `commands`: `src/events` → `src/handlers` → `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
 
 Только после полного закрытия CorwinDev перейти к Tomato6969.
 
