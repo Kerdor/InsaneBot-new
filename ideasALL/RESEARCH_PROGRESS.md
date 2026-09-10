@@ -73,7 +73,14 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - Добавлены `TOM-021–033` в `ideasALL/ideas/TOMATO_BATCH3.md`.
 - Зафиксированы lock/unlock, stage/unstage, kick, invite, ban/unban, trust/untrust, user limit, bitrate и передача ownership для временных Join-to-Create voice-каналов.
 
-### Текущая точка
-Следующая область: `commands/🎮 MiniGames`.
+### Batch 5
+- `commands/🎮 MiniGames` — ✅ обработано полностью.
+- Проверена вся директория, включая 25 рабочих файлов и 7 `.js.disabled` файлов.
+- Добавлены `TOM-034–058` в `ideasALL/ideas/TOMATO_BATCH4.md`.
+- Зафиксированы 2048, Connect4, Snake, Tic-Tac-Toe, RPS, Hangman, Guess The Number, Guess The Pokémon, ChaosWords, Lie Swatter, Will You Press The Button, Would You Rather, FastType, текстовые эффекты и Discord Activities (Betrayal.io, Chess, Fishington.io, YouTube Together).
+- `uno.js` и `poker-night.js` не учитывались как рабочие механики; `.js.disabled` файлы не учитывались.
 
-`bot/main.py` и другая реализация InsaneBot не изменялись.
+### Текущая точка
+`commands/🎮 MiniGames` закрыта. Следующая область определяется по дереву `commands` ветки `new_2025`.
+
+`bot/main.py` и implementation InsaneBot не изменялись.
