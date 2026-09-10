@@ -42,6 +42,7 @@ Recursive Git Tree проверен полностью. Основные обл�
 - `src/config` полностью просмотрен; новых уникальных механик не найдено.
 - Batch 9: `src/database`, `COR-342`; database полностью закрыт.
 - Batch 10: `src/music`, `COR-343–346`; music полностью закрыт.
+- Batch 11: `src/packages`, `COR-347–354`; оба пакета (`discord-giveaways`, `weather-js`) полностью закрыты.
 
 ### Точная точка продолжения
 `src/events` **ЗАКРЫТ**.
@@ -50,8 +51,9 @@ Recursive Git Tree проверен полностью. Основные обл�
 `src/config` **ЗАКРЫТ**.
 `src/database` **ЗАКРЫТ**.
 `src/music` **ЗАКРЫТ**.
+`src/packages` **ЗАКРЫТ**.
 
-Следующий этап: `src/packages` → прочие файлы.
+Следующий этап: **прочие файлы/каталоги корня CorwinDev** → финальная recursive-tree сверка → закрытие CorwinDev.
 
 **Не переходить к Tomato6969 до полного закрытия CorwinDev.**
 
