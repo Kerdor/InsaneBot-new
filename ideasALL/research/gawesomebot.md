@@ -6,7 +6,7 @@
 
 ## Начало исследования
 
-Фактический recursive tree ветки `indev-4.0.2` проверено через Git tree API; `truncated=false`.
+Фактический recursive tree ветки `indev-4.0.2` проверен через Git tree API; `truncated=false`.
 
 Корневой порядок исследования:
 1. `Commands/`
@@ -18,35 +18,31 @@
 7. `Web/`
 
 ### `Commands/PM/` — ЗАВЕРШЁН
-
-Проверены все 11 файлов и связанные PM/private flows.
-Зафиксировано **GAB-PM-001–GAB-PM-125**.
+Проверены все 11 файлов. **GAB-PM-001–125**.
 
 ### `Commands/Private/` — ЗАВЕРШЁН
-
-Проверены все 4 файла.
-Зафиксировано **GAB-PR-001–GAB-PR-049**.
+Проверены все 4 файла. **GAB-PR-001–049**.
 
 ### `Commands/Public/` — ЗАВЕРШЁН
+Проверены 74 файла включая `_base.js`. Итог: **GAB-PUB-001–672**. Пропусков не выявлено; историческое перекрытие BATCH7 сохранено.
 
-Финальная сверка выполнена по recursive tree ветки `indev-4.0.2`. Каталог содержит **74 файла**, включая `_base.js`; все файлы сопоставлены с просмотренными материалами и банком идей.
+### `Commands/Shared/` — ЗАВЕРШЁН
+Проверены все 4 файла. **GAB-SH-001–094**.
 
-Зафиксированные Public-батчи:
-- `GAWESOME_COMMANDS_PUBLIC.md`
-- `GAWESOME_COMMANDS_PUBLIC_BATCH2.md`
-- `GAWESOME_COMMANDS_PUBLIC_BATCH3.md`
-- `GAWESOME_COMMANDS_PUBLIC_BATCH4.md`
-- `GAWESOME_COMMANDS_PUBLIC_BATCH5.md`
-- `GAWESOME_COMMANDS_PUBLIC_BATCH6.md` — до **GAB-PUB-590**
-- `GAWESOME_COMMANDS_PUBLIC_BATCH7.md` — дополнительные **GAB-PUB-496–556**; сохранён как отдельный исторический батч
-- `GAWESOME_COMMANDS_PUBLIC_BATCH8.md` — **GAB-PUB-591–672**
+### `Commands/` — ЗАВЕРШЁН
+Все четыре подкаталога закрыты.
 
-Итоговый диапазон Public: **GAB-PUB-001–GAB-PUB-672**. Пропусков в текущей нумерации не выявлено; историческое перекрытие BATCH7 сохранено без удаления.
+### `Configurations/` — ЗАВЕРШЁН
+Recursive tree показал 13 файлов. Все файлы каталога просмотрены и сопоставлены с банком идей: auth template, command registry, runtime/config templates, event routing, filter dictionary, ranks, RSS feeds, status messages, tag reactions, tags, trivia dataset и оставшийся configuration entry.
+
+Зафиксировано **GAB-CONF-001–086** в `ideasALL/ideas/GAWESOME_CONFIG.md`.
+
+Разобраны command metadata/aliases/categories/defaults, access levels, named permissions, shard/web/database/runtime settings, logging levels, encryption/session secrets, blocklists, maintainers, activity/status, event routing, modular pipelines, rank thresholds, RSS streaming, configurable status-message pools, tags, profanity/NSFW dictionary и trivia data.
 
 ### Точная точка продолжения
 
-**Следующий шаг: перейти к `Commands/Shared/` и исследовать его полностью.**
+**Следующий шаг: начать `Database/` и пройти его полностью.**
 
-Не переходить в `Configurations/`, пока полностью не закрыт весь `Commands/`.
+После `Database/` → `Internals/` → `Modules/` → `Temp/` → `Web/`.
 
 Другие репозитории не трогать до полного завершения GAwesomeBot.
