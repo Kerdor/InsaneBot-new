@@ -76,7 +76,24 @@ Branch: `main`
 - `ideasALL/ideas/CORWIN_BATCH7.md` — **COR-315–332**.
 - Новые направления: music control buttons, radio persistence/recovery, soundboard queue, counting/guessing/word games, XP helpers, help/links panels и динамический event loader.
 
+### Закрытие handlers
+Финальная recursive-tree проверка `src/handlers` выполнена. Все ветки (`audio`, `games`, `helppanel`, `linkspanel`, `loaders`, `functions`, `components`, `security`) сверены; новых уникальных механик не найдено.
+
+`src/handlers` **ЗАКРЫТ**.
+
+## 2026-09-11 — Batch 8
+
+### Фактически просмотрено
+- `src/interactions/Command` — полный набор command-definition файлов.
+- `src/interactions/ContextMenu` — `profile.js`, `unwarn.js`, `userinfo.js`, `warn.js`, `warnings.js`.
+
+### Зафиксировано
+- `ideasALL/ideas/CORWIN_BATCH8.md` — **COR-333–341**.
+- Новые направления: общий subcommand dispatcher и help-subcommands, deferred interaction flow, Discord Activities, интерактивный Embed builder, message collectors для пошагового ввода, временный webhook для отправки Embed и User Context Menu для profile/warn/unwarn/warnings.
+
 ### Точная точка продолжения
-`src/handlers` ещё **не закрыт**. Необходимо завершить финальную проверку оставшихся handler-файлов/веток и только после этого перейти к `src/interactions`.
+`src/events` **ЗАКРЫТ**.
+`src/handlers` **ЗАКРЫТ**.
+`src/interactions` ещё **НЕ ЗАКРЫТ** — требуется финальная сверка полного дерева interactions перед переходом к `src/config`.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
