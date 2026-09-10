@@ -60,9 +60,17 @@ Recursive Git Tree проверен полностью. Основные обл�
 
 Закрыты оставшиеся ветки `src/events`: `invite`, остальные `message`, `stats`, `sticker`, `thread`, `voice`, `warn`.
 
+### Batch 6
+
+Каталог: `ideasALL/ideas/CORWIN_BATCH6.md` — **COR-294–314**.
+
+Начат `src/handlers`: обработаны `functions` (фактически просмотренные файлы), `components` и `security`.
+
 ### Точная точка продолжения
 
-**`src/events` ЗАКРЫТ.** Следующий этап: `src/handlers` → `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
+**`src/events` ЗАКРЫТ. `src/handlers` НЕ ЗАКРЫТ.** Продолжить `audio` → `games` → `helppanel` → `linkspanel` → `loaders` → остальные `functions` → детальная сверка `security`.
+
+После полного закрытия `handlers`: `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
 
 Только после полного закрытия CorwinDev перейти к Tomato6969.
 
