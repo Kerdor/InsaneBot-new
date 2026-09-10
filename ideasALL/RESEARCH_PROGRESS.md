@@ -20,7 +20,7 @@
 | 3 | `ItzSudhan/Discord-MusicBot` | ✅ ЗАВЕРШЁН | `research/discord-music-bot.md` |
 | 4 | `codebymitch/TitanBot` | ✅ ЗАВЕРШЁН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | ✅ ЗАВЕРШЁН | `research/gawesomebot.md` |
-| 6 | `CorwinDev/Discord-Bot` | 🔵 АКТИВЕН | `research/corwindev.md` + `research/corwindev_batch2.md` |
+| 6 | `CorwinDev/Discord-Bot` | 🔵 АКТИВЕН | `research/corwindev.md` |
 | 7 | `Tomato6969/Multipurpose-discord-bot` | ⏳ ОЖИДАЕТ | `—` |
 
 ## CorwinDev/Discord-Bot — ACTIVE
@@ -30,15 +30,18 @@ Repository: `CorwinDev/Discord-Bot`, branch `main`.
 Recursive Git Tree проверен полностью (`truncated=false`). Основные области: `src/commands`, `src/config`, `src/database`, `src/events`, `src/handlers`, `src/interactions`, `src/music`, `src/packages`.
 
 ### Уже обработано
-- Batch 1: `automod`, `autosetup`, `casino`, `custom-commands`, `economy`, `family`, `games`, security handlers и ключевая ticket/transcript инфраструктура.
+- Batch 1: `automod`, `autosetup`, `casino`, `custom-commands`, `economy`, `family`, `games`, security handlers и ticket/transcript infrastructure.
 - `CORWIN_BATCH1.md` — **COR-001–080**.
 - Batch 2: birthdays, bot info, guild info, levels, message rewards, notepad, sticky messages, suggestions, thanks, invites и voice.
 - `CORWIN_BATCH2.md` — **COR-081–125**.
-- Batch 3: фактическое продолжение по `fun`, `games`, `giveaway`, `guild`, `moderation`, `profile`, `reactionroles`, `tickets`, `tools`, `search`, `images` и `music`.
+- Batch 3: `fun`, `games`, `giveaway`, `guild`, `moderation`, `profile`, `reactionroles`, `tickets`, `tools`, `search`, `images`, `music`.
 - `CORWIN_BATCH3.md` — **COR-126–201**.
+- `src/commands` подтверждённо закрыт.
+- Batch 4: начат `src/events`; фактически просмотрены `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js`, `role`.
+- `CORWIN_BATCH4.md` — **COR-202–248**.
 
 ### Точная точка продолжения
-Продолжить **фактический полный обход оставшихся `src/commands`**. Batch 3 добавил большой набор найденных механик, но `src/commands` ещё не считается закрытым. После полного закрытия commands перейти к `src/events`, затем `src/handlers`, `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочим файлам.
+Продолжить фактический полный обход **оставшихся `src/events`**: `invite`, остальные файлы `message`, `stats`, `sticker`, `thread`, `voice`, `warn` и другие фактически присутствующие ветки. После полного закрытия `src/events` перейти к `src/handlers`, затем `src/interactions`, `src/config`, `src/database`, `src/music`, `src/packages` и прочим файлам.
 
 **Не переходить к Tomato6969 до полного закрытия CorwinDev.**
 
