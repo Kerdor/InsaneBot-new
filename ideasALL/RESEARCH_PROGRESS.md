@@ -32,19 +32,21 @@ Recursive Git Tree проверен полностью. Основные обл�
 ### Уже обработано
 - Batch 1: `COR-001–080`.
 - Batch 2: `COR-081–125`.
-- Batch 3: `COR-126–201`.
-- `src/commands` подтверждённо закрыт.
-- Batch 4: `src/events` — `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js`, `role`; **COR-202–248**.
-- Batch 5: оставшиеся ветки `invite`, `message`, `stats`, `sticker`, `thread`, `voice`, `warn`; **COR-249–293**.
-- Batch 6: начат `src/handlers`; обработаны `functions` (выбранные файлы), `components` и `security`; **COR-294–314**.
-- Batch 7: продолжен `src/handlers`; обработаны `audio`, `games`, `helppanel`, `linkspanel`, `loaders` и дополнительные сверки `functions`; **COR-315–332**.
+- Batch 3: `COR-126–201`; `src/commands` закрыт.
+- Batch 4: `src/events` — `channel`, `client`, `emoji`, `event`, `giveaway`, `guild`, `message/messageCreate.js`, `role`; `COR-202–248`.
+- Batch 5: оставшиеся ветки `invite`, `message`, `stats`, `sticker`, `thread`, `voice`, `warn`; `COR-249–293`.
+- Batch 6: `src/handlers`, `COR-294–314`.
+- Batch 7: продолжение `src/handlers`, `COR-315–332`.
+- `src/handlers` подтверждённо закрыт после финальной recursive-tree сверки.
+- Batch 8: `src/interactions/Command` и `src/interactions/ContextMenu`, `COR-333–341`.
 
 ### Точная точка продолжения
 `src/events` **ЗАКРЫТ**.
+`src/handlers` **ЗАКРЫТ**.
 
-`src/handlers` **НЕ ЗАКРЫТ**. Выполнена основная часть обхода, но требуется финальная проверка дерева handlers и оставшихся файлов/веток перед закрытием.
+`src/interactions` **НЕ ЗАКРЫТ**. Обработаны `Command` и `ContextMenu`; требуется финальная сверка полного дерева interactions.
 
-После полного закрытия `handlers`: `src/interactions` → `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
+После полного закрытия `interactions`: `src/config` → `src/database` → `src/music` → `src/packages` → прочие файлы.
 
 **Не переходить к Tomato6969 до полного закрытия CorwinDev.**
 
