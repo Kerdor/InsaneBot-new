@@ -83,7 +83,14 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - Добавлены `TOM-073–077` в `ideasALL/ideas/TOMATO_BATCH6.md`.
 - Зафиксированы текстовый калькулятор, интерактивный calculator UI, вывод числа e, вывод числа π и пользовательские отложенные напоминания.
 
+### Batch 8
+- `commands/👀 Filter` — ✅ обработано полностью.
+- Просмотрены все 16 файлов.
+- Добавлены `TOM-078–092` в `ideasALL/ideas/TOMATO_BATCH7.md`.
+- Зафиксированы 8D rotation, Bass Boost, Equalizer presets, reset EQ/filter, готовые voice/timescale эффекты и ручные pitch/speed/rate.
+- `cleareq.js` сверён с `clearfilter.js` и не добавлен отдельно.
+
 ### Текущая точка
-`commands/🏫 School Commands` закрыта. Следующая область: `commands/👀 Filter`.
+Следующая область: `commands/👑 Owner`.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
