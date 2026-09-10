@@ -26,7 +26,7 @@
 
 ## `GAwesomeBot/bot` — АКТИВЕН
 
-Ветка: `indev-4.0.2`. Фактический recursive tree проверен через Git Tree API; `truncated=false`.
+Ветка: `indev-4.0.2`. Фактический recursive tree проверен через Git tree API; `truncated=false`.
 
 ### `Commands/` — ЗАКРЫТ
 - PM: **GAB-PM-001–125**
