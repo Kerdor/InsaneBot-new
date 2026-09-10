@@ -33,28 +33,29 @@
 ### Commands — ЗАКРЫТ
 - PM: **GAB-PM-001–125**
 - Private: **GAB-PR-001–049**
-- Public: **GAB-PUB-001–672**, 74 файла включая `_base.js`.
+- Public: **GAB-PUB-001–672**.
 - Shared: **GAB-SH-001–094**.
 
 ### Configurations — ЗАКРЫТ
-Проверены все **13 файлов**. Зафиксировано **GAB-CONF-001–086**.
+Проверены все **13 файлов**. **GAB-CONF-001–086**.
 
 ### Database — ЗАКРЫТ
-Проверены все **19 файлов**: 6 верхнего уровня + 13 схем. Зафиксировано **GAB-DB-001–096**.
+Проверены все **19 файлов**: 6 верхнего уровня + 13 схем. **GAB-DB-001–096**.
 
-### Internals — 🔵 В ПРОЦЕССЕ
-Проверены core-направления `Boot`, `Client`, `Constants`, `Errors`, event framework, `Extendables`, `Extensions`, `IPC`, `Logger`, `ShardUtil`, `Sharder`, `Worker`, README и доступные Extension API-компоненты.
+### Internals — ЗАКРЫТ
+Полный каталог закрыт. **GAB-INT-001–123**.
 
-Зафиксировано **GAB-INT-001–123** в `ideasALL/ideas/GAWESOME_INTERNALS.md`.
+### Modules — ЗАКРЫТ
+Проверены все фактические файлы `Modules/` и вложенных `Emoji/`, `MessageUtils/ReactionMenus/`, `Timeouts/`, `Utils/`.
 
-Обработаны staged boot lifecycle, Safe Mode, runtime timers, hot reload, entity resolvers, violation pipeline, coded errors, event requirements/prerequisites, event registry, extendables, shard-aware IPC, shard respawn, structured logging/Sentry, plugin sandbox/scopes/storage, validated Embed builder, worker isolation, entity cleanup и audit/status pipelines.
+Зафиксировано **GAB-MOD-001–080** в `ideasALL/ideas/GAWESOME_MODULES.md`.
+
+Ключевые направления: conversion/cache и shard coordination; emoji/media pipeline; entity resolvers; external API wrappers; RSS streaming; paginated/reaction menus; parsers/reminders; long-duration timers; ModLog CRUD; voice→text access control; onboarding; polls/trivia; activity/streamer state; safe text/regex/URL helpers; MOTD; temp storage; encryption; updater; extension sandbox.
 
 ### Точная точка продолжения
 
-**Продолжить полный обход оставшихся фактических файлов `Internals/Events/` и остальных элементов `Internals/`, затем только после проверки всех файлов поставить `Internals` в ЗАВЕРШЁН.**
+**Продолжить `GAwesomeBot/bot → Temp/`, затем `Web/`.**
 
-После полного `Internals/` → `Modules/` → `Temp/` → `Web/`.
-
-Другие репозитории не трогать до полного завершения GAwesomeBot.
+Только после полного закрытия GAwesomeBot перейти к `CorwinDev/Discord-Bot`.
 
 `bot/main.py` и другая реализация InsaneBot не изменяются.
