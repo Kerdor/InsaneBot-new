@@ -93,7 +93,15 @@
 - `botconfig/` **ЗАВЕРШЁН**.
 - `social_log/` **ЗАВЕРШЁН**.
 
+### Batch 19 — `slashCommands/` — ЗАВЕРШЁН
+- `TOM-248–254` → `ideasALL/ideas/TOMATO_BATCH19.md`.
+- Рекурсивно проверены `Admin`, `Fun`, `Info`, `Music`, `NSFW` и root-level `chat.js`.
+- Slash-команды, дублирующие уже исследованные системы, не размножались.
+- Зафиксированы replay текущего трека, modstats, source-size diagnostics, расширенная invite statistics card, интерактивный FAQ, SoundCloud play+skip и общий слой image/meme generators.
+- `Info/translate.js` исключён как нерабочий в текущем виде.
+- `slashCommands/` **ЗАВЕРШЁН**.
+
 ### Следующая точка
-Перейти к следующей непроверенной top-level области/root-level файлам Tomato6966, продолжая работу большими батчами и не возвращаясь к закрытым областям без необходимости.
+Перейти к оставшимся непроверенным top-level/root-level областям Tomato6966, продолжая работу большими батчами и не возвращаясь к закрытым областям без необходимости.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
