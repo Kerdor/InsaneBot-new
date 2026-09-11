@@ -65,7 +65,24 @@
 
 Зафиксированы канонические кластеры `GD-116–160`: moderation hierarchy/safety, warnings, warning points, bans/tempbans, mute/timeout, moderation cases, mass moderation, purge, lock/unlock, staff DM и ticket panel/workflow/claim/priority/limits/transcripts/multiple systems.
 
+### Batch 5 — Roles / Progression / Social / Stats / Reports / Events / Integrations / Streams / Modlog / Quality — ЗАВЕРШЁН
+`ideasALL/research/GLOBAL_DEDUP_BATCH5.md`
+
+Обработаны:
+- `ROLES.md`
+- `PROGRESSION.md`
+- `SOCIAL.md`
+- `STATS.md`
+- `REPORTS.md`
+- `EVENTS.md`
+- `INTEGRATIONS.md`
+- `INTEGRATIONS_STREAMS_ADVANCED.md`
+- `MODLOG.md`
+- `QUALITY_AND_RELEASE.md`
+
+Зафиксированы канонические кластеры `GD-161–229`: selfroles/managed roles, XP/levels, social/AFK/relations, activity statistics, reports, persistent/recurring events, external integrations and credentials, multi-provider stream monitoring, moderation case lookup/editing/rendering и CI/security/release automation.
+
 ### Следующая точка
-Продолжить глобальную дедупликацию следующего крупного тематического блока. Batch 1–4 повторно не пересобирать без новых исходных данных.
+Продолжить глобальную дедупликацию следующего крупного тематического блока. Batch 1–5 повторно не пересобирать без новых исходных данных.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
