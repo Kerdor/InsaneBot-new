@@ -87,14 +87,20 @@
 
 ### Batch 13 — `events/` — ЗАВЕРШЁН
 - Проверены `events/client` и `events/guild`.
-- `TOM-201–216` → `ideasALL/ideas/TOMATO_BATCH13.md`.
-- Зафиксированы новые варианты: auto-clean bot-channel IDs, music request channel isolation, Bot Permission preflight, thread auto-join, unified command gateway, synthetic Message adapter, music self-healing/preconditions, dynamic status placeholders/rotation, startup diagnostics, lazy databasing, partial fetch, temporary error replies и shard lifecycle logging.
+- `TOM-201–216` → `TOMATO_BATCH13.md`.
+- Зафиксированы auto-clean bot-channel IDs, music request channel isolation, Bot Permission preflight, thread auto-join, unified command gateway, synthetic Message adapter, music self-healing/preconditions, dynamic status placeholders/rotation, startup diagnostics, lazy databasing, partial fetch, temporary error replies и shard lifecycle logging.
 - Базовые diagnostic/lifecycle hooks, пустые handlers и уже существующие механики не размножены.
+
+### Batch 14 — `handlers/` — В РАБОТЕ
+- `TOM-217–227` → `TOMATO_BATCH14.md`.
+- Проверены функциональные handlers и крупные части `aichat.js`, `anti_nuke.js`, `antiselfbot.js`, `apply.js`, `blacklist.js`, `epicgamesverification.js`, `extraevents.js`, `functions.js`, `joinvc.js`, `keyword.js`, `logger.js`, `validcode.js` и связанные handlers.
+- Новые варианты: voice-channel role while connected, обновляемые VC join/leave messages, Anti-Self-Bot detection/action thresholds, DM application safeguards, Epic Games verification flow details, keyword trigger debounce, snipe cache, auto-crosspost, persistent server-deaf, owner operational notifications и guild chunk/raid diagnostics.
+- Дубли Setup/Logger/helper-систем не размножены.
 
 ## Текущая точка
 
-`events/` **ЗАВЕРШЁН**.
+`handlers/` **НЕ ЗАКРЫТ**.
 
-Следующий этап: определить следующую функциональную директорию Tomato и обработать её **крупным последовательным батчем**, сразу записывая новые идеи и обновляя checkpoints. Не переходить к следующему источнику — Tomato ещё не закрыт.
+Следующий этап: продолжить оставшиеся функциональные handlers, затем проверить вложенные handler-поддиректории (`playermanagers`, `erela_events` если относятся к текущему дереву). После полного просмотра закрыть `handlers/` и только затем двигаться дальше.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
