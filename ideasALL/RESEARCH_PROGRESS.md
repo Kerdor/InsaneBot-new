@@ -28,23 +28,25 @@
 
 Результат: `GD-028–072`.
 
-Основные объединения: economy balance/bank, shop/inventory, periodic rewards, PayDay, P2P, admin economy operations, balance limits, leaderboards, Economy API, rob/crime, fishing/hunt/mine, gambling, global/server economy modes, economy reset/prune, giveaways, JTC, counters, role panels, birthdays, user notes, moderation cases, ticket workflow, custom commands, aliases, triggers, placeholders, embeds и server configuration.
-
 ### Batch 3 — Audio / Filtering / Games / Trivia / Fun — ✅ ЗАВЕРШЁН
 Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH3.md`
 
-Обработаны:
-- `AUDIO_INFRA.md`
-- `FILTERING.md`
-- `GAMES.md`
-- `GAMES_TRIVIA_ADVANCED.md`
-- `FUN.md`
+Обработаны `AUDIO_INFRA.md`, `FILTERING.md`, `GAMES.md`, `GAMES_TRIVIA_ADVANCED.md`, `FUN.md`.
 
 Результат: `GD-073–115`.
 
-Основные объединения: managed audio node и его lifecycle, filtering/content control, filter enforcement/modlog, mini-game architecture, game stats/daily challenges, Trivia datasets/session lifecycle/answer matching/rewards и отдельный Fun layer.
+### Batch 4 — Moderation / Tickets — ✅ ЗАВЕРШЁН
+Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH4.md`
+
+Обработаны:
+- `MODERATION.md`
+- `TICKETS.md`
+
+Результат: `GD-116–160`.
+
+Основные объединения: moderation hierarchy и Discord safety checks, warnings/warning points, ban/kick/timeout/mute workflows, moderation cases, mass moderation и purge, channel lock/unlock, staff DM, ticket panel, active-ticket limits, claim/priority, close/delete/rename, participants, notifications, transcripts и multiple ticket systems.
 
 ## Следующая точка
-Продолжить глобальную дедупликацию следующего крупного набора тематических файлов. Уже закрытые Batch 1–3 повторно не обрабатывать без необходимости.
+Продолжить глобальную дедупликацию следующего крупного набора тематических файлов. Уже закрытые Batch 1–4 повторно не обрабатывать без необходимости.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
