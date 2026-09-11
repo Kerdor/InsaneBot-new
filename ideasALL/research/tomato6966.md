@@ -28,19 +28,25 @@
 - `TOM-188–191`: bulk buy/sell, 10% sell fee, valuation inventory и leaderboard по `balance + bank + inventory value` с pagination/личным rank.
 - `TOM-192–194`: Coinflip 1.5x, Dice 4x и Slots 9x/2x payout variants.
 - `TOM-195–196`: Crime с повышенной наградой + Black Market и Rob с минимальным balance цели 500.
-- Проверены `bank.js`, `beg.js`, `blackmarket.js`, `buy.js`, `coinflip.js`, `crime.js`, `daily.js`, `deposit.js`, `dice.js`, `ecohelp.js`, `ecolb.js`, `hourly.js`, `inventory.js`, `items.js`, `monthly.js`, `pay.js`, `profile.js`, `rob.js`, `sell.js`, `slots.js`, `storeinfo.js`, `transfer.js`, `weekly.js`, `withdraw.js`, `work.js` и `balance.js`.
-- `ecohelp.js` — отдельный Economy help с группировкой команд на economy, gambling и extra; зафиксирован как `TOM-197`, новых самостоятельных механик не добавлено.
-- `work.js` подтверждён: cooldown 25 минут, случайная профессия и случайная награда 50–249 с применением Black Market multiplier; новых самостоятельных требований сверх существующих идей не выделено.
-- `sell.js` и `storeinfo.js` подтверждены как уже покрытые item-store механики; новые детали уже сохранены в `TOM-188–190`.
-- `ecolb.js` подтверждён как источник `TOM-191`; присутствуют 10 записей на страницу, reaction navigation на 45 секунд, личный rank и top-3 medals.
-- `pay.js` и `transfer.js` подтверждены как одна и та же базовая P2P money-transfer механика с разными именами/алиасами; отдельно не размножены.
-- `bank.js`, `balance.js`, `inventory.js`, `items.js`, `profile.js`, `storeinfo.js` подтверждены как UI/просмотр уже покрытых Economy-систем.
+- Проверены все 27 Economy-файлов; дубли не размножены.
+- `ecohelp.js` зафиксирован как `TOM-197`.
 
 ### Состояние
 `commands/💸 Economy` **ЗАВЕРШЁН**.
 
+## Batch 12 — `databases/` + database loader
+- Дерево `databases/` проверено; содержащиеся там артефакты — Enmap/SQLite runtime-хранилища и placeholder-файлы, а не самостоятельные команды.
+- `handlers/loaddb.js` просмотрен полностью.
+- `TOM-198`: разделение Enmap-баз по доменам и отдельным каталогам.
+- `TOM-199`: архитектурный паттерн numbered slots для до 100 независимых конфигураций одного типа.
+- `TOM-200`: инициализация обязательной структуры данных через `ensure`/default records.
+- SQLite/WAL-файлы не добавлены как отдельные идеи: это бинарные данные состояния, а не механики.
+
+### Состояние
+`databases/` **ЗАВЕРШЁН**.
+
 ## Точка продолжения
-Следующая директория Tomato — определить по recursive tree после `commands/💸 Economy`; начать с полного дерева и продолжить крупными последовательными батчами.
+Следующий проход — следующая функциональная директория Tomato после `databases/`, крупным последовательным батчем.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
