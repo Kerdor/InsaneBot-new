@@ -53,69 +53,47 @@
 Ветка: `new_2025`.
 
 ### Batch 1–9
-- `commands/⌨️ Programming` — `TOM-001–005`, закрыто.
-- `commands/⚙️ Settings` — `TOM-006–011`, закрыто.
-- `commands/⚜️ Custom Queue(s)` — `TOM-012–020`, закрыто.
-- `commands/🎮 MiniGames` — `TOM-034–058`, закрыто.
-- `commands/🎤 Voice` — `TOM-021–033`, закрыто.
-- `commands/🎶 Music` — `TOM-059–072`, закрыто.
-- `commands/🏫 School Commands` — `TOM-073–077`, закрыто.
-- `commands/👀 Filter` — `TOM-078–092`, закрыто.
-- `commands/👑 Owner` — `TOM-093–106`, закрыто.
+- `commands/Programming` — `TOM-001–005`.
+- `commands/Settings` — `TOM-006–011`.
+- `commands/Custom Queue(s)` — `TOM-012–020`.
+- `commands/Voice` — `TOM-021–033`.
+- `commands/MiniGames` — `TOM-034–058`.
+- `commands/Music` — `TOM-059–072`.
+- `commands/School Commands` — `TOM-073–077`.
+- `commands/Filter` — `TOM-078–092`.
+- `commands/Owner` — `TOM-093–106`.
 
-### Batch 10 — `commands/💪 Setup` — ЗАВЕРШЁН
-- `TOM-107–116` → `TOMATO_BATCH9.md`.
-- `TOM-117–145` → `TOMATO_BATCH9_PART2.md`.
-- `TOM-146–171` → `TOMATO_BATCH9_PART3.md`.
-- `TOM-172–184` → `TOMATO_BATCH9_PART4.md`.
+### Batch 10 — `commands/Setup` — ЗАВЕРШЁН
+- `TOM-107–184` → `TOMATO_BATCH9*.md`.
 - Recursive Setup перепроверен; redirects/дубли не размножены.
 
-### Batch 11 — `commands/💸 Economy` — ЗАВЕРШЁН
+### Batch 11 — `commands/Economy` — ЗАВЕРШЁН
+- `TOM-185–197` → `TOMATO_BATCH10.md`, `TOMATO_BATCH11.md`.
 - Recursive Economy tree проверен; все 27 command files просмотрены.
-- `TOM-185–196` → `TOMATO_BATCH10.md`.
-- `TOM-197` → `TOMATO_BATCH11.md`.
-- Зафиксированы Black Market boost/multiplier, cooldown tiers, bulk buy/sell, sell fee, inventory valuation, combined-capital leaderboard, gambling payout variants, Crime/Rob variants и Economy help panel.
 
 ### Batch 12 — `databases/` — ЗАВЕРШЁН
-- Дерево `databases/` проверено; runtime-хранилища Enmap/SQLite и placeholder-файлы.
-- `handlers/loaddb.js` проверен полностью.
 - `TOM-198–200` → `TOMATO_BATCH12.md`.
-- `TOM-198`: domain-separated Enmap storage.
-- `TOM-199`: numbered slots для масштабирования до 100 независимых конфигураций одного типа.
-- `TOM-200`: ensure/default schema initialization.
-- Бинарные SQLite/WAL-артефакты не считались отдельными механиками.
+- Runtime storage/SQLite/WAL артефакты проверены и не считались отдельными механиками.
 
 ### Batch 13 — `events/` — ЗАВЕРШЁН
-- Проверены `events/client` и `events/guild`.
 - `TOM-201–216` → `TOMATO_BATCH13.md`.
-- Зафиксированы auto-clean bot-channel IDs, music request channel isolation, Bot Permission preflight, thread auto-join, unified command gateway, synthetic Message adapter, music self-healing/preconditions, dynamic status placeholders/rotation, startup diagnostics, lazy databasing, partial fetch, temporary error replies и shard lifecycle logging.
-- Базовые diagnostic/lifecycle hooks, пустые handlers и уже существующие механики не размножены.
+- `events/client` и `events/guild` закрыты.
 
-### Batch 14 — `handlers/` — ПЕРВАЯ КРУПНАЯ ЧАСТЬ
-- `TOM-217–227` → `TOMATO_BATCH14.md`.
-- Проверены крупные functional handlers; дубли Setup/Logger/helper-систем не размножены.
-
-### Batch 15 — `handlers/playermanagers/` + `handlers/erela_events/`
-- `TOM-228–230` → `TOMATO_BATCH15.md`.
-- Обе вложенные директории проверены рекурсивно.
-- Зафиксированы timed messages, единая Music Control Panel и voice preflight.
-
-### Batch 16 — оставшиеся root-level handlers
-- `TOM-231–240` → `TOMATO_BATCH16.md`.
-- Проверены `command.js`, `slashCommands.js`, `clientvariables.js`, `counter.js`, `mute.js`, `roster.js`, `suggest.js`, `jointocreate.js`, `ticketevent.js`, `leave.js`, `welcome.js`, `ranking.js`, `membercount.js`, `reactionrole.js`, `ghost_ping_detector.js`.
-- Зафиксированы giveaway DM notifications, автоматическая передача JTC ownership, периодический JTC cleanup, двухшаговый ticket confirmation, закрытие ticket с отзывом доступа/переносом/rename, CAPTCHA quarantine role, leveling anti-farm, level role rewards, reversible suggestion votes/voter list и декларативный slash builder.
-- Дубли существующих систем не размножены.
-
-### Batch 17 — финальный recursive контроль `handlers/` — ЗАВЕРШЁН
-- `TOM-241–242` → `TOMATO_BATCH17.md`.
-- Root-level handlers из `index.js` сверены с журналом; `playermanagers/` и `erela_events/` уже закрыты в Batch 15.
-- Точечно перепроверены `antidiscord.js`, `ticket.js`, `ticketevent.js`, `boostlog.js`, `timedmessages.js`, `extraevents.js`, `clientvariables.js`, `dailyfact.js`, `autoembed.js`, `autonsfw.js`.
-- `TOM-241`: Auto-Embed по конкретному каналу или родительской категории.
-- `TOM-242`: автоматическая очистка guild-specific данных при `guildDelete`, включая масштабируемые конфигурации, с сохранением отдельных исторических/модерационных данных.
-- Остальные root-level handlers дали только уже собранные системы или инфраструктурные helpers.
+### Batch 14–17 — `handlers/` — ЗАВЕРШЁН
+- `TOM-217–242` → `TOMATO_BATCH14.md` … `TOMATO_BATCH17.md`.
+- Root-level handlers и `playermanagers/`, `erela_events/` проверены рекурсивно.
 - `handlers/` **ПОЛНОСТЬЮ ЗАВЕРШЁН**.
 
-### Следующий этап
-Перейти к следующей top-level области Tomato6966, не возвращаясь к `handlers/` без необходимости.
+### Batch 18 — `botconfig/` + `social_log/` — ЗАВЕРШЁН
+- `TOM-243–245`: Twitch Live Logger, live-role + temporary ping, автоматическое обновление Twitch OAuth.
+- `TOM-246`: Twitter Feed с фильтрацией reply/retweet и дедупликацией.
+- `TOM-247`: YouTube Feed с несколькими каналами и историей отправленных видео.
+- TikTok Logger проверен, но в текущей ветке отключён; `twitterfeed2.js` закомментирован. Оба не добавлены как рабочие механики.
+- Статические botconfig JSON не считаются самостоятельными механиками.
+- `botconfig/` **ЗАВЕРШЁН**.
+- `social_log/` **ЗАВЕРШЁН**.
+
+### Следующая точка
+Перейти к следующей непроверенной top-level области/root-level файлам Tomato6966, продолжая работу большими батчами и не возвращаясь к закрытым областям без необходимости.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
