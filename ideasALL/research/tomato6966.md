@@ -29,7 +29,7 @@
 - `TOM-192–194`: Coinflip 1.5x, Dice 4x и Slots 9x/2x payout variants.
 - `TOM-195–196`: Crime с повышенной наградой + Black Market и Rob с минимальным balance цели 500.
 - Проверены `bank.js`, `beg.js`, `blackmarket.js`, `buy.js`, `coinflip.js`, `crime.js`, `daily.js`, `deposit.js`, `dice.js`, `ecohelp.js`, `ecolb.js`, `hourly.js`, `inventory.js`, `items.js`, `monthly.js`, `pay.js`, `profile.js`, `rob.js`, `sell.js`, `slots.js`, `storeinfo.js`, `transfer.js`, `weekly.js`, `withdraw.js`, `work.js` и `balance.js`.
-- `ecohelp.js` — отдельный Economy help с группировкой команд на economy, gambling и extra; новых самостоятельных механик не добавил.
+- `ecohelp.js` — отдельный Economy help с группировкой команд на economy, gambling и extra; зафиксирован как `TOM-197`, новых самостоятельных механик не добавлено.
 - `work.js` подтверждён: cooldown 25 минут, случайная профессия и случайная награда 50–249 с применением Black Market multiplier; новых самостоятельных требований сверх существующих идей не выделено.
 - `sell.js` и `storeinfo.js` подтверждены как уже покрытые item-store механики; новые детали уже сохранены в `TOM-188–190`.
 - `ecolb.js` подтверждён как источник `TOM-191`; присутствуют 10 записей на страницу, reaction navigation на 45 секунд, личный rank и top-3 medals.
