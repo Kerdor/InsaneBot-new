@@ -56,8 +56,19 @@
 ### Состояние
 `events/` **ЗАВЕРШЁН**.
 
-## Точка продолжения
-Следующий проход — следующая функциональная директория Tomato после `events/`, крупным последовательным батчем.
+## Batch 14 — `handlers/`
+- После `events/` начат последовательный проход `handlers/`.
+- Проверены функциональные handlers, включая `aichat.js`, `anti_nuke.js`, `antiselfbot.js`, `apply.js`, `blacklist.js`, `epicgamesverification.js`, `extraevents.js`, `functions.js`, `joinvc.js`, `keyword.js`, `logger.js`, `validcode.js` и связанные runtime handlers.
+- `TOM-217–227` → `ideasALL/ideas/TOMATO_BATCH14.md`.
+- Новые/дополнительные механики: role while in voice, обновляемые VC join/leave messages, Anti-Self-Bot detection/action thresholds, DM-based application questionnaire safeguards, Epic Games verification flow details, keyword/custom-command trigger debounce, snipe cache, auto-crosspost, persistent bot server-deaf, owner operational guild join/leave DM и guild chunk/raid diagnostics.
+- `anti_nuke`, blacklist, anti-link/caps/mention, backup, auto-* и другие handlers сверены с уже собранными Setup-системами и не размножены.
+- `functions.js` признан преимущественно helper-библиотекой; отдельные уже существующие механики не добавлялись повторно.
+
+### Состояние
+`handlers/` **НЕ ЗАКРЫТ**.
+
+### Точка продолжения
+Продолжить с оставшимися функциональными файлами `handlers/`, затем проверить вложенные handler-поддиректории (`playermanagers`, `erela_events` если относятся к текущему функциональному дереву) и только после полного прохода закрыть `handlers/`.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
