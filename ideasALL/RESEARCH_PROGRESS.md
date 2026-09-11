@@ -20,7 +20,7 @@
 | 4 | `codebymitch/TitanBot` | ✅ ЗАВЕРШЁН | `research/titanbot.md` |
 | 5 | `GAwesomeBot/bot` | ✅ ЗАВЕРШЁН | `research/gawesomebot.md` |
 | 6 | `CorwinDev/Discord-Bot` | ✅ ЗАВЕРШЁН | `research/corwindev.md` |
-| 7 | `Tomato6966/Multipurpose-discord-bot` | 🔄 В РАБОТЕ | `research/tomato6966.md` |
+| 7 | `Tomato6966/Multipurpose-discord-bot` | ✅ ЗАВЕРШЁН | `research/tomato6966.md` |
 
 ## CorwinDev/Discord-Bot — COMPLETE
 Полный recursive Git Tree проверен повторно. Все обнаруженные области и root-level файлы просмотрены и сверены с банком идей.
@@ -40,7 +40,7 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 
 `CorwinDev/Discord-Bot` **ЗАВЕРШЁН**.
 
-## Tomato6966/Multipurpose-discord-bot — IN PROGRESS
+## Tomato6966/Multipurpose-discord-bot — COMPLETE
 Ветка: `new_2025`.
 
 ### Batch 1–9
@@ -110,10 +110,18 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 - `botconfig/` и `social_log/` **ЗАВЕРШЕНЫ**.
 
 ### Batch 19 — `slashCommands/` — ЗАВЕРШЁН
-- `TOM-248–254` → `ideasALL/ideas/TOMATO_BATCH19.md`.
+- `TOM-248–254` → `TOMATO_BATCH19.md`.
 - Рекурсивно проверены `Admin`, `Fun`, `Info`, `Music`, `NSFW` и root-level `chat.js`.
 - Большинство slash-команд оказались альтернативными интерфейсами уже исследованных систем и не были размножены.
 - Новые идеи: replay текущего трека, modstats, source-size diagnostics, расширенная invite statistics card, интерактивный FAQ, SoundCloud play+skip и общий слой image/meme generators.
 - `Info/translate.js` исключён как нерабочий в текущем виде.
+
+### Batch 20 — финальный root-level контроль — ЗАВЕРШЁН
+- `TOMATO_BATCH20.md`.
+- Проверены `.github/`, `assets/`, `languages/`, `.eslintrc`, `.prettierrc`, `.gitignore`, `LICENSE`, `README.md`, `example.env`, `package.json`, `bun.lockb` и `index.js`.
+- Новых самостоятельных механик не выявлено.
+- Полный top-level Git Tree ветки `new_2025` закрыт.
+
+`Tomato6966/Multipurpose-discord-bot` **ЗАВЕРШЁН**.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
