@@ -46,7 +46,6 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 - `commands/⌨️ Programming` — `TOM-001–005`, закрыто.
 - `commands/⚙️ Settings` — `TOM-006–011`, закрыто.
 - `commands/⚜️ Custom Queue(s)` — `TOM-012–020`, закрыто.
-- `commands/🎤 Voice` — `TOM-021–033`, закрыто.
 - `commands/🎮 MiniGames` — `TOM-034–058`, закрыто.
 - `commands/🎶 Music` — `TOM-059–072`, закрыто.
 - `commands/🏫 School Commands` — `TOM-073–077`, закрыто.
@@ -72,12 +71,18 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 - `handlers/loaddb.js` проверен полностью.
 - `TOM-198–200` → `ideasALL/ideas/TOMATO_BATCH12.md`.
 - `TOM-198`: domain-separated Enmap storage.
-- `TOM-199`: numbered slots до 100 конфигураций одного типа.
+- `TOM-199`: numbered slots до 100 конфигураций.
 - `TOM-200`: ensure/default schema initialization.
 - Бинарные SQLite/WAL-файлы не считались отдельными механиками.
 
+### Batch 13 — `events/` — ЗАВЕРШЁН
+- Проверены `events/client` и `events/guild`.
+- `TOM-201–216` → `ideasALL/ideas/TOMATO_BATCH13.md`.
+- Зафиксированы новые варианты: auto-clean bot-channel IDs, music request channel isolation, Bot Permission preflight, thread auto-join, unified command gateway, synthetic Message adapter, music self-healing/preconditions, dynamic status placeholders/rotation, startup diagnostics, lazy databasing, partial fetch, temporary error replies и shard lifecycle logging.
+- Базовые diagnostic/lifecycle hooks, пустые handlers и уже существующие механики не размножены.
+
 ### Текущая точка
-`databases/` **ЗАВЕРШЁН**.
+`events/` **ЗАВЕРШЁН**.
 
 Следующий проход — следующая функциональная директория Tomato, крупным последовательным батчем.
 
