@@ -31,17 +31,20 @@
 ### Batch 1 — Core / Architecture / Storage / Access — ЗАВЕРШЁН
 `ideasALL/research/GLOBAL_DEDUP_BATCH1.md`
 
-Обработаны:
-- `CORE_FRAMEWORK.md`
-- `COG_MANAGEMENT.md`
-- `ARCHITECTURE.md`
-- `CONFIGURATION.md`
-- `DATA_STORAGE.md`
-- `ACCESS_CONTROL.md`
+Зафиксированы канонические кластеры `GD-001–027`.
 
-Зафиксированы канонические кластеры `GD-001–027`: модульная архитектура, lifecycle модулей, источники расширений, безопасность установки, диагностика, hot reload, версии расширений, permission/ACL, scoped configuration, reusable UI, background tasks, persistent state, storage isolation, multi-instance, migration locking, backup/restore, scaling/deployment, localization/timezone, error/audit layers, broadcast/serverlock, runtime info и core RPC.
+### Batch 2 — Economy / Community / Customization — ЗАВЕРШЁН
+`ideasALL/research/GLOBAL_DEDUP_BATCH2.md`
+
+Обработаны:
+- `ECONOMY.md`
+- `ECONOMY_ADVANCED.md`
+- `COMMUNITY.md`
+- `CUSTOMIZATION.md`
+
+Зафиксированы канонические кластеры `GD-028–072`: базовая экономика, кошелёк/банк, магазин и инвентарь, периодические награды, PayDay, P2P, административные операции, лимиты баланса, лидерборды, Economy API, rob/crime, fishing/hunt/mine, gambling, глобальный/серверный режим, economy reset/prune, giveaways, JTC, counters, role panels, birthdays, user notes, moderation cases, ticket workflow/priority/limits/transcripts, custom commands, aliases, triggers, placeholders, embeds, welcome/goodbye и per-server configuration.
 
 ### Следующая точка
-Продолжить глобальную дедупликацию следующих тематических областей, не пересобирая уже закрытый Batch 1 без появления новых исходных данных.
+Продолжить глобальную дедупликацию следующего крупного тематического блока. Batch 1–2 повторно не пересобирать без новых исходных данных.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
