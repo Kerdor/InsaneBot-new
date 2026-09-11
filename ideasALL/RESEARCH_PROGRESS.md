@@ -85,18 +85,18 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - `commands/👑 Owner` — ✅ обработано полностью.
 - Добавлены `TOM-093–106`.
 
-### Batch 10 — `commands/💪 Setup` — В РАБОТЕ
-- Recursive tree директории проверен; содержание ещё не закрыто.
+### Batch 10 — `commands/💪 Setup` — ЗАВЕРШЁН
+- Recursive tree Setup перепроверен.
 - `TOM-107–116` в `TOMATO_BATCH9.md`.
 - `TOM-117–145` в `TOMATO_BATCH9_PART2.md`.
 - `TOM-146–171` в `TOMATO_BATCH9_PART3.md`.
-- `TOM-146–156`: language, admin command log, member counters, Menu Apply/Ticket, music request panel, Valid-Code, Joinlist, JTC.
-- `TOM-157–162`: mute style/default time, level-up reply variant, Server Roster, Report Log.
-- `TOM-163–166`: up to 100 Ticket Systems, closed-ticket category, customizable Suggestion texts and voting emojis.
-- `TOM-167–171`: TikTok logger, Twitter logger/fallback, Twitch logger with multiple channels and live/ghost-ping roles.
-- Проверены дубли: boost, logger, radio, admin, reactionrole, rank; redirects не размножались.
+- `TOM-172–184` в `TOMATO_BATCH9_PART4.md`.
+- Обработаны Setup-механики от category toggles/anti-* до Application, Auto-Support, Custom Commands, Embed, JTC, Ticket, Suggestion, social loggers, Welcome/Leave и Warn.
+- Проверены redirects и дубли: `setup-boost.js`, `setup-boostlog.js`, `setup-logger.js`, `setup-radio.js`, `setup-admin.js`, `setup-reactionrole.js`, `setup-rank.js`, `setup-serverstats.js`, а также повторные anti-* setup-файлы.
+- `setup-commands.js` подтверждён как тот же механизм массового toggle категорий (`TOM-107`).
+- `setup-boostlog.js` подтверждён как уже покрытый `TOM-114`.
 
 ### Текущая точка
-`commands/💪 Setup` **НЕ закрыта**. Продолжать с оставшихся файлов Setup после обработанного social block (`setup-tiktok.js` / `setup-twitter.js` / `setup-twitch.js`), затем последовательно закрыть остаток Setup. Не переходить к Economy до полного закрытия Setup.
+`commands/💪 Setup` **ЗАВЕРШЁН**. Следующий этап — `commands/💰 Economy`: сначала проверить recursive tree, затем идти крупными батчами, сразу записывая идеи и checkpoint.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
