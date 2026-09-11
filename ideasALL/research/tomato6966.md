@@ -1,5 +1,4 @@
 # Research Journal — Tomato6966/Multipurpose-discord-bot
-
 Источник: `Tomato6966/Multipurpose-discord-bot`
 Ветка: `new_2025`
 
@@ -82,11 +81,19 @@
 - `TOM-240`: декларативный Slash Command Builder из структуры файлов с группами, subcommands и типизированными options.
 - Большинство остальных handlers дали только подтверждение уже собранных систем или технические safeguards и отдельно не размножались.
 
-### Состояние
-`handlers/` **НЕ ЗАКРЫТ**.
+## Batch 17 — финальный recursive контроль `handlers/`
+- `TOM-241–242` → `ideasALL/ideas/TOMATO_BATCH17.md`.
+- Root-level список handlers из `index.js` сверён с журналом; вложенные `playermanagers/` и `erela_events/` закрыты ранее.
+- Точечно перепроверены `antidiscord.js`, `ticket.js`, `ticketevent.js`, `boostlog.js`, `timedmessages.js`, `extraevents.js`, `clientvariables.js`, `dailyfact.js`, `autoembed.js`, `autonsfw.js`.
+- `TOM-241`: Auto-Embed может применяться по конкретному каналу или через его родительскую категорию (`parentId`), с очисткой невалидных channel IDs.
+- `TOM-242`: при `guildDelete` бот автоматически очищает guild-specific данные из множества хранилищ и масштабируемых конфигураций, сохраняя отдельные исторические/модерационные данные.
+- Остальные root-level handlers дали только уже зафиксированные Setup/Events/Batch-механики либо инфраструктурные helpers; новых самостоятельных идей не найдено.
 
-### Точка продолжения
-Остался финальный recursive контроль `handlers/`: проверить, что в root-level и вложенных поддиректориях не осталось функциональных файлов, не просмотренных полностью. После этого можно закрыть `handlers/` и перейти к следующей области Tomato6966.
+### Состояние
+`handlers/` **ЗАВЕРШЁН**.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
+
+### Следующая точка
+Перейти к следующей top-level области Tomato6966, не возвращаясь к `handlers/` без необходимости.
