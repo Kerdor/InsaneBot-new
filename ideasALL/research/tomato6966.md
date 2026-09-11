@@ -3,94 +3,44 @@
 Источник: `Tomato6966/Multipurpose-discord-bot`
 Ветка: `new_2025`
 
-## Batch 1
-### `commands/⌨️ Programming`
-- Просмотрены `coliru.js`, `compile.js`, `github.js`, `httpstatus.js`, `npm.js`, `npmpkgsize.js`.
-- `compile.js` и `coliru.js` — одна и та же механика, объединены.
-- Зафиксированы `TOM-001–005`.
+## Batch 1–9
+- `commands/⌨️ Programming`: `TOM-001–005`.
+- `commands/⚙️ Settings`: `TOM-006–011`.
+- `commands/⚜️ Custom Queue(s)`: `TOM-012–020`.
+- `commands/🎤 Voice`: `TOM-021–033`.
+- `commands/🎮 MiniGames`: `TOM-034–058`.
+- `commands/🎶 Music`: `TOM-059–072`.
+- `commands/🏫 School Commands`: `TOM-073–077`.
+- `commands/👀 Filter`: `TOM-078–092`.
+- `commands/👑 Owner`: `TOM-093–106`.
 
-## Batch 2
-### `commands/⚙️ Settings`
-- Просмотрены все 20 файлов.
-- Зафиксированы `TOM-006–011`.
-- `prefix.js` сверён с `CORE-012`; money/AFK/music settings сверены с существующим банком.
+## Batch 10 — Setup
+- `TOM-107–116`: category toggles, Number Counter, daily facts, Anti-New-Account, Anti-Spam, Anti-Link, boost DM/log, Ghost Ping Detector, Epic Games Verification.
+- `TOM-117–145`: AI-Chat, anti-* protections, backups, Auto-Delete/Embed/Meme/NSFW, Anti-Warn toggle, Anti-Nuke, Application, Auto-Support, Custom Commands, Embed customization.
+- `TOM-146–171`: language, admin command log, Member Counter, Menu Apply/Ticket, music request panel, Valid-Code, Joinlist, JTC, mute settings, level-up reply, Roster, Report Log, Ticket, Suggestions, TikTok/Twitter/Twitch.
+- `TOM-172–184`: Welcome/Leave and Warn systems.
+- Recursive Setup закрыт; дубли/redirect не размножены.
 
-## Batch 3
-### `commands/⚜️ Custom Queue(s)` + `commands/🎤 Voice`
-- `savedqueue.js` обработан целиком: `TOM-012–020`.
-- `voice.js` обработан целиком: `TOM-021–033`.
-
-## Batch 5
-### `commands/🎮 MiniGames`
-- Вся директория проверена: `TOM-034–058`.
-- `.js.disabled`, `uno.js` и unsupported `poker-night.js` не учитывались как рабочие механики.
-
-## Batch 6
-### `commands/🎶 Music`
-- Вся директория проверена: `TOM-059–072`.
-- Проверены remaining/base controls, нерабочие и закомментированные варианты; `move.js` содержит дефект и не считается полноценной positional move механикой.
-
-## Batch 7
-### `commands/🏫 School Commands`
-- Все 5 файлов проверены: `TOM-073–077`.
-
-## Batch 8
-### `commands/👀 Filter`
-- Вся область проверена: `TOM-078–092`.
-- EQ reset duplicate не размножен; speed/rate оставлены отдельно от pitch.
-
-## Batch 9
-### `commands/👑 Owner`
-- Все 19 файлов проверены: `TOM-093–106`.
-- Отключённые/нерабочие stop/reload варианты не считались рабочими командами; PM2 restart отмечен как небезопасный без owner-check.
-
-## Batch 10 — `commands/💪 Setup`
-### Часть 1: `TOM-107–116`
-- Проверена первая часть Setup: category toggles, Number Counter, daily facts, Anti-New-Account, Anti-Spam, Anti-Link, boost DM/log, Ghost Ping Detector и Epic Games Verification.
-
-### Часть 2: `TOM-117–145`
-- Проверены AI-Chat, Anti-Caps, Anti-Discord Links, Anti-Mention, backups, Auto-Delete, Auto-Embed, Auto-Meme, Auto-NSFW, Auto-Warn batch toggle, Anti-Nuke.
-- Затем Application, Auto-Support, Custom Commands и Embed settings.
-- Зафиксированы `TOM-117–145`.
-- Redirect и повторные blacklist/anti-* setup-файлы отдельно не размножались.
-
-### Часть 3: `TOM-146–171`
-- Продолжен последовательный просмотр Setup крупными блоками.
-- `TOM-146`: интерактивная смена языка с reset/status.
-- `TOM-147`: отдельный Admin Command Log.
-- `TOM-148–149`: до 25 Member Counter систем и большой набор placeholders для серверной статистики.
-- `TOM-150`: Menu Apply до 100 конфигураций и до 25 options.
-- `TOM-151–152`: Menu Ticket до 100 конфигураций, до 25 options, access/closed category и per-system Claim messages.
-- `TOM-153`: постоянная Music Request панель.
-- `TOM-154`: Valid-Code toggle.
-- `TOM-155`: Joinlist с шестью условиями и четырьмя действиями.
-- `TOM-156`: до 100 JTC конфигураций с отдельными trigger VC и шаблонами имени.
-- `TOM-157–158`: mute style timeout/role, отдельная mute-role и составное default mute time с максимумом 1 Week.
-- `TOM-159`: level-up reply/channel вариант.
-- `TOM-160–161`: до 100 Server Roster систем и настройка style/inline/show-all-roles.
-- `TOM-162`: Report Log channel.
-- `TOM-163–164`: основной Ticket Setup до 100 systems и отдельная closed-ticket category.
-- `TOM-165–166`: Suggestion System с кастомными status texts и upvote/downvote emoji.
-- `TOM-167–168`: TikTok logger до 3 sources и кастомные notification templates с placeholders.
-- `TOM-169–170`: Twitter logger, retweet toggle и Manual Setup fallback для username/ID.
-- `TOM-171`: Twitch logger до 10 sources, связка с Discord user, custom message, publication channel, live role, ghost-ping role и multi-remove.
-- `setup-boost.js`, `setup-logger.js`, `setup-radio.js`, `setup-admin.js` проверены как дубли/варианты уже собранных систем.
-- `setup-serverstats.js` — redirect на `setup-membercount`.
-- `setup-reactionrole.js` сверён с существующей Reaction Roles системой и новых самостоятельных требований не добавил.
-- `setup-rank.js` сверён с `TITAN_LEVELING`; сохранён только reply-vs-channel вариант.
-
-### Часть 4: `TOM-172–184`
-- Проверены оставшиеся Welcome/Leave/Warn setup-файлы.
-- `TOM-172–175`: раздельные welcome channel/DM, второй обычный welcome channel, welcome roles и CAPTCHA security layer.
-- `TOM-176–181`: auto/custom welcome/leave images, background, frame/tag/membercount/servername toggles, invite information, Welcome test и отдельный Leave Message System.
-- `TOM-182–184`: Warn thresholds для kick/ban, role rewards по числу warn и их комбинирование.
-- После этого recursive Setup-путь перепроверен по `setup-*`; рабочие standalone setup-механики закрыты, redirects/дубли отдельно не размножались.
+## Batch 11 — `commands/💸 Economy`
+### Batch 1: `TOM-185–196`
+- Recursive Economy tree проверен. Найдены 27 command files, включая `buy`, `rob`, `beg`, `pay`, `dice`, `sell`, `work`, `bank`, `daily`, `ecolb`, `crime`, `slots`, `items`, `weekly`, `hourly`, `deposit`, `balance`, `ecohelp`, `monthly`, `profile`, `coinflip`, `transfer`, `withdraw`, `inventory`, `storeinfo`, `blackmarket`.
+- `buy`, `sell`, `balance`, `bank`, `inventory`, `profile`, `storeinfo` используют фиксированный item catalog и считают стоимость имущества.
+- `deposit`/`withdraw` поддерживают `ALL` для полного перемещения wallet↔bank; обычные суммы проверяются на наличие средств.
+- `daily`, `hourly`, `weekly`, `monthly` используют отдельные cooldown timestamps и один общий Black Market multiplier.
+- `beg`, `work`, `crime`, `rob` также получают Black Market multiplier; `crime` использует повышенную базовую награду, `rob` требует минимум 500 у цели.
+- `blackmarket.js`: за 10k за каждый дополнительный множитель пользователь покупает multiplier 2–5x на 5 дней; multiplier применяется к earning-командам.
+- `sell.js`: продажа возвращает 90% цены; поддерживается bulk quantity.
+- `buy.js`: bulk quantity, общая стоимость и проверка balance до покупки.
+- `ecolb.js`: рейтинг по `balance + bank + inventory value`, pagination по 10, personal rank и top-3 medals.
+- `coinflip.js`: heads/tails, payout 1.5x при победе.
+- `dice.js`: выбор 1–6, payout 4x при точном совпадении.
+- `slots.js`: три символа; 3 одинаковых = 9x, 2 одинаковых = 2x, иначе ставка списывается.
+- `items.js`/`inventory.js`/`profile.js`: показывают количество и денежную стоимость фиксированного набора предметов.
+- Стандартные `pay`, `transfer`, `deposit`, `withdraw`, `bank`, `balance`, `inventory`, `profile`, `storeinfo`, `items` как отдельные идеи не размножены; сохранены только новые варианты/детали.
+- Зафиксированы `TOM-185–196` в `ideasALL/ideas/TOMATO_BATCH10.md`.
 
 ### Состояние
-`commands/💪 Setup` **ЗАВЕРШЁН**.
+`commands/💸 Economy` **НЕ ЗАВЕРШЁН**.
 
 ## Точка продолжения
-Следующий источник внутри Tomato — `commands/💰 Economy` (или соответствующая следующая директория в recursive tree). Начать с полного дерева и затем обрабатывать крупными последовательными батчами.
-
-## Статус
-Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
+Продолжать Economy с оставшихся файлов/проверки `ecohelp.js` и убедиться, что все 27 файлов директории закрыты и сверены. После полного закрытия переходить к следующей директории Tomato.
