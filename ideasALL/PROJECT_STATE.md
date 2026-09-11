@@ -54,9 +54,18 @@
 - `GAMES_TRIVIA_ADVANCED.md`
 - `FUN.md`
 
-Зафиксированы канонические кластеры `GD-073–115`: managed audio backend, runtime/process lifecycle, filtering pipeline, filter enforcement, mini-games, game statistics, daily challenges, Trivia sessions и наборы вопросов, Trivia UX/answer matching, Fun layer и random/media fun mechanics.
+Зафиксированы канонические кластеры `GD-073–115`.
+
+### Batch 4 — Moderation / Tickets — ЗАВЕРШЁН
+`ideasALL/research/GLOBAL_DEDUP_BATCH4.md`
+
+Обработаны:
+- `MODERATION.md`
+- `TICKETS.md`
+
+Зафиксированы канонические кластеры `GD-116–160`: moderation hierarchy/safety, warnings, warning points, bans/tempbans, mute/timeout, moderation cases, mass moderation, purge, lock/unlock, staff DM и ticket panel/workflow/claim/priority/limits/transcripts/multiple systems.
 
 ### Следующая точка
-Продолжить глобальную дедупликацию следующего крупного тематического блока. Batch 1–3 повторно не пересобирать без новых исходных данных.
+Продолжить глобальную дедупликацию следующего крупного тематического блока. Batch 1–4 повторно не пересобирать без новых исходных данных.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
