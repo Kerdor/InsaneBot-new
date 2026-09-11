@@ -98,10 +98,19 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - `TOM-136–139`: многоэкземплярный Auto-Support, до 25 вариантов, индивидуальный Embed/обычный ответ, повторная публикация панели в выбранный канал.
 - `TOM-140–141`: Custom Commands до 25 на сервер и выбор Embed/обычного ответа.
 - `TOM-142–145`: глобальный цвет Embed, footer icon из URL/вложения, footer text и toggle thumbnail.
-- `setup-antispam.js` сверён с `TOM-111`; новых самостоятельных механик не добавлено.
-- Redirect-файлы `setup-antimassmention.js`, `setup-antimasspings.js`, `setup-antipings.js`, `setup-auditlog.js` отдельно не считаются.
+- `TOM-146–156` добавлены в `ideasALL/ideas/TOMATO_BATCH9_PART3.md`.
+- `TOM-146`: интерактивная смена языка с reset/status и несколькими языками.
+- `TOM-147`: отдельный канал для логирования выполнения административных команд.
+- `TOM-148–149`: до 25 Member Counter систем и расширенные placeholders серверной статистики для имён каналов.
+- `TOM-150`: Menu Apply с до 100 конфигураций и до 25 вариантов в панели.
+- `TOM-151–152`: Menu Ticket до 100 конфигураций, до 25 вариантов, general access/closed category и per-system claim с кастомными сообщениями.
+- `TOM-153`: постоянная Music Request панель с кнопками управления.
+- `TOM-154`: toggle Valid-Code системы.
+- `TOM-155`: Joinlist с шестью типами условий и четырьмя действиями при join.
+- `TOM-156`: до 100 независимых JTC конфигураций, создание trigger или использование текущего VC и кастомное имя временных комнат.
+- Проверены и сверены дубли: `setup-boost.js`, `setup-logger.js`, `setup-radio.js`, `setup-admin.js`; `setup-serverstats.js` — redirect на membercount.
 
 ### Текущая точка
-`commands/💪 Setup` **НЕ закрыта**. Продолжить после `setup-embed.js`, то есть с `setup-joinlist.js` и далее по tree. Не переходить к Economy до полного закрытия Setup.
+`commands/💪 Setup` **НЕ закрыта**. Следующий участок — продолжать с оставшихся файлов Setup после уже обработанного блока (ориентир: следующие файлы после `setup-membercount.js` / `setup-menuticket.js` / `setup-music.js`). Не переходить к Economy до полного закрытия Setup.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
