@@ -56,7 +56,7 @@
 ### Состояние
 `events/` **ЗАВЕРШЁН**.
 
-## Batch 14 — `handlers/`
+## Batch 14 — `handlers/` — первая крупная часть
 - После `events/` начат последовательный проход `handlers/`.
 - Проверены функциональные handlers, включая `aichat.js`, `anti_nuke.js`, `antiselfbot.js`, `apply.js`, `blacklist.js`, `epicgamesverification.js`, `extraevents.js`, `functions.js`, `joinvc.js`, `keyword.js`, `logger.js`, `validcode.js` и связанные runtime handlers.
 - `TOM-217–227` → `ideasALL/ideas/TOMATO_BATCH14.md`.
@@ -64,11 +64,20 @@
 - `anti_nuke`, blacklist, anti-link/caps/mention, backup, auto-* и другие handlers сверены с уже собранными Setup-системами и не размножены.
 - `functions.js` признан преимущественно helper-библиотекой; отдельные уже существующие механики не добавлялись повторно.
 
+## Batch 15 — `handlers/playermanagers/` + `handlers/erela_events/`
+- `playermanagers/` проверен: `playlist.js`, `playtop.js`, `request.js`, `search.js`, `similar.js`, `skiptrack.js`, `song.js`.
+- `erela_events/` проверен по дереву: `client_events.js`, `creation.js`, `events.js`, `musicsystem.js`, `node_events.js`; крупные playback lifecycle и music panel участки просмотрены.
+- `TOM-228–230` → `ideasALL/ideas/TOMATO_BATCH15.md`.
+- `TOM-228`: timed messages по дням/часам/минутам через cron.
+- `TOM-229`: единая интерактивная Music Control Panel с кнопками playback/seek/loop/autoplay/shuffle и динамическим состоянием.
+- `TOM-230`: единый music voice preflight с проверками CONNECT, SPEAK и переполнения voice channel до маршрутизации конкретного player manager.
+- Уже собранные playlist/search/similar/skiptrack/playtop и отдельные music controls не размножены; сохранены только новые UX/архитектурные варианты.
+
 ### Состояние
 `handlers/` **НЕ ЗАКРЫТ**.
 
 ### Точка продолжения
-Продолжить с оставшимися функциональными файлами `handlers/`, затем проверить вложенные handler-поддиректории (`playermanagers`, `erela_events` если относятся к текущему функциональному дереву) и только после полного прохода закрыть `handlers/`.
+Продолжить с оставшимися root-level functional handlers из `handlers/`, которые ещё не были полностью закрыты, и отдельно сверить ticket/welcome/leave/ranking/reactionrole/roster/suggest и прочие оставшиеся крупные handlers. После полного recursive прохода закрыть `handlers/`.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
