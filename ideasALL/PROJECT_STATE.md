@@ -75,8 +75,9 @@
 
 - Recursive tree проверен; все 27 command files просмотрены.
 - `TOM-185–196` → `ideasALL/ideas/TOMATO_BATCH10.md`.
+- `TOM-197` → `ideasALL/ideas/TOMATO_BATCH11.md`.
 - Зафиксированы Black Market boost/multiplier, разные cooldown tiers, bulk buy/sell, sell fee, inventory valuation, combined-capital leaderboard, Coinflip/Dice/Slots payout variants, Crime и Rob variants.
-- `ecohelp.js`, `work.js`, `sell.js`, `ecolb.js` и остальные Economy-файлы дополнительно перепроверены; новых самостоятельных механик сверх уже записанных не найдено.
+- `ecohelp.js`, `work.js`, `sell.js`, `ecolb.js` и остальные Economy-файлы дополнительно перепроверены; новых самостоятельных механик сверх уже записанных не найдено, кроме `TOM-197` (Economy help panel).
 - Стандартные balance/bank/pay/deposit/withdraw/transfer/inventory/profile/storeinfo/items не размножены без новых требований.
 
 ## Текущая точка
