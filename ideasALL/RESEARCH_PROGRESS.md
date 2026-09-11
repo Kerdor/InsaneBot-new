@@ -42,11 +42,13 @@
 Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH6.md`
 Результат: `GD-230–259`.
 
-Основные объединения: DM profile wizard, personal server aliases, DM control-plane/relay, DM poll/giveaway workflows, dynamic permission-aware help, channel cooldown/quiet, persistent counters, structured message archive, filtered bulk cleanup, emoji tooling, URL redirect safety, temporary talk rooms, server to-do list, points lottery, weekly stats reset, command-usage stats, rank-specific leaderboards, RSS aliases, NSFW provider gates и Bitly utility.
+### Batch 7 — GAwesome Web — ✅ ЗАВЕРШЁН
+Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH7.md`
+Результат: `GD-260–284`.
 
-Важно: Batch 6 не закрывает весь GAwesome Public. Дополнительные Public-файлы ещё должны пройти source-specific review и затем попасть в отдельный dedup pass.
+Основные объединения: web DTO/presentation layer, privacy-aware profiles, public server listings, extension gallery/versioning, dashboard control plane, bulk/transactional/partial configuration, Discord web authentication, route-level authorization, XSS-safe Markdown, controller/API separation, isolated public/maintainer surfaces и web server lifecycle.
 
 ## Следующая точка
-Закончить `GAwesomeBot/Commands/Public/`, затем повторно сверить новые GAwesome mechanics с `GD-001–259`. RoadMap пока не строить.
+Закончить `GAwesomeBot/Commands/Public/`, затем повторно сверить новые GAwesome Public mechanics с `GD-001–284`. RoadMap пока не строить.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
