@@ -103,12 +103,19 @@
 ### Batch 16 — оставшиеся root-level handlers
 - `TOM-231–240` → `TOMATO_BATCH16.md`.
 - Проверены `command.js`, `slashCommands.js`, `clientvariables.js`, `counter.js`, `mute.js`, `roster.js`, `suggest.js`, `jointocreate.js`, `ticketevent.js`, `leave.js`, `welcome.js`, `ranking.js`, `membercount.js`, `reactionrole.js`, `ghost_ping_detector.js`.
-- Зафиксированы giveaway DM notifications, автоматическая передача JTC ownership, периодический JTC cleanup, двухшаговое ticket confirmation, закрытие ticket с отзывом доступа/переносом/rename, CAPTCHA quarantine role, leveling anti-farm, level role rewards, reversible suggestion votes/voter list и декларативный slash builder.
+- Зафиксированы giveaway DM notifications, автоматическая передача JTC ownership, периодический JTC cleanup, двухшаговый ticket confirmation, закрытие ticket с отзывом доступа/переносом/rename, CAPTCHA quarantine role, leveling anti-farm, level role rewards, reversible suggestion votes/voter list и декларативный slash builder.
 - Дубли существующих систем не размножены.
 
-### Текущая точка
-`handlers/` **НЕ ЗАКРЫТ**.
+### Batch 17 — финальный recursive контроль `handlers/` — ЗАВЕРШЁН
+- `TOM-241–242` → `TOMATO_BATCH17.md`.
+- Root-level handlers из `index.js` сверены с журналом; `playermanagers/` и `erela_events/` уже закрыты в Batch 15.
+- Точечно перепроверены `antidiscord.js`, `ticket.js`, `ticketevent.js`, `boostlog.js`, `timedmessages.js`, `extraevents.js`, `clientvariables.js`, `dailyfact.js`, `autoembed.js`, `autonsfw.js`.
+- `TOM-241`: Auto-Embed по конкретному каналу или родительской категории.
+- `TOM-242`: автоматическая очистка guild-specific данных при `guildDelete`, включая масштабируемые конфигурации, с сохранением отдельных исторических/модерационных данных.
+- Остальные root-level handlers дали только уже собранные системы или инфраструктурные helpers.
+- `handlers/` **ПОЛНОСТЬЮ ЗАВЕРШЁН**.
 
-Следующий этап: финальный recursive контроль дерева `handlers/`, проверка любых ещё не просмотренных файлов/поддиректорий и точечная сверка небольших handlers. Только после фактического полного покрытия закрыть `handlers/`.
+### Следующий этап
+Перейти к следующей top-level области Tomato6966, не возвращаясь к `handlers/` без необходимости.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
