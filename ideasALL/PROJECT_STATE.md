@@ -24,7 +24,7 @@
 4. **codebymitch/TitanBot — ЗАВЕРШЁН.**
 5. **GAwesomeBot/bot — ЗАВЕРШЁН.**
 6. **CorwinDev/Discord-Bot — ЗАВЕРШЁН.**
-7. **Tomato6966/Multipurpose-discord-bot — В РАБОТЕ.**
+7. **Tomato6966/Multipurpose-discord-bot — ЗАВЕРШЁН.**
 
 ## CorwinDev/Discord-Bot — COMPLETE
 
@@ -48,7 +48,7 @@
 
 `CorwinDev/Discord-Bot` **ПОЛНОСТЬЮ ЗАВЕРШЁН**.
 
-## Tomato6966/Multipurpose-discord-bot — IN PROGRESS
+## Tomato6966/Multipurpose-discord-bot — COMPLETE
 
 Ветка: `new_2025`.
 
@@ -94,14 +94,22 @@
 - `social_log/` **ЗАВЕРШЁН**.
 
 ### Batch 19 — `slashCommands/` — ЗАВЕРШЁН
-- `TOM-248–254` → `ideasALL/ideas/TOMATO_BATCH19.md`.
+- `TOM-248–254` → `TOMATO_BATCH19.md`.
 - Рекурсивно проверены `Admin`, `Fun`, `Info`, `Music`, `NSFW` и root-level `chat.js`.
 - Slash-команды, дублирующие уже исследованные системы, не размножались.
 - Зафиксированы replay текущего трека, modstats, source-size diagnostics, расширенная invite statistics card, интерактивный FAQ, SoundCloud play+skip и общий слой image/meme generators.
 - `Info/translate.js` исключён как нерабочий в текущем виде.
 - `slashCommands/` **ЗАВЕРШЁН**.
 
+### Batch 20 — финальный root-level контроль — ЗАВЕРШЁН
+- `TOMATO_BATCH20.md`.
+- Проверены `.github/`, `assets/`, `languages/`, `.eslintrc`, `.prettierrc`, `.gitignore`, `LICENSE`, `README.md`, `example.env`, `package.json`, `bun.lockb` и `index.js`.
+- Новых самостоятельных механик не выявлено.
+- Полный top-level Git Tree ветки `new_2025` закрыт.
+
+`Tomato6966/Multipurpose-discord-bot` **ПОЛНОСТЬЮ ЗАВЕРШЁН**.
+
 ### Следующая точка
-Перейти к оставшимся непроверенным top-level/root-level областям Tomato6966, продолжая работу большими батчами и не возвращаясь к закрытым областям без необходимости.
+Все 7 источников из текущей очереди обработаны. Следующий этап — **глобальная обработка банка идей**: собрать идеи из всех `COR-*`/`TOM-*` и предыдущих файлов, найти пересечения, объединить дубликаты, сохранить уникальные UX/варианты и затем построить нормальный порядок реализации/RoadMap.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
