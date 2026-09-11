@@ -72,14 +72,22 @@
 - `Admin`, `Info`, `Music`, `Fun` и `NSFW` рекурсивно просмотрены; повторяющиеся slash-варианты существующих систем не размножены.
 - `Info/translate.js` исключён как нерабочий в текущем виде из-за обращения к неопределённому `args`.
 
+## Batch 20 — финальный root-level контроль
+- Проверены `.github/`, `assets/`, `languages/`, `.eslintrc`, `.prettierrc`, `.gitignore`, `LICENSE`, `README.md`, `example.env`, `package.json`, `bun.lockb` и `index.js`.
+- `.github/` содержит только Funding/Issue Templates; `assets/` — графику и шрифты; `languages/` — локализации; конфиги/lockfile/README/LICENSE — сервисные файлы.
+- `index.js` проверен как bootstrap: client settings/intents/presence, language loading, handler loading и login; самостоятельных незафиксированных runtime-механик не выявлено.
+- Новых идей для банка не выявлено.
+- `TOMATO_BATCH20.md` фиксирует полный финальный контроль top-level дерева.
+
 ### Состояние
 `handlers/` **ЗАВЕРШЁН**.
 `botconfig/` **ЗАВЕРШЁН**.
 `social_log/` **ЗАВЕРШЁН**.
 `slashCommands/` **ЗАВЕРШЁН**.
+Весь `Tomato6966/Multipurpose-discord-bot` на ветке `new_2025` **ЗАВЕРШЁН**.
 
 ## Статус
-Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
+Tomato6966/Multipurpose-discord-bot — **ЗАВЕРШЁН**.
 
 ### Следующая точка
-Перейти к оставшимся непроверенным top-level/root-level областям Tomato6966, не возвращаясь к закрытым областям без необходимости.
+Перейти к следующему источнику исследования после Tomato6966. На текущем этапе глобальная дедупликация/сортировка всех собранных идей ещё не выполняется — сначала должны быть полностью обработаны все источники из очереди.
