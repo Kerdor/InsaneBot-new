@@ -60,9 +60,14 @@
 ### Batch 7 — GAwesome Web — ЗАВЕРШЁН
 `ideasALL/research/GLOBAL_DEDUP_BATCH7.md`
 
-Зафиксированы канонические кластеры `GD-260–284`: web DTO, privacy-aware profiles, public server listings, extension gallery/versioning, dashboard control plane, transactional/partial configuration, Discord web authentication, route authorization boundaries, XSS-safe Markdown, controller/API separation, public content surfaces, maintainer dashboard и web lifecycle isolation.
+Зафиксированы канонические кластеры `GD-260–284`.
 
-### Следующая точка
-Начать сверку оставшихся GAwesome Public mechanics с `GD-001–284` и продолжить глобальную дедупликацию с `GD-285`. RoadMap пока не строить.
+### Batch 8 — GAwesome Public final dedup — ЗАВЕРШЁН
+`ideasALL/research/GLOBAL_DEDUP_BATCH8.md`
+
+Зафиксированы новые канонические кластеры `GD-285–287`: named persistent server countdowns, self/admin nickname management, role inspection with effective permissions.
+
+## Следующая точка
+Продолжить глобальную дедупликацию следующих тематических/оставшихся source-specific находок с `GD-288`. RoadMap пока не строить.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
