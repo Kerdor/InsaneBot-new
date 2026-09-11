@@ -85,9 +85,15 @@
 - `TOM-200`: инициализация обязательной структуры данных через `ensure`/default records.
 - Бинарные SQLite/WAL-артефакты отдельно как идеи не учитывались.
 
+### Batch 13 — `events/` — ЗАВЕРШЁН
+- Проверены `events/client` и `events/guild`.
+- `TOM-201–216` → `ideasALL/ideas/TOMATO_BATCH13.md`.
+- Зафиксированы новые варианты: auto-clean bot-channel IDs, music request channel isolation, Bot Permission preflight, thread auto-join, unified command gateway, synthetic Message adapter, music self-healing/preconditions, dynamic status placeholders/rotation, startup diagnostics, lazy databasing, partial fetch, temporary error replies и shard lifecycle logging.
+- Базовые diagnostic/lifecycle hooks, пустые handlers и уже существующие механики не размножены.
+
 ## Текущая точка
 
-`databases/` **ЗАВЕРШЁН**.
+`events/` **ЗАВЕРШЁН**.
 
 Следующий этап: определить следующую функциональную директорию Tomato и обработать её **крупным последовательным батчем**, сразу записывая новые идеи и обновляя checkpoints. Не переходить к следующему источнику — Tomato ещё не закрыт.
 
