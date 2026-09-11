@@ -3,13 +3,13 @@
 Этот файл — контрольная точка для продолжения исследования без потери позиции.
 
 ## Этап 1 — сбор источников
-Основные 7 источников исследованы, но при дополнительной сверке обнаружено, что `GAwesomeBot/Commands/Public/` в source-specific checkpoint был помечен как незакрытый. Поэтому его финальный проход не считаем закрытым до фактического завершения.
+Все 7 основных источников исследованы и source-specific checkpoints закрыты.
 
 1. `Cog-Creators/Red-DiscordBot` — ✅
 2. `python-discord/bot` — ✅
 3. `ItzSudhan/Discord-MusicBot` — ✅
 4. `codebymitch/TitanBot` — ✅
-5. `GAwesomeBot/bot` — ⚠️ PM/Private закрыты; Public требует финального прохода
+5. `GAwesomeBot/bot` — ✅ PM, Private и полный `Commands/Public/` закрыты
 6. `CorwinDev/Discord-Bot` — ✅
 7. `Tomato6966/Multipurpose-discord-bot` — ✅
 
@@ -49,6 +49,6 @@
 Основные объединения: web DTO/presentation layer, privacy-aware profiles, public server listings, extension gallery/versioning, dashboard control plane, bulk/transactional/partial configuration, Discord web authentication, route-level authorization, XSS-safe Markdown, controller/API separation, isolated public/maintainer surfaces и web server lifecycle.
 
 ## Следующая точка
-Закончить `GAwesomeBot/Commands/Public/`, затем повторно сверить новые GAwesome Public mechanics с `GD-001–284`. RoadMap пока не строить.
+Начать **Global Dedup Batch 8**: повторно сверить оставшиеся GAwesome Public mechanics с `GD-001–284` и зафиксировать только действительно новые канонические кластеры, начиная с `GD-285`. RoadMap пока не строить.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
