@@ -82,9 +82,15 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 - Зафиксированы новые варианты: auto-clean bot-channel IDs, music request channel isolation, Bot Permission preflight, thread auto-join, unified command gateway, synthetic Message adapter, music self-healing/preconditions, dynamic status placeholders/rotation, startup diagnostics, lazy databasing, partial fetch, temporary error replies и shard lifecycle logging.
 - Базовые diagnostic/lifecycle hooks, пустые handlers и уже существующие механики не размножены.
 
-### Текущая точка
-`events/` **ЗАВЕРШЁН**.
+### Batch 14 — `handlers/` — В РАБОТЕ
+- `TOM-217–227` → `ideasALL/ideas/TOMATO_BATCH14.md`.
+- Проверены функциональные handlers и крупные части `aichat.js`, `anti_nuke.js`, `antiselfbot.js`, `apply.js`, `blacklist.js`, `epicgamesverification.js`, `extraevents.js`, `functions.js`, `joinvc.js`, `keyword.js`, `logger.js`, `validcode.js` и связанные handlers.
+- Зафиксированы: voice-channel roles, обновляемые VC join/leave messages, Anti-Self-Bot variants, DM application safeguards, Epic Games verification flow details, keyword trigger debounce, snipe cache, auto-crosspost, persistent server-deaf, owner operational notifications и guild chunk/raid diagnostics.
+- Дубли существующих Setup/Logger/utility систем не размножены.
 
-Следующий проход — следующая функциональная директория Tomato, крупным последовательным батчем.
+### Текущая точка
+`handlers/` **НЕ ЗАКРЫТ**.
+
+Следующий проход: оставшиеся функциональные handlers, затем вложенные handler-поддиректории (`playermanagers`, `erela_events` если относятся к текущему дереву). После полного просмотра закрыть `handlers/` и только затем двигаться дальше.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
