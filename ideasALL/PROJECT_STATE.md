@@ -42,9 +42,21 @@
 - `COMMUNITY.md`
 - `CUSTOMIZATION.md`
 
-Зафиксированы канонические кластеры `GD-028–072`: базовая экономика, кошелёк/банк, магазин и инвентарь, периодические награды, PayDay, P2P, административные операции, лимиты баланса, лидерборды, Economy API, rob/crime, fishing/hunt/mine, gambling, глобальный/серверный режим, economy reset/prune, giveaways, JTC, counters, role panels, birthdays, user notes, moderation cases, ticket workflow/priority/limits/transcripts, custom commands, aliases, triggers, placeholders, embeds, welcome/goodbye и per-server configuration.
+Зафиксированы канонические кластеры `GD-028–072`.
+
+### Batch 3 — Audio / Filtering / Games / Trivia / Fun — ЗАВЕРШЁН
+`ideasALL/research/GLOBAL_DEDUP_BATCH3.md`
+
+Обработаны:
+- `AUDIO_INFRA.md`
+- `FILTERING.md`
+- `GAMES.md`
+- `GAMES_TRIVIA_ADVANCED.md`
+- `FUN.md`
+
+Зафиксированы канонические кластеры `GD-073–115`: managed audio backend, runtime/process lifecycle, filtering pipeline, filter enforcement, mini-games, game statistics, daily challenges, Trivia sessions и наборы вопросов, Trivia UX/answer matching, Fun layer и random/media fun mechanics.
 
 ### Следующая точка
-Продолжить глобальную дедупликацию следующего крупного тематического блока. Batch 1–2 повторно не пересобирать без новых исходных данных.
+Продолжить глобальную дедупликацию следующего крупного тематического блока. Batch 1–3 повторно не пересобирать без новых исходных данных.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
