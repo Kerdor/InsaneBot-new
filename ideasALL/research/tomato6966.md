@@ -23,24 +23,24 @@
 
 ## Batch 11 — `commands/💸 Economy`
 ### Batch 1: `TOM-185–196`
-- Recursive Economy tree проверен. Найдены 27 command files, включая `buy`, `rob`, `beg`, `pay`, `dice`, `sell`, `work`, `bank`, `daily`, `ecolb`, `crime`, `slots`, `items`, `weekly`, `hourly`, `deposit`, `balance`, `ecohelp`, `monthly`, `profile`, `coinflip`, `transfer`, `withdraw`, `inventory`, `storeinfo`, `blackmarket`.
-- `buy`, `sell`, `balance`, `bank`, `inventory`, `profile`, `storeinfo` используют фиксированный item catalog и считают стоимость имущества.
-- `deposit`/`withdraw` поддерживают `ALL` для полного перемещения wallet↔bank; обычные суммы проверяются на наличие средств.
-- `daily`, `hourly`, `weekly`, `monthly` используют отдельные cooldown timestamps и один общий Black Market multiplier.
-- `beg`, `work`, `crime`, `rob` также получают Black Market multiplier; `crime` использует повышенную базовую награду, `rob` требует минимум 500 у цели.
-- `blackmarket.js`: за 10k за каждый дополнительный множитель пользователь покупает multiplier 2–5x на 5 дней; multiplier применяется к earning-командам.
-- `sell.js`: продажа возвращает 90% цены; поддерживается bulk quantity.
-- `buy.js`: bulk quantity, общая стоимость и проверка balance до покупки.
-- `ecolb.js`: рейтинг по `balance + bank + inventory value`, pagination по 10, personal rank и top-3 medals.
-- `coinflip.js`: heads/tails, payout 1.5x при победе.
-- `dice.js`: выбор 1–6, payout 4x при точном совпадении.
-- `slots.js`: три символа; 3 одинаковых = 9x, 2 одинаковых = 2x, иначе ставка списывается.
-- `items.js`/`inventory.js`/`profile.js`: показывают количество и денежную стоимость фиксированного набора предметов.
-- Стандартные `pay`, `transfer`, `deposit`, `withdraw`, `bank`, `balance`, `inventory`, `profile`, `storeinfo`, `items` как отдельные идеи не размножены; сохранены только новые варианты/детали.
-- Зафиксированы `TOM-185–196` в `ideasALL/ideas/TOMATO_BATCH10.md`.
+- Recursive Economy tree проверен; все 27 command files просмотрены.
+- `TOM-185–187`: общий Black Market multiplier, покупаемый boost 2–5x на 5 дней и отдельные cooldown tiers.
+- `TOM-188–191`: bulk buy/sell, 10% sell fee, valuation inventory и leaderboard по `balance + bank + inventory value` с pagination/личным rank.
+- `TOM-192–194`: Coinflip 1.5x, Dice 4x и Slots 9x/2x payout variants.
+- `TOM-195–196`: Crime с повышенной наградой + Black Market и Rob с минимальным balance цели 500.
+- Проверены `bank.js`, `beg.js`, `blackmarket.js`, `buy.js`, `coinflip.js`, `crime.js`, `daily.js`, `deposit.js`, `dice.js`, `ecohelp.js`, `ecolb.js`, `hourly.js`, `inventory.js`, `items.js`, `monthly.js`, `pay.js`, `profile.js`, `rob.js`, `sell.js`, `slots.js`, `storeinfo.js`, `transfer.js`, `weekly.js`, `withdraw.js`, `work.js` и `balance.js`.
+- `ecohelp.js` — отдельный Economy help с группировкой команд на economy, gambling и extra; новых самостоятельных механик не добавил.
+- `work.js` подтверждён: cooldown 25 минут, случайная профессия и случайная награда 50–249 с применением Black Market multiplier; новых самостоятельных требований сверх существующих идей не выделено.
+- `sell.js` и `storeinfo.js` подтверждены как уже покрытые item-store механики; новые детали уже сохранены в `TOM-188–190`.
+- `ecolb.js` подтверждён как источник `TOM-191`; присутствуют 10 записей на страницу, reaction navigation на 45 секунд, личный rank и top-3 medals.
+- `pay.js` и `transfer.js` подтверждены как одна и та же базовая P2P money-transfer механика с разными именами/алиасами; отдельно не размножены.
+- `bank.js`, `balance.js`, `inventory.js`, `items.js`, `profile.js`, `storeinfo.js` подтверждены как UI/просмотр уже покрытых Economy-систем.
 
 ### Состояние
-`commands/💸 Economy` **НЕ ЗАВЕРШЁН**.
+`commands/💸 Economy` **ЗАВЕРШЁН**.
 
 ## Точка продолжения
-Продолжать Economy с оставшихся файлов/проверки `ecohelp.js` и убедиться, что все 27 файлов директории закрыты и сверены. После полного закрытия переходить к следующей директории Tomato.
+Следующая директория Tomato — определить по recursive tree после `commands/💸 Economy`; начать с полного дерева и продолжить крупными последовательными батчами.
+
+## Статус
+Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
