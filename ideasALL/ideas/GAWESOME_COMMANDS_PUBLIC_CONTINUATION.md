@@ -10,7 +10,7 @@
 - `invite.js` — выдача bot invite URL; самостоятельной новой механики не обнаружено.
 - `joke.js` — внешний joke provider, progress message, ограничение длины результата и error fallback; отдельной новой механики относительно уже собранного UX/integration слоя нет.
 - `list.js` — server to-do list; уже канонизирована как **GD-248**.
-- `lottery.js` — scaled points lottery; уже канонизирована как **GD-249**.
+- `lottery.js` — scaled points lottery; уже канонизирована как **GD-249**. Дополнительно подтверждены варианты multiplier, динамическая цена билета, максимум 5 билетов на пользователя и creator/admin/maintainer end control — всё уже входит в канон GD-249.
 - `messages.js` — weekly message leaderboard / total weekly messages; покрывается существующим stats/leaderboard каноном.
 - `translate.js` — перевод с явными source/target и специальным source `?` для автоопределения языка; базовая translation integration уже есть в общем банке.
 - `twitter.js` — получение твитов через RSS с количеством результатов, progress message и pagination; provider-specific вариант уже покрыт stream/integration каноном.
@@ -21,6 +21,10 @@
 - `unmute.js` — action/permission/hierarchy checks, проверка факта mute, unmute и ModLog; базовый moderation workflow уже покрыт.
 - `year.js` — exact countdown + humanized summary; уже канонизирована как **GAB-PUB-109**.
 - `youtube.js` — поиск video/playlist/channel, ограничение количества результатов и pagination; provider-specific search уже покрыт integration каноном.
+- `convert.js` — повторно подтверждены нормализация нескольких синтаксисов (`to`, compact value+unit) и typed backend errors; уже отражено в **GAB-PUB-098–099**.
+- `time.js` — повторно подтверждены IANA timezone validation и self-service fallback; уже отражено в **GAB-PUB-104–105**.
+- `weather.js` — повторно подтверждены capability gate по API token, sparse weather fields и provider icon; уже отражено в **GAB-PUB-106–108**.
+- `messages.js` — дополнительно подтверждены собственная статистика пользователя (`me`), lookup другого участника, bot exclusion, top-8 weekly ranking и total weekly message count; это остаётся внутри существующего stats/leaderboard канона.
 
 ## Вывод
 
