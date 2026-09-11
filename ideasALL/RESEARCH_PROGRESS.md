@@ -46,7 +46,26 @@
 
 Основные объединения: moderation hierarchy и Discord safety checks, warnings/warning points, ban/kick/timeout/mute workflows, moderation cases, mass moderation и purge, channel lock/unlock, staff DM, ticket panel, active-ticket limits, claim/priority, close/delete/rename, participants, notifications, transcripts и multiple ticket systems.
 
+### Batch 5 — Roles / Progression / Social / Stats / Reports / Events / Integrations / Streams / Modlog / Quality — ✅ ЗАВЕРШЁН
+Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH5.md`
+
+Обработаны:
+- `ROLES.md`
+- `PROGRESSION.md`
+- `SOCIAL.md`
+- `STATS.md`
+- `REPORTS.md`
+- `EVENTS.md`
+- `INTEGRATIONS.md`
+- `INTEGRATIONS_STREAMS_ADVANCED.md`
+- `MODLOG.md`
+- `QUALITY_AND_RELEASE.md`
+
+Результат: `GD-161–229`.
+
+Основные объединения: selfroles/managed roles, XP/levels, social/AFK/relations, activity statistics, reports, persistent/recurring events, external integrations and credential management, multi-provider stream monitoring, moderation case lookup/editing/rendering и CI/security/release automation.
+
 ## Следующая точка
-Продолжить глобальную дедупликацию следующего крупного набора тематических файлов. Уже закрытые Batch 1–4 повторно не обрабатывать без необходимости.
+Продолжить глобальную дедупликацию следующего крупного набора тематических файлов. Уже закрытые Batch 1–5 повторно не обрабатывать без необходимости.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
