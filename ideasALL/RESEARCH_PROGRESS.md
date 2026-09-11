@@ -9,6 +9,7 @@
 - `✅` означает реальный просмотр + сверку с банком идей.
 - Дубликаты не добавляются; новые детали существующих систем сохраняются.
 - На текущем этапе bot implementation не изменяется; исследуются только ideas/research/checkpoints.
+- Работа ведётся большими батчами, но с фиксацией точной точки продолжения.
 
 ## Источники
 | № | Репозиторий | Статус | Журнал |
@@ -46,8 +47,8 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 - `commands/⌨️ Programming` — `TOM-001–005`, закрыто.
 - `commands/⚙️ Settings` — `TOM-006–011`, закрыто.
 - `commands/⚜️ Custom Queue(s)` — `TOM-012–020`, закрыто.
-- `commands/🎤 Voice` — `TOM-021–033`, закрыто.
 - `commands/🎮 MiniGames` — `TOM-034–058`, закрыто.
+- `commands/🎤 Voice` — `TOM-021–033`, закрыто.
 - `commands/🎶 Music` — `TOM-059–072`, закрыто.
 - `commands/🏫 School Commands` — `TOM-073–077`, закрыто.
 - `commands/👀 Filter` — `TOM-078–092`, закрыто.
@@ -78,19 +79,28 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 
 ### Batch 13 — `events/` — ЗАВЕРШЁН
 - Проверены `events/client` и `events/guild`.
-- `TOM-201–216` → `ideasALL/ideas/TOMATO_BATCH13.md`.
+- `TOM-201–216` → `TOMATO_BATCH13.md`.
 - Зафиксированы новые варианты: auto-clean bot-channel IDs, music request channel isolation, Bot Permission preflight, thread auto-join, unified command gateway, synthetic Message adapter, music self-healing/preconditions, dynamic status placeholders/rotation, startup diagnostics, lazy databasing, partial fetch, temporary error replies и shard lifecycle logging.
 - Базовые diagnostic/lifecycle hooks, пустые handlers и уже существующие механики не размножены.
 
 ### Batch 14 — `handlers/` — В РАБОТЕ
-- `TOM-217–227` → `ideasALL/ideas/TOMATO_BATCH14.md`.
+- `TOM-217–227` → `TOMATO_BATCH14.md`.
 - Проверены функциональные handlers и крупные части `aichat.js`, `anti_nuke.js`, `antiselfbot.js`, `apply.js`, `blacklist.js`, `epicgamesverification.js`, `extraevents.js`, `functions.js`, `joinvc.js`, `keyword.js`, `logger.js`, `validcode.js` и связанные handlers.
 - Зафиксированы: voice-channel roles, обновляемые VC join/leave messages, Anti-Self-Bot variants, DM application safeguards, Epic Games verification flow details, keyword trigger debounce, snipe cache, auto-crosspost, persistent server-deaf, owner operational notifications и guild chunk/raid diagnostics.
 - Дубли существующих Setup/Logger/utility систем не размножены.
 
+### Batch 15 — `handlers/playermanagers/` + `handlers/erela_events/`
+- Проверены `playermanagers/playlist.js`, `playtop.js`, `request.js`, `search.js`, `similar.js`, `skiptrack.js`, `song.js`.
+- Проверено дерево `erela_events/`: `client_events.js`, `creation.js`, `events.js`, `musicsystem.js`, `node_events.js`.
+- `TOM-228–230` → `TOMATO_BATCH15.md`.
+- `TOM-228`: timed messages по дням/часам/минутам через cron.
+- `TOM-229`: единая интерактивная Music Control Panel с playback/seek/loop/autoplay/shuffle и динамическим состоянием.
+- `TOM-230`: единый music voice preflight с CONNECT/SPEAK/full-channel checks до маршрутизации player manager.
+- Базовые playlist/search/similar/skiptrack/playtop и отдельные music controls не размножены.
+
 ### Текущая точка
 `handlers/` **НЕ ЗАКРЫТ**.
 
-Следующий проход: оставшиеся функциональные handlers, затем вложенные handler-поддиректории (`playermanagers`, `erela_events` если относятся к текущему дереву). После полного просмотра закрыть `handlers/` и только затем двигаться дальше.
+Следующий проход: оставшиеся root-level functional handlers, затем полная сверка крупных `ticket`, `ticketevent`, `welcome`, `leave`, `ranking`, `reactionrole`, `roster`, `suggest`, `aichat`, `membercount` и других ещё не закрытых handlers. После полного recursive прохода закрыть `handlers/`.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
