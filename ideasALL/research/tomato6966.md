@@ -91,11 +91,38 @@
 - `TOM-116`: Epic Games Account Verification с verification channel и независимым action-log channel.
 - Redirect-файлы `setup-antimassmention.js`, `setup-antimasspings.js`, `setup-antipings.js`, `setup-auditlog.js` не считались самостоятельными механиками.
 
+### Часть 2: `TOM-117–145`
+- Проверена следующая крупная часть Setup.
+- Зафиксированы AI-Chat, Anti-Caps, Anti-Discord Links, Anti-Mention, scheduled backups, per-channel Auto-Delete, Auto-Embed, Auto-Meme, Auto-NSFW, массовый Auto-Warn toggle и модульный Anti-Nuke (`TOM-117–127`).
+- Затем полностью просмотрены Application, Auto-Support, Custom Commands и глобальные Embed settings (`TOM-128–145`).
+- Application: до 100 systems, автосоздание раздела, кастомная панель, анкета, accept/deny/ticket messages, temporary/accept roles, пять результатов и Last Verify.
+- Auto-Support: несколько systems, до 25 options, индивидуальный Embed/plain response и переустановка панели.
+- Custom Commands: до 25 на guild и выбор Embed/plain.
+- Embed: глобальный цвет, footer icon/text и thumbnail toggle.
+- `setup-antispam.js` сверён с уже записанным `TOM-111`; redirect'ы и повторные blacklist-настройки отдельно не размножались.
+
+### Часть 3: `TOM-146–156`
+- Продолжен последовательный просмотр Setup после `setup-embed.js`, начиная с `setup-joinlist.js` и далее по крупному соседнему блоку файлов.
+- `TOM-146`: интерактивная смена языка с reset/status и выбором нескольких локалей.
+- `TOM-147`: отдельный канал для логирования выполнения административных команд.
+- `TOM-148–149`: до 25 Member Counter систем и расширенные placeholders для пользователей, members, ботов, статусов, каналов, threads и ролей.
+- `TOM-150`: Menu Apply — до 100 конфигураций и до 25 вариантов в одной панели, с сохранением channel/message IDs.
+- `TOM-151–152`: Menu Ticket — до 100 конфигураций, до 25 options, general access/closed category и независимый claim с двумя кастомными сообщениями.
+- `TOM-153`: постоянная Music Request панель с набором интерактивных music controls.
+- `TOM-154`: включение/выключение Valid-Code обработки сообщений с валидными code snippets.
+- `TOM-155`: Joinlist с шестью типами условий по данным нового участника и четырьмя действиями (`kick`, `ban`, `timeout`, `setnickname`), включая составные timeout, ban days и `{random}` nickname.
+- `TOM-156`: до 100 независимых JTC systems; для каждой можно создать trigger VC или использовать текущий VC, настроить имя временных комнат и сохранить отдельную конфигурацию.
+- `setup-boost.js` сверён с `TOM-113–114` и не добавлен повторно.
+- `setup-logger.js` сверён с существующим Audit Logger; новых самостоятельных требований не выделено.
+- `setup-radio.js` сверён с `TOM-064–066`; новых самостоятельных radio-механик не выделено.
+- `setup-admin.js` сверён с существующим permission/ACL слоем; новых самостоятельных требований не выделено.
+- `setup-serverstats.js` — redirect на `setup-membercount`, отдельно не считается.
+
 ### Состояние
-`commands/💪 Setup` **НЕ ЗАВЕРШЁН**. Остались файлы Setup, которые необходимо просмотреть до перехода к `commands/💸 Economy`.
+`commands/💪 Setup` **НЕ ЗАВЕРШЁН**.
 
 ## Точка продолжения
-Продолжать `commands/💪 Setup` с оставшихся файлов после уже просмотренной части; Economy не начинать до полного закрытия Setup.
+Продолжать `commands/💪 Setup` с оставшихся файлов после текущего обработанного блока. Следующие кандидаты — продолжение после `setup-music.js`/`setup-menuticket.js` по recursive tree; Economy не начинать до полного закрытия Setup.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
