@@ -79,11 +79,18 @@
 - `setup-reactionrole.js` сверён с существующей Reaction Roles системой и новых самостоятельных требований не добавил.
 - `setup-rank.js` сверён с `TITAN_LEVELING`; сохранён только reply-vs-channel вариант.
 
+### Часть 4: `TOM-172–184`
+- Проверены оставшиеся Welcome/Leave/Warn setup-файлы.
+- `TOM-172–175`: раздельные welcome channel/DM, второй обычный welcome channel, welcome roles и CAPTCHA security layer.
+- `TOM-176–181`: auto/custom welcome/leave images, background, frame/tag/membercount/servername toggles, invite information, Welcome test и отдельный Leave Message System.
+- `TOM-182–184`: Warn thresholds для kick/ban, role rewards по числу warn и их комбинирование.
+- После этого recursive Setup-путь перепроверен по `setup-*`; рабочие standalone setup-механики закрыты, redirects/дубли отдельно не размножались.
+
 ### Состояние
-`commands/💪 Setup` **НЕ ЗАВЕРШЁН**.
+`commands/💪 Setup` **ЗАВЕРШЁН**.
 
 ## Точка продолжения
-Продолжать Setup после social block: сначала определить и обработать оставшиеся файлы `setup-*` по recursive tree, затем закрыть Setup полностью. Economy не начинать до этого.
+Следующий источник внутри Tomato — `commands/💰 Economy` (или соответствующая следующая директория в recursive tree). Начать с полного дерева и затем обрабатывать крупными последовательными батчами.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
