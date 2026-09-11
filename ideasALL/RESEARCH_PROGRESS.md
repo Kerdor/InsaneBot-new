@@ -109,4 +109,11 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 - Статические botconfig JSON не считаются самостоятельными механиками.
 - `botconfig/` и `social_log/` **ЗАВЕРШЕНЫ**.
 
+### Batch 19 — `slashCommands/` — ЗАВЕРШЁН
+- `TOM-248–254` → `ideasALL/ideas/TOMATO_BATCH19.md`.
+- Рекурсивно проверены `Admin`, `Fun`, `Info`, `Music`, `NSFW` и root-level `chat.js`.
+- Большинство slash-команд оказались альтернативными интерфейсами уже исследованных систем и не были размножены.
+- Новые идеи: replay текущего трека, modstats, source-size diagnostics, расширенная invite statistics card, интерактивный FAQ, SoundCloud play+skip и общий слой image/meme generators.
+- `Info/translate.js` исключён как нерабочий в текущем виде.
+
 `bot/main.py` и implementation InsaneBot не изменялись.
