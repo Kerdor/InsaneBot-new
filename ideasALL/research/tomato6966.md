@@ -45,8 +45,19 @@
 ### Состояние
 `databases/` **ЗАВЕРШЁН**.
 
+## Batch 13 — `events/`
+- Проверены обе функциональные ветки: `events/client` и `events/guild`.
+- `events/client`: `debug`, `disconnect`, `error`, `rateLimit`, `ready`, `reconnecting`, `shardDisconnect`, `shardError`, `shardReady`, `shardReconnecting`, `shardResume`, `warn`.
+- `events/guild`: `interactionCreate`, `message`, `messageCreate`, `threadCreate`.
+- `TOM-201–216` → `ideasALL/ideas/TOMATO_BATCH13.md`.
+- Новые варианты: автоочистка невалидных bot-channel IDs, запрет обычных команд в music-request channel, preflight Bot Permissions, auto-join threads, единый command gateway, synthetic Message adapter для slash, music self-healing/preconditions, dynamic status placeholders/rotation, startup diagnostics, lazy databasing, partial object fetch, временные error replies и отдельный shard lifecycle logging.
+- Базовые lifecycle events, пустые handlers и уже существующие cooldown/permission механики отдельно не размножены.
+
+### Состояние
+`events/` **ЗАВЕРШЁН**.
+
 ## Точка продолжения
-Следующий проход — следующая функциональная директория Tomato после `databases/`, крупным последовательным батчем.
+Следующий проход — следующая функциональная директория Tomato после `events/`, крупным последовательным батчем.
 
 ## Статус
 Tomato6966/Multipurpose-discord-bot — **В РАБОТЕ**.
