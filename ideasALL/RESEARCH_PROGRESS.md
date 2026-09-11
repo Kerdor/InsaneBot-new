@@ -79,43 +79,29 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 
 ### Batch 7
 - `commands/🏫 School Commands` — ✅ обработано полностью.
-- Просмотрены все 5 файлов.
-- Добавлены `TOM-073–077` в `ideasALL/ideas/TOMATO_BATCH6.md`.
-- Зафиксированы текстовый калькулятор, интерактивный calculator UI, вывод числа e, вывод числа π и пользовательские отложенные напоминания.
+- Добавлены `TOM-073–077`.
 
 ### Batch 8
 - `commands/👀 Filter` — ✅ обработано полностью.
-- Просмотрены все 16 файлов.
-- Добавлены `TOM-078–092` в `ideasALL/ideas/TOMATO_BATCH7.md`.
-- Зафиксированы 8D rotation, Bass Boost, Equalizer presets, reset EQ/filter, готовые voice/timescale эффекты и ручные pitch/speed/rate.
-- `cleareq.js` сверён с `clearfilter.js` и не добавлен отдельно.
+- Добавлены `TOM-078–092`.
 
 ### Batch 9
 - `commands/👑 Owner` — ✅ обработано полностью.
-- Просмотрены все 19 файлов.
-- Добавлены `TOM-093–106` в `ideasALL/ideas/TOMATO_BATCH8.md`.
-- Зафиксированы owner-инструменты для управления ботом, конфигурацией, статусом, owner list, slash deploy, reload/restart, reset данных, рекламой и диагностикой.
-- `addmoney.js` / `removemoney.js` сверены с существующей экономикой; `stopbot.js` и отключённый `reloadbot.js` не считались рабочими командами.
+- Добавлены `TOM-093–106`.
 
 ### Batch 10 — `commands/💪 Setup` — В РАБОТЕ
 - Recursive tree директории проверен; содержание ещё не закрыто.
-- Первая часть Setup добавлена как `TOM-107–116` в `ideasALL/ideas/TOMATO_BATCH9.md`.
-- Вторая проверенная часть добавлена как `TOM-117–127` в `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
-- `TOM-117`: AI-Chat channel.
-- `TOM-118`: Anti-Caps с процентным порогом, whitelist каналов и mute threshold.
-- `TOM-119`: Anti-Discord Links с whitelist каналов/серверов и mute threshold.
-- `TOM-120`: Anti-Mention с лимитом member/role mentions и whitelist каналов.
-- `TOM-121`: автоматические backup сервера раз в 2 дня с удалением старых backup.
-- `TOM-122`: Auto-Delete с отдельной задержкой для каждого канала, 3–3600 секунд.
-- `TOM-123`: Auto-Embed для нескольких выбранных каналов.
-- `TOM-124`: Auto-Meme раз в минуту.
-- `TOM-125`: Auto-NSFW раз в минуту только в NSFW-канале.
-- `TOM-126`: массовое переключение Auto-Warn правил через multi-select.
-- `TOM-127`: Anti-Nuke с модульными защитами, per-module whitelist, дневными/недельными/месячными/all-time thresholds, несколькими наказаниями, quarantine и Suggested Settings.
-- `setup-blacklist.js` повторно не добавлялся как отдельная система: базовая blacklist уже есть; batch-add через запятые и reset отмечены как проверенные детали без отдельного ID.
+- Первая часть: `TOM-107–116` в `ideasALL/ideas/TOMATO_BATCH9.md`.
+- Вторая часть: `TOM-117–127` в `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
+- Текущий проход добавил `TOM-128–145` в `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
+- `TOM-128–135`: многоэкземплярная Application-система, автосоздание application-раздела, кастомный дизайн, анкета, отдельные accept/deny/ticket сообщения, временная/accept роли, пять вариантов результата с собственными ролями/сообщениями/изображениями и Last Verify.
+- `TOM-136–139`: многоэкземплярный Auto-Support, до 25 вариантов, индивидуальный Embed/обычный ответ, повторная публикация панели в выбранный канал.
+- `TOM-140–141`: Custom Commands до 25 на сервер и выбор Embed/обычного ответа.
+- `TOM-142–145`: глобальный цвет Embed, footer icon из URL/вложения, footer text и toggle thumbnail.
+- `setup-antispam.js` сверён с `TOM-111`; новых самостоятельных механик не добавлено.
 - Redirect-файлы `setup-antimassmention.js`, `setup-antimasspings.js`, `setup-antipings.js`, `setup-auditlog.js` отдельно не считаются.
 
 ### Текущая точка
-`commands/💪 Setup` **НЕ закрыта**. Продолжить с оставшихся файлов Setup после уже проверенных `setup-autowarn.js` / `setup-antinuke.js`; не переходить к Economy до полного закрытия Setup.
+`commands/💪 Setup` **НЕ закрыта**. Продолжить после `setup-embed.js`, то есть с `setup-joinlist.js` и далее по tree. Не переходить к Economy до полного закрытия Setup.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
