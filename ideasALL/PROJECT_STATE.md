@@ -64,26 +64,31 @@
 - `commands/👑 Owner` — `TOM-093–106`, закрыто.
 
 ### Batch 10 — `commands/💪 Setup` — ЗАВЕРШЁН
-
-- `TOM-107–116` → `ideasALL/ideas/TOMATO_BATCH9.md`.
-- `TOM-117–145` → `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
-- `TOM-146–171` → `ideasALL/ideas/TOMATO_BATCH9_PART3.md`.
-- `TOM-172–184` → `ideasALL/ideas/TOMATO_BATCH9_PART4.md`.
+- `TOM-107–116` → `TOMATO_BATCH9.md`.
+- `TOM-117–145` → `TOMATO_BATCH9_PART2.md`.
+- `TOM-146–171` → `TOMATO_BATCH9_PART3.md`.
+- `TOM-172–184` → `TOMATO_BATCH9_PART4.md`.
 - Recursive Setup перепроверен; redirects/дубли не размножены.
 
 ### Batch 11 — `commands/💸 Economy` — ЗАВЕРШЁН
-
 - Recursive tree проверен; все 27 command files просмотрены.
-- `TOM-185–196` → `ideasALL/ideas/TOMATO_BATCH10.md`.
-- `TOM-197` → `ideasALL/ideas/TOMATO_BATCH11.md`.
+- `TOM-185–196` → `TOMATO_BATCH10.md`.
+- `TOM-197` → `TOMATO_BATCH11.md`.
 - Зафиксированы Black Market boost/multiplier, разные cooldown tiers, bulk buy/sell, sell fee, inventory valuation, combined-capital leaderboard, Coinflip/Dice/Slots payout variants, Crime и Rob variants.
-- `ecohelp.js`, `work.js`, `sell.js`, `ecolb.js` и остальные Economy-файлы дополнительно перепроверены; новых самостоятельных механик сверх уже записанных не найдено, кроме `TOM-197` (Economy help panel).
-- Стандартные balance/bank/pay/deposit/withdraw/transfer/inventory/profile/storeinfo/items не размножены без новых требований.
+- Economy help panel зафиксирован отдельно; дубли не размножены.
+
+### Batch 12 — `databases/` — ЗАВЕРШЁН
+- Дерево `databases/` проверено; это runtime-хранилища Enmap/SQLite и placeholder-файлы.
+- `handlers/loaddb.js` проверен полностью.
+- `TOM-198`: разделение Enmap-баз по доменам и отдельным каталогам.
+- `TOM-199`: numbered slots для масштабирования до 100 независимых конфигураций одного типа.
+- `TOM-200`: инициализация обязательной структуры данных через `ensure`/default records.
+- Бинарные SQLite/WAL-артефакты отдельно как идеи не учитывались.
 
 ## Текущая точка
 
-`commands/💸 Economy` **ЗАВЕРШЁН**.
+`databases/` **ЗАВЕРШЁН**.
 
-Следующий этап: определить следующую директорию Tomato по recursive tree и обработать её **крупным последовательным батчем**, сразу записывая новые идеи и обновляя checkpoints. Не переходить к следующему источнику — Tomato ещё не закрыт.
+Следующий этап: определить следующую функциональную директорию Tomato и обработать её **крупным последовательным батчем**, сразу записывая новые идеи и обновляя checkpoints. Не переходить к следующему источнику — Tomato ещё не закрыт.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
