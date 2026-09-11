@@ -59,7 +59,12 @@
 
 Batch 6 фиксирует только уже подтверждённые и сверенные механики. Полный `Commands/Public/` GAwesome ещё не объявлен закрытым.
 
+### Batch 7 — GAwesome Web — ЗАВЕРШЁН
+`ideasALL/research/GLOBAL_DEDUP_BATCH7.md`
+
+Зафиксированы канонические кластеры `GD-260–284`: web DTO, privacy-aware profiles, public server listings, extension gallery/versioning, dashboard control plane, transactional/partial configuration, Discord web authentication, route authorization boundaries, XSS-safe Markdown, controller/API separation, public content surfaces, maintainer dashboard и web lifecycle isolation.
+
 ### Следующая точка
-Сначала закончить оставшийся проход `GAwesomeBot/Commands/Public/`, затем сверить новые GAwesome mechanics с `GD-001–259` и только после этого продолжить следующий глобальный batch.
+Сначала закончить оставшийся проход `GAwesomeBot/Commands/Public/`, затем сверить новые GAwesome Public mechanics с `GD-001–284` и продолжить глобальную дедупликацию. RoadMap пока не строить.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
