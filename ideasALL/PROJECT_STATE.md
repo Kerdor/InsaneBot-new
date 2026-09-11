@@ -52,62 +52,37 @@
 
 Ветка: `new_2025`.
 
-### Batch 1
-`commands/⌨️ Programming` обработано полностью: `coliru.js`, `compile.js`, `github.js`, `httpstatus.js`, `npm.js`, `npmpkgsize.js`.
+### Batch 1–9
+- `commands/⌨️ Programming` — `TOM-001–005`, закрыто.
+- `commands/⚙️ Settings` — `TOM-006–011`, закрыто.
+- `commands/⚜️ Custom Queue(s)` — `TOM-012–020`, закрыто.
+- `commands/🎤 Voice` — `TOM-021–033`, закрыто.
+- `commands/🎮 MiniGames` — `TOM-034–058`, закрыто.
+- `commands/🎶 Music` — `TOM-059–072`, закрыто.
+- `commands/🏫 School Commands` — `TOM-073–077`, закрыто.
+- `commands/👀 Filter` — `TOM-078–092`, закрыто.
+- `commands/👑 Owner` — `TOM-093–106`, закрыто.
 
-Зафиксированы `TOM-001–005` в `ideasALL/ideas/TOMATO_BATCH1.md`.
+### Batch 10 — `commands/💪 Setup` — ЗАВЕРШЁН
 
-### Batch 2
-`commands/⚙️ Settings` обработано полностью: просмотрены все 20 файлов.
+- `TOM-107–116` → `ideasALL/ideas/TOMATO_BATCH9.md`.
+- `TOM-117–145` → `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
+- `TOM-146–171` → `ideasALL/ideas/TOMATO_BATCH9_PART3.md`.
+- `TOM-172–184` → `ideasALL/ideas/TOMATO_BATCH9_PART4.md`.
+- Recursive Setup перепроверен; redirects/дубли не размножены.
 
-Зафиксированы `TOM-006–011` в `ideasALL/ideas/TOMATO_BATCH2.md`.
+### Batch 11 — `commands/💸 Economy` — ЗАВЕРШЁН
 
-### Batch 3
-`commands/⚜️ Custom Queue(s)` обработано полностью: `TOM-012–020`.
-
-### Batch 4
-`commands/🎤 Voice` обработано полностью: `TOM-021–033`.
-
-### Batch 5
-`commands/🎮 MiniGames` обработано полностью: `TOM-034–058`.
-
-### Batch 6
-`commands/🎶 Music` обработано полностью: `TOM-059–072` в `ideasALL/ideas/TOMATO_BATCH5.md`.
-
-### Batch 7
-`commands/🏫 School Commands` обработано полностью: `TOM-073–077` в `ideasALL/ideas/TOMATO_BATCH6.md`.
-
-### Batch 8
-`commands/👀 Filter` обработано полностью: `TOM-078–092` в `ideasALL/ideas/TOMATO_BATCH7.md`.
-
-### Batch 9
-`commands/👑 Owner` обработано полностью: `TOM-093–106` в `ideasALL/ideas/TOMATO_BATCH8.md`.
-
-Зафиксированы owner-инструменты для управления ботом, конфигурацией, статусом, owner list, slash deploy, reload/restart, reset данных, рекламой и диагностикой. Дубли экономики не добавлялись; отключённые/нерабочие команды помечены и не считались рабочими механиками.
-
-### Batch 10 — `commands/💪 Setup` — В РАБОТЕ
-
-Recursive tree директории проверен; содержание ещё не закрыто.
-
-- Первая часть Setup добавлена как `TOM-107–116` в `ideasALL/ideas/TOMATO_BATCH9.md`.
-- Вторая проверенная часть добавлена как `TOM-117–127` в `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
-- `TOM-128–145` добавлены в `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
-- `TOM-146–156` добавлены в `ideasALL/ideas/TOMATO_BATCH9_PART3.md`.
-- `TOM-146`: интерактивная смена языка с reset/status и выбором локали.
-- `TOM-147`: отдельный канал для логирования выполнения административных команд.
-- `TOM-148–149`: до 25 Member Counter систем и расширенные placeholders серверной статистики.
-- `TOM-150`: Menu Apply до 100 конфигураций и до 25 вариантов в одной панели.
-- `TOM-151–152`: Menu Ticket до 100 конфигураций, до 25 options, general access/closed category и per-system claim с кастомными сообщениями.
-- `TOM-153`: постоянная Music Request панель с интерактивными controls.
-- `TOM-154`: toggle Valid-Code обработки code snippets.
-- `TOM-155`: Joinlist с шестью типами условий и четырьмя действиями при join.
-- `TOM-156`: до 100 независимых JTC конфигураций с созданием/выбором trigger VC и кастомным именем временных комнат.
-- `setup-boost.js`, `setup-logger.js`, `setup-radio.js`, `setup-admin.js` проверены и сверены с уже существующими идеями; новых самостоятельных механик не выделено.
-- `setup-serverstats.js` — redirect на `setup-membercount`, отдельно не считается.
+- Recursive tree проверен; все 27 command files просмотрены.
+- `TOM-185–196` → `ideasALL/ideas/TOMATO_BATCH10.md`.
+- Зафиксированы Black Market boost/multiplier, разные cooldown tiers, bulk buy/sell, sell fee, inventory valuation, combined-capital leaderboard, Coinflip/Dice/Slots payout variants, Crime и Rob variants.
+- `ecohelp.js`, `work.js`, `sell.js`, `ecolb.js` и остальные Economy-файлы дополнительно перепроверены; новых самостоятельных механик сверх уже записанных не найдено.
+- Стандартные balance/bank/pay/deposit/withdraw/transfer/inventory/profile/storeinfo/items не размножены без новых требований.
 
 ## Текущая точка
-`commands/💪 Setup` **НЕ закрыта**.
 
-Продолжить с оставшихся файлов Setup после текущего обработанного блока, ориентируясь на recursive tree. Не переходить к Economy до полного закрытия Setup.
+`commands/💸 Economy` **ЗАВЕРШЁН**.
+
+Следующий этап: определить следующую директорию Tomato по recursive tree и обработать её **крупным последовательным батчем**, сразу записывая новые идеи и обновляя checkpoints. Не переходить к следующему источнику — Tomato ещё не закрыт.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
