@@ -13,42 +13,42 @@
 6. `CorwinDev/Discord-Bot` — ✅
 7. `Tomato6966/Multipurpose-discord-bot` — ✅
 
-Полные source-specific checkpoints находятся в `research/` и `ideas/`.
-
 ## Этап 2 — глобальная дедупликация
 Цель: собрать пересечения между всеми источниками, объединить идентичные механики, сохранить уникальные варианты и только после этого строить RoadMap.
 
-### Batch 1 — Core / Architecture / Storage / Access — ✅ ЗАВЕРШЁН
-Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH1.md`
-Результат: `GD-001–027`.
+### Batch 1 — Core / Architecture / Storage / Access — ✅
+`GD-001–027`
 
-### Batch 2 — Economy / Community / Customization — ✅ ЗАВЕРШЁН
-Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH2.md`
-Результат: `GD-028–072`.
+### Batch 2 — Economy / Community / Customization — ✅
+`GD-028–072`
 
-### Batch 3 — Audio / Filtering / Games / Trivia / Fun — ✅ ЗАВЕРШЁН
-Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH3.md`
-Результат: `GD-073–115`.
+### Batch 3 — Audio / Filtering / Games / Trivia / Fun — ✅
+`GD-073–115`
 
-### Batch 4 — Moderation / Tickets — ✅ ЗАВЕРШЁН
-Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH4.md`
-Результат: `GD-116–160`.
+### Batch 4 — Moderation / Tickets — ✅
+`GD-116–160`
 
-### Batch 5 — Roles / Progression / Social / Stats / Reports / Events / Integrations / Streams / Modlog / Quality — ✅ ЗАВЕРШЁН
-Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH5.md`
-Результат: `GD-161–229`.
+### Batch 5 — Roles / Progression / Social / Stats / Reports / Events / Integrations / Streams / Modlog / Quality — ✅
+`GD-161–229`
 
-### Batch 6 — GAwesome PM / Private / подтверждённые Public mechanics — ✅ ЗАВЕРШЁН
-Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH6.md`
-Результат: `GD-230–259`.
+### Batch 6 — GAwesome PM / Private / подтверждённые Public mechanics — ✅
+`GD-230–259`
 
-### Batch 7 — GAwesome Web — ✅ ЗАВЕРШЁН
-Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH7.md`
-Результат: `GD-260–284`.
+### Batch 7 — GAwesome Web — ✅
+`GD-260–284`
 
-Основные объединения: web DTO/presentation layer, privacy-aware profiles, public server listings, extension gallery/versioning, dashboard control plane, bulk/transactional/partial configuration, Discord web authentication, route-level authorization, XSS-safe Markdown, controller/API separation, isolated public/maintainer surfaces и web server lifecycle.
+### Batch 8 — GAwesome Public final dedup — ✅
+Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH8.md`
+Результат: `GD-285–287`.
+
+Новые механики:
+- `GD-285` — named persistent server countdowns.
+- `GD-286` — self/admin nickname management.
+- `GD-287` — role inspection with effective permissions.
+
+Остальные финальные Public-команды сверены с уже существующими кластерами; новых GD для них не создавалось.
 
 ## Следующая точка
-Начать **Global Dedup Batch 8**: повторно сверить оставшиеся GAwesome Public mechanics с `GD-001–284` и зафиксировать только действительно новые канонические кластеры, начиная с `GD-285`. RoadMap пока не строить.
+Продолжить глобальную дедупликацию с `GD-288`. RoadMap пока не строить.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
