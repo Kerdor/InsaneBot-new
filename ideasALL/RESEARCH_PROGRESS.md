@@ -60,16 +60,19 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 - `TOM-172–184` → `TOMATO_BATCH9_PART4.md`.
 - Recursive Setup перепроверен; redirects/дубли не размножены.
 
-### Batch 11 — `commands/💸 Economy` — В РАБОТЕ
-- Recursive tree проверен; найден набор Economy-команд: buy, rob, beg, pay, dice, sell, work, bank, daily, ecolb, crime, slots, items, weekly, hourly, deposit, balance, ecohelp, monthly, profile, coinflip, transfer, withdraw, inventory, storeinfo, blackmarket.
+### Batch 11 — `commands/💸 Economy` — ЗАВЕРШЁН
+- Recursive tree проверен; все 27 command files просмотрены.
 - `TOM-185–196` записаны в `ideasALL/ideas/TOMATO_BATCH10.md`.
-- `TOM-185–187`: Black Market multiplier, покупаемый 2–5x boost на 5 дней и разные cooldown tiers hourly/daily/weekly/monthly.
-- `TOM-188–191`: bulk buy/sell, 10% sell fee, valuation inventory и leaderboard по `balance + bank + inventory value` с pagination/личным rank.
-- `TOM-192–194`: Coinflip 1.5x, Dice 4x и Slots 9x/2x payout variants.
-- `TOM-195–196`: Crime 2x regular reward + Black Market и Rob с минимальным balance цели 500.
-- Проверены стандартные balance/bank/pay/deposit/withdraw/transfer/inventory/profile/storeinfo/items/weekly и не размножены без новых требований.
+- `TOM-185–187`: Black Market multiplier/boost и cooldown tiers.
+- `TOM-188–191`: bulk buy/sell, 10% sell fee, inventory valuation и combined-capital leaderboard.
+- `TOM-192–194`: Coinflip, Dice и Slots payout variants.
+- `TOM-195–196`: Crime и Rob variants.
+- `ecohelp.js`, `work.js`, `sell.js`, `ecolb.js` и остальные Economy-файлы дополнительно перепроверены; новых самостоятельных механик сверх уже зафиксированных не найдено.
+- Стандартные balance/bank/pay/deposit/withdraw/transfer/inventory/profile/storeinfo/items не размножены без новых требований.
 
 ### Текущая точка
-`commands/💸 Economy` **НЕ закрыта**. Следующий проход — проверить оставшиеся Economy-файлы, в первую очередь `ecohelp.js`, затем полностью закрыть директорию. После этого переходить к следующей папке.
+`commands/💸 Economy` **ЗАВЕРШЁН**.
+
+Следующий проход — определить следующую директорию Tomato по recursive tree и обработать её крупным последовательным батчем.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
