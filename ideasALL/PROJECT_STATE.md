@@ -56,8 +56,8 @@
 - `commands/⌨️ Programming` — `TOM-001–005`, закрыто.
 - `commands/⚙️ Settings` — `TOM-006–011`, закрыто.
 - `commands/⚜️ Custom Queue(s)` — `TOM-012–020`, закрыто.
-- `commands/🎤 Voice` — `TOM-021–033`, закрыто.
 - `commands/🎮 MiniGames` — `TOM-034–058`, закрыто.
+- `commands/🎤 Voice` — `TOM-021–033`, закрыто.
 - `commands/🎶 Music` — `TOM-059–072`, закрыто.
 - `commands/🏫 School Commands` — `TOM-073–077`, закрыто.
 - `commands/👀 Filter` — `TOM-078–092`, закрыто.
@@ -97,10 +97,17 @@
 - Новые варианты: voice-channel role while connected, обновляемые VC join/leave messages, Anti-Self-Bot detection/action thresholds, DM application safeguards, Epic Games verification flow details, keyword trigger debounce, snipe cache, auto-crosspost, persistent server-deaf, owner operational notifications и guild chunk/raid diagnostics.
 - Дубли Setup/Logger/helper-систем не размножены.
 
+### Batch 15 — `handlers/playermanagers/` + `handlers/erela_events/`
+- `TOM-228–230` → `TOMATO_BATCH15.md`.
+- Проверены `playermanagers/playlist.js`, `playtop.js`, `request.js`, `search.js`, `similar.js`, `skiptrack.js`, `song.js`.
+- Проверено дерево `erela_events/`: `client_events.js`, `creation.js`, `events.js`, `musicsystem.js`, `node_events.js`.
+- Новые варианты: timed messages по расписанию, единая интерактивная Music Control Panel и единый voice preflight для музыкальных операций.
+- Базовые playlist/search/similar/skiptrack/playtop и отдельные music controls не размножены.
+
 ## Текущая точка
 
 `handlers/` **НЕ ЗАКРЫТ**.
 
-Следующий этап: продолжить оставшиеся функциональные handlers, затем проверить вложенные handler-поддиректории (`playermanagers`, `erela_events` если относятся к текущему дереву). После полного просмотра закрыть `handlers/` и только затем двигаться дальше.
+Следующий этап: крупным батчем пройти оставшиеся root-level functional handlers и полностью закрыть `handlers/`: прежде всего `aichat`, `membercount`, `ranking`, `reactionrole`, `roster`, `suggest`, `ticket`, `ticketevent`, `welcome`, `leave`, а также оставшиеся небольшие/инфраструктурные handlers. После этого — сверить recursive tree и только при полном покрытии поставить `handlers/` в `ЗАВЕРШЁН`.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
