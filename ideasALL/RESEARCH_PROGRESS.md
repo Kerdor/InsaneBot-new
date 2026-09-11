@@ -97,7 +97,22 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 - Зафиксированы owner-инструменты для управления ботом, конфигурацией, статусом, owner list, slash deploy, reload/restart, reset данных, рекламой и диагностикой.
 - `addmoney.js` / `removemoney.js` сверены с существующей экономикой; `stopbot.js` и отключённый `reloadbot.js` не считались рабочими командами.
 
+### Batch 10 — `commands/💪 Setup` — В РАБОТЕ
+- Директория содержит 59? файлов; recursive tree проверен полностью.
+- На текущем проходе реально просмотрена и сверена первая часть Setup.
+- Добавлены `TOM-107–116` в `ideasALL/ideas/TOMATO_BATCH9.md`.
+- `TOM-107`: массовое включение/выключение нескольких категорий команд через multi-select.
+- `TOM-108`: Number Counter с каналом, текущим номером, следующим номером и reset.
+- `TOM-109`: ежедневные автоматические факты в выбранный канал.
+- `TOM-110`: Anti-New-Account с минимальным возрастом, kick/ban и DM-сообщением.
+- `TOM-111`: Anti-Spam с лимитом сообщений/10 секунд, whitelist каналов и настраиваемым mute threshold.
+- `TOM-112`: Anti-Link с whitelist каналов/доменов и настраиваемым mute threshold.
+- `TOM-113–114`: DM-благодарность за boost и отдельный Boost Log с тремя шаблонами сообщений.
+- `TOM-115`: Ghost-Ping Detector с отдельным log channel и настраиваемым временем обнаружения.
+- `TOM-116`: Epic Games Account Verification с verification channel и отдельным action-log.
+- Redirect-команды (`setup-antimassmention`, `setup-antimasspings`, `setup-antipings`, `setup-auditlog`) отдельными идеями не считаются.
+
 ### Текущая точка
-`commands/👑 Owner` закрыта. Следующая область — следующая директория `commands` по дереву `new_2025`.
+`commands/💪 Setup` **НЕ закрыта**. Продолжить с оставшихся файлов Setup, начиная после уже проверенных `setup-counter.js` / `setup-dailyfact.js` / `setup-epicgamesverify.js` / `setup-ghost-ping-detector.js` и далее по tree. Не переходить к Economy до полного закрытия Setup.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
