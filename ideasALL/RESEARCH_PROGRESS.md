@@ -93,17 +93,20 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 
 ### Batch 16 — root-level handlers
 - `TOM-231–240` → `TOMATO_BATCH16.md`.
-- Проверены `command.js`, `slashCommands.js`, `clientvariables.js`, `counter.js`, `mute.js`, `roster.js`, `suggest.js`, `jointocreate.js`, `ticketevent.js`, `leave.js`, `welcome.js`, `ranking.js`, `membercount.js`, `reactionrole.js`, `ghost_ping_detector.js`.
-- Зафиксированы giveaway DM notifications, автоматическая передача JTC ownership, периодический JTC cleanup, двухшаговое ticket confirmation, закрытие ticket с отзывом доступа/переносом/rename, CAPTCHA quarantine role, leveling anti-farm, level role rewards, reversible suggestion votes/voter list и декларативный slash builder.
-- Дубли существующих систем не размножены.
+- Проверены основные оставшиеся root-level handlers.
+- Зафиксированы giveaway DM notifications, JTC ownership transfer/cleanup, ticket confirmation/close behavior, CAPTCHA quarantine role, leveling anti-farm, level role rewards, reversible suggestion votes/voter list и declarative slash builder.
 
 ### Batch 17 — финальный recursive контроль `handlers/` — ЗАВЕРШЁН
 - `TOM-241–242` → `TOMATO_BATCH17.md`.
-- Root-level handlers из `index.js` сверены с журналом; `playermanagers/` и `erela_events/` уже закрыты в Batch 15.
-- Точечно перепроверены `antidiscord.js`, `ticket.js`, `ticketevent.js`, `boostlog.js`, `timedmessages.js`, `extraevents.js`, `clientvariables.js`, `dailyfact.js`, `autoembed.js`, `autonsfw.js`.
-- `TOM-241`: Auto-Embed по конкретному каналу или родительской категории.
-- `TOM-242`: автоматическая очистка guild-specific данных при `guildDelete`, включая масштабируемые конфигурации, с сохранением отдельных исторических/модерационных данных.
-- Остальные root-level handlers дали только уже собранные системы или инфраструктурные helpers.
+- Root-level handlers из `index.js` сверены с журналом; вложенные `playermanagers/` и `erela_events/` закрыты ранее.
 - `handlers/` **ПОЛНОСТЬЮ ЗАВЕРШЁН**.
+
+### Batch 18 — `botconfig/` + `social_log/` — ЗАВЕРШЁН
+- `TOM-243–245`: Twitch Live Logger, live-role + temporary ping, автоматическое обновление Twitch OAuth.
+- `TOM-246`: Twitter Feed с фильтрацией reply/retweet и дедупликацией.
+- `TOM-247`: YouTube Feed с несколькими каналами и историей отправленных видео.
+- TikTok Logger не добавлен как рабочая система, потому что в текущей ветке он отключён; закомментированная `twitterfeed2` также не учитывалась.
+- Статические botconfig JSON не считаются самостоятельными механиками.
+- `botconfig/` и `social_log/` **ЗАВЕРШЕНЫ**.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
