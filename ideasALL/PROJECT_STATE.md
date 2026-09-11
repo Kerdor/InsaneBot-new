@@ -91,23 +91,23 @@ Recursive tree директории проверен; содержание ещ�
 
 - Первая часть Setup добавлена как `TOM-107–116` в `ideasALL/ideas/TOMATO_BATCH9.md`.
 - Вторая проверенная часть добавлена как `TOM-117–127` в `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
-- `TOM-117`: AI-Chat channel.
-- `TOM-118`: Anti-Caps с процентным порогом, whitelist каналов и mute threshold.
-- `TOM-119`: Anti-Discord Links с whitelist каналов/серверов и mute threshold.
-- `TOM-120`: Anti-Mention с лимитом member/role mentions и whitelist каналов.
-- `TOM-121`: автоматические backup сервера раз в 2 дня с удалением старых backup.
-- `TOM-122`: Auto-Delete с отдельной задержкой для каждого канала, 3–3600 секунд.
-- `TOM-123`: Auto-Embed для нескольких выбранных каналов.
-- `TOM-124`: Auto-Meme раз в минуту.
-- `TOM-125`: Auto-NSFW раз в минуту только в NSFW-канале.
-- `TOM-126`: массовое переключение Auto-Warn правил через multi-select.
-- `TOM-127`: Anti-Nuke с модульными защитами, per-module whitelist, дневными/недельными/месячными/all-time thresholds, несколькими наказаниями, quarantine и Suggested Settings.
-- `setup-blacklist.js` повторно не добавлялся как отдельная система: базовая blacklist уже есть; batch-add через запятые и reset отмечены как проверенные детали без отдельного ID.
-- Redirect-файлы `setup-antimassmention.js`, `setup-antimasspings.js`, `setup-antipings.js`, `setup-auditlog.js` отдельно не считаются.
+- `TOM-128–145` добавлены в `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
+- `TOM-146–156` добавлены в `ideasALL/ideas/TOMATO_BATCH9_PART3.md`.
+- `TOM-146`: интерактивная смена языка с reset/status и выбором локали.
+- `TOM-147`: отдельный канал для логирования выполнения административных команд.
+- `TOM-148–149`: до 25 Member Counter систем и расширенные placeholders серверной статистики.
+- `TOM-150`: Menu Apply до 100 конфигураций и до 25 вариантов в одной панели.
+- `TOM-151–152`: Menu Ticket до 100 конфигураций, до 25 options, general access/closed category и per-system claim с кастомными сообщениями.
+- `TOM-153`: постоянная Music Request панель с интерактивными controls.
+- `TOM-154`: toggle Valid-Code обработки code snippets.
+- `TOM-155`: Joinlist с шестью типами условий и четырьмя действиями при join.
+- `TOM-156`: до 100 независимых JTC конфигураций с созданием/выбором trigger VC и кастомным именем временных комнат.
+- `setup-boost.js`, `setup-logger.js`, `setup-radio.js`, `setup-admin.js` проверены и сверены с уже существующими идеями; новых самостоятельных механик не выделено.
+- `setup-serverstats.js` — redirect на `setup-membercount`, отдельно не считается.
 
 ## Текущая точка
 `commands/💪 Setup` **НЕ закрыта**.
 
-Продолжить с оставшихся файлов Setup после `setup-antinuke.js`. Не переходить к Economy до полного закрытия Setup.
+Продолжить с оставшихся файлов Setup после текущего обработанного блока, ориентируясь на recursive tree. Не переходить к Economy до полного закрытия Setup.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
