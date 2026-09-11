@@ -21,7 +21,7 @@
 2. **python-discord/bot — ЗАВЕРШЁН.**
 3. **ItzSudhan/Discord-MusicBot — ЗАВЕРШЁН.**
 4. **codebymitch/TitanBot — ЗАВЕРШЁН.**
-5. **GAwesomeBot/bot — почти завершён:** PM и Private каталоги закрыты; `Commands/Public/` требует отдельного финального прохода по оставшимся файлам.
+5. **GAwesomeBot/bot — ЗАВЕРШЁН.** PM, Private и полный `Commands/Public/` закрыты source-specific проходом.
 6. **CorwinDev/Discord-Bot — ЗАВЕРШЁН.**
 7. **Tomato6966/Multipurpose-discord-bot — ЗАВЕРШЁН.**
 
@@ -57,14 +57,12 @@
 
 Зафиксированы канонические кластеры `GD-230–259`.
 
-Batch 6 фиксирует только уже подтверждённые и сверенные механики. Полный `Commands/Public/` GAwesome ещё не объявлен закрытым.
-
 ### Batch 7 — GAwesome Web — ЗАВЕРШЁН
 `ideasALL/research/GLOBAL_DEDUP_BATCH7.md`
 
 Зафиксированы канонические кластеры `GD-260–284`: web DTO, privacy-aware profiles, public server listings, extension gallery/versioning, dashboard control plane, transactional/partial configuration, Discord web authentication, route authorization boundaries, XSS-safe Markdown, controller/API separation, public content surfaces, maintainer dashboard и web lifecycle isolation.
 
 ### Следующая точка
-Сначала закончить оставшийся проход `GAwesomeBot/Commands/Public/`, затем сверить новые GAwesome Public mechanics с `GD-001–284` и продолжить глобальную дедупликацию. RoadMap пока не строить.
+Начать сверку оставшихся GAwesome Public mechanics с `GD-001–284` и продолжить глобальную дедупликацию с `GD-285`. RoadMap пока не строить.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
