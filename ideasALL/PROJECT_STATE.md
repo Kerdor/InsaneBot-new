@@ -85,10 +85,29 @@
 
 Зафиксированы owner-инструменты для управления ботом, конфигурацией, статусом, owner list, slash deploy, reload/restart, reset данных, рекламой и диагностикой. Дубли экономики не добавлялись; отключённые/нерабочие команды помечены и не считались рабочими механиками.
 
-## Текущая точка
-`commands/👑 Owner` закрыта.
+### Batch 10 — `commands/💪 Setup` — В РАБОТЕ
 
-## Следующий шаг
-Перейти к следующей директории `commands` по дереву `new_2025`, полностью проверить её файлы, сверить с банком идей, записать новые механики и обновить checkpoints.
+Recursive tree директории проверен; содержание ещё не закрыто.
+
+- Первая часть Setup добавлена как `TOM-107–116` в `ideasALL/ideas/TOMATO_BATCH9.md`.
+- Вторая проверенная часть добавлена как `TOM-117–127` в `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
+- `TOM-117`: AI-Chat channel.
+- `TOM-118`: Anti-Caps с процентным порогом, whitelist каналов и mute threshold.
+- `TOM-119`: Anti-Discord Links с whitelist каналов/серверов и mute threshold.
+- `TOM-120`: Anti-Mention с лимитом member/role mentions и whitelist каналов.
+- `TOM-121`: автоматические backup сервера раз в 2 дня с удалением старых backup.
+- `TOM-122`: Auto-Delete с отдельной задержкой для каждого канала, 3–3600 секунд.
+- `TOM-123`: Auto-Embed для нескольких выбранных каналов.
+- `TOM-124`: Auto-Meme раз в минуту.
+- `TOM-125`: Auto-NSFW раз в минуту только в NSFW-канале.
+- `TOM-126`: массовое переключение Auto-Warn правил через multi-select.
+- `TOM-127`: Anti-Nuke с модульными защитами, per-module whitelist, дневными/недельными/месячными/all-time thresholds, несколькими наказаниями, quarantine и Suggested Settings.
+- `setup-blacklist.js` повторно не добавлялся как отдельная система: базовая blacklist уже есть; batch-add через запятые и reset отмечены как проверенные детали без отдельного ID.
+- Redirect-файлы `setup-antimassmention.js`, `setup-antimasspings.js`, `setup-antipings.js`, `setup-auditlog.js` отдельно не считаются.
+
+## Текущая точка
+`commands/💪 Setup` **НЕ закрыта**.
+
+Продолжить с оставшихся файлов Setup после `setup-antinuke.js`. Не переходить к Economy до полного закрытия Setup.
 
 `bot/main.py` и другая реализация InsaneBot не изменялись.
