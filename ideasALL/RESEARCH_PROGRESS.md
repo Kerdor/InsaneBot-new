@@ -82,7 +82,7 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 - Зафиксированы auto-clean bot-channel IDs, music request channel isolation, Bot Permission preflight, thread auto-join, unified command gateway, synthetic Message adapter, music self-healing/preconditions, dynamic status placeholders/rotation, startup diagnostics, lazy databasing, partial fetch, temporary error replies и shard lifecycle logging.
 - Базовые diagnostic/lifecycle hooks, пустые handlers и уже существующие механики не размножены.
 
-### Batch 14 — `handlers/` — ПРОЙДЕНА ПЕРВАЯ КРУПНАЯ ЧАСТЬ
+### Batch 14 — `handlers/` — первая крупная часть
 - `TOM-217–227` → `TOMATO_BATCH14.md`.
 - Проверены крупные functional handlers; дубли Setup/Logger/helper-систем не размножены.
 
@@ -91,15 +91,19 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 - Обе вложенные директории проверены рекурсивно.
 - Зафиксированы timed messages, единая Music Control Panel и voice preflight.
 
-### Batch 16 — оставшиеся root-level handlers
+### Batch 16 — root-level handlers
 - `TOM-231–240` → `TOMATO_BATCH16.md`.
 - Проверены `command.js`, `slashCommands.js`, `clientvariables.js`, `counter.js`, `mute.js`, `roster.js`, `suggest.js`, `jointocreate.js`, `ticketevent.js`, `leave.js`, `welcome.js`, `ranking.js`, `membercount.js`, `reactionrole.js`, `ghost_ping_detector.js`.
 - Зафиксированы giveaway DM notifications, автоматическая передача JTC ownership, периодический JTC cleanup, двухшаговое ticket confirmation, закрытие ticket с отзывом доступа/переносом/rename, CAPTCHA quarantine role, leveling anti-farm, level role rewards, reversible suggestion votes/voter list и декларативный slash builder.
 - Дубли существующих систем не размножены.
 
-### Текущая точка
-`handlers/` **НЕ ЗАКРЫТ**.
-
-Следующий этап: финальный recursive контроль дерева `handlers/`, поиск любых ещё не просмотренных файлов/поддиректорий и точечная сверка оставшихся небольших handlers. Только после фактического полного покрытия закрыть `handlers/`.
+### Batch 17 — финальный recursive контроль `handlers/` — ЗАВЕРШЁН
+- `TOM-241–242` → `TOMATO_BATCH17.md`.
+- Root-level handlers из `index.js` сверены с журналом; `playermanagers/` и `erela_events/` уже закрыты в Batch 15.
+- Точечно перепроверены `antidiscord.js`, `ticket.js`, `ticketevent.js`, `boostlog.js`, `timedmessages.js`, `extraevents.js`, `clientvariables.js`, `dailyfact.js`, `autoembed.js`, `autonsfw.js`.
+- `TOM-241`: Auto-Embed по конкретному каналу или родительской категории.
+- `TOM-242`: автоматическая очистка guild-specific данных при `guildDelete`, включая масштабируемые конфигурации, с сохранением отдельных исторических/модерационных данных.
+- Остальные root-level handlers дали только уже собранные системы или инфраструктурные helpers.
+- `handlers/` **ПОЛНОСТЬЮ ЗАВЕРШЁН**.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
