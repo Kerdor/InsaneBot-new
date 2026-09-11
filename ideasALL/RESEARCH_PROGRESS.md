@@ -46,6 +46,7 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 - `commands/⌨️ Programming` — `TOM-001–005`, закрыто.
 - `commands/⚙️ Settings` — `TOM-006–011`, закрыто.
 - `commands/⚜️ Custom Queue(s)` — `TOM-012–020`, закрыто.
+- `commands/🎤 Voice` — `TOM-021–033`, закрыто.
 - `commands/🎮 MiniGames` — `TOM-034–058`, закрыто.
 - `commands/🎶 Music` — `TOM-059–072`, закрыто.
 - `commands/🏫 School Commands` — `TOM-073–077`, закрыто.
