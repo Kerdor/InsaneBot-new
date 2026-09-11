@@ -62,17 +62,23 @@ Batch 12: root/startup/infrastructure — `COR-355–359`.
 
 ### Batch 11 — `commands/💸 Economy` — ЗАВЕРШЁН
 - Recursive tree проверен; все 27 command files просмотрены.
-- `TOM-185–196` записаны в `ideasALL/ideas/TOMATO_BATCH10.md`.
-- `TOM-185–187`: Black Market multiplier/boost и cooldown tiers.
-- `TOM-188–191`: bulk buy/sell, 10% sell fee, inventory valuation и combined-capital leaderboard.
-- `TOM-192–194`: Coinflip, Dice и Slots payout variants.
-- `TOM-195–196`: Crime и Rob variants.
-- `ecohelp.js`, `work.js`, `sell.js`, `ecolb.js` и остальные Economy-файлы дополнительно перепроверены; новых самостоятельных механик сверх уже зафиксированных не найдено.
-- Стандартные balance/bank/pay/deposit/withdraw/transfer/inventory/profile/storeinfo/items не размножены без новых требований.
+- `TOM-185–196` → `TOMATO_BATCH10.md`.
+- `TOM-197` → `TOMATO_BATCH11.md`.
+- `TOM-185–196`: Black Market, cooldown tiers, bulk buy/sell, sell fee, inventory valuation, combined-capital leaderboard, gambling payout variants, Crime/Rob variants.
+- `ecohelp.js` проверен; отдельная help panel зафиксирована как `TOM-197`.
+
+### Batch 12 — `databases/` — ЗАВЕРШЁН
+- Дерево `databases/` проверено; runtime-хранилища Enmap/SQLite и placeholder-файлы.
+- `handlers/loaddb.js` проверен полностью.
+- `TOM-198–200` → `ideasALL/ideas/TOMATO_BATCH12.md`.
+- `TOM-198`: domain-separated Enmap storage.
+- `TOM-199`: numbered slots до 100 конфигураций одного типа.
+- `TOM-200`: ensure/default schema initialization.
+- Бинарные SQLite/WAL-файлы не считались отдельными механиками.
 
 ### Текущая точка
-`commands/💸 Economy` **ЗАВЕРШЁН**.
+`databases/` **ЗАВЕРШЁН**.
 
-Следующий проход — определить следующую директорию Tomato по recursive tree и обработать её крупным последовательным батчем.
+Следующий проход — следующая функциональная директория Tomato, крупным последовательным батчем.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
