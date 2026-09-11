@@ -56,7 +56,6 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 ### Batch 2
 - `commands/⚙️ Settings` — ✅ обработано полностью.
 - Добавлены `TOM-006–011`.
-- Дубли и полностью закомментированные команды не учитывались.
 
 ### Batch 3
 - `commands/⚜️ Custom Queue(s)` — ✅ обработано полностью.
@@ -69,13 +68,10 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 ### Batch 5
 - `commands/🎮 MiniGames` — ✅ обработано полностью.
 - Добавлены `TOM-034–058`.
-- Отключённые `.js.disabled`, `uno.js` и unsupported `poker-night.js` как рабочие механики не учитывались.
 
 ### Batch 6
 - `commands/🎶 Music` — ✅ обработано полностью.
-- Добавлены `TOM-059–072` в `ideasALL/ideas/TOMATO_BATCH5.md`.
-- Новые находки: previous/similar track, DM-grab, playtop, moveme, radio catalog/search, radio reconnect, shuffle rollback, queue deduplication, queue status, Music Mix, Song of the Day и отдельный searchsimilar.
-- Базовые music controls проверены на дубли; нерабочие/закомментированные варианты не учитывались.
+- Добавлены `TOM-059–072`.
 
 ### Batch 7
 - `commands/🏫 School Commands` — ✅ обработано полностью.
@@ -91,26 +87,16 @@ Repository: `Tomato6966/Multipurpose-discord-bot`, branch `new_2025`.
 
 ### Batch 10 — `commands/💪 Setup` — В РАБОТЕ
 - Recursive tree директории проверен; содержание ещё не закрыто.
-- Первая часть: `TOM-107–116` в `ideasALL/ideas/TOMATO_BATCH9.md`.
-- Вторая часть: `TOM-117–127` в `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
-- Текущий проход добавил `TOM-128–145` в `ideasALL/ideas/TOMATO_BATCH9_PART2.md`.
-- `TOM-128–135`: многоэкземплярная Application-система, автосоздание application-раздела, кастомный дизайн, анкета, отдельные accept/deny/ticket сообщения, временная/accept роли, пять вариантов результата с собственными ролями/сообщениями/изображениями и Last Verify.
-- `TOM-136–139`: многоэкземплярный Auto-Support, до 25 вариантов, индивидуальный Embed/обычный ответ, повторная публикация панели в выбранный канал.
-- `TOM-140–141`: Custom Commands до 25 на сервер и выбор Embed/обычного ответа.
-- `TOM-142–145`: глобальный цвет Embed, footer icon из URL/вложения, footer text и toggle thumbnail.
-- `TOM-146–156` добавлены в `ideasALL/ideas/TOMATO_BATCH9_PART3.md`.
-- `TOM-146`: интерактивная смена языка с reset/status и несколькими языками.
-- `TOM-147`: отдельный канал для логирования выполнения административных команд.
-- `TOM-148–149`: до 25 Member Counter систем и расширенные placeholders серверной статистики для имён каналов.
-- `TOM-150`: Menu Apply с до 100 конфигураций и до 25 вариантов в панели.
-- `TOM-151–152`: Menu Ticket до 100 конфигураций, до 25 вариантов, general access/closed category и per-system claim с кастомными сообщениями.
-- `TOM-153`: постоянная Music Request панель с кнопками управления.
-- `TOM-154`: toggle Valid-Code системы.
-- `TOM-155`: Joinlist с шестью типами условий и четырьмя действиями при join.
-- `TOM-156`: до 100 независимых JTC конфигураций, создание trigger или использование текущего VC и кастомное имя временных комнат.
-- Проверены и сверены дубли: `setup-boost.js`, `setup-logger.js`, `setup-radio.js`, `setup-admin.js`; `setup-serverstats.js` — redirect на membercount.
+- `TOM-107–116` в `TOMATO_BATCH9.md`.
+- `TOM-117–145` в `TOMATO_BATCH9_PART2.md`.
+- `TOM-146–171` в `TOMATO_BATCH9_PART3.md`.
+- `TOM-146–156`: language, admin command log, member counters, Menu Apply/Ticket, music request panel, Valid-Code, Joinlist, JTC.
+- `TOM-157–162`: mute style/default time, level-up reply variant, Server Roster, Report Log.
+- `TOM-163–166`: up to 100 Ticket Systems, closed-ticket category, customizable Suggestion texts and voting emojis.
+- `TOM-167–171`: TikTok logger, Twitter logger/fallback, Twitch logger with multiple channels and live/ghost-ping roles.
+- Проверены дубли: boost, logger, radio, admin, reactionrole, rank; redirects не размножались.
 
 ### Текущая точка
-`commands/💪 Setup` **НЕ закрыта**. Следующий участок — продолжать с оставшихся файлов Setup после уже обработанного блока (ориентир: следующие файлы после `setup-membercount.js` / `setup-menuticket.js` / `setup-music.js`). Не переходить к Economy до полного закрытия Setup.
+`commands/💪 Setup` **НЕ закрыта**. Продолжать с оставшихся файлов Setup после обработанного social block (`setup-tiktok.js` / `setup-twitter.js` / `setup-twitch.js`), затем последовательно закрыть остаток Setup. Не переходить к Economy до полного закрытия Setup.
 
 `bot/main.py` и implementation InsaneBot не изменялись.
