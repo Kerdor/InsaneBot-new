@@ -38,17 +38,19 @@
 `GD-260–284`
 
 ### Batch 8 — GAwesome Public final dedup — ✅
-Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH8.md`
-Результат: `GD-285–287`.
+`GD-285–287`
 
 Новые механики:
 - `GD-285` — named persistent server countdowns.
 - `GD-286` — self/admin nickname management.
 - `GD-287` — role inspection with effective permissions.
 
-Остальные финальные Public-команды сверены с уже существующими кластерами; новых GD для них не создавалось.
+### Batch 9 — Финальная сверка GAwesome Public — ✅
+Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH9.md`
 
-## Следующая точка
-Продолжить глобальную дедупликацию с `GD-288`. RoadMap пока не строить.
+Все `GAB-PUB-001–109` повторно сверены с `GD-001–287`. Новых самостоятельных механик не обнаружено.
+
+## Этап 3 — RoadMap
+**Глобальная дедупликация завершена на `GD-287`. Следующий этап — построение RoadMap реализации на основе полного канонического банка.**
 
 `bot/main.py` и реализация InsaneBot не изменялись.
