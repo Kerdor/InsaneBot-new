@@ -40,17 +40,40 @@
 ### Batch 8 — GAwesome Public final dedup — ✅
 `GD-285–287`
 
-Новые механики:
-- `GD-285` — named persistent server countdowns.
-- `GD-286` — self/admin nickname management.
-- `GD-287` — role inspection with effective permissions.
-
 ### Batch 9 — Финальная сверка GAwesome Public — ✅
-Файл: `ideasALL/research/GLOBAL_DEDUP_BATCH9.md`
-
 Все `GAB-PUB-001–109` повторно сверены с `GD-001–287`. Новых самостоятельных механик не обнаружено.
 
-## Этап 3 — RoadMap
-**Глобальная дедупликация завершена на `GD-287`. Следующий этап — построение RoadMap реализации на основе полного канонического банка.**
+## Этап 2.5 — Global Dedup V2 — ✅
+
+V2 выполнен в `GLOBAL_DEDUP_V2_BATCH1–13`.
+
+Основные результаты:
+- source-specific и thematic idea-файлы повторно сопоставлены между собой;
+- infrastructure/helper/command-level findings не раздувают canonical system count;
+- уникальные UX, constraints, recovery и lifecycle mechanics сохранены;
+- Access Control, Global Broadcast, Installation Serverlock и другие V2 candidates сохранены;
+- Reports / User Reports, Social Relations / Social Interactions и Statistics / Analytics подтверждены как отдельные candidates;
+- `INDEX.md` и `README.md` проверены как административные файлы без новых mechanics.
+
+### V2 Batch 13 — финальный проход — ✅
+`ideasALL/research/GLOBAL_DEDUP_V2_BATCH13.md`
+
+**Global Dedup V2 all-files audit завершён.**
+
+## Этап 3 — Canonical Index — СЛЕДУЮЩИЙ ЭТАП
+
+До RoadMap необходимо создать окончательный canonical index:
+
+1. стабильные canonical IDs;
+2. canonical names;
+3. domain grouping;
+4. source-ID mapping;
+5. уникальные mechanics/UX/constraints/recovery;
+6. границы между user-facing systems, subsystems и infrastructure;
+7. финальная проверка на пропуски и дубли.
+
+### Этап 4 — RoadMap
+
+**Пока НЕ НАЧИНАЕМ.** RoadMap строится только после завершения canonical index.
 
 `bot/main.py` и реализация InsaneBot не изменялись.
