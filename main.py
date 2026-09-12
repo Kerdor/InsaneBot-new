@@ -5,6 +5,7 @@ import os
 from bot.config import TEST_GUILD_ID
 from bot.extensions import load_cogs
 
+from bot.storage import database
 
 load_dotenv()
 
