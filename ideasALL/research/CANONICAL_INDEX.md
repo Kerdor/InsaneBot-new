@@ -6,7 +6,8 @@
 
 - Initial Global Dedup: `GD-001–287`.
 - Global Dedup V2: завершён, Batch 1–13.
-- RoadMap на этом этапе **не строится**.
+- Канонический индекс: **готов**.
+- RoadMap можно строить после этого файла.
 - Source-specific файлы не заменяются и не удаляются: они остаются evidence layer.
 
 ## Правила
@@ -15,6 +16,7 @@
 - UX, recovery, ограничения и варианты реализации сохраняются внутри системы.
 - Source IDs не удаляются.
 - Инфраструктурные детали не превращаются в отдельные системы без самостоятельной ценности.
+- Новые canonical IDs добавляются только при наличии source evidence.
 
 ## Existing canonical bank
 
@@ -34,7 +36,7 @@
 
 ## V2 additions
 
-После повторной cross-source проверки добавлены новые самостоятельные кандидаты. Для них используются следующие стабильные IDs.
+V2 добавил **20** новых самостоятельных систем. IDs `GD-288–307` являются стабильными.
 
 | ID | Canonical system | Основные источники |
 |---|---|---|
@@ -61,7 +63,7 @@
 
 ## Important V2 merges / boundaries
 
-- Temporary permission-role lifecycle, channel silence/restore, bounded message cache and resource locking остаются важными reusable subsystems, но не получают отдельные IDs здесь, если они являются infrastructure/workflow слоями существующих систем.
+- Temporary permission-role lifecycle, channel silence/restore, bounded message cache и resource locking остаются важными reusable subsystems, но не получают отдельные IDs здесь, если они являются infrastructure/workflow слоями существующих систем.
 - Discord Activities (`COR-303`, `COR-336–337`) — одна Activity system, без дублирования по source.
 - Storage degradation/graceful degradation — infrastructure capability, а не отдельная пользовательская система.
 - Applications не объединяются с Tickets: lifecycle и сущность разные.
@@ -77,8 +79,12 @@
 
 `GLOBAL_DEDUP_V2_BATCH1–13` завершили повторную cross-source проверку Python Discord, Titan, CorwinDev, Tomato, GAwesome и thematic/architecture files.
 
-Финальный вывод: новых самостоятельных систем после Batch 11 не обнаружено; Batch 12–13 подтвердили существующий набор и закрыли административные/evidence-файлы.
+Batch 1–11 выявили и проверили новые standalone-системы; Batch 12–13 не добавили новых систем и подтвердили итоговый набор.
+
+**Итог:** `GD-001–307` — текущий канонический банк после Global Dedup V2.
 
 ## Next step
 
-После этого индекса можно строить **RoadMap реализации**. Новые canonical IDs без новой source evidence больше не добавлять.
+**Следующий этап — RoadMap реализации.**
+
+Новые canonical IDs без новой source evidence больше не добавлять.
