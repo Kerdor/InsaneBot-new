@@ -1,4 +1,3 @@
-from disnake.ext import commands
 import os
 
 def load_cogs(bot):
