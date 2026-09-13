@@ -5,7 +5,9 @@ import os
 from bot.config import TEST_GUILD_ID
 from bot.extensions import load_cogs
 
-from bot.storage import database
+from bot.storage.database import get_session
+from bot.storage.models import User
+
 
 load_dotenv()
 
@@ -18,7 +20,7 @@ async def start(inter):
 @bot.event
 async def on_ready():
     print(f"Бот запущен {bot.user}")
-    
+
 
 load_cogs(bot)
 bot.run(os.getenv("token"))
