@@ -1,5 +1,7 @@
 import disnake
 from disnake.ext import commands
+import logging
+
 from bot.config import TEST_GUILD_ID
 from bot.extensions import find_extensions
 
@@ -93,10 +95,10 @@ class CogManager(commands.Cog):
         except commands.errors.ExtensionFailed:
             return f":x: В расширении ``{name}`` произошла ошибка."
         except Exception as error:
-            print("====НЕИЗВЕСТНАЯ ОШИБКА====")
-            print(type(error))
-            print(error)
-            print("==========================")
+            logging.error(
+                f"При обработке {name} произошла неизвестная ошибка",
+                exec_info=True
+            )
             return f":x: При обработке ``{name}`` произошла неизвестная ошибка."
 
 

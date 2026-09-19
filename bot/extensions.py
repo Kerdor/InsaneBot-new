@@ -1,5 +1,5 @@
 import os
-
+import logging
 
 def find_extensions():
         all_extensions=[]
@@ -18,7 +18,7 @@ def load_cogs(bot):
     for extension in all_extensions:
         try:
             bot.load_extension(f"{extension}")
-            print("Загружено", f"{extension}")
+            logging.info(f"Загружено {extension}")
         except Exception as e:
-            print("Не загружено", f"{extension}", e)
+            logging.error(f"Не загружено {extension}: {e}")
 
