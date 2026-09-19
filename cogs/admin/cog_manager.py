@@ -1,41 +1,27 @@
 import disnake
 from disnake.ext import commands
 from bot.config import TEST_GUILD_ID
+from bot.extensions import find_extensions
 
-import os
 
 class CogManager(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.all_extensions = self.find_extensions()
-
-    def find_extensions(self):
-        all_extensions=[]
-        for root, dirs, files in os.walk('cogs'):
-                if root.endswith("__pycache__"): continue
-                for file in files:
-                    if file.endswith(".py") and file != "__init__.py":
-                        roots = root.split(os.sep)
-                        load_text = ".".join(roots)
-                        all_extensions.append(f"{load_text}.{file[:-3]}")
-        return all_extensions
 
     async def autocomplete_load(self, inter, user_input):
+        all_extensions = find_extensions()
+        
         filtered_extensions = []
-        for extension in self.all_extensions:
-            simple_ext = extension.split(".")
-            simple_ext.pop(0)
-            extension_name = ".".join(simple_ext)
-            if extension_name.startswith(user_input) and extension not in self.bot.extensions.keys():
+        for extension in all_extensions:
+            extension_name = extension.removeprefix("cogs.")
+            if extension_name.startswith(user_input) and extension not in self.bot.extensions:
                 filtered_extensions.append(extension_name)
         return filtered_extensions
 
     async def autocomplete_loaded(self, inter, user_input):
         filtered_extensions = []
-        for extension in self.bot.extensions.keys():
-            simple_ext = extension.split(".")
-            simple_ext.pop(0)
-            extension_name = ".".join(simple_ext)
+        for extension in self.bot.extensions:
+            extension_name = extension.removeprefix('cogs.')
             if extension_name.startswith(user_input):
                 filtered_extensions.append(extension_name)
         return filtered_extensions
