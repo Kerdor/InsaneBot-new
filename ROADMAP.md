@@ -596,6 +596,19 @@
 
 ### Current milestone
 
-**Milestone 0 — Foundation:** довести текущую структуру `main.py` / `bot/` / `cogs/`, configuration, extension lifecycle и базовую инфраструктуру до устойчивого состояния.
+**Milestone 0 — Foundation: [~] IN PROGRESS**
 
-После этого переходить к storage/data layer, затем к permissions и moderation.
+Довести текущую структуру `main.py` / `bot/` / `cogs/`, configuration, extension lifecycle и базовую инфраструктуру до устойчивого состояния.
+
+Уже сделано в рамках Milestone 0:
+- базовая структура `main.py` / `bot/` / `cogs/`;
+- переход на `commands.InteractionBot()`;
+- загрузчик extensions/cogs;
+- базовая конфигурация через `.env`;
+- SQLAlchemy + Alembic foundation;
+- базовая модель `User`;
+- отдельный logging layer с уровнями и цветным выводом;
+- обработка ошибок загрузки extensions через logging;
+- базовый `cog manager` с load/unload/reload.
+
+После завершения Milestone 0 переходить к storage/data layer, затем к permissions и moderation.
