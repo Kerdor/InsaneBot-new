@@ -14,7 +14,7 @@
 
 База, без которой остальные системы будут постоянно переделываться.
 
-**1.** `GD-001–027` — **legacy historical block; audited — unique Batch 1 requirements redistributed below; original 1:1 GD mapping remains unavailable**
+**1.** ~~`GD-001–027`~~ — **~~legacy historical block; audited — unique Batch 1 requirements redistributed below; original 1:1 GD mapping remains unavailable~~ **DONE — Batch 1 systems audited and redistributed into the roadmap.****
 
 **2.** `B1-CORE` — **Runtime information / diagnostics** — единый слой информации о состоянии и окружении бота для диагностики.
 
