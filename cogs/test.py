@@ -6,8 +6,8 @@ class Test(commands.Cog):
 
     @commands.slash_command(name="test", description='Test command')
     async def test(self, inter):
-        m = 1/0
-        await inter.response.send_message("m")
+        runtime = self.bot.runtime
+        await inter.response.send_message(f"{runtime.uptime}")
 
 
 def setup(bot):
