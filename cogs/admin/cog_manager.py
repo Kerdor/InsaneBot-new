@@ -2,7 +2,7 @@ import disnake
 from disnake.ext import commands
 import logging
 
-from bot.config import TEST_GUILD_ID
+from bot.config import GUILD_IDS
 from bot.extensions import find_extensions
 
 
@@ -30,12 +30,12 @@ class CogManager(commands.Cog):
 
 
     @commands.slash_command(name = "cog", description="Менеджер расширений",
-                            guild_ids=[TEST_GUILD_ID])
+                            guild_ids=GUILD_IDS)
     async def cog(self,inter):
         pass
 
     @cog.sub_command(name = "list", description="Список расширений",
-                     guild_id=[TEST_GUILD_ID])
+                     guild_id=GUILD_IDS)
     async def list_cog(self, inter):
         loaded_cogs = self.bot.extensions.keys()
         loaded_cogs_list = []
@@ -51,7 +51,7 @@ class CogManager(commands.Cog):
 
     @cog.sub_command(name = "load",
                      description="Загрузить расширение",
-                     guild_id=[TEST_GUILD_ID])
+                     guild_id=GUILD_IDS)
     async def load_cog(self, inter,
                        name: str = commands.Param(autocomplete = autocomplete_load)):
         message = self.manage_extension("load", name)
@@ -59,7 +59,7 @@ class CogManager(commands.Cog):
     
     @cog.sub_command(name = "unload",
                          description="Выгрузить расширение",
-                         guild_id=[TEST_GUILD_ID])
+                         guild_id=GUILD_IDS)
     async def unload_cog(self, inter,
                         name: str = commands.Param(autocomplete = autocomplete_loaded)):
         message = self.manage_extension("unload", name)
@@ -67,7 +67,7 @@ class CogManager(commands.Cog):
 
     @cog.sub_command(name = "reload",
                              description="Перезагрузить расширение",
-                             guild_id=[TEST_GUILD_ID])
+                             guild_id=GUILD_IDS)
     async def reload_cog(self, inter, 
                          name: str = commands.Param(autocomplete = autocomplete_loaded)):
         message = self.manage_extension("reload", name)

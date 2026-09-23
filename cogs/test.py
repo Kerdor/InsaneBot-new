@@ -1,4 +1,5 @@
 from disnake.ext import commands
+from bot.embeds import *
 
 class Test(commands.Cog):
     def __init__(self, bot):
@@ -7,7 +8,11 @@ class Test(commands.Cog):
     @commands.slash_command(name="test", description='Test command')
     async def test(self, inter):
         runtime = self.bot.runtime
-        await inter.response.send_message(f"{runtime.uptime}")
+        embed = create_embed(
+            "",
+            f"{runtime.uptime}"
+        )
+        await inter.response.send_message(embed=embed)
 
 
 def setup(bot):

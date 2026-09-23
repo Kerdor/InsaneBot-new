@@ -6,7 +6,7 @@ import time
 
 class RuntimeInfo():
     def __init__(self):
-        self.python_version = sys.version
+        self.python_version = platform.python_version()
         self.disnake_version = disnake.__version__
         self.os_name = platform.system()
         self.architecture = platform.machine()
