@@ -16,7 +16,7 @@
 
 **1.** ~~`GD-001–027`~~ — **~~legacy historical block; audited — unique Batch 1 requirements redistributed below; original 1:1 GD mapping remains unavailable~~ **DONE — Batch 1 systems audited and redistributed into the roadmap.****
 
-**2.** `B1-CORE` — **Runtime information / diagnostics** — единый слой информации о состоянии и окружении бота для диагностики.
+**2.** ~~`B1-CORE` — **Runtime information / diagnostics** — единый слой информации о состоянии и окружении бота для диагностики.~~ **DONE — RuntimeInfo + /runtime diagnostics implemented.**
 
 **3.** `B1-CORE` — **Multi-instance lifecycle** — управление жизненным циклом нескольких экземпляров бота/воркеров.
 
