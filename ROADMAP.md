@@ -18,7 +18,7 @@
 
 **2.** ~~`B1-CORE` — **Runtime information / diagnostics** — единый слой информации о состоянии и окружении бота для диагностики.~~ **DONE — RuntimeInfo + /runtime diagnostics implemented.**
 
-**3.** `B1-CORE` — **Multi-instance lifecycle** — управление жизненным циклом нескольких экземпляров бота/воркеров.
+**3.** ~~`B1-CORE` — **Multi-instance lifecycle** — управление жизненным циклом нескольких экземпляров бота/воркеров.~~ **DONE — start/stop/restart lifecycle for multiple instances implemented.**
 
 **4.** `B1-CORE` — **Core RPC** — внутреннее взаимодействие между экземплярами/процессами бота.
 
@@ -368,237 +368,239 @@
 
 **165.** `GD-185` — Invite statistics
 
-**166.** `GD-187` — Statistics visualization
+**166.** `GD-186` — Voice time statistics
 
-**167.** `GD-250` — Weekly guild statistics reset
+**167.** `GD-187` — Statistics visualization
 
-**168.** `GD-251` — Command-usage statistics
+**168.** `GD-250` — Weekly guild statistics reset
 
-**169.** `GD-252` — Rank-specific leaderboard
+**169.** `GD-251` — Command-usage statistics
 
-**170.** `GD-257` — User points leaderboard surface
+**170.** `GD-252` — Rank-specific leaderboard
 
-**171.** `GD-307` — Statistics / Analytics
+**171.** `GD-257` — User points leaderboard surface
+
+**172.** `GD-307` — Statistics / Analytics
 
 ## 12. Economy
 
-**172.** `GD-028` — Basic user balance
+**173.** `GD-028` — Basic user balance
 
-**173.** `GD-029` — Wallet/bank separation
+**174.** `GD-029` — Wallet/bank separation
 
-**174.** `GD-030` — Economy shop/inventory
+**175.** `GD-030` — Economy shop/inventory
 
-**175.** `GD-031` — Discord-role shop
+**176.** `GD-031` — Discord-role shop
 
-**176.** `GD-032` — Periodic monetary rewards
+**177.** `GD-032` — Periodic monetary rewards
 
-**177.** `GD-033` — Role-based periodic reward
+**178.** `GD-033` — Role-based periodic reward
 
-**178.** `GD-034` — Active work income
+**179.** `GD-034` — Active work income
 
-**179.** `GD-035` — Beg
+**180.** `GD-035` — Beg
 
-**180.** `GD-036` — P2P currency transfer
+**181.** `GD-036` — P2P currency transfer
 
-**181.** `GD-037` — Administrative balance management
+**182.** `GD-037` — Administrative balance management
 
-**182.** `GD-038` — Maximum balance limit
+**183.** `GD-038` — Maximum balance limit
 
-**183.** `GD-039` — Max-balance payout correction
+**184.** `GD-039` — Max-balance payout correction
 
-**184.** `GD-040` — Economy leaderboard
+**185.** `GD-040` — Economy leaderboard
 
-**185.** `GD-042` — Paid actions integration
+**186.** `GD-042` — Paid actions integration
 
-**186.** `GD-043` — Rewards from other systems
+**187.** `GD-043` — Rewards from other systems
 
-**187.** `GD-044` — Risky currency theft
+**188.** `GD-044` — Risky currency theft
 
-**188.** `GD-045` — Crime / risk-reward
+**189.** `GD-045` — Crime / risk-reward
 
-**189.** `GD-046` — Mine
+**190.** `GD-046` — Mine
 
-**190.** `GD-047` — Fishing
+**191.** `GD-047` — Fishing
 
-**191.** `GD-048` — Hunt
+**192.** `GD-048` — Hunt
 
-**192.** `GD-049` — Gambling / slot machine
+**193.** `GD-049` — Gambling / slot machine
 
-**193.** `GD-050` — Global vs server economy mode
+**194.** `GD-050` — Global vs server economy mode
 
-**194.** `GD-051` — Currency name configuration
+**195.** `GD-051` — Currency name configuration
 
-**195.** `GD-052` — Economy reset
+**196.** `GD-052` — Economy reset
 
-**196.** `GD-053` — Inactive economy record cleanup
+**197.** `GD-053` — Inactive economy record cleanup
 
-**197.** `GD-249` — Scaled points lottery
+**198.** `GD-249` — Scaled points lottery
 
 ## 13. Games / Trivia / Fun
 
-**198.** `GD-093` — Mini-game catalog
+**199.** `GD-093` — Mini-game catalog
 
-**199.** `GD-094` — Casino game section
+**200.** `GD-094` — Casino game section
 
-**200.** `GD-095` — Independent mini-games
+**201.** `GD-095` — Independent mini-games
 
-**201.** `GD-096` — Game rankings/statistics
+**202.** `GD-096` — Game rankings/statistics
 
-**202.** `GD-097` — Daily game challenges
+**203.** `GD-097` — Daily game challenges
 
-**203.** `GD-098` — Game economic rewards
+**204.** `GD-098` — Game economic rewards
 
-**204.** `GD-099` — Mixed trivia pool
+**205.** `GD-099` — Mixed trivia pool
 
-**205.** `GD-100` — Custom trivia sets
+**206.** `GD-100` — Custom trivia sets
 
-**206.** `GD-101` — Trivia-set configuration
+**207.** `GD-101` — Trivia-set configuration
 
-**207.** `GD-102` — Trivia victory condition
+**208.** `GD-102` — Trivia victory condition
 
-**208.** `GD-103` — Trivia timers
+**209.** `GD-103` — Trivia timers
 
-**209.** `GD-104` — Bot participant in Trivia
+**210.** `GD-104` — Bot participant in Trivia
 
-**210.** `GD-105` — Trivia response UX
+**211.** `GD-105` — Trivia response UX
 
-**211.** `GD-106` — Trivia answer matching
+**212.** `GD-106` — Trivia answer matching
 
-**212.** `GD-107` — Conditional Trivia reward
+**213.** `GD-107` — Conditional Trivia reward
 
-**213.** `GD-108` — Persistent Trivia statistics
+**214.** `GD-108` — Persistent Trivia statistics
 
-**214.** `GD-109` — Channel-scoped concurrent Trivia
+**215.** `GD-109` — Channel-scoped concurrent Trivia
 
-**215.** `GD-110` — Forced Trivia stop
+**216.** `GD-110` — Forced Trivia stop
 
-**216.** `GD-111` — Async game-session lifecycle
+**217.** `GD-111` — Async game-session lifecycle
 
-**217.** `GD-112` — Fun command layer
+**218.** `GD-112` — Fun command layer
 
-**218.** `GD-113` — Random choice/response utilities
+**219.** `GD-113` — Random choice/response utilities
 
-**219.** `GD-114` — Random media/fact fun
+**220.** `GD-114` — Random media/fact fun
 
-**220.** `GD-115` — Fun user/media transformations
+**221.** `GD-115` — Fun user/media transformations
 
-**221.** `GD-259` — Per-answer visual variation
+**222.** `GD-259` — Per-answer visual variation
 
 ## 14. Music / external media
 
-**222.** `GD-073` — Managed external media/audio node
+**223.** `GD-073` — Managed external media/audio node
 
-**223.** `GD-074` — Automatic media-node runtime installation
+**224.** `GD-074` — Automatic media-node runtime installation
 
-**224.** `GD-075` — Managed-node configuration generation
+**225.** `GD-075` — Managed-node configuration generation
 
-**225.** `GD-076` — External-process environment preflight
+**226.** `GD-076` — External-process environment preflight
 
-**226.** `GD-077` — Runtime-check cache
+**227.** `GD-077` — Runtime-check cache
 
-**227.** `GD-078` — Managed-node resource control
+**228.** `GD-078` — Managed-node resource control
 
-**228.** `GD-079` — Readiness by stdout/logs
+**229.** `GD-079` — Readiness by stdout/logs
 
-**229.** `GD-080` — External-process lifecycle manager
+**230.** `GD-080` — External-process lifecycle manager
 
-**230.** `GD-081` — Node plugin diagnostics
+**231.** `GD-081` — Node plugin diagnostics
 
-**231.** `GD-082` — Managed/unmanaged backend mode
+**232.** `GD-082` — Managed/unmanaged backend mode
 
-**232.** `GD-083` — Reset managed backend settings
+**233.** `GD-083` — Reset managed backend settings
 
-**233.** `GD-200` — External service integrations
+**234.** `GD-200` — External service integrations
 
-**234.** `GD-205` — Multi-provider stream monitoring
+**235.** `GD-205` — Multi-provider stream monitoring
 
-**235.** `GD-206` — Multiple independent stream alerts
+**236.** `GD-206` — Multiple independent stream alerts
 
-**236.** `GD-207` — Transition-based live alerts
+**237.** `GD-207` — Transition-based live alerts
 
-**237.** `GD-208` — YouTube stream filtering
+**238.** `GD-208` — YouTube stream filtering
 
-**238.** `GD-209` — Configurable stream mentions
+**239.** `GD-209` — Configurable stream mentions
 
-**239.** `GD-210` — Stream watch action
+**240.** `GD-210` — Stream watch action
 
-**240.** `GD-211` — Stream API quota control
+**241.** `GD-211` — Stream API quota control
 
-**241.** `GD-212` — Stream OAuth token refresh
+**242.** `GD-212` — Stream OAuth token refresh
 
-**242.** `GD-213` — Shared stream credentials migration
+**243.** `GD-213` — Shared stream credentials migration
 
-**243.** `GD-214` — Missing-secret owner warning
+**244.** `GD-214` — Missing-secret owner warning
 
-**244.** `GD-215` — Resilient stream polling
+**245.** `GD-215` — Resilient stream polling
 
 ## 15. Web / dashboard / advanced control plane
 
-**245.** `GD-202` — Integration dashboard/web interface
+**246.** `GD-202` — Integration dashboard/web interface
 
-**246.** `GD-260` — Web normalized DTO layer
+**247.** `GD-260` — Web normalized DTO layer
 
-**247.** `GD-261` — Privacy-aware public user profile
+**248.** `GD-261` — Privacy-aware public user profile
 
-**248.** `GD-262` — Public server listing
+**249.** `GD-262` — Public server listing
 
-**249.** `GD-263` — Web timestamps
+**250.** `GD-263` — Web timestamps
 
-**250.** `GD-264` — Versioned extension gallery
+**251.** `GD-264` — Versioned extension gallery
 
-**251.** `GD-265` — Human-readable extension scopes
+**252.** `GD-265` — Human-readable extension scopes
 
-**252.** `GD-266` — Extension web administration
+**253.** `GD-266` — Extension web administration
 
-**253.** `GD-267` — Web dashboard control plane
+**254.** `GD-267` — Web dashboard control plane
 
-**254.** `GD-268` — Web command configuration matrix
+**255.** `GD-268` — Web command configuration matrix
 
-**255.** `GD-269` — Preserve untouched configuration fields
+**256.** `GD-269` — Preserve untouched configuration fields
 
-**256.** `GD-270` — Transactional dashboard save
+**257.** `GD-270` — Transactional dashboard save
 
-**257.** `GD-271` — Dashboard destructive-action endpoint
+**258.** `GD-271` — Dashboard destructive-action endpoint
 
-**258.** `GD-272` — Dashboard statistics surface
+**259.** `GD-272` — Dashboard statistics surface
 
-**259.** `GD-278` — Controller/route/API separation
+**260.** `GD-278` — Controller/route/API separation
 
-**260.** `GD-279` — Route-level feature namespaces
+**261.** `GD-279` — Route-level feature namespaces
 
-**261.** `GD-280` — Public content surface isolation
+**262.** `GD-280` — Public content surface isolation
 
-**262.** `GD-281` — Maintainer operational dashboard
+**263.** `GD-281` — Maintainer operational dashboard
 
-**263.** `GD-282` — Web server lifecycle isolation
+**264.** `GD-282` — Web server lifecycle isolation
 
-**264.** `GD-283` — Graceful missing remote entities
+**265.** `GD-283` — Graceful missing remote entities
 
-**265.** `GD-284` — Bulk mutual-guild resolution
+**266.** `GD-284` — Bulk mutual-guild resolution
 
-**266.** `GD-292` — Persistent REPL / Eval Environment
+**267.** `GD-292` — Persistent REPL / Eval Environment
 
-**267.** `GD-290` — Multi-source Latency Healthcheck
+**268.** `GD-290` — Multi-source Latency Healthcheck
 
-**268.** `GD-291` — WebSocket Event-rate Diagnostics
+**269.** `GD-291` — WebSocket Event-rate Diagnostics
 
-**269.** `GD-295` — API Diff / Reconciliation Sync
+**270.** `GD-295` — API Diff / Reconciliation Sync
 
-**270.** `GD-304` — Installation Serverlock
+**271.** `GD-304` — Installation Serverlock
 
-**271.** `GD-305` — User Reports
+**272.** `GD-305` — User Reports
 
 ## 16. Discord Activities / final large systems
 
-**272.** `GD-093–111` — game architecture already prepared above
+**273.** `GD-093–111` — game architecture already prepared above
 
-**273.** `GD-303` — Global Broadcast
+**274.** `GD-303` — Global Broadcast
 
-**274.** `GD-304` — Installation Serverlock
+**275.** `GD-304` — Installation Serverlock
 
-**275.** `GD-307` — Statistics / Analytics
+**276.** `GD-307` — Statistics / Analytics
 
-**276.** Discord Activities canonical system from CorwinDev source (`COR-303`, `COR-336–337`)
+**277.** Discord Activities canonical system from CorwinDev source (`COR-303`, `COR-336–337`)
 
 ## Implementation principle
 
