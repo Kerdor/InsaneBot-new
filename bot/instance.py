@@ -87,7 +87,7 @@ class InstanceManager:
         if instance.status != "running":
             return False
 
-        asyncio.create_tusk(instance.stop())
+        asyncio.create_task(instance.stop())
         return True
 
     def stop_all(self):
